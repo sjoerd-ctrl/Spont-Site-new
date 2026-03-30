@@ -1,5 +1,20 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import CTABanner from "@/components/shared/CTABanner";
+import JsonLd from "@/components/shared/JsonLd";
+
+export const metadata: Metadata = {
+  title: "Blog — Kennis voor de horeca",
+  description:
+    "Praktische artikelen over kassatechnologie, betalingen en het runnen van een horecazaak. Tips en inzichten van Spont.",
+  openGraph: {
+    title: "Blog — Kennis voor de horeca | Spont",
+    description:
+      "Praktische artikelen over kassatechnologie, betalingen en het runnen van een horecazaak.",
+    url: "https://www.spont.nl/blog",
+  },
+  alternates: { canonical: "https://www.spont.nl/blog" },
+};
 
 const articles = [
   {
@@ -49,6 +64,17 @@ const articles = [
 export default function BlogPage() {
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.spont.nl" },
+            { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.spont.nl/blog" },
+          ],
+        }}
+      />
+
       <section className="bg-[#FCF9F4] pt-32 pb-16 px-6">
         <div className="max-w-4xl mx-auto">
           <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-4">Blog</p>
@@ -86,8 +112,8 @@ export default function BlogPage() {
 
       <CTABanner
         title="Klaar voor een kassa die gewoon werkt?"
-        subtitle="Demo aanvragen duurt twee minuten. Geen verplichtingen."
-        primary={{ label: "Demo aanvragen", href: "/contact" }}
+        subtitle="Starten duurt twee minuten. Geen verplichtingen."
+        primary={{ label: "Start direct", href: "/contact" }}
         secondary={{ label: "Bekijk de prijzen", href: "/prijzen" }}
       />
     </>

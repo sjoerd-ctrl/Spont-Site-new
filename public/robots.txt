@@ -1,0 +1,19 @@
+# Spont - Kassasysteem voor de horeca
+# AI-crawlers expliciet toestaan
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.spont.nl/sitemap.xml

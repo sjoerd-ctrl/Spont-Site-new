@@ -1,5 +1,20 @@
+import type { Metadata } from "next";
 import CTABanner from "@/components/shared/CTABanner";
 import { Heart, Users, Zap, Shield } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Over ons",
+  description:
+    "Leer het team achter Spont kennen. Wij bouwen een eerlijk, eenvoudig kassasysteem voor de horeca. Zonder verborgen kosten, zonder gedoe.",
+  openGraph: {
+    title: "Over ons | Spont",
+    description:
+      "Het team achter Spont. Wij bouwen een eerlijk kassasysteem voor de horeca.",
+    url: "https://www.spont.nl/over-ons",
+  },
+  alternates: { canonical: "https://www.spont.nl/over-ons" },
+  other: { "article:modified_time": "2026-03-30" },
+};
 
 const kernwaarden = [
   {
@@ -195,8 +210,8 @@ export default function OverOnsPage() {
       {/* ─── CTA ─── */}
       <CTABanner
         title="Klaar voor meer rust in je zaak?"
-        subtitle="Vraag een demo aan. We laten je zien hoe Spont past bij jouw manier van werken."
-        primary={{ label: "Demo aanvragen", href: "/contact" }}
+        subtitle="Probeer Spont en ontdek hoe het past bij jouw manier van werken."
+        primary={{ label: "Start direct", href: "/contact" }}
         secondary={{ label: "Bekijk de prijzen", href: "/prijzen" }}
       />
     </>

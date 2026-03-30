@@ -18,10 +18,33 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Spont — Kassasysteem voor de horeca",
+  title: {
+    default: "Spont — Kassasysteem voor de horeca",
+    template: "%s | Spont",
+  },
   description:
-    "Spont is het kassasysteem dat meedenkt met de horeca. Eenvoudig voor het personeel, snel in support, eerlijk in prijs. Vraag een demo aan.",
-  keywords: "kassasysteem horeca, kassa restaurant, pos systeem café, horeca software",
+    "Spont is het kassasysteem dat meedenkt met de horeca. Eenvoudig voor het personeel, snel in support, eerlijk in prijs. Start direct.",
+  keywords:
+    "kassasysteem horeca, kassa restaurant, pos systeem café, horeca software",
+  metadataBase: new URL("https://www.spont.nl"),
+  openGraph: {
+    type: "website",
+    locale: "nl_NL",
+    siteName: "Spont",
+    title: "Spont — Kassasysteem voor de horeca",
+    description:
+      "Spont is het kassasysteem dat meedenkt met de horeca. Eenvoudig voor het personeel, snel in support, eerlijk in prijs.",
+    url: "https://www.spont.nl",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Spont — Kassasysteem voor de horeca",
+    description:
+      "Spont is het kassasysteem dat meedenkt met de horeca. Eenvoudig, eerlijk, snel.",
+  },
+  alternates: {
+    canonical: "https://www.spont.nl",
+  },
 };
 
 export default function RootLayout({
@@ -34,6 +57,29 @@ export default function RootLayout({
       lang="nl"
       className={`${notoSerif.variable} ${plusJakarta.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Spont",
+              url: "https://www.spont.nl",
+              logo: "https://www.spont.nl/logo.svg",
+              description:
+                "Spont is het kassasysteem dat meedenkt met de horeca. Eenvoudig voor het personeel, snel in support, eerlijk in prijs.",
+              contactPoint: {
+                "@type": "ContactPoint",
+                email: "info@spont.nl",
+                contactType: "customer service",
+                availableLanguage: "Dutch",
+              },
+              sameAs: [],
+            }),
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-beige">
         <Navbar />
         <main className="flex-1">{children}</main>

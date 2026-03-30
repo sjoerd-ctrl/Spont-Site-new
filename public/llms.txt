@@ -1,0 +1,47 @@
+# Spont
+
+> Spont is een kassasysteem (POS) speciaal ontworpen voor de horeca in Nederland. Eenvoudig voor personeel, eerlijk geprijsd, met AI-support. Geen verborgen kosten, geen jaarcontracten.
+
+## Over Spont
+
+Spont is een Nederlands horecakassasysteem dat zich onderscheidt door:
+- Lage drempel: personeel leert het in één dienst
+- Eerlijke prijs: vanaf €89/maand, alles inbegrepen
+- AI-support: geen duur supportteam, maar slimme AI + tickets
+- Maandelijks opzegbaar, geen opstartkosten
+
+## Pagina's
+
+- [Homepage](https://www.spont.nl/): Overzicht van Spont, kernwaarden, prijzen en hoe het werkt
+- [Features](https://www.spont.nl/features): Alle functies: kassa, handhelds, QR-bestellen, KDS, reserveringen, rapportages, loyalty, online bestellen
+- [Prijzen](https://www.spont.nl/prijzen): Prijsplannen (Start €89/mnd, Pro €169/mnd), betaaltarieven, hardware opties
+- [Contact](https://www.spont.nl/contact): Direct starten of contact opnemen
+- [Over ons](https://www.spont.nl/over-ons): Team, kernwaarden en missie van Spont
+- [Blog](https://www.spont.nl/blog): Artikelen over kassatechnologie, betalingen en horecaondernemerschap
+
+## Doelgroepen
+
+Spont bedient verschillende horeca-segmenten:
+- [Restaurants](https://www.spont.nl/doelgroepen/restaurants): Tafelbeheer, keukenprints, reserveringen
+- [Koffiezaken](https://www.spont.nl/doelgroepen/coffee-bars): Snelle afhandeling, loyalty, ochtenddrukte
+- [Cafés](https://www.spont.nl/doelgroepen/cafes): Toogverkoop, snelheid, tabjes
+- [Quick Service](https://www.spont.nl/doelgroepen/quick-service): Kiosks, keuken display, snelle flow
+- [Bakkerijen](https://www.spont.nl/doelgroepen/bakkerijen): Productregistratie, voorraadbeheer
+- [Discotheken](https://www.spont.nl/doelgroepen/discotheken): Meerdere verkooppunten, snelle betalingen
+- [Bowlingbanen](https://www.spont.nl/doelgroepen/bowlingbanen): Baanbeheer, meerdere verkooppunten
+
+## Vergelijkingspagina's
+
+- [Spont vs Lightspeed](https://www.spont.nl/vergelijk/lightspeed-alternatief)
+- [Spont vs Untill](https://www.spont.nl/vergelijk/untill-alternatief)
+
+## Kerngegevens
+
+- Bedrijf: Spont
+- Type product: Kassasysteem (POS) voor de horeca
+- Land: Nederland
+- Taal: Nederlands
+- Prijzen: Start €89/mnd, Pro €169/mnd (maandelijks opzegbaar)
+- Support: AI + ticketsysteem (menselijke hulp bijkoopbaar)
+- Website: https://www.spont.nl
+- Contact: info@spont.nl

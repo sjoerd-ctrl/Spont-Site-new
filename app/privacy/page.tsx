@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacybeleid",
+  description:
+    "Lees het privacybeleid van Spont. Wij beschermen je persoonsgegevens en leggen uit welke data we verzamelen en waarom.",
+  alternates: { canonical: "https://www.spont.nl/privacy" },
+};
+
 export default function PrivacyPage() {
   return (
     <section className="bg-[#FCF9F4] pt-32 pb-24 px-6">

@@ -85,7 +85,7 @@ export default function Navbar() {
             href="/contact"
             className="bg-[#CC5533] hover:bg-[#A33818] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
           >
-            Demo aanvragen
+            Start direct
           </Link>
         </div>
 
@@ -118,7 +118,7 @@ export default function Navbar() {
             className="bg-[#CC5533] text-white text-sm font-semibold px-5 py-3 rounded-full text-center"
             onClick={() => setOpen(false)}
           >
-            Demo aanvragen
+            Start direct
           </Link>
         </div>
       )}

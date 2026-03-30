@@ -1,5 +1,19 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { MessageCircle, Calendar, MapPin, Users } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Contact & direct starten",
+  description:
+    "Start direct met Spont of neem contact op. Geen verkooppraatje, gewoon een gesprek over jouw horecazaak.",
+  openGraph: {
+    title: "Contact & direct starten | Spont",
+    description:
+      "Start direct met Spont of neem contact op. Geen verkooppraatje.",
+    url: "https://www.spont.nl/contact",
+  },
+  alternates: { canonical: "https://www.spont.nl/contact" },
+};
 
 export default function ContactPage() {
   return (
@@ -23,22 +37,23 @@ export default function ContactPage() {
       {/* ─── TWO ROUTES ─── */}
       <section className="bg-[#FCF9F4] py-12 px-6">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Route 1 – Demo */}
+          {/* Route 1 – Start direct */}
           <div className="bg-[#2D4B3F] rounded-3xl p-10 text-white">
             <Calendar size={28} className="mb-6 text-white/60" />
             <h2 className="font-serif text-2xl font-semibold mb-3">
-              Demo aanvragen
+              Probeer Spont direct
             </h2>
             <p className="text-white/70 text-sm leading-relaxed mb-8">
-              We laten je Spont zien in actie — afgestemd op jouw type zaak.
-              Een demo duurt 30 minuten en je weet daarna precies of het bij je
-              past.
+              Maak een account aan en begin direct. Geen creditcard nodig, geen
+              verplichtingen. Je bent binnen een paar minuten operationeel.
             </p>
             <a
-              href="mailto:demo@spont.nl"
+              href="https://app.spont.nl"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold px-6 py-3.5 rounded-full transition-colors text-sm"
             >
-              Demo inplannen
+              Start direct
             </a>
           </div>
 

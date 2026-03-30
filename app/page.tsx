@@ -1,6 +1,7 @@
 import Link from "next/link";
 import CTABanner from "@/components/shared/CTABanner";
 import DoelgroepenRotator from "@/components/home/DoelgroepenRotator";
+import JsonLd from "@/components/shared/JsonLd";
 import {
   CheckCircle,
   Clock,
@@ -106,6 +107,36 @@ const plans = [
 export default function HomePage() {
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Spont",
+          url: "https://www.spont.nl",
+          description:
+            "Spont is het kassasysteem dat meedenkt met de horeca. Eenvoudig voor het personeel, snel in support, eerlijk in prijs.",
+          potentialAction: {
+            "@type": "SearchAction",
+            target: "https://www.spont.nl/blog?q={search_term_string}",
+            "query-input": "required name=search_term_string",
+          },
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://www.spont.nl",
+            },
+          ],
+        }}
+      />
+
       {/* ─── HERO ─── */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -136,7 +167,7 @@ export default function HomePage() {
                 href="/contact"
                 className="bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold px-8 py-4 rounded-full transition-colors text-base inline-block text-center"
               >
-                Demo aanvragen
+                Start direct
               </Link>
               <Link
                 href="/doelgroepen"
@@ -351,7 +382,7 @@ export default function HomePage() {
                       : "bg-[#1A1714] hover:bg-[#2D4B3F] text-white"
                   }`}
                 >
-                  Demo aanvragen
+                  Start direct
                 </Link>
               </div>
             ))}
@@ -425,8 +456,8 @@ export default function HomePage() {
       {/* ─── CTA ─── */}
       <CTABanner
         title="Klaar voor een kassa die gewoon werkt?"
-        subtitle="Demo aanvragen duurt twee minuten. Geen verplichtingen."
-        primary={{ label: "Demo aanvragen", href: "/contact" }}
+        subtitle="Starten duurt twee minuten. Geen verplichtingen."
+        primary={{ label: "Start direct", href: "/contact" }}
         secondary={{ label: "Bekijk de prijzen", href: "/prijzen" }}
       />
     </>

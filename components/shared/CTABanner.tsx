@@ -10,7 +10,7 @@ interface CTABannerProps {
 export default function CTABanner({
   title,
   subtitle,
-  primary = { label: "Demo aanvragen", href: "/contact" },
+  primary = { label: "Start direct", href: "/contact" },
   secondary = { label: "Bekijk de prijzen", href: "/prijzen" },
 }: CTABannerProps) {
   return (

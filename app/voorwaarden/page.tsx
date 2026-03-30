@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Algemene voorwaarden",
+  description:
+    "Lees de algemene voorwaarden van Spont. Transparant over onze dienstverlening, prijzen en afspraken.",
+  alternates: { canonical: "https://www.spont.nl/voorwaarden" },
+};
+
 export default function VoorwaardenPage() {
   return (
     <section className="bg-[#FCF9F4] pt-32 pb-24 px-6">

@@ -1,5 +1,19 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import CTABanner from "@/components/shared/CTABanner";
+
+export const metadata: Metadata = {
+  title: "Doelgroepen",
+  description:
+    "Spont werkt voor restaurants, koffiezaken, cafés, quick service, bakkerijen, bars en bowlingbanen. Ontdek wat Spont voor jouw type zaak doet.",
+  openGraph: {
+    title: "Doelgroepen | Spont",
+    description:
+      "Spont werkt voor restaurants, koffiezaken, cafés, quick service, bakkerijen, bars en bowlingbanen.",
+    url: "https://www.spont.nl/doelgroepen",
+  },
+  alternates: { canonical: "https://www.spont.nl/doelgroepen" },
+};
 
 const doelgroepen = [
   {
@@ -101,8 +115,8 @@ export default function DoelgroepenPage() {
       {/* ─── CTA ─── */}
       <CTABanner
         title="Herken je jouw zaak hier?"
-        subtitle="Plan een demo en zie hoe Spont werkt voor jouw type horeca. Duurt twee minuten."
-        primary={{ label: "Demo aanvragen", href: "/contact" }}
+        subtitle="Probeer Spont voor jouw type horeca. Starten duurt twee minuten."
+        primary={{ label: "Start direct", href: "/contact" }}
         secondary={{ label: "Bekijk de prijzen", href: "/prijzen" }}
       />
     </>

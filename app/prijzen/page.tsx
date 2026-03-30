@@ -1,6 +1,23 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import CTABanner from "@/components/shared/CTABanner";
+import JsonLd from "@/components/shared/JsonLd";
 import { CheckCircle, Bot, Users, Wrench } from "lucide-react";
+import PaymentsTabs from "@/components/pricing/PaymentsTabs";
+
+export const metadata: Metadata = {
+  title: "Prijzen",
+  description:
+    "Spont Start vanaf €89/mnd, Pro vanaf €169/mnd. Alle functies inbegrepen, geen verborgen kosten, maandelijks opzegbaar.",
+  openGraph: {
+    title: "Prijzen | Spont",
+    description:
+      "Spont Start vanaf €89/mnd, Pro vanaf €169/mnd. Alle functies inbegrepen, geen verborgen kosten.",
+    url: "https://www.spont.nl/prijzen",
+  },
+  alternates: { canonical: "https://www.spont.nl/prijzen" },
+  other: { "article:modified_time": "2026-03-30" },
+};
 
 // ─── PLANS ────────────────────────────────────────────────────────────────────
 
@@ -10,7 +27,7 @@ const plans = [
     price: "€89",
     period: "/maand",
     description: "1–2 verkooppunten. Alle functies inbegrepen.",
-    cta: "Demo aanvragen",
+    cta: "Start direct",
     ctaHref: "/contact",
     highlight: false,
     features: [
@@ -83,6 +100,28 @@ const faqs = [
 export default function PricingPage() {
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.spont.nl" },
+            { "@type": "ListItem", position: 2, name: "Prijzen", item: "https://www.spont.nl/prijzen" },
+          ],
+        }}
+      />
+
       {/* ─── HERO ─── */}
       <section className="relative overflow-hidden pt-32 pb-20 px-6">
         <div className="absolute inset-0 z-0">
@@ -105,6 +144,9 @@ export default function PricingPage() {
           <p className="text-white/70 text-lg max-w-xl mx-auto">
             Volledig kassasysteem. Vanaf €59/maand. Geen opstartkosten,
             geen jaarcontract.
+          </p>
+          <p className="text-white/40 text-xs mt-4">
+            Laatst bijgewerkt: <time dateTime="2026-03-30">30 maart 2026</time>
           </p>
         </div>
       </section>
@@ -241,87 +283,8 @@ export default function PricingPage() {
             </div>
           </div>
 
-          {/* Tarieven tabellen */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-            {/* POS */}
-            <div className="bg-[#F6F3EE] rounded-3xl p-7">
-              <p className="text-[#CC5533] font-semibold text-xs uppercase tracking-widest mb-5">
-                Kassa (POS)
-              </p>
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-[#EBE8E3]">
-                    <th className="text-left text-[#5C5550] font-medium pb-3 pr-4">Betaalmethode</th>
-                    <th className="text-right text-[#5C5550] font-medium pb-3">Tarief</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-[#EBE8E3]">
-                  <tr>
-                    <td className="py-3 pr-4 text-[#1A1714]">Debit / pin</td>
-                    <td className="py-3 text-right font-semibold text-[#1A1714]">€0,085 / tx</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 pr-4 text-[#1A1714]">Creditcard (consumer)</td>
-                    <td className="py-3 text-right font-semibold text-[#1A1714]">1,89%</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 pr-4 text-[#1A1714]">Creditcard (zakelijk)</td>
-                    <td className="py-3 text-right font-semibold text-[#1A1714]">2,79%</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 pr-4 text-[#1A1714]">American Express</td>
-                    <td className="py-3 text-right font-semibold text-[#1A1714]">€0,05 + 2,20%</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 pr-4 text-[#1A1714]">Bancontact</td>
-                    <td className="py-3 text-right font-semibold text-[#1A1714]">€0,06 + 0,30%</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            {/* ECOM */}
-            <div className="bg-[#F6F3EE] rounded-3xl p-7">
-              <p className="text-[#CC5533] font-semibold text-xs uppercase tracking-widest mb-5">
-                Online bestellen (ECOM)
-              </p>
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-[#EBE8E3]">
-                    <th className="text-left text-[#5C5550] font-medium pb-3 pr-4">Betaalmethode</th>
-                    <th className="text-right text-[#5C5550] font-medium pb-3">Tarief</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-[#EBE8E3]">
-                  <tr>
-                    <td className="py-3 pr-4 text-[#1A1714]">Maestro</td>
-                    <td className="py-3 text-right font-semibold text-[#1A1714]">€0,10 / tx</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 pr-4 text-[#1A1714]">iDEAL</td>
-                    <td className="py-3 text-right font-semibold text-[#1A1714]">€0,25 / tx</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 pr-4 text-[#1A1714]">Creditcard (consumer)</td>
-                    <td className="py-3 text-right font-semibold text-[#1A1714]">€0,05 + 1,89%</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 pr-4 text-[#1A1714]">Creditcard (zakelijk)</td>
-                    <td className="py-3 text-right font-semibold text-[#1A1714]">€0,05 + 2,79%</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 pr-4 text-[#1A1714]">American Express</td>
-                    <td className="py-3 text-right font-semibold text-[#1A1714]">€0,08 + 3,10%</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 pr-4 text-[#1A1714]">Bancontact</td>
-                    <td className="py-3 text-right font-semibold text-[#1A1714]">€0,10 + 0,30%</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+          {/* Tarieven tabs */}
+          <PaymentsTabs />
 
         </div>
       </section>
@@ -450,7 +413,7 @@ export default function PricingPage() {
       <CTABanner
         title="Nog vragen over onze pakketten?"
         subtitle="We helpen je kiezen wat past bij jouw zaak. Geen verkooppraatjes."
-        primary={{ label: "Demo aanvragen", href: "/contact" }}
+        primary={{ label: "Start direct", href: "/contact" }}
         secondary={{ label: "Stuur ons een bericht", href: "/contact" }}
       />
     </>

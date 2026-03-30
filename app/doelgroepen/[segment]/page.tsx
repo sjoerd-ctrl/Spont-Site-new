@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import Link from "next/link";
 import CTABanner from "@/components/shared/CTABanner";
+import JsonLd from "@/components/shared/JsonLd";
 import { CheckCircle, AlertCircle } from "lucide-react";
 
 // ─── CONTENT DATA ─────────────────────────────────────────────────────────────
@@ -89,7 +91,7 @@ const segments: Record<string, Segment> = {
     ],
     onboarding: [
       {
-        title: "Plan een demo voor jouw restaurant",
+        title: "Start direct voor jouw restaurant",
         body: "We laten zien wat Spont voor jou kan betekenen.",
       },
       {
@@ -167,7 +169,7 @@ const segments: Record<string, Segment> = {
     ],
     onboarding: [
       {
-        title: "Plan een demo voor jouw koffiezaak",
+        title: "Start direct voor jouw koffiezaak",
         body: "We laten zien wat Spont voor jou kan betekenen.",
       },
       {
@@ -245,7 +247,7 @@ const segments: Record<string, Segment> = {
     ],
     onboarding: [
       {
-        title: "Plan een demo voor jouw zaak",
+        title: "Start direct voor jouw zaak",
         body: "We laten zien wat Spont voor jou kan betekenen.",
       },
       {
@@ -323,7 +325,7 @@ const segments: Record<string, Segment> = {
     ],
     onboarding: [
       {
-        title: "Plan een demo voor jouw bakkerij of café",
+        title: "Start direct voor jouw bakkerij of café",
         body: "We laten zien wat Spont voor jou kan betekenen.",
       },
       {
@@ -402,7 +404,7 @@ const segments: Record<string, Segment> = {
     ],
     onboarding: [
       {
-        title: "Plan een demo voor jouw bar of club",
+        title: "Start direct voor jouw bar of club",
         body: "We laten zien wat Spont voor jou kan betekenen.",
       },
       {
@@ -480,7 +482,7 @@ const segments: Record<string, Segment> = {
     ],
     onboarding: [
       {
-        title: "Plan een demo voor jouw café",
+        title: "Start direct voor jouw café",
         body: "We laten zien wat Spont voor jou kan betekenen.",
       },
       {
@@ -550,7 +552,7 @@ const segments: Record<string, Segment> = {
     ],
     onboarding: [
       {
-        title: "Plan een demo voor jouw bowlingbaan",
+        title: "Start direct voor jouw bowlingbaan",
         body: "We laten zien hoe Spont past bij jouw leisure-concept.",
       },
       {
@@ -568,6 +570,66 @@ const segments: Record<string, Segment> = {
     ],
   },
 };
+
+// ─── METADATA ─────────────────────────────────────────────────────────────────
+
+const segmentMeta: Record<string, { title: string; description: string }> = {
+  restaurants: {
+    title: "Kassasysteem voor restaurants",
+    description:
+      "Spont voor restaurants: tafelbeheer, keukenprints, reserveringen en afrekenen in één systeem. Start direct.",
+  },
+  "coffee-bars": {
+    title: "Kassasysteem voor koffiezaken",
+    description:
+      "Spont voor koffiezaken: snelle afrekening, loyaliteitsprogramma en QR-bestellen. Ideaal voor ochtenddrukte.",
+  },
+  cafes: {
+    title: "Kassasysteem voor cafés en kroegen",
+    description:
+      "Spont voor cafés: snel tappen, tabs beheren en direct afrekenen. Gebouwd voor drukke avonden.",
+  },
+  "quick-service": {
+    title: "Kassasysteem voor Quick Service",
+    description:
+      "Spont voor quick service: kiosks, snelle bestellingen en KDS. Minder wachttijd, meer omzet.",
+  },
+  bakkerijen: {
+    title: "Kassasysteem voor bakkerijen",
+    description:
+      "Spont voor bakkerijen: snelle balieverkoop, productregistratie en inzicht in bestverkopende producten.",
+  },
+  discotheken: {
+    title: "Kassasysteem voor bars en clubs",
+    description:
+      "Spont voor bars en clubs: sneller serveren bij drukte, tabs beheren en meerdere verkooppunten.",
+  },
+  bowlingbanen: {
+    title: "Kassasysteem voor bowlingbanen",
+    description:
+      "Spont voor bowlingbanen: horeca en baanverkoop in één systeem met QR-bestellen aan de banen.",
+  },
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ segment: string }>;
+}): Promise<Metadata> {
+  const { segment } = await params;
+  const meta = segmentMeta[segment];
+  if (!meta) return {};
+  return {
+    title: meta.title,
+    description: meta.description,
+    openGraph: {
+      title: `${meta.title} | Spont`,
+      description: meta.description,
+      url: `https://www.spont.nl/doelgroepen/${segment}`,
+    },
+    alternates: { canonical: `https://www.spont.nl/doelgroepen/${segment}` },
+  };
+}
 
 // ─── PAGE COMPONENT ────────────────────────────────────────────────────────────
 
@@ -588,6 +650,18 @@ export default async function DoelgroepDetailPage({
 
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.spont.nl" },
+            { "@type": "ListItem", position: 2, name: "Doelgroepen", item: "https://www.spont.nl/doelgroepen" },
+            { "@type": "ListItem", position: 3, name: data.badge, item: `https://www.spont.nl/doelgroepen/${segment}` },
+          ],
+        }}
+      />
+
       {/* ─── HERO ─── */}
       <section className="relative overflow-hidden pt-32 pb-24 px-6 min-h-[60vh] flex items-center">
         <div className="absolute inset-0 z-0">
@@ -612,7 +686,7 @@ export default async function DoelgroepDetailPage({
             href="/contact"
             className="inline-block bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold px-8 py-4 rounded-full transition-colors"
           >
-            Plan een demo
+            Start direct
           </Link>
         </div>
       </section>
@@ -749,7 +823,7 @@ export default async function DoelgroepDetailPage({
       <CTABanner
         title={data.ctaTitle}
         subtitle={data.ctaSubtitle}
-        primary={{ label: "Plan een demo", href: "/contact" }}
+        primary={{ label: "Start direct", href: "/contact" }}
         secondary={{ label: "Bekijk de prijzen", href: "/prijzen" }}
       />
 

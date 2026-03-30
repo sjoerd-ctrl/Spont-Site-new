@@ -250,7 +250,7 @@ export default async function VergelijkPage({
             href="/contact"
             className="bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold px-8 py-4 rounded-full transition-colors inline-block"
           >
-            Demo aanvragen
+            Start direct
           </Link>
         </div>
       </section>
@@ -362,8 +362,8 @@ export default async function VergelijkPage({
       {/* ─── CTA ─── */}
       <CTABanner
         title="Klaar voor een kassa die gewoon werkt?"
-        subtitle="Demo aanvragen duurt twee minuten. Geen verplichtingen. Geen creditcard."
-        primary={{ label: "Demo aanvragen", href: "/contact" }}
+        subtitle="Starten duurt twee minuten. Geen verplichtingen. Geen creditcard."
+        primary={{ label: "Start direct", href: "/contact" }}
         secondary={{ label: "Bekijk de prijzen", href: "/prijzen" }}
       />
     </>

@@ -1,5 +1,7 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import CTABanner from "@/components/shared/CTABanner";
+import JsonLd from "@/components/shared/JsonLd";
 import {
   Smartphone,
   CalendarDays,
@@ -18,6 +20,20 @@ import {
   Wand2,
   Watch,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Alle functies",
+  description:
+    "Ontdek alle functies van Spont: kassa, QR-bestellen, reserveringen, KDS, rapportages, loyalty, online bestellen en AI-support.",
+  openGraph: {
+    title: "Alle functies | Spont",
+    description:
+      "Ontdek alle functies van Spont: kassa, QR-bestellen, reserveringen, KDS, rapportages, loyalty en meer.",
+    url: "https://www.spont.nl/features",
+  },
+  alternates: { canonical: "https://www.spont.nl/features" },
+  other: { "article:modified_time": "2026-03-30" },
+};
 
 const solutions = [
   {
@@ -88,6 +104,57 @@ const extras = [
 export default function FeaturesPage() {
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "Wat zit er allemaal in het Spont kassasysteem?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Spont bevat: POS-kassa, QR-bestellen, reserveringen, keuken- en bardisplay (KDS), online bestellen, rapportages, loyalty, AI-assistent, Tap to Pay op iPhone, bestelzuilen en meer. Alles is inbegrepen in het abonnement.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Werkt Spont op een iPad of tablet?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Ja, Spont werkt op iPad, Android-tablets en touchscreens. Het systeem is browser-based en vereist geen speciale hardware.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Heeft Spont een AI-assistent?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Ja, Spont is AI-first gebouwd. De AI-assistent helpt bij installatie, configuratie en supportvragen. 24/7 beschikbaar, zonder wachttijden.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Kan ik QR-bestellen gebruiken met Spont?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Ja, gasten bestellen zelf via QR-code aan tafel. De bestelling gaat direct naar de bar of keuken. Geen misverstand, geen vertraging.",
+              },
+            },
+          ],
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.spont.nl" },
+            { "@type": "ListItem", position: 2, name: "Features", item: "https://www.spont.nl/features" },
+          ],
+        }}
+      />
+
       {/* ─── HERO ─── */}
       <section className="bg-[#FCF9F4] pt-32 pb-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
@@ -97,16 +164,19 @@ export default function FeaturesPage() {
           <h1 className="text-5xl md:text-6xl font-serif text-[#1A1714] font-semibold leading-tight mb-6">
             Eén systeem voor alles.
           </h1>
-          <p className="text-[#5C5550] text-lg max-w-2xl mx-auto mb-10">
+          <p className="text-[#5C5550] text-lg max-w-2xl mx-auto mb-6">
             Geen losse tools, geen integratie-gedoe. Spont bundelt alles wat je
             nodig hebt in één platform — en het werkt gewoon.
+          </p>
+          <p className="text-[#5C5550]/60 text-xs mb-10">
+            Laatst bijgewerkt: <time dateTime="2026-03-30">30 maart 2026</time>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
               className="bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold px-8 py-4 rounded-full transition-colors"
             >
-              Demo aanvragen
+              Start direct
             </Link>
             <Link
               href="/prijzen"
@@ -216,8 +286,8 @@ export default function FeaturesPage() {
       {/* ─── CTA ─── */}
       <CTABanner
         title="Klaar om alles in één te hebben?"
-        subtitle="Demo aanvragen duurt twee minuten. Wij nemen de rest over."
-        primary={{ label: "Demo aanvragen", href: "/contact" }}
+        subtitle="Starten duurt twee minuten. Geen verplichtingen."
+        primary={{ label: "Start direct", href: "/contact" }}
         secondary={{ label: "Bekijk de prijzen", href: "/prijzen" }}
       />
     </>

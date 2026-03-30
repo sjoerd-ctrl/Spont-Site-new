@@ -49,7 +49,7 @@ export default function ContactPage() {
               verplichtingen. Je bent binnen een paar minuten operationeel.
             </p>
             <a
-              href="https://spont-live.eu.auth0.com/u/signup"
+              href="https://admin.spont.nl"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold px-6 py-3.5 rounded-full transition-colors text-sm"

@@ -164,7 +164,7 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://spont-live.eu.auth0.com/u/signup"
+                href="https://admin.spont.nl"
                 className="bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold px-8 py-4 rounded-full transition-colors text-base inline-block text-center"
               >
                 Start direct
@@ -375,7 +375,7 @@ export default function HomePage() {
                   ))}
                 </ul>
                 <a
-                  href="https://spont-live.eu.auth0.com/u/signup"
+                  href="https://admin.spont.nl"
                   className={`rounded-full py-3 text-center text-sm font-semibold transition-colors block ${
                     plan.highlight
                       ? "bg-[#CC5533] hover:bg-[#A33818] text-white"

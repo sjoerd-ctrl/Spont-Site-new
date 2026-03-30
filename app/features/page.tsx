@@ -173,7 +173,7 @@ export default function FeaturesPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://spont-live.eu.auth0.com/u/signup"
+              href="https://admin.spont.nl"
               className="bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold px-8 py-4 rounded-full transition-colors"
             >
               Start direct

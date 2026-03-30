@@ -80,7 +80,7 @@ export default function Navbar() {
             Inloggen
           </a>
           <a
-            href="https://spont-live.eu.auth0.com/u/signup"
+            href="https://admin.spont.nl"
             className="bg-[#CC5533] hover:bg-[#A33818] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
           >
             Start direct
@@ -112,7 +112,7 @@ export default function Navbar() {
           ))}
           <hr className="border-[#EBE8E3]" />
           <a
-            href="https://spont-live.eu.auth0.com/u/signup"
+            href="https://admin.spont.nl"
             className="bg-[#CC5533] text-white text-sm font-semibold px-5 py-3 rounded-full text-center"
             onClick={() => setOpen(false)}
           >

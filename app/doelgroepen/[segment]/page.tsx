@@ -348,7 +348,7 @@ const segments: Record<string, Segment> = {
     headline: "Kassasysteem voor Bars & Clubs",
     subheadline:
       "Sneller serveren, meer omzet en controle op drukke avonden. In bars, clubs en poppodia draait alles om snelheid en overzicht. Spont is speciaal ingericht voor drukke avonden, hoge volumes en wisselend personeel.",
-    heroImg: "https://images.unsplash.com/photo-1571266028778-c86a3edd7685?w=2000&q=80",
+    heroImg: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=2000&q=80",
     ctaTitle: "Klaar voor jouw drukste avonden?",
     ctaSubtitle:
       "Ontdek hoe Spont jouw bar of club helpt om sneller te werken, meer omzet te draaien en controle te houden — ook tijdens piekuren.",
@@ -501,71 +501,73 @@ const segments: Record<string, Segment> = {
   },
 
   bowlingbanen: {
-    badge: "SPECIAAL VOOR BOWLINGBANEN",
-    headline: "Een kassasysteem dat net zo soepel draait als de perfecte strike",
+    badge: "SPECIAAL VOOR BOWLINGBANEN & LEISURE",
+    headline: "Eén pincode, vrij rondlopen, overal bestellen",
     subheadline:
-      "Van baanreserveringen tot QR-bestellingen aan de tafel. Spont helpt je leisure-onderneming efficiënter draaien.",
+      "Gasten krijgen bij aankomst een persoonlijke pincode. Daarmee bestellen ze bij de bowlingbaan, de bar, het restaurant en de lasergame-arena. Geen losse rekeningen, geen gedoe. Spont koppelt alles aan elkaar.",
     heroImg: "https://images.unsplash.com/photo-1541795795328-f073b763494e?w=2000&q=80",
-    ctaTitle: "Klaar voor meer strikes?",
-    ctaSubtitle: "Ontdek hoe Spont jouw bowlingbaan kan versterken.",
+    ctaTitle: "Klaar om je leisurezaak te moderniseren?",
+    ctaSubtitle: "Ontdek hoe Spont bowling, horeca en entertainment verbindt in een systeem.",
     painPoints: [
       {
-        title: "Horeca én baanverkoop in één",
-        body: "Twee systemen naast elkaar werken zorgt voor fouten en dubbel werk.",
+        title: "Gescheiden systemen",
+        body: "Bowlingbanen, horeca en lasergamen draaien op aparte kassa's. Dat betekent dubbel werk, fouten en geen totaaloverzicht.",
       },
       {
-        title: "Bestellingen aan de baan",
-        body: "Gasten kunnen niet zelf bestellen — je mist omzet tijdens het spel.",
+        title: "Gasten moeten steeds naar de bar",
+        body: "Tijdens het bowlen of lasergamen moet je naar de bar om te bestellen. Dat kost tijd, gasten bestellen minder en je mist omzet.",
+      },
+      {
+        title: "Afrekenen is een chaos",
+        body: "Groepen hebben besteld bij de baan, bij de bar en bij het restaurant. Alles op aparte bonnen. Afrekenen duurt lang en er gaan dingen mis.",
       },
       {
         title: "Geen inzicht per zone",
-        body: "Moeilijk te zien wat er per baan of per bar wordt verkocht.",
+        body: "Hoeveel omzet draait de bar versus de banen? Welke activiteit levert het meest op? Zonder centraal systeem weet je het niet.",
       },
       {
-        title: "Wisselend personeel",
-        body: "Seizoenswerkers moeten snel kunnen meedraaien.",
-      },
-      {
-        title: "Lange afrekenmomenten",
-        body: "Afsluiten van een groepsbaan kost te veel tijd.",
+        title: "Handmatig bestellen kost personeel",
+        body: "Medewerkers lopen heen en weer om bestellingen op te nemen. Dat is traag, foutgevoelig en kost je extra handen.",
       },
     ],
     solution: {
-      title: "Eén systeem voor horeca én leisure",
-      subtitle: "Combineer baanverkoop, horeca en retail in één overzicht.",
-      body: "Spont koppelt makkelijk met je baanreserveringssysteem en maakt QR-bestellen aan de banen mogelijk. Zo loopt alles soepel — van de eerste strike tot de laatste bestelling.",
+      title: "Eén pincode, alles gekoppeld",
+      subtitle: "Gasten lopen vrij rond door je complex en bestellen overal met dezelfde code.",
+      body: "Via de koppeling met Raxbooker worden reserveringen automatisch klantprofielen in Spont. Bij aankomst krijgt de gast een pincode. Daarmee bestelt hij via tablets bij de baan, via QR-codes in de lasergame-arena of bij het restaurant. Alles komt op dezelfde rekening. Aan het eind van de dag rekent de gast een keer af. Het personeel ziet op het keukenscherm (KDS) precies waar elke bestelling naartoe moet.",
       benefits: [
-        "Horeca en baanverhuur in één kassa",
-        "QR-bestellen aan de banen",
-        "Koppeling met baanreserveringssystemen",
-        "Overzicht per zone, per baan of per medewerker",
-        "Snelle afrekening voor grote groepen",
+        "Persoonlijke pincode per gast of groep, geldig in het hele complex",
+        "Bestellen via tablets bij de banen, QR-codes of NFC-tags",
+        "Koppeling met Raxbooker: reservering wordt automatisch klantprofiel",
+        "KDS stuurt bestellingen naar de juiste plek (bar, keuken, arena)",
+        "Eén rekening voor alle activiteiten, snel afrekenen via Vivawallet",
+        "Realtime voorraadbeheer: alleen beschikbare items zichtbaar",
+        "Handhelds, QR-bestellen en selfservice kiosken",
       ],
     },
     testimonials: [
       {
         quote:
-          "Spont gaf ons de mogelijkheid om te moderniseren en efficiënter te werken, precies wat we zochten. Geen logge systemen meer, maar een cloud-kassa die makkelijk koppelt met ons baanreserveringssysteem.",
+          "Voorheen werkten we met gescheiden systemen voor bowlen, horeca en lasergamen. Spont koppelt alles aan elkaar via Raxbooker. Onze gasten krijgen een pincode bij aankomst en bestellen overal zelf via tablets en QR-codes. Het personeel ziet op het keukenscherm waar elke bestelling naartoe moet. Geen gedoe meer, snellere service en meer omzet.",
         name: "Franky's Bowling",
         location: "Nieuwegein",
       },
     ],
     onboarding: [
       {
-        title: "Start direct voor jouw bowlingbaan",
-        body: "We laten zien hoe Spont past bij jouw leisure-concept.",
+        title: "We bekijken samen jouw leisure-concept",
+        body: "Welke activiteiten bied je aan? Waar zitten de verkooppunten? We brengen het in kaart.",
       },
       {
-        title: "We richten Spont in op jouw werkwijze",
-        body: "Banen, horeca, retail — alles in één systeem.",
+        title: "Koppeling met Raxbooker en je bestaande systemen",
+        body: "Reserveringen worden automatisch klantprofielen met pincode in Spont.",
       },
       {
-        title: "Koppeling met jouw baanreserveringssysteem",
-        body: "We helpen je bij de technische integratie.",
+        title: "Tablets, QR-codes en NFC-tags op locatie",
+        body: "We richten bestelpunten in bij de banen, in de arena en in het restaurant.",
       },
       {
-        title: "Klaar voor drukke weekenden en groepsreserveringen",
-        body: "Ga live en ervaar het verschil.",
+        title: "Live in je hele complex",
+        body: "Gasten lopen vrij rond, bestellen overal en rekenen een keer af. Klaar.",
       },
     ],
   },
@@ -605,9 +607,9 @@ const segmentMeta: Record<string, { title: string; description: string }> = {
       "Spont voor bars en clubs: sneller serveren bij drukte, tabs beheren en meerdere verkooppunten.",
   },
   bowlingbanen: {
-    title: "Kassasysteem voor bowlingbanen",
+    title: "Kassasysteem voor bowlingbanen en leisure",
     description:
-      "Spont voor bowlingbanen: horeca en baanverkoop in één systeem met QR-bestellen aan de banen.",
+      "Spont voor bowlingbanen: persoonlijke pincode per gast, bestellen via tablets en QR-codes, koppeling met Raxbooker en alles op een rekening.",
   },
 };
 

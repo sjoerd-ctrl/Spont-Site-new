@@ -69,7 +69,7 @@ export default function ContactPage() {
               een dealer bij jou in de buurt? We helpen je verder.
             </p>
             <a
-              href="mailto:partners@spont.nl"
+              href="#formulier"
               className="inline-block bg-[#1A1714] hover:bg-[#2D4B3F] text-white font-semibold px-6 py-3.5 rounded-full transition-colors text-sm"
             >
               Neem contact op

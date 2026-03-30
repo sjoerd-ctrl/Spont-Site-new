@@ -79,7 +79,7 @@ export default function ContactPage() {
       </section>
 
       {/* ─── CONTACT FORM ─── */}
-      <section className="bg-[#F6F3EE] py-20 px-6">
+      <section id="formulier" className="bg-[#F6F3EE] py-20 px-6 scroll-mt-20">
         <div className="max-w-2xl mx-auto">
           <h2 className="font-serif text-2xl font-semibold text-[#1A1714] mb-8 text-center">
             Of stuur ons direct een bericht.

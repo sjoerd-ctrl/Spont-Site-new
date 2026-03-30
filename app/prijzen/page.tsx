@@ -344,7 +344,7 @@ export default function PricingPage() {
             </div>
 
             {/* Blok 2 – optioneel */}
-            <div className="bg-[#F6F3EE] rounded-3xl p-7">
+            <Link href="/contact#formulier" className="card-hover bg-[#F6F3EE] rounded-3xl p-7 block">
               <div className="w-10 h-10 bg-[#CC5533]/10 rounded-2xl flex items-center justify-center mb-4">
                 <Users size={20} className="text-[#CC5533]" />
               </div>
@@ -358,7 +358,7 @@ export default function PricingPage() {
                 Wil je een vast contactpersoon? Een gecertificeerde dealer
                 helpt je. Eigen maandelijks tarief.
               </p>
-            </div>
+            </Link>
 
             {/* Blok 3 – optioneel */}
             <div className="bg-[#F6F3EE] rounded-3xl p-7">

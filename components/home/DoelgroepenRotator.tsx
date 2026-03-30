@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 
 const segments = [
@@ -49,33 +49,54 @@ const segments = [
 ];
 
 export default function DoelgroepenRotator() {
-  const [startIndex, setStartIndex] = useState(0);
-  const [visible, setVisible] = useState(true);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setVisible(false);
-      setTimeout(() => {
-        setStartIndex((i) => (i + 1) % segments.length);
-        setVisible(true);
-      }, 400);
-    }, 3500);
-    return () => clearInterval(interval);
-  }, []);
+    const el = scrollRef.current;
+    if (!el) return;
 
-  const cards = [0, 1, 2].map((offset) => segments[(startIndex + offset) % segments.length]);
+    let raf: number;
+    let lastTime = 0;
+    const speed = 0.5; // px per frame (~30px/s)
+
+    const step = (time: number) => {
+      if (!paused && lastTime) {
+        const delta = time - lastTime;
+        el.scrollLeft += speed * (delta / 16);
+
+        // Loop: when we've scrolled past the first set, jump back
+        const half = el.scrollWidth / 2;
+        if (el.scrollLeft >= half) {
+          el.scrollLeft -= half;
+        }
+      }
+      lastTime = time;
+      raf = requestAnimationFrame(step);
+    };
+
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [paused]);
+
+  // Duplicate items for seamless loop
+  const items = [...segments, ...segments];
 
   return (
     <div
-      className={`grid grid-cols-1 md:grid-cols-3 gap-4 transition-opacity duration-400 ${
-        visible ? "opacity-100" : "opacity-0"
-      }`}
+      ref={scrollRef}
+      className="flex gap-4 overflow-x-auto scrollbar-hide"
+      style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onTouchStart={() => setPaused(true)}
+      onTouchEnd={() => setPaused(false)}
     >
-      {cards.map((seg) => (
+      {items.map((seg, i) => (
         <Link
-          key={seg.slug}
+          key={`${seg.slug}-${i}`}
           href={`/doelgroepen/${seg.slug}`}
-          className="card-hover cursor-pointer group relative block rounded-2xl overflow-hidden min-h-56"
+          className="card-hover cursor-pointer group relative block rounded-2xl overflow-hidden min-h-56 flex-shrink-0 w-[85vw] md:w-[calc(33.333%-0.67rem)]"
         >
           <img
             src={seg.img}

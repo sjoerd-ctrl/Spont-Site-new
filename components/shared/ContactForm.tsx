@@ -60,6 +60,17 @@ export default function ContactForm() {
       </div>
       <div>
         <label className="block text-sm font-medium text-[#1A1714] mb-2">
+          Telefoonnummer
+        </label>
+        <input
+          type="tel"
+          name="telefoon"
+          className="w-full bg-white rounded-2xl px-5 py-3.5 text-[#1A1714] text-sm outline-none focus:ring-2 focus:ring-[#CC5533] placeholder-[#5C5550]/50"
+          placeholder="06 12345678"
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-[#1A1714] mb-2">
           Type zaak
         </label>
         <select
@@ -90,6 +101,18 @@ export default function ContactForm() {
           placeholder="Vertel ons over jouw zaak en wat je nodig hebt..."
         />
       </div>
+
+      <label className="flex items-start gap-3 cursor-pointer">
+        <input
+          type="checkbox"
+          name="dealer"
+          value="ja"
+          className="mt-0.5 w-5 h-5 rounded border-[#5C5550]/30 text-[#CC5533] focus:ring-[#CC5533] accent-[#CC5533]"
+        />
+        <span className="text-sm text-[#1A1714]">
+          Ik wil graag een Spont Dealer als vast contactpersoon
+        </span>
+      </label>
 
       {state?.error && (
         <p className="text-red-600 text-sm">{state.error}</p>

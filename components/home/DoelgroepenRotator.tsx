@@ -38,7 +38,7 @@ const segments = [
     slug: "discotheken",
     label: "Discotheek & club",
     subtitle: "Ook als het donker en druk is",
-    img: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80",
+    img: "/images/disco-muziekgieterij.jpg",
   },
   {
     slug: "bowlingbanen",

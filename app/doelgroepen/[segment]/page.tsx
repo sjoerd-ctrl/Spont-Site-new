@@ -348,7 +348,7 @@ const segments: Record<string, Segment> = {
     headline: "Kassasysteem voor Bars & Clubs",
     subheadline:
       "Sneller serveren, meer omzet en controle op drukke avonden. In bars, clubs en poppodia draait alles om snelheid en overzicht. Spont is speciaal ingericht voor drukke avonden, hoge volumes en wisselend personeel.",
-    heroImg: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=2000&q=80",
+    heroImg: "/images/disco-deus-at-muziekgieterij.jpg",
     ctaTitle: "Klaar voor jouw drukste avonden?",
     ctaSubtitle:
       "Ontdek hoe Spont jouw bar of club helpt om sneller te werken, meer omzet te draaien en controle te houden — ook tijdens piekuren.",

@@ -70,7 +70,7 @@ export default function Navbar() {
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="https://spont-live.eu.auth0.com/u/login"
+            href="https://admin.spont.nl"
             className={`text-sm font-medium transition-colors ${
               isLight
                 ? "text-[#5C5550] hover:text-[#1A1714]"

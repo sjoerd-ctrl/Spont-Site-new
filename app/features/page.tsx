@@ -1,0 +1,225 @@
+import Link from "next/link";
+import CTABanner from "@/components/shared/CTABanner";
+import {
+  Smartphone,
+  CalendarDays,
+  QrCode,
+  Monitor,
+  Globe,
+  CreditCard,
+  UtensilsCrossed,
+  BarChart3,
+  Gift,
+  FileText,
+  Bot,
+  Map,
+  Receipt,
+  Users,
+  Wand2,
+  Watch,
+} from "lucide-react";
+
+const solutions = [
+  {
+    icon: Smartphone,
+    title: "Kassasysteem",
+    body: "Volledig kassasysteem op iPad of tablet. Bonnen, tafelbeheer, splits- en samenvoeging — allemaal in één scherm.",
+  },
+  {
+    icon: CalendarDays,
+    title: "Reserveringen",
+    body: "Online reserveringen zonder commissie. Direct gekoppeld aan je kassa en tafelplattegrond.",
+  },
+  {
+    icon: QrCode,
+    title: "QR-bestellen",
+    body: "Gasten bestellen zelf via QR-code. De bon gaat direct naar de bar of keuken. Geen misverstand, geen vertraging.",
+  },
+  {
+    icon: Monitor,
+    title: "Bestelzuil",
+    body: "Zelfbedieningskiosken voor quick service en afhaal. Minder wachtrij, meer bestellingen.",
+  },
+  {
+    icon: Globe,
+    title: "Online bestellen",
+    body: "Een complete bestelpagina voor afhaal en bezorging. Geen derde partij, geen commissie.",
+  },
+  {
+    icon: CreditCard,
+    title: "Spont Pay",
+    body: "Geïntegreerde pinbetalingen. Bonnen splitsen gaat in seconden. Tap to Pay op iPhone.",
+  },
+  {
+    icon: UtensilsCrossed,
+    title: "Keuken & bardisplay",
+    body: "Digitale bonnen voor keuken en bar. Geen papier, geen verwarring over volgorde.",
+  },
+  {
+    icon: BarChart3,
+    title: "Rapportages & BI",
+    body: "Omzet per periode, medewerker en product. Real-time dashboard, ook op je telefoon.",
+  },
+  {
+    icon: Gift,
+    title: "Loyalty",
+    body: "Spaarprogramma, kortingscodes en cadeaukaarten. Gasten komen terug.",
+  },
+  {
+    icon: FileText,
+    title: "Digitale menukaarten",
+    body: "QR-menukaarten die automatisch meegaan met je kassa. Prijswijziging? Overal tegelijk aangepast.",
+  },
+  {
+    icon: Bot,
+    title: "AI Assistent",
+    body: "24/7 beschikbaar voor support en configuratievragen. Wacht nooit op een antwoord.",
+  },
+];
+
+const extras = [
+  { icon: Map, title: "Tafelplattegronden", body: "Teken je zaak na en wijs tafels toe aan orders." },
+  { icon: Receipt, title: "Facturatie & offertes", body: "Stuur facturen en offertes direct vanuit het systeem." },
+  { icon: Users, title: "Rollen & rechten", body: "Bepaal wie wat mag. Per medewerker of rol." },
+  { icon: Wand2, title: "Menu engineering", body: "Ontdek welke gerechten het meest opleveren en stuur bij." },
+  { icon: Watch, title: "iPhone Handhelds", body: "Neem bestellingen op aan tafel met Tap to Pay op iPhone." },
+];
+
+export default function FeaturesPage() {
+  return (
+    <>
+      {/* ─── HERO ─── */}
+      <section className="bg-[#FCF9F4] pt-32 pb-20 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-4">
+            Alle functies
+          </p>
+          <h1 className="text-5xl md:text-6xl font-serif text-[#1A1714] font-semibold leading-tight mb-6">
+            Eén systeem voor alles.
+          </h1>
+          <p className="text-[#5C5550] text-lg max-w-2xl mx-auto mb-10">
+            Geen losse tools, geen integratie-gedoe. Spont bundelt alles wat je
+            nodig hebt in één platform — en het werkt gewoon.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold px-8 py-4 rounded-full transition-colors"
+            >
+              Demo aanvragen
+            </Link>
+            <Link
+              href="/prijzen"
+              className="bg-[#F6F3EE] hover:bg-[#EBE8E3] text-[#1A1714] font-semibold px-8 py-4 rounded-full transition-colors"
+            >
+              Bekijk prijzen
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── AI SECTIE ─── */}
+      <section className="bg-[#2D4B3F] py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-4">
+                AI-first
+              </p>
+              <h2 className="text-3xl md:text-4xl font-serif text-white font-semibold mb-6">
+                AI maakt het verschil.
+              </h2>
+              <p className="text-white/70 leading-relaxed">
+                Spont is AI-first gebouwd — niet als marketingterm, maar als
+                fundament. AI regelt het standaardwerk, zodat jij tijd hebt voor
+                je gasten.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-4">
+              {[
+                "AI-assistent voor installatie en configuratie",
+                "Slimme chatbot voor supportvragen",
+                "Automatische suggesties voor optimalisatie",
+                "24/7 beschikbaar, zonder wachttijden",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="bg-white/10 rounded-2xl px-5 py-4 flex items-center gap-3"
+                >
+                  <Bot size={16} className="text-[#CC5533] shrink-0" />
+                  <span className="text-white/90 text-sm">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── KERNOPLOSSINGEN ─── */}
+      <section className="bg-[#FCF9F4] py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
+              Kernfuncties
+            </p>
+            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#1A1714]">
+              De kern van het Spont-platform.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {solutions.map((s) => {
+              const Icon = s.icon;
+              return (
+                <div
+                  key={s.title}
+                  className="bg-[#F6F3EE] rounded-3xl p-8 hover:bg-[#F0EDE8] transition-colors"
+                >
+                  <div className="w-12 h-12 bg-[#CC5533]/10 rounded-2xl flex items-center justify-center mb-5">
+                    <Icon size={22} className="text-[#CC5533]" />
+                  </div>
+                  <h3 className="font-serif font-semibold text-lg text-[#1A1714] mb-2">
+                    {s.title}
+                  </h3>
+                  <p className="text-[#5C5550] text-sm leading-relaxed">{s.body}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── EXTRA FUNCTIES ─── */}
+      <section className="bg-[#F6F3EE] py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl font-serif font-semibold text-[#1A1714]">
+              Extra functionaliteit.
+            </h2>
+            <p className="text-[#5C5550] mt-2">Handige extras om je zaak nog soepeler te laten draaien.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {extras.map((e) => {
+              const Icon = e.icon;
+              return (
+                <div key={e.title} className="bg-white rounded-3xl p-6 text-center">
+                  <Icon size={22} className="text-[#CC5533] mx-auto mb-3" />
+                  <h3 className="font-semibold text-[#1A1714] text-sm mb-1">{e.title}</h3>
+                  <p className="text-[#5C5550] text-xs leading-relaxed">{e.body}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CTA ─── */}
+      <CTABanner
+        title="Klaar om alles in één te hebben?"
+        subtitle="Demo aanvragen duurt twee minuten. Wij nemen de rest over."
+        primary={{ label: "Demo aanvragen", href: "/contact" }}
+        secondary={{ label: "Bekijk de prijzen", href: "/prijzen" }}
+      />
+    </>
+  );
+}

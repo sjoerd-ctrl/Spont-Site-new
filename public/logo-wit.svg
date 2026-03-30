@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 1700.79 396.85">
+  <!-- Generator: Adobe Illustrator 30.1.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 136)  -->
+  <defs>
+    <style>
+      .st0 {
+        mask: url(#mask);
+      }
+
+      .st1 {
+        fill: none;
+        stroke: url(#linear-gradient);
+        stroke-miterlimit: 3.79;
+        stroke-width: 11px;
+      }
+
+      .st2 {
+        fill: #fff;
+      }
+
+      .st3 {
+        fill: #cdd3e5;
+      }
+    </style>
+    <mask id="mask" x="7.47" y="3.36" width="1130.33" height="548.38" maskUnits="userSpaceOnUse">
+      <g id="mask1" data-name="mask">
+        <g id="o-mask">
+          <circle id="o-base-2" class="st2" cx="186.53" cy="182.42" r="179.06"/>
+        </g>
+      </g>
+    </mask>
+    <linearGradient id="linear-gradient" x1="-251.89" y1="81.49" x2="-245.11" y2="88.25" gradientTransform="translate(8344.42 -2370.76) scale(30.32)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#a687eb"/>
+      <stop offset=".5" stop-color="#6168b0"/>
+      <stop offset="1" stop-color="#49c6e2"/>
+    </linearGradient>
+  </defs>
+  <path class="st2" d="M159.44,380.22c81.59,0,135.97-45.83,135.97-113.31s-45.32-98.21-135.97-107.77c-52.88-5.54-74.03-20.65-74.03-49.35,0-25.68,28.21-43.81,68.49-43.81s68.49,26.7,78.05,68.49l53.38-20.65c-7.05-30.72-22.67-54.89-46.33-73.02-23.67-18.64-52.38-27.7-85.11-27.7-71.02,0-123.89,40.29-123.89,95.69,0,61.94,40.29,97.2,121.37,105.75,60.94,6.54,88.64,24.68,88.64,54.4-.51,34.75-30.72,57.91-80.58,57.91s-87.64-33.24-98.21-90.15l-52.38,18.13c6.54,38.78,23.67,68.99,50.37,91.66,26.7,22.67,60.43,33.75,100.21,33.75h0ZM394.64,372.68v-140.51h98.7c68.49,0,109.78-43.81,109.78-106.26s-41.79-105.77-109.78-105.77h-154.1v352.54h55.4,0ZM489.82,178.78h-95.18v-105.26h95.18c36.76,0,57.91,19.64,57.91,52.37s-20.14,52.88-57.91,52.88ZM1113.29,372.68l1-276.49,185.33,276.49h65.48V20.14h-55.4v268.93L1128.9,20.14h-71.02v352.54h55.4ZM1576.61,372.68V73.52h115.32V20.14h-286.06v53.38h115.32v299.14h55.41Z"/>
+  <g>
+    <circle id="o-base" class="st2" cx="813.25" cy="204.8" r="179.06"/>
+    <g class="st0">
+      <circle class="st3" cx="958.74" cy="372.68" r="179.06"/>
+    </g>
+    <circle id="o-base-3" class="st1" cx="813.25" cy="204.8" r="179.06"/>
+  </g>
+</svg>

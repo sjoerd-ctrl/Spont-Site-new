@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="59.37cm" height="19cm" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1683.07 538.65">
+  <defs>
+    <mask id="mask" x="-1.39" y="-9.73" width="1130.33" height="548.38" maskUnits="userSpaceOnUse">
+      <g id="mask-2" data-name="mask">
+        <g id="o-mask">
+          <circle id="o-base-2" cx="177.67" cy="169.33" r="179.06" fill="#fff"/>
+        </g>
+      </g>
+    </mask>
+    <linearGradient id="linear-gradient" x1="-260.75" y1="68.4" x2="-253.97" y2="75.16" gradientTransform="translate(8604.17 -1987.02) scale(30.32)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#a687eb"/>
+      <stop offset=".5" stop-color="#6168b0"/>
+      <stop offset="1" stop-color="#49c6e2"/>
+    </linearGradient>
+  </defs>
+  <path d="M150.58,367.13c81.59,0,135.97-45.83,135.97-113.31s-45.32-98.21-135.97-107.77c-52.88-5.54-74.03-20.65-74.03-49.35,0-25.68,28.21-43.81,68.49-43.81s68.49,26.7,78.05,68.49l53.38-20.65c-7.05-30.72-22.67-54.89-46.33-73.02C206.48,9.06,177.77,0,145.04,0,74.03,0,21.16,40.29,21.16,95.69c0,61.94,40.29,97.2,121.37,105.75,60.94,6.54,88.64,24.68,88.64,54.4-.51,34.75-30.72,57.91-80.58,57.91s-87.64-33.24-98.21-90.15L0,241.74c6.54,38.78,23.67,68.99,50.37,91.66,26.7,22.67,60.43,33.75,100.21,33.75h0ZM385.78,359.59v-140.51h98.7c68.49,0,109.78-43.81,109.78-106.26S552.47,7.05,484.48,7.05h-154.1v352.54h55.4,0ZM480.96,165.69h-95.18V60.43h95.18c36.76,0,57.91,19.64,57.91,52.37s-20.14,52.88-57.91,52.88ZM1104.43,359.59l1-276.49,185.33,276.49h65.48V7.05h-55.4v268.93L1120.04,7.05h-71.02v352.54h55.4ZM1567.75,359.59V60.43h115.32V7.05h-286.06v53.38h115.32v299.14h55.41Z" fill="#fff"/>
+  <g>
+    <circle id="o-base" cx="804.39" cy="191.71" r="179.06" fill="#fff"/>
+    <g mask="url(#mask)">
+      <circle cx="949.88" cy="359.59" r="179.06" fill="#cdd3e5"/>
+    </g>
+    <circle id="o-base-3" cx="804.39" cy="191.71" r="179.06" fill="none" stroke="url(#linear-gradient)" stroke-miterlimit="3.79" stroke-width="11"/>
+  </g>
+</svg>

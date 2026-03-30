@@ -214,7 +214,7 @@ export default function FeaturesPage() {
               ].map((item) => (
                 <div
                   key={item}
-                  className="bg-white/10 rounded-2xl px-5 py-4 flex items-center gap-3"
+                  className="card-hover bg-white/10 rounded-2xl px-5 py-4 flex items-center gap-3"
                 >
                   <Bot size={16} className="text-[#CC5533] shrink-0" />
                   <span className="text-white/90 text-sm">{item}</span>
@@ -243,7 +243,7 @@ export default function FeaturesPage() {
               return (
                 <div
                   key={s.title}
-                  className="bg-[#F6F3EE] rounded-3xl p-8 hover:bg-[#F0EDE8] transition-colors"
+                  className="card-hover bg-[#F6F3EE] rounded-3xl p-8 hover:bg-[#F0EDE8]"
                 >
                   <div className="w-12 h-12 bg-[#CC5533]/10 rounded-2xl flex items-center justify-center mb-5">
                     <Icon size={22} className="text-[#CC5533]" />
@@ -272,7 +272,7 @@ export default function FeaturesPage() {
             {extras.map((e) => {
               const Icon = e.icon;
               return (
-                <div key={e.title} className="bg-white rounded-3xl p-6 text-center">
+                <div key={e.title} className="card-hover bg-white rounded-3xl p-6 text-center">
                   <Icon size={22} className="text-[#CC5533] mx-auto mb-3" />
                   <h3 className="font-semibold text-[#1A1714] text-sm mb-1">{e.title}</h3>
                   <p className="text-[#5C5550] text-xs leading-relaxed">{e.body}</p>

@@ -158,7 +158,7 @@ export default function PricingPage() {
             {plans.map((plan) => (
               <div
                 key={plan.name}
-                className={`rounded-3xl p-8 flex flex-col ${
+                className={`card-hover rounded-3xl p-8 flex flex-col ${
                   plan.highlight
                     ? "bg-[#2D4B3F] text-white ring-2 ring-[#2D4B3F]"
                     : "bg-[#F6F3EE] text-[#1A1714]"

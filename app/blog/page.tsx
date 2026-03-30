@@ -93,7 +93,7 @@ export default function BlogPage() {
             <Link
               key={a.slug}
               href={`/blog/${a.slug}`}
-              className="block bg-[#F6F3EE] hover:bg-[#F0EDE8] rounded-3xl p-8 transition-colors group"
+              className="card-hover cursor-pointer block bg-[#F6F3EE] hover:bg-[#F0EDE8] rounded-3xl p-8 group"
             >
               <div className="flex items-center gap-3 mb-3">
                 <span className="text-xs font-semibold text-[#CC5533] uppercase tracking-widest">

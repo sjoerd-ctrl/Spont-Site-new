@@ -95,7 +95,7 @@ export default function DoelgroepenPage() {
             <Link
               key={d.slug}
               href={`/doelgroepen/${d.slug}`}
-              className="group rounded-3xl overflow-hidden relative block min-h-72 hover:shadow-xl transition-shadow"
+              className="card-hover cursor-pointer group rounded-3xl overflow-hidden relative block min-h-72"
             >
               <img
                 src={d.img}

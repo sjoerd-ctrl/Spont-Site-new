@@ -38,7 +38,7 @@ export default function ContactPage() {
       <section className="bg-[#FCF9F4] py-12 px-6">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Route 1 – Start direct */}
-          <div className="bg-[#2D4B3F] rounded-3xl p-10 text-white">
+          <div className="card-hover bg-[#2D4B3F] rounded-3xl p-10 text-white">
             <Calendar size={28} className="mb-6 text-white/60" />
             <h2 className="font-serif text-2xl font-semibold mb-3">
               Probeer Spont direct
@@ -58,7 +58,7 @@ export default function ContactPage() {
           </div>
 
           {/* Route 2 – Partner */}
-          <div className="bg-[#F6F3EE] rounded-3xl p-10">
+          <div className="card-hover bg-[#F6F3EE] rounded-3xl p-10">
             <Users size={28} className="mb-6 text-[#CC5533]" />
             <h2 className="font-serif text-2xl font-semibold text-[#1A1714] mb-3">
               Dealer of partner

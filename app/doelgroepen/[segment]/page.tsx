@@ -706,7 +706,7 @@ export default async function DoelgroepDetailPage({
             {data.painPoints.map((p) => (
               <div
                 key={p.title}
-                className="bg-[#F6F3EE] rounded-3xl p-7 flex gap-4"
+                className="card-hover bg-[#F6F3EE] rounded-3xl p-7 flex gap-4"
               >
                 <AlertCircle
                   size={20}
@@ -745,7 +745,7 @@ export default async function DoelgroepDetailPage({
             {data.solution.benefits.map((b) => (
               <div
                 key={b}
-                className="bg-white/10 rounded-2xl px-5 py-4 flex items-center gap-3"
+                className="card-hover bg-white/10 rounded-2xl px-5 py-4 flex items-center gap-3"
               >
                 <CheckCircle size={16} className="text-[#CC5533] shrink-0" />
                 <span className="text-white/90 text-sm">{b}</span>
@@ -776,7 +776,7 @@ export default async function DoelgroepDetailPage({
             }`}
           >
             {data.testimonials.map((t) => (
-              <div key={t.name} className="bg-white rounded-3xl p-8 shadow-sm">
+              <div key={t.name} className="card-hover bg-white rounded-3xl p-8 shadow-sm">
                 <p className="text-[#1A1714] text-base leading-relaxed mb-6 italic">
                   &ldquo;{t.quote}&rdquo;
                 </p>
@@ -803,7 +803,7 @@ export default async function DoelgroepDetailPage({
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {data.onboarding.map((step, i) => (
-              <div key={step.title} className="bg-[#F6F3EE] rounded-3xl p-8 flex gap-5">
+              <div key={step.title} className="card-hover bg-[#F6F3EE] rounded-3xl p-8 flex gap-5">
                 <div className="w-10 h-10 rounded-full bg-[#CC5533]/10 flex items-center justify-center shrink-0">
                   <span className="font-serif font-bold text-[#CC5533] text-sm">
                     0{i + 1}

@@ -213,7 +213,7 @@ export default function HomePage() {
               return (
                 <div
                   key={vp.title}
-                  className="bg-[#F6F3EE] rounded-3xl p-8 hover:bg-[#F0EDE8] transition-colors"
+                  className="card-hover bg-[#F6F3EE] rounded-3xl p-8 hover:bg-[#F0EDE8]"
                 >
                   <div className="w-12 h-12 bg-[#CC5533]/10 rounded-2xl flex items-center justify-center mb-5">
                     <Icon size={22} className="text-[#CC5533]" />
@@ -242,7 +242,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="md:col-span-2 bg-[#2D4B3F] rounded-[2rem] overflow-hidden relative min-h-72">
+            <div className="card-hover md:col-span-2 bg-[#2D4B3F] rounded-[2rem] overflow-hidden relative min-h-72">
               <img
                 src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=1200&q=80"
                 alt="Kassasysteem"
@@ -261,14 +261,14 @@ export default function HomePage() {
             </div>
 
             <div className="flex flex-col gap-4">
-              <div className="bg-[#FCF9F4] rounded-[2rem] p-8 flex-1">
+              <div className="card-hover bg-[#FCF9F4] rounded-[2rem] p-8 flex-1">
                 <TrendingUp size={22} className="text-[#CC5533] mb-4" />
                 <h3 className="font-serif font-semibold text-[#1A1714] mb-2">Rapportages</h3>
                 <p className="text-[#5C5550] text-sm">
                   Omzet per periode, medewerker en product. Altijd beschikbaar — ook van thuis.
                 </p>
               </div>
-              <div className="bg-[#CC5533] rounded-[2rem] p-8 flex-1">
+              <div className="card-hover bg-[#CC5533] rounded-[2rem] p-8 flex-1">
                 <CheckCircle size={22} className="text-white mb-4" />
                 <h3 className="font-serif font-semibold text-white mb-2">QR-bestellen</h3>
                 <p className="text-white/80 text-sm">
@@ -277,21 +277,21 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="bg-[#FCF9F4] rounded-[2rem] p-8">
+            <div className="card-hover bg-[#FCF9F4] rounded-[2rem] p-8">
               <Clock size={22} className="text-[#CC5533] mb-4" />
               <h3 className="font-serif font-semibold text-[#1A1714] mb-2">Reserveringen</h3>
               <p className="text-[#5C5550] text-sm">
                 Zonder commissie. Direct gekoppeld aan je kassa.
               </p>
             </div>
-            <div className="bg-[#F0EDE8] rounded-[2rem] p-8">
+            <div className="card-hover bg-[#F0EDE8] rounded-[2rem] p-8">
               <Zap size={22} className="text-[#CC5533] mb-4" />
               <h3 className="font-serif font-semibold text-[#1A1714] mb-2">Betalingen</h3>
               <p className="text-[#5C5550] text-sm">
                 Geïntegreerde pinbetalingen. Bonnen splitsen in seconden.
               </p>
             </div>
-            <div className="bg-[#2D4B3F] rounded-[2rem] p-8">
+            <div className="card-hover bg-[#2D4B3F] rounded-[2rem] p-8">
               <BarChart3 size={22} className="text-white mb-4" />
               <h3 className="font-serif font-semibold text-white mb-2">Keuken & bar display</h3>
               <p className="text-white/70 text-sm">
@@ -346,7 +346,7 @@ export default function HomePage() {
             {plans.map((plan) => (
               <div
                 key={plan.name}
-                className={`rounded-3xl p-8 flex flex-col ${
+                className={`card-hover rounded-3xl p-8 flex flex-col ${
                   plan.highlight
                     ? "bg-[#2D4B3F] text-white"
                     : "bg-white text-[#1A1714]"
@@ -439,7 +439,7 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((t) => (
-              <div key={t.name} className="bg-white rounded-3xl p-8 shadow-sm">
+              <div key={t.name} className="card-hover bg-white rounded-3xl p-8 shadow-sm">
                 <p className="text-[#1A1714] text-base leading-relaxed mb-6 italic">
                   &ldquo;{t.quote}&rdquo;
                 </p>

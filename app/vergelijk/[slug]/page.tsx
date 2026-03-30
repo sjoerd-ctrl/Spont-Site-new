@@ -258,11 +258,11 @@ export default async function VergelijkPage({
       {/* ─── SAMENVATTING ─── */}
       <section className="bg-[#FCF9F4] py-16 px-6">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-[#2D4B3F] rounded-3xl p-8 text-white">
+          <div className="card-hover bg-[#2D4B3F] rounded-3xl p-8 text-white">
             <p className="text-xs font-semibold uppercase tracking-widest text-white/50 mb-3">Spont</p>
             <p className="text-white/90 leading-relaxed">{v.spontSamenvatting}</p>
           </div>
-          <div className="bg-[#F6F3EE] rounded-3xl p-8">
+          <div className="card-hover bg-[#F6F3EE] rounded-3xl p-8">
             <p className="text-xs font-semibold uppercase tracking-widest text-[#CC5533] mb-3">{v.concurrentNaam}</p>
             <p className="text-[#5C5550] leading-relaxed">{v.concurrentSamenvatting}</p>
           </div>
@@ -318,7 +318,7 @@ export default async function VergelijkPage({
             Voor wie is welk systeem?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-[#2D4B3F] rounded-3xl p-8">
+            <div className="card-hover bg-[#2D4B3F] rounded-3xl p-8">
               <p className="text-xs font-semibold uppercase tracking-widest text-[#CC5533] mb-4">
                 Kies Spont als…
               </p>
@@ -331,7 +331,7 @@ export default async function VergelijkPage({
                 ))}
               </ul>
             </div>
-            <div className="bg-[#F6F3EE] rounded-3xl p-8">
+            <div className="card-hover bg-[#F6F3EE] rounded-3xl p-8">
               <p className="text-xs font-semibold uppercase tracking-widest text-[#CC5533] mb-4">
                 Kies {v.concurrentNaam} als…
               </p>

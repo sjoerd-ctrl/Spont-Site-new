@@ -109,15 +109,15 @@ export default function OverOnsPage() {
 
           {/* Stats */}
           <div className="grid grid-cols-2 gap-4">
-            <div className="bg-[#2D4B3F] rounded-3xl p-8 text-white">
+            <div className="card-hover bg-[#2D4B3F] rounded-3xl p-8 text-white">
               <p className="text-5xl font-serif font-bold mb-2">500+</p>
               <p className="text-white/70 text-sm">Horecazaken die dagelijks draaien op Spont</p>
             </div>
-            <div className="bg-[#CC5533] rounded-3xl p-8 text-white">
+            <div className="card-hover bg-[#CC5533] rounded-3xl p-8 text-white">
               <p className="text-5xl font-serif font-bold mb-2">&lt;2u</p>
               <p className="text-white/70 text-sm">Gemiddelde responstijd via AI + tickets</p>
             </div>
-            <div className="bg-[#F6F3EE] rounded-3xl p-8 col-span-2">
+            <div className="card-hover bg-[#F6F3EE] rounded-3xl p-8 col-span-2">
               <p className="text-5xl font-serif font-bold text-[#1A1714] mb-2">2019</p>
               <p className="text-[#5C5550] text-sm">Opgericht. Sindsdien geen dag zonder horeca.</p>
             </div>
@@ -152,7 +152,7 @@ export default function OverOnsPage() {
             {kernwaarden.map((kw) => {
               const Icon = kw.icon;
               return (
-                <div key={kw.title} className="bg-[#F6F3EE] rounded-3xl p-8">
+                <div key={kw.title} className="card-hover bg-[#F6F3EE] rounded-3xl p-8">
                   <div className="w-12 h-12 bg-[#CC5533]/10 rounded-2xl flex items-center justify-center mb-5">
                     <Icon size={22} className="text-[#CC5533]" />
                   </div>
@@ -187,7 +187,7 @@ export default function OverOnsPage() {
             {team.map((member) => (
               <div
                 key={member.name}
-                className="bg-white rounded-3xl overflow-hidden shadow-sm"
+                className="card-hover bg-white rounded-3xl overflow-hidden shadow-sm"
               >
                 <div className="w-full h-20 bg-[#F6F3EE] flex items-end px-8 pt-8">
                   <div className="w-16 h-16 rounded-full bg-[#2D4B3F] flex items-center justify-center text-white font-serif font-bold text-xl">

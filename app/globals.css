@@ -39,3 +39,12 @@ body {
 h1, h2, h3, h4 {
   font-family: var(--font-noto-serif), Georgia, serif;
 }
+
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}

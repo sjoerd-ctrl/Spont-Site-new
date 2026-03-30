@@ -75,7 +75,7 @@ export default function DoelgroepenRotator() {
         <Link
           key={seg.slug}
           href={`/doelgroepen/${seg.slug}`}
-          className="group relative block rounded-2xl overflow-hidden min-h-56"
+          className="card-hover cursor-pointer group relative block rounded-2xl overflow-hidden min-h-56"
         >
           <img
             src={seg.img}

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import CTABanner from "@/components/shared/CTABanner";
 import { CheckCircle, XCircle, AlertCircle } from "lucide-react";
+import KostenCalculator from "@/components/shared/KostenCalculator";
 
 // ─── TYPES ────────────────────────────────────────────────────────────────────
 
@@ -24,6 +25,7 @@ type Vergelijking = {
   kiesSpont: string[];
   kiesConcurrent: string[];
   quote: { text: string; name: string; role: string };
+  calculator?: "lightspeed" | "tebi";
 };
 
 // ─── CONTENT ──────────────────────────────────────────────────────────────────
@@ -67,6 +69,7 @@ const vergelijkingen: Record<string, Vergelijking> = {
       name: "Marloes V.",
       role: "Eigenaar, Brasserie de Hoek",
     },
+    calculator: "lightspeed",
   },
 
   "untill-alternatief": {
@@ -108,6 +111,8 @@ const vergelijkingen: Record<string, Vergelijking> = {
     },
   },
 
+
+
   "tebi-alternatief": {
     metaTitle: "Spont vs Tebi | Eerlijk vergeleken voor horeca",
     metaDescription:
@@ -146,6 +151,7 @@ const vergelijkingen: Record<string, Vergelijking> = {
       name: "Anita R.",
       role: "Eigenaar, Lunchroom Zonnig",
     },
+    calculator: "tebi",
   },
 
   "dish-alternatief": {
@@ -392,6 +398,15 @@ export default async function VergelijkPage({
           </div>
         </div>
       </section>
+
+      {/* ─── CALCULATOR ─── */}
+      {v.calculator && (
+        <section className="bg-[#FCF9F4] py-16 px-6">
+          <div className="max-w-4xl mx-auto">
+            <KostenCalculator model={v.calculator} concurrentNaam={v.concurrentNaam} />
+          </div>
+        </section>
+      )}
 
       {/* ─── VOOR WIE ─── */}
       <section className="bg-[#FCF9F4] py-16 px-6">

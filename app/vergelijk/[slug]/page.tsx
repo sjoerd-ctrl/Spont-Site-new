@@ -246,12 +246,12 @@ export default async function VergelijkPage({
             {v.h1}
           </h1>
           <p className="text-[#5C5550] text-lg max-w-2xl mb-8">{v.subkop}</p>
-          <Link
-            href="/contact"
+          <a
+            href="https://spont-live.eu.auth0.com/u/signup"
             className="bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold px-8 py-4 rounded-full transition-colors inline-block"
           >
             Start direct
-          </Link>
+          </a>
         </div>
       </section>
 

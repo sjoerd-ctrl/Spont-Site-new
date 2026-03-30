@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { MessageCircle, Calendar, MapPin, Users } from "lucide-react";
+import ContactForm from "@/components/shared/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact & direct starten",
@@ -48,7 +49,7 @@ export default function ContactPage() {
               verplichtingen. Je bent binnen een paar minuten operationeel.
             </p>
             <a
-              href="https://app.spont.nl"
+              href="https://spont-live.eu.auth0.com/u/signup"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold px-6 py-3.5 rounded-full transition-colors text-sm"
@@ -83,73 +84,7 @@ export default function ContactPage() {
           <h2 className="font-serif text-2xl font-semibold text-[#1A1714] mb-8 text-center">
             Of stuur ons direct een bericht.
           </h2>
-          <form className="space-y-5" action="mailto:info@spont.nl" method="post">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <div>
-                <label className="block text-sm font-medium text-[#1A1714] mb-2">
-                  Voornaam
-                </label>
-                <input
-                  type="text"
-                  className="w-full bg-white rounded-2xl px-5 py-3.5 text-[#1A1714] text-sm outline-none focus:ring-2 focus:ring-[#CC5533] placeholder-[#5C5550]/50"
-                  placeholder="Jan"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-[#1A1714] mb-2">
-                  Achternaam
-                </label>
-                <input
-                  type="text"
-                  className="w-full bg-white rounded-2xl px-5 py-3.5 text-[#1A1714] text-sm outline-none focus:ring-2 focus:ring-[#CC5533] placeholder-[#5C5550]/50"
-                  placeholder="Jansen"
-                />
-              </div>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-[#1A1714] mb-2">
-                E-mailadres
-              </label>
-              <input
-                type="email"
-                className="w-full bg-white rounded-2xl px-5 py-3.5 text-[#1A1714] text-sm outline-none focus:ring-2 focus:ring-[#CC5533] placeholder-[#5C5550]/50"
-                placeholder="jan@mijnzaak.nl"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-[#1A1714] mb-2">
-                Type zaak
-              </label>
-              <select className="w-full bg-white rounded-2xl px-5 py-3.5 text-[#1A1714] text-sm outline-none focus:ring-2 focus:ring-[#CC5533]">
-                <option value="">Selecteer...</option>
-                <option>Restaurant</option>
-                <option>Café</option>
-                <option>Koffiezaak</option>
-                <option>Lunchroom</option>
-                <option>Fastcasual / afhaal</option>
-                <option>Bakkerij</option>
-                <option>Discotheek / club</option>
-                <option>Hotel</option>
-                <option>Anders</option>
-              </select>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-[#1A1714] mb-2">
-                Bericht
-              </label>
-              <textarea
-                rows={5}
-                className="w-full bg-white rounded-2xl px-5 py-3.5 text-[#1A1714] text-sm outline-none focus:ring-2 focus:ring-[#CC5533] placeholder-[#5C5550]/50 resize-none"
-                placeholder="Vertel ons over jouw zaak en wat je nodig hebt..."
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold py-4 rounded-full transition-colors text-sm"
-            >
-              Verstuur bericht
-            </button>
-          </form>
+          <ContactForm />
         </div>
       </section>
 

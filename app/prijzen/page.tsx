@@ -28,7 +28,7 @@ const plans = [
     period: "/maand",
     description: "1–2 verkooppunten. Alle functies inbegrepen.",
     cta: "Start direct",
-    ctaHref: "/contact",
+    ctaHref: "https://spont-live.eu.auth0.com/u/signup",
     highlight: false,
     features: [
       { text: "Alle functies inbegrepen", included: true },
@@ -48,7 +48,7 @@ const plans = [
     period: "/maand",
     description: "Onbeperkt verkooppunten. Meerdere vestigingen. Alles.",
     cta: "Start met Pro",
-    ctaHref: "/contact",
+    ctaHref: "https://spont-live.eu.auth0.com/u/signup",
     highlight: true,
     features: [
       { text: "Alles van Start", included: true },

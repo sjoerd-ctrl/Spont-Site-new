@@ -163,12 +163,12 @@ export default function HomePage() {
               voor het personeel. Eerlijk in prijs. Geen verrassingen.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/contact"
+              <a
+                href="https://spont-live.eu.auth0.com/u/signup"
                 className="bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold px-8 py-4 rounded-full transition-colors text-base inline-block text-center"
               >
                 Start direct
-              </Link>
+              </a>
               <Link
                 href="/doelgroepen"
                 className="bg-white/15 hover:bg-white/25 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base inline-block text-center backdrop-blur-sm"
@@ -374,16 +374,16 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  href="/contact"
-                  className={`rounded-full py-3 text-center text-sm font-semibold transition-colors ${
+                <a
+                  href="https://spont-live.eu.auth0.com/u/signup"
+                  className={`rounded-full py-3 text-center text-sm font-semibold transition-colors block ${
                     plan.highlight
                       ? "bg-[#CC5533] hover:bg-[#A33818] text-white"
                       : "bg-[#1A1714] hover:bg-[#2D4B3F] text-white"
                   }`}
                 >
                   Start direct
-                </Link>
+                </a>
               </div>
             ))}
           </div>

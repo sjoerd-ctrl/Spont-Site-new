@@ -682,12 +682,12 @@ export default async function DoelgroepDetailPage({
           <p className="text-white/75 text-lg max-w-2xl leading-relaxed mb-10">
             {data.subheadline}
           </p>
-          <Link
-            href="/contact"
+          <a
+            href="https://spont-live.eu.auth0.com/u/signup"
             className="inline-block bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold px-8 py-4 rounded-full transition-colors"
           >
             Start direct
-          </Link>
+          </a>
         </div>
       </section>
 

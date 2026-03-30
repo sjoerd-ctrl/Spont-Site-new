@@ -43,5 +43,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...segmentPages, ...vergelijkPages];
+  const blogSlugs = [
+    "kassasysteem-festival-evenement",
+    "kassasysteem-kiezen-starter",
+  ];
+
+  const blogPages: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
+    url: `${baseUrl}/blog/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...segmentPages, ...vergelijkPages, ...blogPages];
 }

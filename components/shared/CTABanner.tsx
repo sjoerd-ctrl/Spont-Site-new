@@ -10,7 +10,7 @@ interface CTABannerProps {
 export default function CTABanner({
   title,
   subtitle,
-  primary = { label: "Start direct", href: "/contact" },
+  primary = { label: "Start direct", href: "https://spont-live.eu.auth0.com/u/signup" },
   secondary = { label: "Bekijk de prijzen", href: "/prijzen" },
 }: CTABannerProps) {
   return (

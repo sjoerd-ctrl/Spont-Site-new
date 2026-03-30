@@ -18,6 +18,20 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "kassasysteem-festival-evenement",
+    title: "Kassasysteem voor festivals en evenementen: waar let je op?",
+    excerpt: "Plug-and-play, Tap to Pay, offline modus en geen contract. Waar je op moet letten bij het kiezen van een kassasysteem voor je festival of evenement.",
+    date: "30 maart 2026",
+    category: "Evenementen",
+  },
+  {
+    slug: "kassasysteem-kiezen-starter",
+    title: "Kassasysteem kiezen als starter: 7 vragen die je moet stellen",
+    excerpt: "Begin je een horecazaak? Stel deze 7 vragen voordat je een kassasysteem kiest. Van kosten tot contracten en support.",
+    date: "30 maart 2026",
+    category: "Ondernemen",
+  },
+  {
     slug: "wat-kost-kassasysteem-restaurant",
     title: "Wat kost een kassasysteem voor een restaurant?",
     excerpt: "Abonnement, hardware, transactiekosten, support — alles op een rij. Zo vergelijk je het eerlijk.",

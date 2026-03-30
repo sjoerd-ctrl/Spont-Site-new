@@ -35,6 +35,11 @@ Spont bedient verschillende horeca-segmenten:
 - [Spont vs Lightspeed](https://www.spont.nl/vergelijk/lightspeed-alternatief)
 - [Spont vs Untill](https://www.spont.nl/vergelijk/untill-alternatief)
 
+## Blogartikelen
+
+- [Kassasysteem voor festivals en evenementen](https://www.spont.nl/blog/kassasysteem-festival-evenement): Plug-and-play, offline modus, Tap to Pay — waar je op let bij een evenementenkassa
+- [Kassasysteem kiezen als starter](https://www.spont.nl/blog/kassasysteem-kiezen-starter): 7 vragen die je moet stellen voordat je een kassasysteem kiest als horecastarter
+
 ## Kerngegevens
 
 - Bedrijf: Spont

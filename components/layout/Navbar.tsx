@@ -70,9 +70,7 @@ export default function Navbar() {
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="https://app.spont.nl"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="https://spont-live.eu.auth0.com/u/login"
             className={`text-sm font-medium transition-colors ${
               isLight
                 ? "text-[#5C5550] hover:text-[#1A1714]"
@@ -81,12 +79,12 @@ export default function Navbar() {
           >
             Inloggen
           </a>
-          <Link
-            href="/contact"
+          <a
+            href="https://spont-live.eu.auth0.com/u/signup"
             className="bg-[#CC5533] hover:bg-[#A33818] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
           >
             Start direct
-          </Link>
+          </a>
         </div>
 
         {/* Mobile toggle */}
@@ -113,13 +111,13 @@ export default function Navbar() {
             </Link>
           ))}
           <hr className="border-[#EBE8E3]" />
-          <Link
-            href="/contact"
+          <a
+            href="https://spont-live.eu.auth0.com/u/signup"
             className="bg-[#CC5533] text-white text-sm font-semibold px-5 py-3 rounded-full text-center"
             onClick={() => setOpen(false)}
           >
             Start direct
-          </Link>
+          </a>
         </div>
       )}
     </header>

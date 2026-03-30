@@ -571,6 +571,79 @@ const segments: Record<string, Segment> = {
       },
     ],
   },
+
+  evenementen: {
+    badge: "EVENEMENTEN & FESTIVALS",
+    headline: "Kassasysteem voor evenementen en festivals",
+    subheadline:
+      "Plug-and-play, Tap to Pay op iPhone en maandelijks opzegbaar. Spont werkt waar jij werkt, van foodtruck tot festivalbar.",
+    heroImg: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=2000&q=80",
+    ctaTitle: "Klaar voor je volgende evenement?",
+    ctaSubtitle:
+      "Ontdek hoe Spont jouw evenement helpt om sneller af te rekenen, meer te verkopen en altijd overzicht te houden.",
+    ctaFooter: "Geschikt voor: festivals, popupbars, foodtrucks, cateraars, sportevenementen",
+    painPoints: [
+      {
+        title: "Geen tijd voor installatie",
+        body: "Je hebt een paar uur om alles op te zetten. Een kassasysteem dat configuratie nodig heeft past daar niet in.",
+      },
+      {
+        title: "Wifi is onbetrouwbaar",
+        body: "Op locatie is de verbinding vaak slecht. Je kassa moet ook zonder internet doorwerken.",
+      },
+      {
+        title: "Losse pinterminals zijn duur",
+        body: "Voor een weekend een terminal huren kost al snel meer dan het kassasysteem zelf.",
+      },
+      {
+        title: "Personeel kent het systeem niet",
+        body: "Tijdelijk personeel moet direct kunnen meedraaien zonder training.",
+      },
+      {
+        title: "Geen inzicht per bar of kraam",
+        body: "Na het evenement weet je niet welke bar het meeste heeft verkocht.",
+      },
+    ],
+    solution: {
+      title: "Gebouwd voor tijdelijke setups en hoge volumes",
+      subtitle:
+        "Spont werkt direct uit de doos. Tap to Pay op iPhone, geen losse pinterminal, maandelijks opzegbaar.",
+      body: "Of je nu een foodtruck runt, een festivalbar beheert of catering doet: Spont werkt op je eigen iPhone of iPad en is binnen minuten operationeel.",
+      benefits: [
+        "Plug-and-play: operationeel in minuten",
+        "Tap to Pay op iPhone, geen losse terminal nodig",
+        "Maandelijks opzegbaar, geen verplichting na het seizoen",
+        "Werkt op eigen hardware (iPhone, iPad)",
+        "Real-time omzet per bar, kraam of shift",
+      ],
+    },
+    testimonials: [
+      {
+        quote:
+          "Op ons festival draaien we met tien verkooppunten tegelijk. Spont is zo simpel dat we elk seizoen nieuw personeel inzetten zonder problemen.",
+        name: "Festival organisator",
+        location: "Nederland",
+      },
+    ],
+    onboarding: [
+      {
+        title: "Download Spont op je iPhone of iPad",
+        body: "Geen speciale hardware nodig. Werkt op je eigen apparaat.",
+      },
+      {
+        title: "Menukaart aanmaken",
+        body: "Producten en categorieën instellen duurt een paar minuten.",
+      },
+      {
+        title: "Tap to Pay activeren",
+        body: "Accepteer pinbetalingen direct op je iPhone. Geen terminal nodig.",
+      },
+      {
+        title: "Live op je evenement",
+        body: "Klaar. Verkoop, reken af en houd overzicht in real-time.",
+      },
+    ],
+  },
 };
 
 // ─── METADATA ─────────────────────────────────────────────────────────────────
@@ -610,6 +683,11 @@ const segmentMeta: Record<string, { title: string; description: string }> = {
     title: "Kassasysteem voor bowlingbanen en leisure",
     description:
       "Spont voor bowlingbanen: persoonlijke pincode per gast, bestellen via tablets en QR-codes, koppeling met Raxbooker en alles op een rekening.",
+  },
+  evenementen: {
+    title: "Kassasysteem voor evenementen en festivals",
+    description:
+      "Spont voor evenementen: plug-and-play, Tap to Pay op iPhone en maandelijks opzegbaar. Operationeel in minuten.",
   },
 };
 

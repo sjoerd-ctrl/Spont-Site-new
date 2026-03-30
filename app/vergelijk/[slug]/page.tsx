@@ -186,6 +186,88 @@ const vergelijkingen: Record<string, Vergelijking> = {
       role: "Eigenaar, Grand Café De Linde",
     },
   },
+
+  "trivec-alternatief": {
+    metaTitle: "Spont vs Trivec | Eerlijk vergeleken voor horeca",
+    metaDescription:
+      "Trivec werkt via resellers en is prijzig. Spont is transparant, hardware-vrij en maandelijks opzegbaar. Vergelijk en beslis.",
+    h1: "Spont vs Trivec: welk kassasysteem past bij jouw zaak?",
+    subkop:
+      "Trivec is een Scandinavisch systeem populair in grote horecaketens. Spont biedt vergelijkbare functionaliteit voor een transparante prijs, zonder installatiekosten.",
+    spontSamenvatting:
+      "Volledig kassasysteem. Geen supportteam — dat is waarom het zo goedkoop is. AI + tickets handelen het af. Wil je een mens? Dat koop je bij.",
+    concurrentNaam: "Trivec",
+    concurrentSamenvatting:
+      "Trivec is gericht op middelgrote en grote horecabedrijven. Krachtig en uitgebreid, maar de prijs is hoog en de implementatie tijdrovend. Setup vereist een technicus.",
+    tabel: [
+      { criterium: "Maandprijs (start)", spont: "€89/mnd (€59 met Payments)", concurrent: "€100–€200/mnd op aanvraag" },
+      { criterium: "Opstartkosten", spont: "€0", concurrent: "€1.500–€3.000+ (hardware + installatie)" },
+      { criterium: "Contract", spont: "Maandelijks opzegbaar", concurrent: "Jaarcontract standaard" },
+      { criterium: "Setup door technicus", spont: "❌ Zelf instellen in 15 min", concurrent: "✅ Verplicht" },
+      { criterium: "Hardware lock-in", spont: "❌ Geen", concurrent: "✅ Eigen hardware verplicht" },
+      { criterium: "Platform", spont: "iOS + Android", concurrent: "Eigen hardware (Windows-based)" },
+      { criterium: "Tap to Pay", spont: "✅ iPhone & Android", concurrent: "❌ Niet beschikbaar" },
+      { criterium: "Prijstransparantie", spont: "✅", concurrent: "❌ Alleen via offerte" },
+      { criterium: "Support", spont: "AI + tickets", concurrent: "24/7 via eigen team" },
+    ],
+    kiesSpont: [
+      "Je niet vast wil zitten aan dure hardware en jaarcontracten",
+      "Je snel wil starten zonder technicus",
+      "Je Tap to Pay op iPhone wil gebruiken",
+      "Je transparante prijzen wil zonder een offerte aan te vragen",
+    ],
+    kiesConcurrent: [
+      "Je een grote keten runt met 10+ vestigingen en een IT-afdeling",
+      "Je bereid bent te investeren in een uitgebreide implementatie",
+      "Je 24/7 menselijke support wil bij complexe setups",
+    ],
+    quote: {
+      text: "We zijn overgestapt van een duur systeem met jaarcontract naar Spont. Zelfde functies, veel lagere kosten, en we kunnen maandelijks opzeggen.",
+      name: "Joost B.",
+      role: "Eigenaar, Brasserie Noord",
+    },
+  },
+
+  "orderbird-alternatief": {
+    metaTitle: "Spont vs Orderbird | Vergeleken op prijs en functies",
+    metaDescription:
+      "Orderbird focust op iPad-kassa's voor de horeca. Spont biedt hetzelfde plus Tap to Pay, betere prijzen en meer koppelingen.",
+    h1: "Spont vs Orderbird: wat past bij jouw horecazaak?",
+    subkop:
+      "Orderbird is een Duits iPad-kassasysteem voor de horeca. Spont biedt vergelijkbare functionaliteit met eigen betaalintegratie en lagere kosten.",
+    spontSamenvatting:
+      "Volledig kassasysteem. Geen supportteam — dat is waarom het zo goedkoop is. AI + tickets handelen het af. Wil je een mens? Dat koop je bij.",
+    concurrentNaam: "Orderbird",
+    concurrentSamenvatting:
+      "Orderbird is een Duits kassasysteem gericht op restaurants en cafés. Werkt op iPad, maar vereist een aparte betaalterminal en heeft hogere transactiekosten door samenwerking met externe betaalpartners.",
+    tabel: [
+      { criterium: "Maandprijs (start)", spont: "€89/mnd (€59 met Payments)", concurrent: "€69–€129/mnd" },
+      { criterium: "Opstartkosten", spont: "€0", concurrent: "€0–€500 (afhankelijk van pakket)" },
+      { criterium: "Contract", spont: "Maandelijks opzegbaar", concurrent: "Maandelijks of jaarlijks" },
+      { criterium: "Tap to Pay", spont: "✅ iPhone & Android", concurrent: "❌ Losse terminal verplicht" },
+      { criterium: "Betaalintegratie", spont: "✅ Eigen integratie, één factuur", concurrent: "❌ Losse betaalpartner" },
+      { criterium: "Platform", spont: "iOS + Android", concurrent: "iPad (iOS)" },
+      { criterium: "Tafelbeheer", spont: "✅ Volledig (plattegrond, splitsen)", concurrent: "✅ Beschikbaar" },
+      { criterium: "PIN tarieven", spont: "€0,085/tx debit", concurrent: "~1,5–2% via externe partner" },
+      { criterium: "Koppelingen", spont: "✅ Boekhouding, reservering, delivery", concurrent: "Beperkt in NL" },
+    ],
+    kiesSpont: [
+      "Je geen aparte betaalterminal wil aanschaffen",
+      "Je Tap to Pay op iPhone wil gebruiken aan tafel",
+      "Je ook op Android wil werken",
+      "Je lagere transactiekosten wil via een eigen betaalintegratie",
+    ],
+    kiesConcurrent: [
+      "Je al een iPad-setup hebt en tevreden bent met een losse betaalterminal",
+      "Je een Duitstalige interface of support prefereert",
+      "Je specifiek orderbird-koppelingen gebruikt",
+    ],
+    quote: {
+      text: "Eindelijk één systeem voor kassa en betalingen. Geen losse terminal meer, geen tweede factuur. Simpeler dan ik dacht.",
+      name: "Laura M.",
+      role: "Eigenaar, Café De Oesterbar",
+    },
+  },
 };
 
 // ─── HELPERS ──────────────────────────────────────────────────────────────────

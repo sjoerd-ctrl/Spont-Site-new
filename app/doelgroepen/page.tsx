@@ -58,6 +58,12 @@ const doelgroepen = [
     subtitle: "Van baan tot bar",
     img: "https://images.unsplash.com/photo-1541795795328-f073b763494e?w=800&q=80",
   },
+  {
+    slug: "evenementen",
+    title: "Evenementen & festivals",
+    subtitle: "Plug-and-play, Tap to Pay, geen contract",
+    img: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80",
+  },
 ];
 
 export default function DoelgroepenPage() {

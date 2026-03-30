@@ -272,6 +272,494 @@ const articles: Record<string, Article> = {
       </>
     ),
   },
+
+  "hoe-werken-kaartbetalingen": {
+    title: "Hoe werken kaartbetalingen eigenlijk?",
+    metaDescription:
+      "Van tikken op de terminal tot geld op je rekening — uitgelegd voor horecaondernemers. Transactiekosten, interchange en Tap to Pay.",
+    date: "9 december 2025",
+    dateISO: "2025-12-09",
+    category: "Betalingen",
+    content: (
+      <>
+        <p>
+          Een gast tikt zijn kaart op je terminal. Drie seconden later staat er &ldquo;goedgekeurd&rdquo; op het
+          scherm. Maar wat gebeurt er in die drie seconden? En waarom betaal je daar transactiekosten voor?
+          Dit artikel legt het uit in gewone taal.
+        </p>
+
+        <h2>De reis van een kaartbetaling in vier stappen</h2>
+
+        <h3>Stap 1: de gast betaalt</h3>
+        <p>
+          Je gast houdt zijn kaart of telefoon tegen de terminal (of je iPhone met Tap to Pay). De terminal
+          leest de kaartgegevens en stuurt een verzoek naar de betaalverwerker.
+        </p>
+
+        <h3>Stap 2: autorisatie</h3>
+        <p>
+          De betaalverwerker stuurt het verzoek door naar de bank van je gast. Die bank checkt: is er genoeg
+          saldo? Is de kaart geldig? Is er iets verdachts? Dit duurt meestal minder dan twee seconden.
+        </p>
+
+        <h3>Stap 3: verwerking</h3>
+        <p>
+          Na goedkeuring wordt de transactie geregistreerd. Het bedrag wordt gereserveerd op de rekening van
+          je gast, maar staat nog niet op jouw rekening.
+        </p>
+
+        <h3>Stap 4: uitbetaling</h3>
+        <p>
+          Aan het einde van de dag worden alle goedgekeurde transacties in batch verwerkt. Het geld wordt
+          overgemaakt naar jouw bankrekening. Dit heet &ldquo;settlement&rdquo; en duurt een tot drie werkdagen.
+        </p>
+
+        <h2>Wie verdient er aan je transactie?</h2>
+        <p>Bij iedere kaartbetaling betaal je een percentage dat verdeeld wordt over drie partijen:</p>
+        <ul>
+          <li>
+            <strong>Interchange fee</strong> — naar de bank van je gast. In Europa circa 0,2% voor
+            betaalpassen en 0,3% voor creditcards.
+          </li>
+          <li>
+            <strong>Scheme fee</strong> — naar het kaartnetwerk (Visa, Mastercard). Meestal 0,02&ndash;0,05%.
+          </li>
+          <li>
+            <strong>Acquirer fee</strong> — naar jouw betaalverwerker. Dit is het deel met de meeste variatie:
+            0,5&ndash;1,5%.
+          </li>
+        </ul>
+        <p>
+          In totaal betaal je tussen de 0,7% en 2,5% per transactie, afhankelijk van het type kaart en je
+          betaalverwerker.
+        </p>
+
+        <h2>Waarom sommige kassasystemen duurder zijn dan andere</h2>
+        <p>
+          Bij veel kassasystemen heb je twee contracten: een met de kassaleverancier en een met een aparte
+          betaalverwerker. Dit heeft nadelen:
+        </p>
+        <ul>
+          <li>Dubbele contracten, twee facturen, twee klantenservices</li>
+          <li>Hogere transactiekosten door extra marges</li>
+          <li>Een apart pinapparaat dat storingsgevoeliger is</li>
+        </ul>
+        <p>
+          Een ge&iuml;ntegreerde betaaloplossing &mdash; waarbij kassa en betaalverwerking in &eacute;&eacute;n
+          product zitten &mdash; betekent &eacute;&eacute;n contract, &eacute;&eacute;n factuur en geen losse
+          betaalterminal.
+        </p>
+
+        <h2>Tap to Pay: betalen zonder terminal</h2>
+        <p>
+          Tap to Pay op iPhone werkt via NFC, dezelfde technologie als in een betaalterminal. Voordelen: je
+          medewerker rekent aan tafel af zonder terug te lopen naar de bar, geen extra apparaat om op te laden
+          of te vervangen, en lagere kosten.
+        </p>
+
+        <h2>Drie praktische conclusies</h2>
+        <ul>
+          <li>
+            <strong>Ken je transactiekosten.</strong> Op een maandomzet van 40.000 euro is het verschil tussen
+            1,5% en 2% al 200 euro per maand.
+          </li>
+          <li>
+            <strong>Overweeg een ge&iuml;ntegreerde oplossing.</strong> Minder contracten, minder hardware,
+            minder gedoe.
+          </li>
+          <li>
+            <strong>Bekijk Tap to Pay.</strong> Als je aan tafel wilt afrekenen, is dit de simpelste optie.
+          </li>
+        </ul>
+
+        <h2>Hoe werkt dit bij Spont?</h2>
+        <ul>
+          <li>Geen apart pinapparaat of betaalcontract nodig</li>
+          <li>Tap to Pay op iPhone standaard inbegrepen</li>
+          <li>Een factuur voor alles: kassa en betalingen</li>
+          <li>Transactiekosten direct inzichtelijk in je dashboard</li>
+        </ul>
+      </>
+    ),
+  },
+
+  "kassasysteem-vergelijken": {
+    title: "Kassasysteem vergelijken: waar let je op?",
+    metaDescription:
+      "Prijs is één ding. Maar wat met contracten, support en gebruiksgemak voor je personeel? Dit zijn de 7 punten die tellen bij het vergelijken.",
+    date: "10 maart 2026",
+    dateISO: "2026-03-10",
+    category: "Ondernemen",
+    content: (
+      <>
+        <p>
+          Je hebt een shortlist van twee of drie kassasystemen. Nu moet je vergelijken. Maar hoe? Prijs is
+          belangrijk, maar lang niet het enige. Dit artikel geeft je een helder kader.
+        </p>
+
+        <h2>Waarom vergelijken lastig is</h2>
+        <p>
+          Iedere aanbieder presenteert zijn product anders. De een toont een lage maandprijs maar rekent apart
+          voor hardware en koppelingen. Zonder een vast vergelijkingskader vergelijk je appels met peren.
+          Gebruik onderstaande zeven punten als checklist.
+        </p>
+
+        <h2>1. Totale kosten per maand</h2>
+        <p>
+          Niet het abonnement, maar het totaalplaatje. Tel op: abonnement, hardware (afgeschreven per maand),
+          transactiekosten op je verwachte omzet, support en eventuele extra modules. Een systeem van 29 euro
+          met dure hardware en hoge transactiekosten is duurder dan een systeem van 49 euro zonder bijkomende
+          kosten.
+        </p>
+
+        <h2>2. Contractvoorwaarden</h2>
+        <p>
+          Zit je vast aan een jaarcontract? Is er een opzegtermijn? Voor starters en seizoensgebonden zaken
+          is maandelijkse opzegbaarheid essentieel.
+        </p>
+
+        <h2>3. Hardware</h2>
+        <p>
+          Moet je hun hardware kopen, of werkt het op je eigen apparaten? Check ook: heb je een aparte
+          betaalterminal nodig, of is betalen ge&iuml;ntegreerd? Met Tap to Pay op iPhone heb je geen losse
+          terminal meer nodig.
+        </p>
+
+        <h2>4. Gebruiksgemak</h2>
+        <p>
+          Hoe snel kan je team ermee werken? Vraag om een demo of proefperiode. Laat een medewerker het
+          systeem testen, niet jezelf &mdash; jij kent het product al van de presentatie.
+        </p>
+
+        <h2>5. Support</h2>
+        <p>
+          Hoe bereik je support? Wat zijn de reactietijden? Is er hulp buiten kantooruren? Check reviews van
+          bestaande klanten over de support, niet alleen de beloftes op de website.
+        </p>
+
+        <h2>6. Schaalbaarheid</h2>
+        <p>
+          Als je wilt groeien naar twee of drie vestigingen, past je kassasysteem daar dan bij? Vraag: kan ik
+          meerdere locaties beheren vanuit een dashboard? Is er een rol- en rechtensysteem?
+        </p>
+
+        <h2>7. Koppelingen</h2>
+        <p>
+          Welke andere software gebruik je? Check welke koppelingen standaard beschikbaar zijn en welke extra
+          kosten. Een kassasysteem dat niet koppelt met je boekhoudpakket betekent handmatig gegevens
+          overtypen.
+        </p>
+
+        <h2>Hoe scoort Spont op deze punten?</h2>
+        <ul>
+          <li>Totale kosten: scherp geprijsd, geen verborgen kosten, eigen betaalintegratie</li>
+          <li>Contract: maandelijks opzegbaar, geen minimale looptijd</li>
+          <li>Hardware: werkt op je eigen iPad en iPhone</li>
+          <li>Gebruiksgemak: setup in 15 minuten, geen technicus nodig</li>
+          <li>Support: via chat en ticketsysteem, onderdeel van je abonnement</li>
+          <li>Schaalbaarheid: centraal dashboard voor meerdere locaties</li>
+          <li>Koppelingen: boekhouding, bezorging en meer standaard inbegrepen</li>
+        </ul>
+      </>
+    ),
+  },
+
+  "meerdere-horecalocaties-beheren": {
+    title: "Meerdere horecalocaties beheren: zo houd je het overzicht",
+    metaDescription:
+      "Twee of drie locaties? Zo houd je grip op omzet, personeel en menukaarten met een centraal kassasysteem.",
+    date: "15 februari 2026",
+    dateISO: "2026-02-15",
+    category: "Ondernemen",
+    content: (
+      <>
+        <p>
+          Je hebt een tweede of derde locatie geopend, of je bent dat aan het plannen. Met iedere locatie
+          groeit de complexiteit. Hoe houd je grip op omzet, personeel en menukaarten zonder dat je dagelijks
+          heen en weer rijdt?
+        </p>
+
+        <h2>Het probleem met losse systemen</h2>
+        <p>Veel horecaondernemers beginnen met een kassasysteem voor een locatie. Bij locatie twee en drie ontstaan problemen:</p>
+        <ul>
+          <li>
+            <strong>Geen centraal overzicht.</strong> Je moet per vestiging inloggen. Drie locaties betekent
+            drie logins, drie rapportages, drie keer handmatig vergelijken.
+          </li>
+          <li>
+            <strong>Menuwijzigingen kosten tijd.</strong> Dezelfde aanpassing drie keer doorvoeren. Vergeet
+            je er een, dan staat er een ander menu.
+          </li>
+          <li>
+            <strong>Geen vergelijkbare data.</strong> Als iedere locatie anders is ingericht, kun je de
+            cijfers niet goed naast elkaar leggen.
+          </li>
+          <li>
+            <strong>Personeelsbeheer wordt ingewikkeld.</strong> Medewerkers op meerdere locaties, verschillende
+            rollen per vestiging, toegangsrechten die per locatie verschillen.
+          </li>
+        </ul>
+
+        <h2>Wat je nodig hebt bij meerdere locaties</h2>
+
+        <h3>Centraal dashboard</h3>
+        <p>
+          Een plek waar je in &eacute;&eacute;n oogopslag ziet hoe iedere locatie draait. Omzet per dag, per
+          week, per locatie. Zonder dat je op drie plekken hoeft in te loggen.
+        </p>
+
+        <h3>Centraal menubeheer</h3>
+        <p>
+          Pas je menukaart een keer aan en rol het uit naar alle locaties. Of stel per locatie variaties in:
+          misschien heeft je vestiging op het station een kleiner menu dan je hoofdzaak.
+        </p>
+
+        <h3>Rollen en rechten</h3>
+        <p>
+          Niet iedereen hoeft alles te zien. Je bedrijfsleider ziet de rapportages van zijn locatie. Je
+          kassamedewerker ziet alleen het bestelmenu. Jij als eigenaar ziet alles.
+        </p>
+
+        <h3>Uniforme rapportages</h3>
+        <p>
+          Als je locaties vergelijkt, wil je appels met appels vergelijken. Welke locatie heeft de hoogste
+          gemiddelde bonwaarde? Waar zijn de personeelskosten relatief het hoogst? Welke producten lopen goed
+          in vestiging A maar niet in B?
+        </p>
+
+        <h2>De overstap: aandachtspunten</h2>
+        <ul>
+          <li>
+            <strong>Datamigratie.</strong> Kun je bestaande producten, categorie&euml;n en prijzen importeren?
+          </li>
+          <li>
+            <strong>Trainingstijd.</strong> Plan de overstap niet op je drukste weekend.
+          </li>
+          <li>
+            <strong>Contracten opzeggen.</strong> Check de opzegtermijn van je huidige systemen.
+          </li>
+          <li>
+            <strong>Testperiode.</strong> Begin met &eacute;&eacute;n locatie. Los problemen op voordat je de
+            rest overzet.
+          </li>
+        </ul>
+
+        <h2>Wat biedt Spont voor meerdere locaties?</h2>
+        <ul>
+          <li>Centraal dashboard: al je locaties in &eacute;&eacute;n overzicht</li>
+          <li>Centraal menubeheer: aanpassen op &eacute;&eacute;n plek, uitrollen naar alle vestigingen</li>
+          <li>Per locatie variaties mogelijk (ander menu, andere prijzen)</li>
+          <li>Rollen en rechten: eigenaar, bedrijfsleider, kassamedewerker</li>
+          <li>Uniforme rapportages over alle locaties</li>
+          <li>Maandelijks opzegbaar, ook met meerdere vestigingen</li>
+          <li>Tap to Pay en handhelds op iedere locatie, zonder extra terminals</li>
+        </ul>
+      </>
+    ),
+  },
+
+  "nieuw-restaurant-welke-kassa": {
+    title: "Nieuw restaurant openen: welke kassa kies je?",
+    metaDescription:
+      "Als je net begint, wil je geen gedoe. Dit zijn de vijf vragen die je moet stellen voordat je een kassasysteem kiest voor je nieuwe restaurant.",
+    date: "25 februari 2026",
+    dateISO: "2026-02-25",
+    category: "Restaurant",
+    content: (
+      <>
+        <p>
+          Je opent een restaurant. Er komt van alles op je af: vergunningen, inrichting, personeel,
+          leveranciers. Ergens op die lijst staat ook &ldquo;kassasysteem kiezen&rdquo;. Dit artikel helpt
+          je daar snel doorheen.
+        </p>
+
+        <h2>Waarom je kassasysteem er meer toe doet dan je denkt</h2>
+        <p>
+          Je kassa is niet alleen een afrekenmachine. Het is het systeem waar iedere bestelling doorheen gaat,
+          waar je omzet in bijhoudt, waar je personeel de hele avond mee werkt. Als je net begint, wil je
+          twee dingen: snel starten en niet te veel betalen voor dingen die je nog niet nodig hebt.
+        </p>
+
+        <h2>Wat je nu nodig hebt (en wat nog niet)</h2>
+        <p>Focus op wat je de eerste maanden echt nodig hebt:</p>
+        <ul>
+          <li>
+            <strong>Wel nodig vanaf dag 1:</strong> bestellingen opnemen, afrekenen (pin en contant), bonnen
+            printen of digitaal versturen, basisrapportages, en een simpele menukaart die je zelf kunt
+            aanpassen.
+          </li>
+          <li>
+            <strong>Kan later:</strong> voorraadbeheer, koppelingen met boekhouding, online bestellen,
+            reserveringen, keukenschermen.
+          </li>
+        </ul>
+
+        <h2>De vijf vragen voor een nieuw restaurant</h2>
+
+        <h3>1. Hoe snel ben ik operationeel?</h3>
+        <p>
+          Je hebt een openingsdatum. Je kassa moet het doen. Kies een systeem dat je zelf kunt installeren
+          en instellen, zonder technicus. Als je in een middag je menukaart kunt invoeren en een testbestelling
+          kunt draaien, zit je goed.
+        </p>
+
+        <h3>2. Kan mijn team er direct mee werken?</h3>
+        <p>
+          Je personeel is nieuw, je zaak is nieuw, alles is nieuw. Een goed kassasysteem is intuïtief genoeg
+          dat je team het na een korte uitleg snapt. Test dit door iemand zonder ervaring een bestelling te
+          laten opnemen.
+        </p>
+
+        <h3>3. Wat betaal ik de eerste zes maanden?</h3>
+        <p>
+          Reken door wat je de eerste zes maanden kwijt bent, inclusief hardware, abonnement, transactiekosten
+          en eventuele setupkosten. Vermijd grote investeringen vooraf.
+        </p>
+
+        <h3>4. Zit ik ergens aan vast?</h3>
+        <p>
+          Contract van twaalf maanden? Verplichte hardware? Dit zijn risico&apos;s als starter. Kies
+          maandelijks opzegbaar, zodat je kunt schakelen als het niet bevalt.
+        </p>
+
+        <h3>5. Groeit het mee als mijn zaak groeit?</h3>
+        <p>
+          Je begint klein. Maar misschien wil je over een jaar een terras toevoegen of een tweede locatie.
+          Check nu alvast of je kassasysteem dat aankan zonder opnieuw te beginnen.
+        </p>
+
+        <h2>Veelgemaakte fouten bij nieuwe restaurants</h2>
+        <ul>
+          <li>
+            <strong>Te veel betalen voor features die je niet gebruikt.</strong> Begin simpel, breid later uit.
+          </li>
+          <li>
+            <strong>Kiezen op basis van de demo, niet op basis van dagelijks gebruik.</strong> Vraag een
+            proefperiode en test onder echte omstandigheden.
+          </li>
+          <li>
+            <strong>Hardware kopen die je niet nodig hebt.</strong> Een dure touchscreen-kassa is niet per se
+            beter dan een iPad met Tap to Pay.
+          </li>
+          <li>
+            <strong>Contract tekenen zonder de kleine lettertjes te lezen.</strong> Check opzegtermijn,
+            prijsverhogingen en kosten voor extra gebruikers.
+          </li>
+        </ul>
+
+        <h2>Wat biedt Spont voor nieuwe restaurants?</h2>
+        <ul>
+          <li>Setup in 15 minuten, je doet het zelf</li>
+          <li>Werkt op je eigen iPad en iPhone</li>
+          <li>Tap to Pay ingebouwd, geen losse betaalterminal</li>
+          <li>Maandelijks opzegbaar, geen jaarcontract</li>
+          <li>Begin met de basis, voeg later toe wat je nodig hebt</li>
+          <li>Scherp geprijsd, geen verborgen kosten</li>
+        </ul>
+      </>
+    ),
+  },
+
+  "wat-kost-kassasysteem-restaurant": {
+    title: "Wat kost een kassasysteem voor een restaurant?",
+    metaDescription:
+      "Abonnement, hardware, transactiekosten, support — alle kostenposten op een rij. Zo vergelijk je kassasystemen eerlijk.",
+    date: "20 maart 2026",
+    dateISO: "2026-03-20",
+    category: "Ondernemen",
+    content: (
+      <>
+        <p>
+          Je zoekt een kassasysteem voor je restaurant. De eerste vraag is logisch: wat kost dat? Het eerlijke
+          antwoord: het hangt ervan af. Maar dit artikel zet alle kostenposten op een rij.
+        </p>
+
+        <h2>De vier kostenposten die je moet kennen</h2>
+
+        <h3>1. Het maandabonnement</h3>
+        <p>
+          Bij de meeste aanbieders ligt dit tussen de 29 en 99 euro per maand. Let op: goedkopere pakketten
+          missen vaak functies die je later alsnog nodig hebt. Vraag altijd wat er precies in het abonnement
+          zit.
+        </p>
+
+        <h3>2. Hardware</h3>
+        <p>
+          Sommige leveranciers dwingen je hun hardware te kopen: touchscreen-kassa&apos;s, kassalades,
+          bonprinters en betaalterminals. Dat loopt snel op naar 1.000 tot 3.000 euro. Andere systemen werken
+          op je eigen iPad of iPhone &mdash; bij Spont is een aparte betaalterminal niet nodig dankzij Tap to
+          Pay.
+        </p>
+
+        <h3>3. Transactiekosten</h3>
+        <p>
+          Iedere keer dat een gast met pin of creditcard betaalt, betaal je een percentage. Meestal tussen de
+          1,5% en 2,5% per transactie. Op een maandomzet van 30.000 euro is dat 450 tot 750 euro per maand
+          &mdash; alleen aan transactiekosten. Dit is vaak de grootste kostenpost, maar wordt het minst
+          besproken.
+        </p>
+
+        <h3>4. Setup en support</h3>
+        <p>
+          Sommige systemen rekenen eenmalig 200 tot 500 euro voor installatie en training. Vraag ook wat
+          support kost. Zit dat in je abonnement, of betaal je per gesprek?
+        </p>
+
+        <h2>Rekenvoorbeeld: wat betaal je per maand?</h2>
+        <p>Stel: je hebt een restaurant met een maandomzet van 40.000 euro.</p>
+        <ul>
+          <li>
+            <strong>Traditioneel systeem:</strong> abonnement 69 euro + hardware afgeschreven 55 euro/mnd +
+            transactiekosten 1,9% = 760 euro. Totaal: ~884 euro/mnd.
+          </li>
+          <li>
+            <strong>Spont:</strong> abonnement, eigen hardware (geen extra kosten), lagere transactiekosten
+            via eigen integratie. Totaal: aanzienlijk lager.
+          </li>
+        </ul>
+
+        <h2>Verborgen kosten waar je op moet letten</h2>
+        <ul>
+          <li>
+            <strong>Contractduur.</strong> Bij jaarcontracten betaal je de resterende maanden mee als je eerder
+            wilt stoppen.
+          </li>
+          <li>
+            <strong>Updates en upgrades.</strong> Soms wordt apart gerekend voor nieuwe versies of extra
+            modules.
+          </li>
+          <li>
+            <strong>Extra gebruikers.</strong> Check of je per gebruiker extra betaalt of dat het onbeperkt is.
+          </li>
+          <li>
+            <strong>Koppelingen.</strong> Wil je boekhoudsoftware of reserveringssysteem koppelen? Bij sommige
+            aanbieders kost dat extra per koppeling per maand.
+          </li>
+        </ul>
+
+        <h2>Hoe vergelijk je eerlijk?</h2>
+        <p>Vergelijk niet op abonnementsprijs alleen. Stel voor iedere aanbieder dezelfde vragen:</p>
+        <ul>
+          <li>Wat betaal ik per maand inclusief alles?</li>
+          <li>Welke hardware heb ik nodig en wat kost die?</li>
+          <li>Wat is het transactiepercentage?</li>
+          <li>Zit ik vast aan een contract?</li>
+          <li>Wat kost support?</li>
+          <li>Welke koppelingen heb ik nodig en kosten die extra?</li>
+        </ul>
+
+        <h2>Wat biedt Spont?</h2>
+        <ul>
+          <li>Maandelijks opzegbaar, geen jaarcontract</li>
+          <li>Werkt op je eigen iPad en iPhone, geen verplichte hardware</li>
+          <li>Eigen betaalintegratie, geen losse betaalterminal nodig</li>
+          <li>Tap to Pay op iPhone inbegrepen</li>
+          <li>Support zit in je abonnement</li>
+          <li>Koppelingen met boekhouding en bezorgplatforms inbegrepen</li>
+        </ul>
+      </>
+    ),
+  },
 };
 
 // ─── METADATA ─────────────────────────────────────────────────────────────────

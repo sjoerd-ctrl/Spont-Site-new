@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "bakkerijen",
     "discotheken",
     "bowlingbanen",
+    "evenementen",
   ];
 
   const segmentPages: MetadataRoute.Sitemap = segments.map((segment) => ({
@@ -36,6 +37,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const vergelijkPages: MetadataRoute.Sitemap = [
     "lightspeed-alternatief",
     "untill-alternatief",
+    "tebi-alternatief",
+    "dish-alternatief",
+    "trivec-alternatief",
+    "orderbird-alternatief",
   ].map((slug) => ({
     url: `${baseUrl}/vergelijk/${slug}`,
     lastModified: now,
@@ -46,6 +51,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const blogSlugs = [
     "kassasysteem-festival-evenement",
     "kassasysteem-kiezen-starter",
+    "hoe-werken-kaartbetalingen",
+    "kassasysteem-vergelijken",
+    "meerdere-horecalocaties-beheren",
+    "nieuw-restaurant-welke-kassa",
+    "wat-kost-kassasysteem-restaurant",
+    "tap-to-pay-iphone",
+    "ai-support-revolutie",
   ];
 
   const blogPages: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({

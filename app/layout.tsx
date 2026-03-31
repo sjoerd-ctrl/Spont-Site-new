@@ -6,6 +6,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/shared/CookieBanner";
 import PlausibleAnalytics from "@/components/shared/PlausibleAnalytics";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const notoSerif = Noto_Serif({
   variable: "--font-noto-serif",
@@ -91,6 +92,7 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <PlausibleAnalytics />
         </Suspense>
+        <SpeedInsights />
       </body>
     </html>
   );

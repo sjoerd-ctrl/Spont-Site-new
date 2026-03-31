@@ -18,30 +18,87 @@ function fmt(n: number) {
   }).format(n);
 }
 
+function Toggle({
+  label,
+  sublabel,
+  value,
+  onChange,
+}: {
+  label: string;
+  sublabel?: string;
+  value: boolean;
+  onChange: (v: boolean) => void;
+}) {
+  return (
+    <div className="flex items-center justify-between bg-white border border-[#EBE8E3] rounded-xl px-4 py-3">
+      <div>
+        <p className="text-sm font-medium text-[#1A1714]">{label}</p>
+        {sublabel && <p className="text-xs text-[#5C5550]">{sublabel}</p>}
+      </div>
+      <button
+        type="button"
+        onClick={() => onChange(!value)}
+        className={`relative w-11 h-6 rounded-full transition-colors shrink-0 ml-4 ${
+          value ? "bg-[#2D4B3F]" : "bg-[#EBE8E3]"
+        }`}
+      >
+        <span
+          className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white shadow transition-transform ${
+            value ? "translate-x-5" : "translate-x-0"
+          }`}
+        />
+      </button>
+    </div>
+  );
+}
+
+const LS_INCLUDED: Record<"Basic" | "Core" | "Pro", number> = {
+  Basic: 1,
+  Core: 2,
+  Pro: 3,
+};
+const LS_PLAN_PRICE: Record<"Basic" | "Core" | "Pro", number> = {
+  Basic: 89,
+  Core: 159,
+  Pro: 249,
+};
+
 export default function KostenCalculator({ model, concurrentNaam }: Props) {
   const [omzet, setOmzet] = useState(30000);
   const [transacties, setTransacties] = useState(2500);
   const [pctDebit, setPctDebit] = useState(85);
   const [pctCredit, setPctCredit] = useState(15);
   const [lsPlan, setLsPlan] = useState<"Basic" | "Core" | "Pro">("Core");
+  const [aantalDevices, setAantalDevices] = useState(2);
+  const [heeftQR, setHeeftQR] = useState(false);
+  const [heeftKiosk, setHeeftKiosk] = useState(false);
+  const [heeftOnline, setHeeftOnline] = useState(false);
 
   const debitFrac = pctDebit / 100;
   const creditFrac = pctCredit / 100;
 
-  // ─── Spont ───────────────────────────────────────────────────────────────────
+  // ─── Spont — alles inbegrepen ──────────────────────────────────────────────
   const spontSoftware = 59;
   const spontDebit = transacties * debitFrac * 0.085;
   const spontCredit = omzet * creditFrac * 0.0189;
   const spontTotaal = spontSoftware + spontDebit + spontCredit;
 
-  // ─── Concurrent ──────────────────────────────────────────────────────────────
+  // ─── Lightspeed ────────────────────────────────────────────────────────────
   let concSoftware = 0;
   let concDebit = 0;
   let concCredit = 0;
+  let concExtraDevices = 0;
+  let concQR = 0;
+  let concKiosk = 0;
+  let concOnline = 0;
 
   if (model === "lightspeed") {
-    const planPrijs = { Basic: 89, Core: 159, Pro: 249 }[lsPlan];
-    concSoftware = planPrijs;
+    concSoftware = LS_PLAN_PRICE[lsPlan];
+    const extraDevices = Math.max(0, aantalDevices - LS_INCLUDED[lsPlan]);
+    concExtraDevices = extraDevices * 49;
+    concQR = heeftQR ? 49 : 0;
+    concKiosk = heeftKiosk ? 49 : 0;
+    concOnline = 0; // Lightspeed includes online ordering in paid plans
     concDebit = omzet * debitFrac * 0.014;
     concCredit = omzet * creditFrac * 0.028;
   } else {
@@ -51,11 +108,12 @@ export default function KostenCalculator({ model, concurrentNaam }: Props) {
     concCredit = transacties * creditFrac * 0.05 + omzet * creditFrac * (0.0025 + 0.003);
   }
 
-  const concTotaal = concSoftware + concDebit + concCredit;
+  const concTotaal = concSoftware + concExtraDevices + concQR + concKiosk + concOnline + concDebit + concCredit;
   const besparing = concTotaal - spontTotaal;
   const besparingPct = concTotaal > 0 ? (besparing / concTotaal) * 100 : 0;
-
   const spontWint = besparing > 0;
+
+  const isLS = model === "lightspeed";
 
   return (
     <div className="bg-[#F6F3EE] rounded-3xl p-8 md:p-10">
@@ -66,19 +124,14 @@ export default function KostenCalculator({ model, concurrentNaam }: Props) {
         Vul je situatie in en zie wat je per maand betaalt bij {concurrentNaam} versus Spont.
       </p>
 
-      {/* ─── Inputs ─── */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
+      {/* ─── Basis inputs ─── */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
         <label className="flex flex-col gap-1.5">
-          <span className="text-xs font-semibold text-[#5C5550] uppercase tracking-wider">
-            Omzet per maand
-          </span>
+          <span className="text-xs font-semibold text-[#5C5550] uppercase tracking-wider">Omzet per maand</span>
           <div className="relative">
             <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#5C5550] text-sm">€</span>
             <input
-              type="number"
-              min={0}
-              step={1000}
-              value={omzet}
+              type="number" min={0} step={1000} value={omzet}
               onChange={(e) => setOmzet(Number(e.target.value))}
               className="w-full bg-white border border-[#EBE8E3] rounded-xl pl-8 pr-4 py-3 text-sm text-[#1A1714] focus:outline-none focus:ring-2 focus:ring-[#CC5533]/30"
             />
@@ -86,34 +139,20 @@ export default function KostenCalculator({ model, concurrentNaam }: Props) {
         </label>
 
         <label className="flex flex-col gap-1.5">
-          <span className="text-xs font-semibold text-[#5C5550] uppercase tracking-wider">
-            Transacties per maand
-          </span>
+          <span className="text-xs font-semibold text-[#5C5550] uppercase tracking-wider">Transacties per maand</span>
           <input
-            type="number"
-            min={0}
-            step={100}
-            value={transacties}
+            type="number" min={0} step={100} value={transacties}
             onChange={(e) => setTransacties(Number(e.target.value))}
             className="w-full bg-white border border-[#EBE8E3] rounded-xl px-4 py-3 text-sm text-[#1A1714] focus:outline-none focus:ring-2 focus:ring-[#CC5533]/30"
           />
         </label>
 
         <label className="flex flex-col gap-1.5">
-          <span className="text-xs font-semibold text-[#5C5550] uppercase tracking-wider">
-            % Debitbetalingen (PIN)
-          </span>
+          <span className="text-xs font-semibold text-[#5C5550] uppercase tracking-wider">% Debitbetalingen (PIN)</span>
           <div className="relative">
             <input
-              type="number"
-              min={0}
-              max={100}
-              value={pctDebit}
-              onChange={(e) => {
-                const v = Math.min(100, Number(e.target.value));
-                setPctDebit(v);
-                setPctCredit(100 - v);
-              }}
+              type="number" min={0} max={100} value={pctDebit}
+              onChange={(e) => { const v = Math.min(100, Number(e.target.value)); setPctDebit(v); setPctCredit(100 - v); }}
               className="w-full bg-white border border-[#EBE8E3] rounded-xl px-4 pr-8 py-3 text-sm text-[#1A1714] focus:outline-none focus:ring-2 focus:ring-[#CC5533]/30"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[#5C5550] text-sm">%</span>
@@ -121,51 +160,98 @@ export default function KostenCalculator({ model, concurrentNaam }: Props) {
         </label>
 
         <label className="flex flex-col gap-1.5">
-          <span className="text-xs font-semibold text-[#5C5550] uppercase tracking-wider">
-            % Creditbetalingen
-          </span>
+          <span className="text-xs font-semibold text-[#5C5550] uppercase tracking-wider">% Creditbetalingen</span>
           <div className="relative">
             <input
-              type="number"
-              min={0}
-              max={100}
-              value={pctCredit}
-              onChange={(e) => {
-                const v = Math.min(100, Number(e.target.value));
-                setPctCredit(v);
-                setPctDebit(100 - v);
-              }}
+              type="number" min={0} max={100} value={pctCredit}
+              onChange={(e) => { const v = Math.min(100, Number(e.target.value)); setPctCredit(v); setPctDebit(100 - v); }}
               className="w-full bg-white border border-[#EBE8E3] rounded-xl px-4 pr-8 py-3 text-sm text-[#1A1714] focus:outline-none focus:ring-2 focus:ring-[#CC5533]/30"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[#5C5550] text-sm">%</span>
           </div>
         </label>
 
-        {model === "lightspeed" && (
-          <label className="flex flex-col gap-1.5 sm:col-span-2">
-            <span className="text-xs font-semibold text-[#5C5550] uppercase tracking-wider">
-              Lightspeed plan
-            </span>
+        {/* Lightspeed plan keuze */}
+        {isLS && (
+          <div className="flex flex-col gap-1.5 sm:col-span-2">
+            <span className="text-xs font-semibold text-[#5C5550] uppercase tracking-wider">Lightspeed plan</span>
             <div className="flex gap-3">
               {(["Basic", "Core", "Pro"] as const).map((p) => (
                 <button
-                  key={p}
-                  onClick={() => setLsPlan(p)}
+                  key={p} onClick={() => setLsPlan(p)}
                   className={`flex-1 py-2.5 rounded-xl text-sm font-semibold border transition-colors ${
                     lsPlan === p
                       ? "bg-[#1A1714] text-white border-[#1A1714]"
                       : "bg-white text-[#5C5550] border-[#EBE8E3] hover:border-[#1A1714]"
                   }`}
                 >
-                  {p} — €{p === "Basic" ? 89 : p === "Core" ? 159 : 249}
+                  {p} — €{LS_PLAN_PRICE[p]}
+                  <span className="block text-[10px] font-normal opacity-60">{LS_INCLUDED[p]} licentie{LS_INCLUDED[p] > 1 ? "s" : ""} incl.</span>
                 </button>
               ))}
+            </div>
+          </div>
+        )}
+
+        {/* Verkooppunten */}
+        {isLS && (
+          <label className="flex flex-col gap-1.5 sm:col-span-2">
+            <span className="text-xs font-semibold text-[#5C5550] uppercase tracking-wider">
+              Aantal verkooppunten / devices
+              <span className="ml-2 normal-case font-normal text-[#CC5533]">
+                {aantalDevices > LS_INCLUDED[lsPlan]
+                  ? `+${aantalDevices - LS_INCLUDED[lsPlan]} extra × €49 = €${(aantalDevices - LS_INCLUDED[lsPlan]) * 49}/mnd bij ${concurrentNaam}`
+                  : `${LS_INCLUDED[lsPlan] - aantalDevices + (aantalDevices <= LS_INCLUDED[lsPlan] ? 0 : 0)} inbegrepen in plan`}
+              </span>
+            </span>
+            <div className="flex items-center gap-4 bg-white border border-[#EBE8E3] rounded-xl px-4 py-3">
+              <button
+                type="button"
+                onClick={() => setAantalDevices(Math.max(1, aantalDevices - 1))}
+                className="w-8 h-8 rounded-full bg-[#F6F3EE] flex items-center justify-center text-lg font-semibold text-[#1A1714] hover:bg-[#EBE8E3] transition-colors"
+              >−</button>
+              <span className="flex-1 text-center text-lg font-semibold text-[#1A1714]">{aantalDevices}</span>
+              <button
+                type="button"
+                onClick={() => setAantalDevices(aantalDevices + 1)}
+                className="w-8 h-8 rounded-full bg-[#F6F3EE] flex items-center justify-center text-lg font-semibold text-[#1A1714] hover:bg-[#EBE8E3] transition-colors"
+              >+</button>
             </div>
           </label>
         )}
       </div>
 
-      {/* ─── Resultaten ─── */}
+      {/* ─── Modules / opties ─── */}
+      {isLS && (
+        <div className="mb-8">
+          <p className="text-xs font-semibold text-[#5C5550] uppercase tracking-wider mb-3">
+            Welke modules gebruik je?
+            <span className="ml-2 normal-case font-normal text-[#2D4B3F]">Inbegrepen bij Spont — extra kosten bij {concurrentNaam}</span>
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <Toggle
+              label="QR-bestellen"
+              sublabel={heeftQR ? `+€49/mnd bij ${concurrentNaam}` : "Niet actief"}
+              value={heeftQR}
+              onChange={setHeeftQR}
+            />
+            <Toggle
+              label="Kiosken"
+              sublabel={heeftKiosk ? `+€49/mnd bij ${concurrentNaam}` : "Niet actief"}
+              value={heeftKiosk}
+              onChange={setHeeftKiosk}
+            />
+            <Toggle
+              label="Online bestellen"
+              sublabel="Inbegrepen bij beide"
+              value={heeftOnline}
+              onChange={setHeeftOnline}
+            />
+          </div>
+        </div>
+      )}
+
+      {/* ─── Resultaten tabel ─── */}
       <div className="rounded-2xl overflow-hidden border border-[#EBE8E3]">
         <table className="w-full text-sm">
           <thead>
@@ -181,6 +267,27 @@ export default function KostenCalculator({ model, concurrentNaam }: Props) {
               <td className="px-5 py-3 text-right text-[#1A1714] font-medium">{fmt(spontSoftware)}</td>
               <td className="px-5 py-3 text-right text-[#5C5550]">{fmt(concSoftware)}</td>
             </tr>
+            {isLS && concExtraDevices > 0 && (
+              <tr className="bg-[#FCF9F4]">
+                <td className="px-5 py-3 text-[#5C5550]">Extra verkooppunten ({aantalDevices - LS_INCLUDED[lsPlan]} × €49)</td>
+                <td className="px-5 py-3 text-right text-[#2D4B3F] font-medium">Inbegrepen</td>
+                <td className="px-5 py-3 text-right text-[#5C5550]">{fmt(concExtraDevices)}</td>
+              </tr>
+            )}
+            {isLS && heeftQR && (
+              <tr className="bg-white">
+                <td className="px-5 py-3 text-[#5C5550]">QR-bestellen</td>
+                <td className="px-5 py-3 text-right text-[#2D4B3F] font-medium">Inbegrepen</td>
+                <td className="px-5 py-3 text-right text-[#5C5550]">{fmt(concQR)}</td>
+              </tr>
+            )}
+            {isLS && heeftKiosk && (
+              <tr className={heeftQR ? "bg-[#FCF9F4]" : "bg-white"}>
+                <td className="px-5 py-3 text-[#5C5550]">Kiosken</td>
+                <td className="px-5 py-3 text-right text-[#2D4B3F] font-medium">Inbegrepen</td>
+                <td className="px-5 py-3 text-right text-[#5C5550]">{fmt(concKiosk)}</td>
+              </tr>
+            )}
             <tr className="bg-[#FCF9F4]">
               <td className="px-5 py-3 text-[#5C5550]">Debetbetalingen</td>
               <td className="px-5 py-3 text-right text-[#1A1714] font-medium">{fmt(spontDebit)}</td>

@@ -88,7 +88,8 @@ const testimonials = [
 const plans = [
   {
     name: "Start",
-    price: "€89",
+    price: "€69",
+    priceNote: "*",
     period: "/maand",
     description: "1–2 verkooppunten. Alle functies inbegrepen.",
     features: ["Kassasysteem, handhelds, KDS", "QR-bestellen & online bestellen", "Loyalty & BI-rapportages", "AI + ticketsupport"],
@@ -96,7 +97,8 @@ const plans = [
   },
   {
     name: "Pro",
-    price: "€169",
+    price: "€149",
+    priceNote: "*",
     period: "/maand",
     description: "Onbeperkt verkooppunten. Meerdere vestigingen.",
     features: ["Alles van Start", "Onbeperkte verkooppunten", "Meerdere vestigingen in één dashboard", "AI-inzichten & prioriteitstickets"],
@@ -361,6 +363,9 @@ export default function HomePage() {
                   </p>
                   <p className={`text-4xl font-serif font-bold ${plan.highlight ? "text-white" : "text-[#1A1714]"}`}>
                     {plan.price}
+                    {"priceNote" in plan && (
+                      <span className="text-lg font-semibold text-[#CC5533]">{(plan as { priceNote: string }).priceNote}</span>
+                    )}
                     <span className={`text-base font-normal ml-1 ${plan.highlight ? "text-white/60" : "text-[#5C5550]"}`}>
                       {plan.period}
                     </span>
@@ -388,7 +393,10 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="text-center mt-8">
+          <p className="text-center text-[#5C5550] text-xs mt-6">
+            <span className="font-semibold">* Met Spont Payments.</span> Zonder Payments: €89 (Start) of €169 (Pro) per maand.
+          </p>
+          <div className="text-center mt-4">
             <Link href="/prijzen" className="text-sm text-[#CC5533] font-semibold hover:underline">
               Alle prijsdetails bekijken →
             </Link>

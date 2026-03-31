@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import CTABanner from "@/components/shared/CTABanner";
-import { Heart, Users, Zap, Shield } from "lucide-react";
+import { Heart, Users, Zap, Shield, Handshake, MapPin, PhoneCall } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Over ons",
@@ -41,14 +41,14 @@ const kernwaarden = [
 
 const team = [
   {
-    name: "Flip van den Bosch",
-    role: "Co-founder & CEO",
-    bio: "Flip groeide op in de horeca. Hij zag hoe kassasystemen het werk zwaarder maakten in plaats van makkelijker. Dat wilde hij anders.",
+    name: "Sjoerd van den Bosch",
+    role: "Co-founder",
+    bio: "Sjoerd bouwt het systeem dat Flip voor ogen had. Technologie die zichzelf wegcijfert, zodat de horeca centraal staat.",
   },
   {
-    name: "Sjoerd van den Bosch",
-    role: "Co-founder & CTO",
-    bio: "Sjoerd bouwt het systeem dat Flip voor ogen had. Technologie die zichzelf wegcijfert, zodat de horeca centraal staat.",
+    name: "Flip van den Bosch",
+    role: "Co-founder",
+    bio: "Flip groeide op in de horeca. Hij zag hoe kassasystemen het werk zwaarder maakten in plaats van makkelijker. Dat wilde hij anders.",
   },
 ];
 
@@ -203,6 +203,40 @@ export default function OverOnsPage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* ─── DEALERS BLOCK ─── */}
+          <div className="mt-8">
+            <div className="card-hover bg-[#2D4B3F] rounded-3xl overflow-hidden shadow-sm">
+              <div className="w-full h-20 bg-[#243D32] flex items-end px-8 pt-8">
+                <div className="w-16 h-16 rounded-full bg-[#CC5533]/20 flex items-center justify-center">
+                  <Handshake size={28} className="text-[#CC5533]" />
+                </div>
+              </div>
+              <div className="p-8">
+                <h3 className="font-serif font-semibold text-xl text-white mb-1">
+                  Ons dealernetwerk
+                </h3>
+                <p className="text-[#CC5533] text-sm font-medium mb-4">Lokale ontzorging, overal in Nederland</p>
+                <p className="text-white/70 text-sm leading-relaxed mb-6">
+                  Spont werkt samen met een netwerk van gecertificeerde dealers. Zij helpen bij de installatie, training en dagelijkse ondersteuning — zodat jij je op je zaak kunt richten.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div className="flex items-start gap-3">
+                    <MapPin size={16} className="text-[#CC5533] shrink-0 mt-0.5" />
+                    <p className="text-white/70 text-sm">Dealers door heel Nederland en België</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <PhoneCall size={16} className="text-[#CC5533] shrink-0 mt-0.5" />
+                    <p className="text-white/70 text-sm">Persoonlijk aanspreekpunt in jouw regio</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Users size={16} className="text-[#CC5533] shrink-0 mt-0.5" />
+                    <p className="text-white/70 text-sm">Installatie, training en opvolging geregeld</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

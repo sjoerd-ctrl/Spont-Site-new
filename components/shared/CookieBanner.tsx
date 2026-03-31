@@ -25,11 +25,11 @@ export default function CookieBanner() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6">
-      <div className="max-w-4xl mx-auto bg-[#1A1714] rounded-2xl p-6 md:flex md:items-center md:gap-6 shadow-2xl">
+      <div className="max-w-4xl mx-auto bg-[#111827] rounded-2xl p-6 md:flex md:items-center md:gap-6 shadow-2xl">
         <p className="text-white/80 text-sm leading-relaxed flex-1 mb-4 md:mb-0">
           Wij gebruiken functionele en analytische cookies om de website te
           verbeteren. Geen tracking zonder jouw toestemming.{" "}
-          <Link href="/privacy" className="text-[#CC5533] hover:underline">
+          <Link href="/privacy" className="text-[#4353FF] hover:underline">
             Privacyverklaring
           </Link>
         </p>
@@ -42,7 +42,7 @@ export default function CookieBanner() {
           </button>
           <button
             onClick={accept}
-            className="px-5 py-2.5 rounded-full text-sm font-semibold bg-[#CC5533] hover:bg-[#A33818] text-white transition-colors"
+            className="px-5 py-2.5 rounded-full text-sm font-semibold bg-[#4353FF] hover:bg-[#3344DD] text-white transition-colors"
           >
             Accepteren
           </button>

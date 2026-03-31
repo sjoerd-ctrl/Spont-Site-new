@@ -163,13 +163,13 @@ export default function FeaturesPage() {
             alt="Modern restaurant interieur"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-[#1A1714]/70" />
+          <div className="absolute inset-0 bg-[#111827]/70" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center w-full">
-          <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-4">
+          <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-4">
             Alle functies
           </p>
-          <h1 className="text-5xl md:text-6xl font-serif text-white font-semibold leading-tight mb-6">
+          <h1 className="text-5xl md:text-6xl font-sans text-white font-semibold leading-tight mb-6">
             Eén systeem voor alles.
           </h1>
           <p className="text-white/70 text-lg max-w-2xl mx-auto mb-6">
@@ -182,7 +182,7 @@ export default function FeaturesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="https://admin.spont.nl"
-              className="bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold px-8 py-4 rounded-full transition-colors"
+              className="bg-[#4353FF] hover:bg-[#3344DD] text-white font-semibold px-8 py-4 rounded-full transition-colors"
             >
               Start direct
             </a>
@@ -197,13 +197,13 @@ export default function FeaturesPage() {
       </section>
 
       {/* ─── KERNOPLOSSINGEN ─── */}
-      <section className="bg-[#FCF9F4] py-24 px-6">
+      <section className="bg-[#FFFFFF] py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-3">
               Kernfuncties
             </p>
-            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#1A1714]">
+            <h2 className="text-3xl md:text-4xl font-sans font-semibold text-[#111827]">
               De kern van het Spont-platform.
             </h2>
           </div>
@@ -214,15 +214,15 @@ export default function FeaturesPage() {
               return (
                 <div
                   key={s.title}
-                  className="card-hover bg-[#F6F3EE] rounded-3xl p-8 hover:bg-[#F0EDE8]"
+                  className="card-hover bg-[#F9FAFB] rounded-3xl p-8 hover:bg-[#F3F4F6]"
                 >
-                  <div className="w-12 h-12 bg-[#CC5533]/10 rounded-2xl flex items-center justify-center mb-5">
-                    <Icon size={22} className="text-[#CC5533]" />
+                  <div className="w-12 h-12 bg-[#4353FF]/10 rounded-2xl flex items-center justify-center mb-5">
+                    <Icon size={22} className="text-[#4353FF]" />
                   </div>
-                  <h3 className="font-serif font-semibold text-lg text-[#1A1714] mb-2">
+                  <h3 className="font-sans font-semibold text-lg text-[#111827] mb-2">
                     {s.title}
                   </h3>
-                  <p className="text-[#5C5550] text-sm leading-relaxed">{s.body}</p>
+                  <p className="text-[#6B7280] text-sm leading-relaxed">{s.body}</p>
                 </div>
               );
             })}
@@ -231,22 +231,22 @@ export default function FeaturesPage() {
       </section>
 
       {/* ─── EXTRA FUNCTIES ─── */}
-      <section className="bg-[#F6F3EE] py-20 px-6">
+      <section className="bg-[#F9FAFB] py-20 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-2xl font-serif font-semibold text-[#1A1714]">
+            <h2 className="text-2xl font-sans font-semibold text-[#111827]">
               Extra functionaliteit.
             </h2>
-            <p className="text-[#5C5550] mt-2">Handige extras om je zaak nog soepeler te laten draaien.</p>
+            <p className="text-[#6B7280] mt-2">Handige extras om je zaak nog soepeler te laten draaien.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {extras.map((e) => {
               const Icon = e.icon;
               return (
                 <div key={e.title} className="card-hover bg-white rounded-3xl p-6 text-center">
-                  <Icon size={22} className="text-[#CC5533] mx-auto mb-3" />
-                  <h3 className="font-semibold text-[#1A1714] text-sm mb-1">{e.title}</h3>
-                  <p className="text-[#5C5550] text-xs leading-relaxed">{e.body}</p>
+                  <Icon size={22} className="text-[#4353FF] mx-auto mb-3" />
+                  <h3 className="font-semibold text-[#111827] text-sm mb-1">{e.title}</h3>
+                  <p className="text-[#6B7280] text-xs leading-relaxed">{e.body}</p>
                 </div>
               );
             })}
@@ -255,14 +255,14 @@ export default function FeaturesPage() {
       </section>
 
       {/* ─── AI SECTIE ─── */}
-      <section className="bg-[#2D4B3F] py-20 px-6">
+      <section className="bg-[#111827] py-20 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-4">
+              <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-4">
                 AI-first
               </p>
-              <h2 className="text-3xl md:text-4xl font-serif text-white font-semibold mb-6">
+              <h2 className="text-3xl md:text-4xl font-sans text-white font-semibold mb-6">
                 AI maakt het verschil.
               </h2>
               <p className="text-white/70 leading-relaxed">
@@ -281,7 +281,7 @@ export default function FeaturesPage() {
                   key={item}
                   className="card-hover bg-white/10 rounded-2xl px-5 py-4 flex items-center gap-3"
                 >
-                  <Bot size={16} className="text-[#CC5533] shrink-0" />
+                  <Bot size={16} className="text-[#4353FF] shrink-0" />
                   <span className="text-white/90 text-sm">{item}</span>
                 </div>
               ))}

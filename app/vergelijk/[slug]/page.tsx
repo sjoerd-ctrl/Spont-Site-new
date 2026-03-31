@@ -279,8 +279,8 @@ const vergelijkingen: Record<string, Vergelijking> = {
 // ─── HELPERS ──────────────────────────────────────────────────────────────────
 
 function CelIcon({ value }: { value: string }) {
-  if (value.startsWith("✅")) return <CheckCircle size={16} className="text-[#2D4B3F] inline mr-1 shrink-0" />;
-  if (value.startsWith("❌")) return <XCircle size={16} className="text-[#CC5533] inline mr-1 shrink-0" />;
+  if (value.startsWith("✅")) return <CheckCircle size={16} className="text-[#111827] inline mr-1 shrink-0" />;
+  if (value.startsWith("❌")) return <XCircle size={16} className="text-[#4353FF] inline mr-1 shrink-0" />;
   if (value.startsWith("⚠️")) return <AlertCircle size={16} className="text-amber-500 inline mr-1 shrink-0" />;
   return null;
 }
@@ -325,18 +325,18 @@ export default async function VergelijkPage({
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="bg-[#FCF9F4] pt-32 pb-16 px-6 border-b border-[#EBE8E3]">
+      <section className="bg-[#FFFFFF] pt-32 pb-16 px-6 border-b border-[#E5E7EB]">
         <div className="max-w-4xl mx-auto">
-          <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-4">
+          <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-4">
             Vergelijking
           </p>
-          <h1 className="text-4xl md:text-5xl font-serif text-[#1A1714] font-semibold mb-5 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-sans text-[#111827] font-semibold mb-5 leading-tight">
             {v.h1}
           </h1>
-          <p className="text-[#5C5550] text-lg max-w-2xl mb-8">{v.subkop}</p>
+          <p className="text-[#6B7280] text-lg max-w-2xl mb-8">{v.subkop}</p>
           <a
             href="https://admin.spont.nl"
-            className="bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold px-8 py-4 rounded-full transition-colors inline-block"
+            className="bg-[#4353FF] hover:bg-[#3344DD] text-white font-semibold px-8 py-4 rounded-full transition-colors inline-block"
           >
             Start direct
           </a>
@@ -344,29 +344,29 @@ export default async function VergelijkPage({
       </section>
 
       {/* ─── SAMENVATTING ─── */}
-      <section className="bg-[#FCF9F4] py-16 px-6">
+      <section className="bg-[#FFFFFF] py-16 px-6">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="card-hover bg-[#2D4B3F] rounded-3xl p-8 text-white">
+          <div className="card-hover bg-[#111827] rounded-3xl p-8 text-white">
             <p className="text-xs font-semibold uppercase tracking-widest text-white/50 mb-3">Spont</p>
             <p className="text-white/90 leading-relaxed">{v.spontSamenvatting}</p>
           </div>
-          <div className="card-hover bg-[#F6F3EE] rounded-3xl p-8">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#CC5533] mb-3">{v.concurrentNaam}</p>
-            <p className="text-[#5C5550] leading-relaxed">{v.concurrentSamenvatting}</p>
+          <div className="card-hover bg-[#F9FAFB] rounded-3xl p-8">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#4353FF] mb-3">{v.concurrentNaam}</p>
+            <p className="text-[#6B7280] leading-relaxed">{v.concurrentSamenvatting}</p>
           </div>
         </div>
       </section>
 
       {/* ─── VERGELIJKINGSTABEL ─── */}
-      <section className="bg-[#F6F3EE] py-16 px-6">
+      <section className="bg-[#F9FAFB] py-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-serif font-semibold text-[#1A1714] mb-8">
+          <h2 className="text-2xl md:text-3xl font-sans font-semibold text-[#111827] mb-8">
             Vergelijking op een rij
           </h2>
-          <div className="rounded-3xl overflow-hidden border border-[#EBE8E3]">
+          <div className="rounded-3xl overflow-hidden border border-[#E5E7EB]">
             <table className="w-full text-sm">
               <thead>
-                <tr className="bg-[#1A1714] text-white">
+                <tr className="bg-[#111827] text-white">
                   <th className="text-left px-6 py-4 font-medium text-white/60 w-1/3">Criterium</th>
                   <th className="text-left px-6 py-4 font-semibold">Spont</th>
                   <th className="text-left px-6 py-4 font-medium text-white/80">{v.concurrentNaam}</th>
@@ -376,16 +376,16 @@ export default async function VergelijkPage({
                 {v.tabel.map((rij, i) => (
                   <tr
                     key={rij.criterium}
-                    className={i % 2 === 0 ? "bg-white" : "bg-[#FCF9F4]"}
+                    className={i % 2 === 0 ? "bg-white" : "bg-[#FFFFFF]"}
                   >
-                    <td className="px-6 py-4 text-[#5C5550] font-medium">{rij.criterium}</td>
-                    <td className="px-6 py-4 text-[#1A1714] font-medium">
+                    <td className="px-6 py-4 text-[#6B7280] font-medium">{rij.criterium}</td>
+                    <td className="px-6 py-4 text-[#111827] font-medium">
                       <span className="inline-flex items-start gap-1">
                         <CelIcon value={rij.spont} />
                         <CelText value={rij.spont} />
                       </span>
                     </td>
-                    <td className="px-6 py-4 text-[#5C5550]">
+                    <td className="px-6 py-4 text-[#6B7280]">
                       <span className="inline-flex items-start gap-1">
                         <CelIcon value={rij.concurrent} />
                         <CelText value={rij.concurrent} />
@@ -401,7 +401,7 @@ export default async function VergelijkPage({
 
       {/* ─── CALCULATOR ─── */}
       {v.calculator && (
-        <section className="bg-[#FCF9F4] py-16 px-6">
+        <section className="bg-[#FFFFFF] py-16 px-6">
           <div className="max-w-4xl mx-auto">
             <KostenCalculator model={v.calculator} concurrentNaam={v.concurrentNaam} />
           </div>
@@ -409,33 +409,33 @@ export default async function VergelijkPage({
       )}
 
       {/* ─── VOOR WIE ─── */}
-      <section className="bg-[#FCF9F4] py-16 px-6">
+      <section className="bg-[#FFFFFF] py-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-serif font-semibold text-[#1A1714] mb-8">
+          <h2 className="text-2xl md:text-3xl font-sans font-semibold text-[#111827] mb-8">
             Voor wie is welk systeem?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="card-hover bg-[#2D4B3F] rounded-3xl p-8">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#CC5533] mb-4">
+            <div className="card-hover bg-[#111827] rounded-3xl p-8">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#4353FF] mb-4">
                 Kies Spont als…
               </p>
               <ul className="space-y-3">
                 {v.kiesSpont.map((punt) => (
                   <li key={punt} className="flex items-start gap-3 text-white/90 text-sm">
-                    <CheckCircle size={16} className="text-[#CC5533] shrink-0 mt-0.5" />
+                    <CheckCircle size={16} className="text-[#4353FF] shrink-0 mt-0.5" />
                     {punt}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="card-hover bg-[#F6F3EE] rounded-3xl p-8">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#CC5533] mb-4">
+            <div className="card-hover bg-[#F9FAFB] rounded-3xl p-8">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#4353FF] mb-4">
                 Kies {v.concurrentNaam} als…
               </p>
               <ul className="space-y-3">
                 {v.kiesConcurrent.map((punt) => (
-                  <li key={punt} className="flex items-start gap-3 text-[#5C5550] text-sm">
-                    <CheckCircle size={16} className="text-[#5C5550] shrink-0 mt-0.5" />
+                  <li key={punt} className="flex items-start gap-3 text-[#6B7280] text-sm">
+                    <CheckCircle size={16} className="text-[#6B7280] shrink-0 mt-0.5" />
                     {punt}
                   </li>
                 ))}
@@ -446,13 +446,13 @@ export default async function VergelijkPage({
       </section>
 
       {/* ─── QUOTE ─── */}
-      <section className="bg-[#F6F3EE] py-16 px-6">
+      <section className="bg-[#F9FAFB] py-16 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <blockquote className="font-serif text-2xl text-[#1A1714] leading-snug italic mb-6">
+          <blockquote className="font-sans text-2xl text-[#111827] leading-snug italic mb-6">
             &ldquo;{v.quote.text}&rdquo;
           </blockquote>
-          <p className="text-[#5C5550] text-sm font-medium">{v.quote.name}</p>
-          <p className="text-[#5C5550] text-xs mt-1">{v.quote.role}</p>
+          <p className="text-[#6B7280] text-sm font-medium">{v.quote.name}</p>
+          <p className="text-[#6B7280] text-xs mt-1">{v.quote.role}</p>
         </div>
       </section>
 

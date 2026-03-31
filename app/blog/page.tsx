@@ -89,36 +89,36 @@ export default function BlogPage() {
         }}
       />
 
-      <section className="bg-[#FCF9F4] pt-32 pb-16 px-6">
+      <section className="bg-[#FFFFFF] pt-32 pb-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-4">Blog</p>
-          <h1 className="text-5xl font-serif text-[#1A1714] font-semibold mb-4">
+          <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-4">Blog</p>
+          <h1 className="text-5xl font-sans text-[#111827] font-semibold mb-4">
             Kennis voor de horeca.
           </h1>
-          <p className="text-[#5C5550] text-lg">
+          <p className="text-[#6B7280] text-lg">
             Praktische artikelen over kassatechnologie, betalingen en het runnen van een horecazaak.
           </p>
         </div>
       </section>
 
-      <section className="bg-[#FCF9F4] pb-24 px-6">
+      <section className="bg-[#FFFFFF] pb-24 px-6">
         <div className="max-w-4xl mx-auto space-y-4">
           {articles.map((a) => (
             <Link
               key={a.slug}
               href={`/blog/${a.slug}`}
-              className="card-hover cursor-pointer block bg-[#F6F3EE] hover:bg-[#F0EDE8] rounded-3xl p-8 group"
+              className="card-hover cursor-pointer block bg-[#F9FAFB] hover:bg-[#F3F4F6] rounded-3xl p-8 group"
             >
               <div className="flex items-center gap-3 mb-3">
-                <span className="text-xs font-semibold text-[#CC5533] uppercase tracking-widest">
+                <span className="text-xs font-semibold text-[#4353FF] uppercase tracking-widest">
                   {a.category}
                 </span>
-                <span className="text-[#5C5550] text-xs">{a.date}</span>
+                <span className="text-[#6B7280] text-xs">{a.date}</span>
               </div>
-              <h2 className="font-serif text-xl font-semibold text-[#1A1714] mb-2 group-hover:text-[#CC5533] transition-colors">
+              <h2 className="font-sans text-xl font-semibold text-[#111827] mb-2 group-hover:text-[#4353FF] transition-colors">
                 {a.title}
               </h2>
-              <p className="text-[#5C5550] text-sm leading-relaxed">{a.excerpt}</p>
+              <p className="text-[#6B7280] text-sm leading-relaxed">{a.excerpt}</p>
             </Link>
           ))}
         </div>

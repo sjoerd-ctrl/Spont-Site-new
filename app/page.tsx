@@ -142,18 +142,18 @@ export default function HomePage() {
             alt="Restaurant"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-[#1A1714]/65" />
+          <div className="absolute inset-0 bg-[#111827]/65" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-20 w-full">
           <div className="max-w-2xl">
             <HeroReveal delay={0}>
-              <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-6">
+              <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-6">
                 Kassasysteem voor de horeca
               </p>
             </HeroReveal>
             <HeroReveal delay={0.1}>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-white font-semibold leading-[1.05] mb-6">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-sans text-white font-semibold leading-[1.05] mb-6">
                 Jouw kassa.
                 <br />
                 <em className="not-italic text-white/80">Jouw tempo.</em>
@@ -169,7 +169,7 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="https://admin.spont.nl"
-                  className="bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold px-8 py-4 rounded-full transition-colors text-base inline-block text-center"
+                  className="bg-[#4353FF] hover:bg-[#3344DD] text-white font-semibold px-8 py-4 rounded-full transition-colors text-base inline-block text-center"
                 >
                   Start direct
                 </a>
@@ -186,7 +186,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── TRUST STRIP ─── */}
-      <section className="bg-white border-b border-[#EBE8E3] py-10 px-6">
+      <section className="bg-white border-b border-[#E5E7EB] py-10 px-6">
         <Stagger className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-6">
           {[
             { icon: Zap,         label: "Zelfde dag nog online" },
@@ -196,26 +196,26 @@ export default function HomePage() {
             { icon: Bot,         label: "AI + ticketsupport inbegrepen" },
           ].map(({ icon: Icon, label }) => (
             <StaggerItem key={label} className="flex items-center gap-3">
-              <div className="shrink-0 w-9 h-9 rounded-xl bg-[#FCF9F4] flex items-center justify-center">
-                <Icon size={18} className="text-[#CC5533]" />
+              <div className="shrink-0 w-9 h-9 rounded-xl bg-[#FFFFFF] flex items-center justify-center">
+                <Icon size={18} className="text-[#4353FF]" />
               </div>
-              <span className="text-sm font-medium text-[#1A1714] leading-tight">{label}</span>
+              <span className="text-sm font-medium text-[#111827] leading-tight">{label}</span>
             </StaggerItem>
           ))}
         </Stagger>
       </section>
 
       {/* ─── WHY SPONT ─── */}
-      <section className="bg-[#FCF9F4] py-24 px-6">
+      <section className="bg-[#FFFFFF] py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <FadeUp className="text-center mb-16">
-            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-3">
               Waarom Spont?
             </p>
-            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#1A1714]">
+            <h2 className="text-3xl md:text-4xl font-sans font-semibold text-[#111827]">
               Meer tafels, minder gedoe.
             </h2>
-            <p className="text-[#5C5550] mt-4 max-w-xl mx-auto">
+            <p className="text-[#6B7280] mt-4 max-w-xl mx-auto">
               Alles wat je nodig hebt. Niks wat je niet gebruikt.
             </p>
           </FadeUp>
@@ -225,14 +225,14 @@ export default function HomePage() {
               const Icon = vp.icon;
               return (
                 <StaggerItem key={vp.title} className="h-full">
-                  <div className="card-hover bg-[#F6F3EE] rounded-3xl p-8 hover:bg-[#F0EDE8] h-full flex flex-col">
-                    <div className="w-12 h-12 bg-[#CC5533]/10 rounded-2xl flex items-center justify-center mb-5 shrink-0">
-                      <Icon size={22} className="text-[#CC5533]" />
+                  <div className="card-hover bg-[#F9FAFB] rounded-3xl p-8 hover:bg-[#F3F4F6] h-full flex flex-col">
+                    <div className="w-12 h-12 bg-[#4353FF]/10 rounded-2xl flex items-center justify-center mb-5 shrink-0">
+                      <Icon size={22} className="text-[#4353FF]" />
                     </div>
-                    <h3 className="font-serif font-semibold text-lg text-[#1A1714] mb-2">
+                    <h3 className="font-sans font-semibold text-lg text-[#111827] mb-2">
                       {vp.title}
                     </h3>
-                    <p className="text-[#5C5550] text-sm leading-relaxed">{vp.body}</p>
+                    <p className="text-[#6B7280] text-sm leading-relaxed">{vp.body}</p>
                   </div>
                 </StaggerItem>
               );
@@ -242,13 +242,13 @@ export default function HomePage() {
       </section>
 
       {/* ─── FEATURE SHOWCASE ─── */}
-      <section className="bg-[#F6F3EE] py-24 px-6">
+      <section className="bg-[#F9FAFB] py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <FadeUp className="text-center mb-16">
-            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-3">
               Het platform
             </p>
-            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#1A1714]">
+            <h2 className="text-3xl md:text-4xl font-sans font-semibold text-[#111827]">
               Eén systeem voor alles.
             </h2>
           </FadeUp>
@@ -257,7 +257,7 @@ export default function HomePage() {
 
             {/* Rij 1: grote kassa-kaart + 2 gestapelde kaarten */}
             <StaggerItem className="md:col-span-2 h-full">
-              <div className="card-hover bg-[#2D4B3F] rounded-[2rem] overflow-hidden relative h-full min-h-72">
+              <div className="card-hover bg-[#111827] rounded-[2rem] overflow-hidden relative h-full min-h-72">
                 <img
                   src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=1200&q=80"
                   alt="Kassasysteem"
@@ -265,7 +265,7 @@ export default function HomePage() {
                 />
                 <div className="relative z-10 p-10 flex flex-col justify-end h-full min-h-72">
                   <Smartphone size={28} className="text-white/60 mb-4" />
-                  <h3 className="font-serif text-2xl text-white font-semibold mb-2">
+                  <h3 className="font-sans text-2xl text-white font-semibold mb-2">
                     Kassasysteem
                   </h3>
                   <p className="text-white/70 text-sm max-w-sm">
@@ -277,16 +277,16 @@ export default function HomePage() {
             </StaggerItem>
 
             <StaggerItem className="flex flex-col gap-4 h-full">
-              <div className="card-hover bg-[#FCF9F4] rounded-[2rem] p-8 flex-1 flex flex-col">
-                <TrendingUp size={22} className="text-[#CC5533] mb-4 shrink-0" />
-                <h3 className="font-serif font-semibold text-[#1A1714] mb-2">Rapportages</h3>
-                <p className="text-[#5C5550] text-sm">
+              <div className="card-hover bg-[#FFFFFF] rounded-[2rem] p-8 flex-1 flex flex-col">
+                <TrendingUp size={22} className="text-[#4353FF] mb-4 shrink-0" />
+                <h3 className="font-sans font-semibold text-[#111827] mb-2">Rapportages</h3>
+                <p className="text-[#6B7280] text-sm">
                   Omzet per periode, medewerker en product. Altijd beschikbaar — ook van thuis.
                 </p>
               </div>
-              <div className="card-hover bg-[#CC5533] rounded-[2rem] p-8 flex-1 flex flex-col">
+              <div className="card-hover bg-[#4353FF] rounded-[2rem] p-8 flex-1 flex flex-col">
                 <CheckCircle size={22} className="text-white mb-4 shrink-0" />
-                <h3 className="font-serif font-semibold text-white mb-2">QR-bestellen</h3>
+                <h3 className="font-sans font-semibold text-white mb-2">QR-bestellen</h3>
                 <p className="text-white/80 text-sm">
                   Gasten bestellen zelf via QR-code. De bon gaat direct naar de bar of keuken.
                 </p>
@@ -295,29 +295,29 @@ export default function HomePage() {
 
             {/* Rij 2: 3 gelijke kaarten */}
             <StaggerItem className="h-full">
-              <div className="card-hover bg-[#FCF9F4] rounded-[2rem] p-8 h-full flex flex-col">
-                <Clock size={22} className="text-[#CC5533] mb-4 shrink-0" />
-                <h3 className="font-serif font-semibold text-[#1A1714] mb-2">Reserveringen</h3>
-                <p className="text-[#5C5550] text-sm">
+              <div className="card-hover bg-[#FFFFFF] rounded-[2rem] p-8 h-full flex flex-col">
+                <Clock size={22} className="text-[#4353FF] mb-4 shrink-0" />
+                <h3 className="font-sans font-semibold text-[#111827] mb-2">Reserveringen</h3>
+                <p className="text-[#6B7280] text-sm">
                   Zonder commissie. Direct gekoppeld aan je kassa.
                 </p>
               </div>
             </StaggerItem>
 
             <StaggerItem className="h-full">
-              <div className="card-hover bg-[#F0EDE8] rounded-[2rem] p-8 h-full flex flex-col">
-                <Zap size={22} className="text-[#CC5533] mb-4 shrink-0" />
-                <h3 className="font-serif font-semibold text-[#1A1714] mb-2">Betalingen</h3>
-                <p className="text-[#5C5550] text-sm">
+              <div className="card-hover bg-[#F3F4F6] rounded-[2rem] p-8 h-full flex flex-col">
+                <Zap size={22} className="text-[#4353FF] mb-4 shrink-0" />
+                <h3 className="font-sans font-semibold text-[#111827] mb-2">Betalingen</h3>
+                <p className="text-[#6B7280] text-sm">
                   Geïntegreerde pinbetalingen. Bonnen splitsen in seconden.
                 </p>
               </div>
             </StaggerItem>
 
             <StaggerItem className="h-full">
-              <div className="card-hover bg-[#2D4B3F] rounded-[2rem] p-8 h-full flex flex-col">
+              <div className="card-hover bg-[#111827] rounded-[2rem] p-8 h-full flex flex-col">
                 <BarChart3 size={22} className="text-white mb-4 shrink-0" />
-                <h3 className="font-serif font-semibold text-white mb-2">Keuken & bar display</h3>
+                <h3 className="font-sans font-semibold text-white mb-2">Keuken & bar display</h3>
                 <p className="text-white/70 text-sm">
                   Digitale bonnen voor de keuken. Geen papier, geen misverstanden.
                 </p>
@@ -329,41 +329,41 @@ export default function HomePage() {
       </section>
 
       {/* ─── DOELGROEPEN ─── */}
-      <section className="bg-[#FCF9F4] py-24 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section className="bg-[#FFFFFF] py-24 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
           <FadeUp className="text-center mb-12">
-            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-3">
               Voor jou
             </p>
-            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#1A1714]">
+            <h2 className="text-3xl md:text-4xl font-sans font-semibold text-[#111827]">
               Voor welk type zaak ben jij?
             </h2>
-            <p className="text-[#5C5550] mt-4 max-w-xl mx-auto">
+            <p className="text-[#6B7280] mt-4 max-w-xl mx-auto">
               Zelfde systeem, eerlijke prijs — gemaakt voor jouw manier van werken.
             </p>
           </FadeUp>
+        </div>
 
-          <DoelgroepenRotator />
+        <DoelgroepenRotator />
 
-          <div className="text-center mt-8">
-            <Link href="/doelgroepen" className="text-sm text-[#CC5533] font-semibold hover:underline">
-              Bekijk alle doelgroepen →
-            </Link>
-          </div>
+        <div className="text-center mt-8">
+          <Link href="/doelgroepen" className="text-sm text-[#4353FF] font-semibold hover:underline">
+            Bekijk alle doelgroepen →
+          </Link>
         </div>
       </section>
 
       {/* ─── PRICING PREVIEW ─── */}
-      <section className="bg-[#F6F3EE] py-24 px-6">
+      <section className="bg-[#F9FAFB] py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <FadeUp className="text-center mb-12">
-            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-3">
               Prijzen
             </p>
-            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#1A1714]">
+            <h2 className="text-3xl md:text-4xl font-sans font-semibold text-[#111827]">
               Wat je ziet, is wat je betaalt.
             </h2>
-            <p className="text-[#5C5550] mt-4">
+            <p className="text-[#6B7280] mt-4">
               Geen verborgen kosten. Geen jaarcontract. Alle functies inbegrepen.
             </p>
           </FadeUp>
@@ -375,31 +375,31 @@ export default function HomePage() {
                 key={plan.name}
                 className={`card-hover rounded-3xl p-8 flex flex-col ${
                   plan.highlight
-                    ? "bg-[#2D4B3F] text-white"
-                    : "bg-white text-[#1A1714]"
+                    ? "bg-[#111827] text-white"
+                    : "bg-white text-[#111827]"
                 }`}
               >
                 <div className="mb-6">
-                  <h3 className={`font-serif text-xl font-semibold mb-1 ${plan.highlight ? "text-white" : "text-[#1A1714]"}`}>
+                  <h3 className={`font-sans text-xl font-semibold mb-1 ${plan.highlight ? "text-white" : "text-[#111827]"}`}>
                     {plan.name}
                   </h3>
-                  <p className={`text-sm mb-4 ${plan.highlight ? "text-white/70" : "text-[#5C5550]"}`}>
+                  <p className={`text-sm mb-4 ${plan.highlight ? "text-white/70" : "text-[#6B7280]"}`}>
                     {plan.description}
                   </p>
-                  <p className={`text-4xl font-serif font-bold ${plan.highlight ? "text-white" : "text-[#1A1714]"}`}>
+                  <p className={`text-4xl font-sans font-bold ${plan.highlight ? "text-white" : "text-[#111827]"}`}>
                     {plan.price}
                     {"priceNote" in plan && (
-                      <sup className="text-sm font-semibold text-[#CC5533] align-super">{(plan as { priceNote: string }).priceNote}</sup>
+                      <sup className="text-sm font-semibold text-[#4353FF] align-super">{(plan as { priceNote: string }).priceNote}</sup>
                     )}
-                    <span className={`text-base font-normal ml-1 ${plan.highlight ? "text-white/60" : "text-[#5C5550]"}`}>
+                    <span className={`text-base font-normal ml-1 ${plan.highlight ? "text-white/60" : "text-[#6B7280]"}`}>
                       {plan.period}
                     </span>
                   </p>
                 </div>
                 <ul className="space-y-2 mb-8 flex-1">
                   {plan.features.map((f) => (
-                    <li key={f} className={`flex items-center gap-2 text-sm ${plan.highlight ? "text-white/80" : "text-[#5C5550]"}`}>
-                      <CheckCircle size={14} className={plan.highlight ? "text-[#CC5533]" : "text-[#CC5533]"} />
+                    <li key={f} className={`flex items-center gap-2 text-sm ${plan.highlight ? "text-white/80" : "text-[#6B7280]"}`}>
+                      <CheckCircle size={14} className={plan.highlight ? "text-[#4353FF]" : "text-[#4353FF]"} />
                       {f}
                     </li>
                   ))}
@@ -408,8 +408,8 @@ export default function HomePage() {
                   href="https://admin.spont.nl"
                   className={`rounded-full py-3 text-center text-sm font-semibold transition-colors block ${
                     plan.highlight
-                      ? "bg-[#CC5533] hover:bg-[#A33818] text-white"
-                      : "bg-[#1A1714] hover:bg-[#2D4B3F] text-white"
+                      ? "bg-[#4353FF] hover:bg-[#3344DD] text-white"
+                      : "bg-[#111827] hover:bg-[#111827] text-white"
                   }`}
                 >
                   Start direct
@@ -419,11 +419,11 @@ export default function HomePage() {
             ))}
           </Stagger>
 
-          <p className="text-center text-[#5C5550] text-xs mt-6">
+          <p className="text-center text-[#6B7280] text-xs mt-6">
             <span className="font-semibold">* Met Spont Payments.</span> Zonder Payments: €89 (Start) of €169 (Pro) per maand.
           </p>
           <div className="text-center mt-4">
-            <Link href="/prijzen" className="text-sm text-[#CC5533] font-semibold hover:underline">
+            <Link href="/prijzen" className="text-sm text-[#4353FF] font-semibold hover:underline">
               Alle prijsdetails bekijken →
             </Link>
           </div>
@@ -431,16 +431,16 @@ export default function HomePage() {
       </section>
 
       {/* ─── HOW IT WORKS ─── */}
-      <section className="bg-[#FCF9F4] py-24 px-6">
+      <section className="bg-[#FFFFFF] py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <FadeUp className="text-center mb-16">
-            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-3">
               Hoe werkt het?
             </p>
-            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#1A1714]">
+            <h2 className="text-3xl md:text-4xl font-sans font-semibold text-[#111827]">
               Binnen enkele minuten operationeel.
             </h2>
-            <p className="text-[#5C5550] mt-4">
+            <p className="text-[#6B7280] mt-4">
               Geen wekenlange implementaties. Geen verborgen opstartkosten.
             </p>
           </FadeUp>
@@ -448,15 +448,15 @@ export default function HomePage() {
           <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {steps.map((step) => (
               <StaggerItem key={step.num} className="text-center">
-                <div className="w-14 h-14 rounded-full bg-[#CC5533]/10 flex items-center justify-center mx-auto mb-5">
-                  <span className="font-serif font-bold text-[#CC5533] text-lg">
+                <div className="w-14 h-14 rounded-full bg-[#4353FF]/10 flex items-center justify-center mx-auto mb-5">
+                  <span className="font-sans font-bold text-[#4353FF] text-lg">
                     {step.num}
                   </span>
                 </div>
-                <h3 className="font-serif font-semibold text-lg text-[#1A1714] mb-2">
+                <h3 className="font-sans font-semibold text-lg text-[#111827] mb-2">
                   {step.title}
                 </h3>
-                <p className="text-[#5C5550] text-sm leading-relaxed">{step.body}</p>
+                <p className="text-[#6B7280] text-sm leading-relaxed">{step.body}</p>
               </StaggerItem>
             ))}
           </Stagger>
@@ -464,10 +464,10 @@ export default function HomePage() {
       </section>
 
       {/* ─── TESTIMONIALS ─── */}
-      <section className="bg-[#F6F3EE] py-24 px-6">
+      <section className="bg-[#F9FAFB] py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <FadeUp className="text-center mb-12">
-            <h2 className="text-3xl font-serif font-semibold text-[#1A1714]">
+            <h2 className="text-3xl font-sans font-semibold text-[#111827]">
               Wat horecaondernemers zeggen.
             </h2>
           </FadeUp>
@@ -475,12 +475,12 @@ export default function HomePage() {
             {testimonials.map((t) => (
               <StaggerItem key={t.name}>
                 <div className="card-hover bg-white rounded-3xl p-8 shadow-sm h-full">
-                  <p className="text-[#1A1714] text-base leading-relaxed mb-6 italic">
+                  <p className="text-[#111827] text-base leading-relaxed mb-6 italic">
                     &ldquo;{t.quote}&rdquo;
                   </p>
                   <div>
-                    <p className="font-semibold text-[#1A1714] text-sm">{t.name}</p>
-                    <p className="text-[#5C5550] text-xs mt-0.5">{t.role}</p>
+                    <p className="font-semibold text-[#111827] text-sm">{t.name}</p>
+                    <p className="text-[#6B7280] text-xs mt-0.5">{t.role}</p>
                   </div>
                 </div>
               </StaggerItem>

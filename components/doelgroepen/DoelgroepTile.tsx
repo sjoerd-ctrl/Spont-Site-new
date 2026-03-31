@@ -57,7 +57,7 @@ export function DoelgroepTile({
       />
 
       {/* Subtiele gradient altijd aanwezig voor diepte */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#1A1714]/80 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/80 via-transparent to-transparent pointer-events-none" />
 
       {/* Hele tile klikbaar */}
       <Link href={href} className="absolute inset-0 z-20" aria-label={headline} />
@@ -69,12 +69,12 @@ export function DoelgroepTile({
         animate={{ y: hovered ? -4 : 0 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
       >
-        <p className="text-[#CC5533] text-xs font-semibold uppercase tracking-widest mb-3">
+        <p className="text-[#4353FF] text-xs font-semibold uppercase tracking-widest mb-3">
           {label}
         </p>
 
         <h3
-          className="font-serif font-semibold text-white leading-snug mb-3"
+          className="font-sans font-semibold text-white leading-snug mb-3"
           style={{ fontSize: featured ? "1.5rem" : "1.15rem" }}
         >
           {headline}
@@ -85,7 +85,7 @@ export function DoelgroepTile({
         </p>
 
         <motion.span
-          className="mt-5 inline-flex items-center gap-1.5 text-[#CC5533] text-xs font-semibold uppercase tracking-wider"
+          className="mt-5 inline-flex items-center gap-1.5 text-[#4353FF] text-xs font-semibold uppercase tracking-wider"
           animate={{ opacity: hovered ? 1 : 0.7 }}
           transition={{ duration: 0.2 }}
         >

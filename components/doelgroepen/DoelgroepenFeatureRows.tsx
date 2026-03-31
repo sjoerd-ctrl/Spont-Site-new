@@ -35,18 +35,18 @@ export function FeatureRow({
     >
       {/* Tekstkolom */}
       <div className="flex-1 max-w-md">
-        <p className="text-[#2D4B3F] font-semibold text-xs uppercase tracking-widest mb-3">
+        <p className="text-[#111827] font-semibold text-xs uppercase tracking-widest mb-3">
           {eyebrow}
         </p>
-        <h2 className="text-2xl md:text-3xl font-serif font-semibold text-[#1A1714] leading-snug mb-4">
+        <h2 className="text-2xl md:text-3xl font-sans font-semibold text-[#111827] leading-snug mb-4">
           {title}
         </h2>
-        <p className="text-base text-[#5C5550] leading-relaxed mb-7">
+        <p className="text-base text-[#6B7280] leading-relaxed mb-7">
           {description}
         </p>
         <Link
           href={ctaHref}
-          className="inline-flex items-center gap-1.5 text-[#CC5533] font-semibold text-sm uppercase tracking-wider hover:gap-3 transition-all duration-200"
+          className="inline-flex items-center gap-1.5 text-[#4353FF] font-semibold text-sm uppercase tracking-wider hover:gap-3 transition-all duration-200"
         >
           {ctaLabel} <span>→</span>
         </Link>

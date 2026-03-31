@@ -62,7 +62,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isLight
-          ? "bg-[#FCF9F4]/95 backdrop-blur-md shadow-sm"
+          ? "bg-[#FFFFFF]/95 backdrop-blur-md shadow-sm"
           : "bg-transparent"
       }`}
     >
@@ -84,7 +84,7 @@ export default function Navbar() {
               href={link.href}
               className={`text-sm font-medium transition-colors ${
                 isLight
-                  ? "text-[#5C5550] hover:text-[#1A1714]"
+                  ? "text-[#6B7280] hover:text-[#111827]"
                   : "text-white/80 hover:text-white"
               }`}
             >
@@ -101,7 +101,7 @@ export default function Navbar() {
               onClick={() => setLoginOpen(!loginOpen)}
               className={`flex items-center gap-1 text-sm font-medium transition-colors ${
                 isLight
-                  ? "text-[#5C5550] hover:text-[#1A1714]"
+                  ? "text-[#6B7280] hover:text-[#111827]"
                   : "text-white/80 hover:text-white"
               }`}
             >
@@ -113,7 +113,7 @@ export default function Navbar() {
             </button>
 
             {loginOpen && (
-              <div className="absolute right-0 top-full mt-3 w-64 bg-white rounded-2xl shadow-xl border border-[#EBE8E3] overflow-hidden">
+              <div className="absolute right-0 top-full mt-3 w-64 bg-white rounded-2xl shadow-xl border border-[#E5E7EB] overflow-hidden">
                 {loginOptions.map((opt) => (
                   <a
                     key={opt.href}
@@ -121,10 +121,10 @@ export default function Navbar() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setLoginOpen(false)}
-                    className="flex items-center gap-4 px-4 py-3.5 hover:bg-[#FCF9F4] transition-colors"
+                    className="flex items-center gap-4 px-4 py-3.5 hover:bg-[#FFFFFF] transition-colors"
                   >
                     <img src={opt.icon} alt={opt.name} className="shrink-0 w-10 h-10 rounded-xl" />
-                    <p className="text-sm font-semibold text-[#1A1714]">{opt.name}</p>
+                    <p className="text-sm font-semibold text-[#111827]">{opt.name}</p>
                   </a>
                 ))}
               </div>
@@ -133,7 +133,7 @@ export default function Navbar() {
 
           <a
             href="https://admin.spont.nl"
-            className="bg-[#CC5533] hover:bg-[#A33818] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
+            className="bg-[#4353FF] hover:bg-[#3344DD] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
           >
             Start direct
           </a>
@@ -141,7 +141,7 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className={`md:hidden p-2 ${isLight ? "text-[#1A1714]" : "text-white"}`}
+          className={`md:hidden p-2 ${isLight ? "text-[#111827]" : "text-white"}`}
           onClick={() => setOpen(!open)}
           aria-label="Menu"
         >
@@ -151,19 +151,19 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-[#FCF9F4] border-t border-[#EBE8E3] px-6 py-6 flex flex-col gap-4">
+        <div className="md:hidden bg-[#FFFFFF] border-t border-[#E5E7EB] px-6 py-6 flex flex-col gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-base font-medium text-[#1A1714]"
+              className="text-base font-medium text-[#111827]"
               onClick={() => setOpen(false)}
             >
               {link.label}
             </Link>
           ))}
-          <hr className="border-[#EBE8E3]" />
-          <p className="text-xs font-semibold text-[#5C5550] uppercase tracking-widest">Inloggen</p>
+          <hr className="border-[#E5E7EB]" />
+          <p className="text-xs font-semibold text-[#6B7280] uppercase tracking-widest">Inloggen</p>
           {loginOptions.map((opt) => (
             <a
               key={opt.href}
@@ -174,13 +174,13 @@ export default function Navbar() {
               className="flex items-center gap-3"
             >
               <img src={opt.icon} alt={opt.name} className="shrink-0 w-9 h-9 rounded-xl" />
-              <p className="text-sm font-semibold text-[#1A1714]">{opt.name}</p>
+              <p className="text-sm font-semibold text-[#111827]">{opt.name}</p>
             </a>
           ))}
-          <hr className="border-[#EBE8E3]" />
+          <hr className="border-[#E5E7EB]" />
           <a
             href="https://admin.spont.nl"
-            className="bg-[#CC5533] text-white text-sm font-semibold px-5 py-3 rounded-full text-center"
+            className="bg-[#4353FF] text-white text-sm font-semibold px-5 py-3 rounded-full text-center"
             onClick={() => setOpen(false)}
           >
             Start direct

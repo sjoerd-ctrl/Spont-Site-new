@@ -65,7 +65,7 @@ export default function DoelgroepenRotator() {
 
     let raf: number;
     let lastTime = 0;
-    const speed = 0.5;
+    const speed = 0.28; // langzamer — was 0.5
 
     const step = (time: number) => {
       if (!paused && lastTime) {
@@ -84,7 +84,6 @@ export default function DoelgroepenRotator() {
     return () => cancelAnimationFrame(raf);
   }, [paused]);
 
-  // Duplicate for seamless loop
   const items = [...segments, ...segments];
 
   return (
@@ -100,38 +99,38 @@ export default function DoelgroepenRotator() {
       {items.map((seg, i) => (
         <motion.div
           key={`${seg.slug}-${i}`}
-          className="flex-shrink-0 w-[85vw] md:w-[calc(33.333%-0.67rem)]"
+          className="flex-shrink-0 w-64 md:w-72"
           whileHover={{
             scale: 1.02,
             y: -4,
-            boxShadow: "0 18px 45px rgba(0,0,0,0.10)",
+            boxShadow: "0 20px 48px rgba(0,0,0,0.14)",
           }}
           whileTap={{ scale: 0.98 }}
           transition={{ type: "spring", stiffness: 260, damping: 20 }}
         >
           <Link
             href={`/doelgroepen/${seg.slug}`}
-            className="block bg-white rounded-3xl overflow-hidden p-3 text-decoration-none"
-            style={{ textDecoration: "none" }}
+            className="relative block rounded-3xl overflow-hidden"
+            style={{ height: "400px" }}
           >
-            {/* Image wrap — eigen border-radius + overflow hidden */}
-            <div className="rounded-2xl overflow-hidden mb-4" style={{ height: "180px" }}>
-              <img
-                src={seg.img}
-                alt={seg.label}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
+            {/* Full-bleed foto */}
+            <img
+              src={seg.img}
+              alt={seg.label}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
 
-            {/* Content */}
-            <div className="px-2 pb-2">
-              <h3 className="font-serif text-base font-semibold text-[#1A1714] leading-tight">
+            {/* Gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1A1714]/90 via-[#1A1714]/25 to-transparent" />
+
+            {/* Tekst onderaan */}
+            <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+              <h3 className="font-serif text-2xl font-semibold text-white leading-tight mb-2">
                 {seg.label}
               </h3>
-              <p className="text-xs text-[#5C5550] mt-1">{seg.subtitle}</p>
-              <span className="mt-3 inline-block text-xs font-semibold text-[#CC5533] uppercase tracking-wider">
-                Meer info →
-              </span>
+              <p className="text-sm text-white/70 leading-snug">
+                {seg.subtitle}
+              </p>
             </div>
           </Link>
         </motion.div>

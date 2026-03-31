@@ -14,13 +14,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-const badges = [
-  "Binnen enkele minuten operationeel",
-  "Geen opstartkosten",
-  "Maandelijks opzegbaar",
-  "Updates inbegrepen",
-  "AI + ticketsupport inbegrepen",
-];
 
 const valueProps = [
   {
@@ -179,18 +172,27 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <div className="mt-12 flex flex-wrap gap-3">
-              {badges.map((b) => (
-                <span
-                  key={b}
-                  className="flex items-center gap-2 text-xs text-white/70 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2"
-                >
-                  <CheckCircle size={12} className="text-[#CC5533]" />
-                  {b}
-                </span>
-              ))}
-            </div>
           </div>
+        </div>
+      </section>
+
+      {/* ─── TRUST STRIP ─── */}
+      <section className="bg-white border-b border-[#EBE8E3] py-10 px-6">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-6">
+          {[
+            { icon: Zap,          label: "Binnen minuten operationeel" },
+            { icon: CheckCircle,  label: "Geen opstartkosten" },
+            { icon: ShieldCheck,  label: "Maandelijks opzegbaar" },
+            { icon: Smartphone,   label: "Werkt op eigen hardware" },
+            { icon: Bot,          label: "AI + ticketsupport inbegrepen" },
+          ].map(({ icon: Icon, label }) => (
+            <div key={label} className="flex items-center gap-3">
+              <div className="shrink-0 w-9 h-9 rounded-xl bg-[#FCF9F4] flex items-center justify-center">
+                <Icon size={18} className="text-[#CC5533]" />
+              </div>
+              <span className="text-sm font-medium text-[#1A1714] leading-tight">{label}</span>
+            </div>
+          ))}
         </div>
       </section>
 

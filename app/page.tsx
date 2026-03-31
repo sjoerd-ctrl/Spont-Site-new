@@ -220,13 +220,13 @@ export default function HomePage() {
             </p>
           </FadeUp>
 
-          <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
             {valueProps.map((vp) => {
               const Icon = vp.icon;
               return (
-                <StaggerItem key={vp.title}>
-                  <div className="card-hover bg-[#F6F3EE] rounded-3xl p-8 hover:bg-[#F0EDE8]">
-                    <div className="w-12 h-12 bg-[#CC5533]/10 rounded-2xl flex items-center justify-center mb-5">
+                <StaggerItem key={vp.title} className="h-full">
+                  <div className="card-hover bg-[#F6F3EE] rounded-3xl p-8 hover:bg-[#F0EDE8] h-full flex flex-col">
+                    <div className="w-12 h-12 bg-[#CC5533]/10 rounded-2xl flex items-center justify-center mb-5 shrink-0">
                       <Icon size={22} className="text-[#CC5533]" />
                     </div>
                     <h3 className="font-serif font-semibold text-lg text-[#1A1714] mb-2">
@@ -253,10 +253,11 @@ export default function HomePage() {
             </h2>
           </FadeUp>
 
-          <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
 
-            <StaggerItem className="md:col-span-2">
-              <div className="card-hover bg-[#2D4B3F] rounded-[2rem] overflow-hidden relative min-h-72">
+            {/* Rij 1: grote kassa-kaart + 2 gestapelde kaarten */}
+            <StaggerItem className="md:col-span-2 h-full">
+              <div className="card-hover bg-[#2D4B3F] rounded-[2rem] overflow-hidden relative h-full min-h-72">
                 <img
                   src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=1200&q=80"
                   alt="Kassasysteem"
@@ -275,16 +276,16 @@ export default function HomePage() {
               </div>
             </StaggerItem>
 
-            <StaggerItem className="flex flex-col gap-4">
-              <div className="card-hover bg-[#FCF9F4] rounded-[2rem] p-8 flex-1">
-                <TrendingUp size={22} className="text-[#CC5533] mb-4" />
+            <StaggerItem className="flex flex-col gap-4 h-full">
+              <div className="card-hover bg-[#FCF9F4] rounded-[2rem] p-8 flex-1 flex flex-col">
+                <TrendingUp size={22} className="text-[#CC5533] mb-4 shrink-0" />
                 <h3 className="font-serif font-semibold text-[#1A1714] mb-2">Rapportages</h3>
                 <p className="text-[#5C5550] text-sm">
                   Omzet per periode, medewerker en product. Altijd beschikbaar — ook van thuis.
                 </p>
               </div>
-              <div className="card-hover bg-[#CC5533] rounded-[2rem] p-8 flex-1">
-                <CheckCircle size={22} className="text-white mb-4" />
+              <div className="card-hover bg-[#CC5533] rounded-[2rem] p-8 flex-1 flex flex-col">
+                <CheckCircle size={22} className="text-white mb-4 shrink-0" />
                 <h3 className="font-serif font-semibold text-white mb-2">QR-bestellen</h3>
                 <p className="text-white/80 text-sm">
                   Gasten bestellen zelf via QR-code. De bon gaat direct naar de bar of keuken.
@@ -292,9 +293,10 @@ export default function HomePage() {
               </div>
             </StaggerItem>
 
-            <StaggerItem>
-              <div className="card-hover bg-[#FCF9F4] rounded-[2rem] p-8">
-                <Clock size={22} className="text-[#CC5533] mb-4" />
+            {/* Rij 2: 3 gelijke kaarten */}
+            <StaggerItem className="h-full">
+              <div className="card-hover bg-[#FCF9F4] rounded-[2rem] p-8 h-full flex flex-col">
+                <Clock size={22} className="text-[#CC5533] mb-4 shrink-0" />
                 <h3 className="font-serif font-semibold text-[#1A1714] mb-2">Reserveringen</h3>
                 <p className="text-[#5C5550] text-sm">
                   Zonder commissie. Direct gekoppeld aan je kassa.
@@ -302,9 +304,9 @@ export default function HomePage() {
               </div>
             </StaggerItem>
 
-            <StaggerItem>
-              <div className="card-hover bg-[#F0EDE8] rounded-[2rem] p-8">
-                <Zap size={22} className="text-[#CC5533] mb-4" />
+            <StaggerItem className="h-full">
+              <div className="card-hover bg-[#F0EDE8] rounded-[2rem] p-8 h-full flex flex-col">
+                <Zap size={22} className="text-[#CC5533] mb-4 shrink-0" />
                 <h3 className="font-serif font-semibold text-[#1A1714] mb-2">Betalingen</h3>
                 <p className="text-[#5C5550] text-sm">
                   Geïntegreerde pinbetalingen. Bonnen splitsen in seconden.
@@ -312,9 +314,9 @@ export default function HomePage() {
               </div>
             </StaggerItem>
 
-            <StaggerItem>
-              <div className="card-hover bg-[#2D4B3F] rounded-[2rem] p-8">
-                <BarChart3 size={22} className="text-white mb-4" />
+            <StaggerItem className="h-full">
+              <div className="card-hover bg-[#2D4B3F] rounded-[2rem] p-8 h-full flex flex-col">
+                <BarChart3 size={22} className="text-white mb-4 shrink-0" />
                 <h3 className="font-serif font-semibold text-white mb-2">Keuken & bar display</h3>
                 <p className="text-white/70 text-sm">
                   Digitale bonnen voor de keuken. Geen papier, geen misverstanden.

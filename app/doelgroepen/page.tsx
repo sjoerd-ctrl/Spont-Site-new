@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import CTABanner from "@/components/shared/CTABanner";
-import { FeatureRow } from "@/components/doelgroepen/DoelgroepenFeatureRows";
+import { DoelgroepTile } from "@/components/doelgroepen/DoelgroepTile";
 
 export const metadata: Metadata = {
   title: "Doelgroepen",
@@ -14,16 +14,6 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: "https://www.spont.nl/doelgroepen" },
 };
-
-// ─── Visual helper ────────────────────────────────────────────────────────────
-// Verwijder img en vervang door een illustratie of UI-mockup.
-function Visual({ src, alt }: { src: string; alt: string }) {
-  return (
-    <div className="rounded-2xl overflow-hidden shadow-md h-64 md:h-72 bg-[#E8E0D6]">
-      <img src={src} alt={alt} className="w-full h-full object-cover" />
-    </div>
-  );
-}
 
 export default function DoelgroepenPage() {
   return (
@@ -53,121 +43,76 @@ export default function DoelgroepenPage() {
         </div>
       </section>
 
-      {/* ─── FEATURE ROWS ─── */}
-      <section className="bg-[#FCF9F4] py-8 md:py-12">
-        <div className="mx-auto max-w-5xl px-6 md:px-8">
+      {/* ─── TILE GRID ─── */}
+      <section className="bg-[#FCF9F4] py-16 px-6">
+        <div className="mx-auto max-w-6xl">
 
-          <FeatureRow
-            eyebrow="VOL TERRAS, DRUKKE BEDIENING"
-            title="Restaurants"
-            description="Of je nu een bruine kroeg, een trendy bistro of een groot terrasrestaurant hebt — Spont houdt de bediening soepel. Tafelorders, splits rekeningen, kaart- én contant betalen, alles in één systeem. Meer tafels bedienen zonder dat het ten koste gaat van de gastvrijheid."
-            ctaLabel="Meer info"
-            ctaHref="/doelgroepen/restaurants"
-            reverse={false}
-          >
-            <Visual
-              src="https://images.unsplash.com/photo-1657198642762-bae3c6958e80?w=1200&q=80"
-              alt="Restaurants"
+          {/* Rij 1: featured links + 2 tiles rechts */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start mb-4">
+            <DoelgroepTile
+              label="Vol terras, drukke bediening"
+              headline="Restaurants"
+              description="Of je nu een bruine kroeg, een trendy bistro of een groot terrasrestaurant hebt — Spont houdt de bediening soepel. Tafelorders, splits rekeningen, alles in één systeem."
+              href="/doelgroepen/restaurants"
+              imageSrc="https://images.unsplash.com/photo-1657198642762-bae3c6958e80?w=1200&q=80"
+              featured
             />
-          </FeatureRow>
+            <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <DoelgroepTile
+                label="Ochtenddrukte, loyaliteit, snelheid"
+                headline="Koffiezaken"
+                description="In de ochtendspits telt elke seconde. Razendsnel afrekenen, loyaliteitskaarten bijhouden en je meest bestelde drankjes altijd op één tik."
+                href="/doelgroepen/coffee-bars"
+                imageSrc="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=800&q=80"
+              />
+              <DoelgroepTile
+                label="Snel aan de toog"
+                headline="Café & kroeg"
+                description="Grote knoppen, snelle tap-betaling en een omzetoverzicht aan het einde van de avond — zonder gedoe."
+                href="/doelgroepen/cafes"
+                imageSrc="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=800&q=80"
+              />
+              <DoelgroepTile
+                label="Van bestelling tot afgifte"
+                headline="Quick Service"
+                description="Kassa direct gekoppeld aan de keuken. Nummers voor gasten, elke bestelling op de juiste plek — snel en foutloos."
+                href="/doelgroepen/quick-service"
+                imageSrc="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80"
+              />
+              <DoelgroepTile
+                label="Toonbank, snel, overzichtelijk"
+                headline="Bakkerijen"
+                description="Afrekenen aan de balie snel en overzichtelijk. Een kassa die bijhoudt wat je verkoopt en wat je verdient."
+                href="/doelgroepen/bakkerijen"
+                imageSrc="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80"
+              />
+            </div>
+          </div>
 
-          <FeatureRow
-            eyebrow="OCHTENDDRUKTE, LOYALITEIT, SNELHEID"
-            title="Koffiezaken"
-            description="In de ochtendspits telt elke seconde. Spont laat je razendsnel afrekenen, loyaliteitskaarten bijhouden en je meest bestelde drankjes altijd op één tik bereiken. Klanten komen terug — en jij weet waarom."
-            ctaLabel="Meer info"
-            ctaHref="/doelgroepen/coffee-bars"
-            reverse={true}
-          >
-            <Visual
-              src="https://images.unsplash.com/photo-1702540565983-f9184533c42a?w=1200&q=80"
-              alt="Koffiezaken"
+          {/* Rij 2: 3 gelijke tiles */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <DoelgroepTile
+              label="Ook als het donker en druk is"
+              headline="Discotheek & club"
+              description="Helder scherm, grote knoppen en Tap to Pay. Spont werkt ook als de muziek hard staat."
+              href="/doelgroepen/discotheken"
+              imageSrc="/images/disco-muziekgieterij.jpg"
             />
-          </FeatureRow>
-
-          <FeatureRow
-            eyebrow="SNEL AAN DE TOOG"
-            title="Café & kroeg"
-            description="Druk aan de bar, muziek op volle sterkte, een rij klanten. Spont is ontworpen om in die chaos feilloos te werken. Grote knoppen, snelle tap-betaling, en een overzicht van de omzet aan het einde van de avond — zonder gedoe."
-            ctaLabel="Meer info"
-            ctaHref="/doelgroepen/cafes"
-            reverse={false}
-          >
-            <Visual
-              src="https://images.unsplash.com/photo-1761671595965-e03c4d5f779f?w=1200&q=80"
-              alt="Café & kroeg"
+            <DoelgroepTile
+              label="Van baan tot bar"
+              headline="Bowling & leisure"
+              description="Van baanverhuur tot horeca-omzet — alles op één plek. Helder overzicht, ook op drukke vrijdagavonden."
+              href="/doelgroepen/bowlingbanen"
+              imageSrc="https://images.unsplash.com/photo-1539805668195-3c16b76c90c1?w=800&q=80"
             />
-          </FeatureRow>
-
-          <FeatureRow
-            eyebrow="VAN BESTELLING TOT AFGIFTE"
-            title="Quick Service"
-            description="Bij quick service draait alles om doorlooptijd. Spont verbindt de kassa direct met de keuken, geeft nummers uit aan gasten en zorgt dat elke bestelling op de juiste plek uitkomt — snel, foutloos, zonder papieren bonnetjes."
-            ctaLabel="Meer info"
-            ctaHref="/doelgroepen/quick-service"
-            reverse={true}
-          >
-            <Visual
-              src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&q=80"
-              alt="Quick Service"
+            <DoelgroepTile
+              label="Plug-and-play, geen contract"
+              headline="Evenementen & festivals"
+              description="Eén keer opstarten, meteen aan de slag. Tap to Pay op je telefoon of vaste kassa — jij kiest."
+              href="/doelgroepen/evenementen"
+              imageSrc="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80"
             />
-          </FeatureRow>
-
-          <FeatureRow
-            eyebrow="TOONBANK, SNEL, OVERZICHTELIJK"
-            title="Bakkerijen"
-            description="Een volle toonbank, vaste klanten en een lunchpiek om 12 uur. Spont maakt afrekenen aan de balie snel en overzichtelijk. Geen ingewikkeld systeem, gewoon een kassa die bijhoudt wat je verkoopt en wat je verdient."
-            ctaLabel="Meer info"
-            ctaHref="/doelgroepen/bakkerijen"
-            reverse={false}
-          >
-            <Visual
-              src="https://images.unsplash.com/photo-1738153730506-3f1c165c30fc?w=1200&q=80"
-              alt="Bakkerijen"
-            />
-          </FeatureRow>
-
-          <FeatureRow
-            eyebrow="OOK ALS HET DONKER EN DRUK IS"
-            title="Discotheek & club"
-            description="Spont werkt ook als het donker is en de muziek hard staat. Helder scherm, grote knoppen, en Tap to Pay zodat je geen muntjes of bonnetjes nodig hebt. Ideaal voor drukke bars en nachtclubs waar snelheid alles is."
-            ctaLabel="Meer info"
-            ctaHref="/doelgroepen/discotheken"
-            reverse={true}
-          >
-            <Visual
-              src="/images/disco-muziekgieterij.jpg"
-              alt="Discotheek & club"
-            />
-          </FeatureRow>
-
-          <FeatureRow
-            eyebrow="VAN BAAN TOT BAR"
-            title="Bowling & leisure"
-            description="Van het reserveren van banen tot bestellingen aan de bar: Spont beheert alles op één plek. Combineer horeca-omzet met baanverhuur en houd altijd een helder overzicht — ook op drukke vrijdagavonden."
-            ctaLabel="Meer info"
-            ctaHref="/doelgroepen/bowlingbanen"
-            reverse={false}
-          >
-            <Visual
-              src="https://images.unsplash.com/photo-1539805668195-3c16b76c90c1?w=1200&q=80"
-              alt="Bowling & leisure"
-            />
-          </FeatureRow>
-
-          <FeatureRow
-            eyebrow="PLUG-AND-PLAY, TAP TO PAY, GEEN CONTRACT"
-            title="Evenementen & festivals"
-            description="Eén keer opstarten, meteen aan de slag. Spont heeft geen langlopend contract nodig. Tap to Pay op je telefoon, mobiele pinautomaat of vaste kassa — jij kiest. Perfect voor festivals, markten en tijdelijke pop-ups."
-            ctaLabel="Meer info"
-            ctaHref="/doelgroepen/evenementen"
-            reverse={true}
-          >
-            <Visual
-              src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=1200&q=80"
-              alt="Evenementen & festivals"
-            />
-          </FeatureRow>
+          </div>
 
         </div>
       </section>

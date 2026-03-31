@@ -1,6 +1,6 @@
 import Link from "next/link";
 import CTABanner from "@/components/shared/CTABanner";
-import DoelgroepenRotator from "@/components/home/DoelgroepenRotator";
+import { DoelgroepTile } from "@/components/doelgroepen/DoelgroepTile";
 import JsonLd from "@/components/shared/JsonLd";
 import { FadeUp, FadeIn, Stagger, StaggerItem, HeroReveal } from "@/components/shared/Animate";
 import {
@@ -343,7 +343,51 @@ export default function HomePage() {
             </p>
           </FadeUp>
 
-          <DoelgroepenRotator />
+          {/* Tile grid: featured links + 4 tiles rechts (2×2) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
+
+            {/* Featured — linker kolom, 2 rijen hoog */}
+            <DoelgroepTile
+              label="Vol terras, drukke bediening"
+              headline="Restaurants"
+              description="Tafelorders, gesplitste rekeningen, kaart- én contant betalen — alles in één systeem. Meer tafels bedienen zonder gedoe."
+              href="/doelgroepen/restaurants"
+              imageSrc="https://images.unsplash.com/photo-1657198642762-bae3c6958e80?w=1200&q=80"
+              featured
+            />
+
+            {/* Rechterkolom — 2×2 grid */}
+            <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <DoelgroepTile
+                label="Ochtenddrukte, loyaliteit"
+                headline="Koffiezaken"
+                description="Razendsnel afrekenen en loyaliteitskaarten bijhouden. Klanten komen terug — en jij weet waarom."
+                href="/doelgroepen/coffee-bars"
+                imageSrc="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=800&q=80"
+              />
+              <DoelgroepTile
+                label="Snel aan de toog"
+                headline="Café & kroeg"
+                description="Grote knoppen, snelle tap-betaling, omzetoverzicht aan het einde van de avond — zonder gedoe."
+                href="/doelgroepen/cafes"
+                imageSrc="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=800&q=80"
+              />
+              <DoelgroepTile
+                label="Van bestelling tot afgifte"
+                headline="Quick Service"
+                description="Kassa direct gekoppeld aan de keuken. Nummers voor gasten, foutloos, zonder papieren bonnetjes."
+                href="/doelgroepen/quick-service"
+                imageSrc="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80"
+              />
+              <DoelgroepTile
+                label="Toonbank, snel, overzichtelijk"
+                headline="Bakkerijen"
+                description="Afrekenen aan de balie snel en overzichtelijk. Bijhouden wat je verkoopt en wat je verdient."
+                href="/doelgroepen/bakkerijen"
+                imageSrc="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80"
+              />
+            </div>
+          </div>
 
           <div className="text-center mt-8">
             <Link href="/doelgroepen" className="text-sm text-[#CC5533] font-semibold hover:underline">

@@ -14,7 +14,7 @@ export default function PlausibleAnalytics() {
     if (initialized.current) return;
     initialized.current = true;
     init({
-      domain: "spont.nl",
+      domain: window.location.hostname,
       autoCapturePageviews: true,
       outboundLinks: true,
     });

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import CTABanner from "@/components/shared/CTABanner";
+import DoelgroepenSlider from "@/components/doelgroepen/DoelgroepenSlider";
 
 export const metadata: Metadata = {
   title: "Doelgroepen",
@@ -94,28 +94,17 @@ export default function DoelgroepenPage() {
         </div>
       </section>
 
-      {/* ─── DOELGROEPEN GRID ─── */}
-      <section className="bg-[#FCF9F4] py-20 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {doelgroepen.map((d) => (
-            <Link
-              key={d.slug}
-              href={`/doelgroepen/${d.slug}`}
-              className="card-hover cursor-pointer group rounded-3xl overflow-hidden relative block min-h-72"
-            >
-              <img
-                src={d.img}
-                alt={d.title}
-                className="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1A1714]/80 via-[#1A1714]/20 to-transparent" />
-              <div className="relative z-10 p-8 flex flex-col justify-end h-full min-h-72">
-                <h2 className="font-serif text-2xl font-semibold text-white">{d.title}</h2>
-                <p className="text-sm text-white/70 mt-1">{d.subtitle}</p>
-              </div>
-            </Link>
-          ))}
+      {/* ─── DOELGROEPEN SLIDER ─── */}
+      <section className="bg-[#FCF9F4] py-20 overflow-hidden">
+        <div className="max-w-7xl mx-auto mb-10 px-6 md:px-12">
+          <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-2">
+            Kies jouw type zaak
+          </p>
+          <p className="text-[#5C5550] text-base">
+            Scroll om alle typen te bekijken.
+          </p>
         </div>
+        <DoelgroepenSlider items={doelgroepen} />
       </section>
 
       {/* ─── CTA ─── */}

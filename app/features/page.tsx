@@ -196,43 +196,6 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* ─── AI SECTIE ─── */}
-      <section className="bg-[#2D4B3F] py-20 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-4">
-                AI-first
-              </p>
-              <h2 className="text-3xl md:text-4xl font-serif text-white font-semibold mb-6">
-                AI maakt het verschil.
-              </h2>
-              <p className="text-white/70 leading-relaxed">
-                Spont is AI-first gebouwd — niet als marketingterm, maar als
-                fundament. AI regelt het standaardwerk, zodat jij tijd hebt voor
-                je gasten.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 gap-4">
-              {[
-                "AI-assistent voor installatie en configuratie",
-                "Slimme chatbot voor supportvragen",
-                "Automatische suggesties voor optimalisatie",
-                "24/7 beschikbaar, zonder wachttijden",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="card-hover bg-white/10 rounded-2xl px-5 py-4 flex items-center gap-3"
-                >
-                  <Bot size={16} className="text-[#CC5533] shrink-0" />
-                  <span className="text-white/90 text-sm">{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ─── KERNOPLOSSINGEN ─── */}
       <section className="bg-[#FCF9F4] py-24 px-6">
         <div className="max-w-7xl mx-auto">
@@ -287,6 +250,42 @@ export default function FeaturesPage() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── AI SECTIE ─── */}
+      <section className="bg-[#2D4B3F] py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-4">
+                AI-first
+              </p>
+              <h2 className="text-3xl md:text-4xl font-serif text-white font-semibold mb-6">
+                AI maakt het verschil.
+              </h2>
+              <p className="text-white/70 leading-relaxed">
+                Spont is AI-first gebouwd — niet als marketingterm, maar als
+                fundament. AI regelt het standaardwerk, zodat jij tijd hebt voor
+                je gasten.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-4">
+              {[
+                "AI-assistent voor installatie en configuratie",
+                "Slimme chatbot voor supportvragen",
+                "24/7 beschikbaar, zonder wachttijden",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="card-hover bg-white/10 rounded-2xl px-5 py-4 flex items-center gap-3"
+                >
+                  <Bot size={16} className="text-[#CC5533] shrink-0" />
+                  <span className="text-white/90 text-sm">{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

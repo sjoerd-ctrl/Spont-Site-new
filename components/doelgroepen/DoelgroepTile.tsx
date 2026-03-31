@@ -10,7 +10,7 @@ export interface DoelgroepTileProps {
   description: string;
   href: string;
   imageSrc: string;
-  featured?: boolean; // grote linker tile
+  featured?: boolean;
 }
 
 export function DoelgroepTile({
@@ -25,49 +25,47 @@ export function DoelgroepTile({
 
   return (
     <motion.div
-      className={`relative overflow-hidden rounded-3xl bg-[#F0EDE8] flex flex-col ${
-        featured ? "min-h-[480px] md:row-span-2" : "min-h-[220px]"
+      className={`relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm flex flex-col ${
+        featured ? "min-h-[480px] md:row-span-2" : "min-h-[300px]"
       }`}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
       animate={
         hovered
           ? {
-              scale: 1.02,
-              boxShadow:
-                "0 0 0 1.5px #CC5533, 0 24px 48px rgba(26,23,20,0.16)",
+              borderColor: "rgba(204,85,51,0.5)",
+              backgroundColor: "rgba(255,255,255,0.08)",
             }
           : {
-              scale: 1,
-              boxShadow:
-                "0 0 0 0px transparent, 0 2px 12px rgba(26,23,20,0.06)",
+              borderColor: "rgba(255,255,255,0.10)",
+              backgroundColor: "rgba(255,255,255,0.05)",
             }
       }
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
-      {/* ── Achtergrondafbeelding: blur → scherp bij hover ── */}
+      {/* Achtergrondafbeelding: blur → scherp bij hover */}
       <motion.img
         src={imageSrc}
         alt={headline}
         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         animate={
           hovered
-            ? { opacity: 1, filter: "blur(0px)", scale: 1 }
-            : { opacity: 0, filter: "blur(8px)", scale: 1.05 }
+            ? { opacity: 0.55, filter: "blur(0px)",  scale: 1 }
+            : { opacity: 0,    filter: "blur(6px)", scale: 1.04 }
         }
-        transition={{ duration: 0.4, ease: "easeOut" }}
+        transition={{ duration: 0.45, ease: "easeOut" }}
       />
 
-      {/* ── Donkere overlay verschijnt samen met de foto ── */}
-      <motion.div
-        className="absolute inset-0 bg-[#1A1714] pointer-events-none"
-        animate={{ opacity: hovered ? 0.55 : 0 }}
-        transition={{ duration: 0.4 }}
-      />
+      {/* Subtiele gradient altijd aanwezig voor diepte */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#1A1714]/80 via-transparent to-transparent pointer-events-none" />
 
-      {/* ── Content: schuift licht omhoog bij hover ── */}
+      {/* Hele tile klikbaar */}
+      <Link href={href} className="absolute inset-0 z-20" aria-label={headline} />
+
+      {/* Content: schuift licht omhoog bij hover */}
       <motion.div
         className="relative z-10 p-7 flex flex-col h-full"
+        style={{ minHeight: featured ? "480px" : "300px" }}
         animate={{ y: hovered ? -4 : 0 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
       >
@@ -75,30 +73,24 @@ export function DoelgroepTile({
           {label}
         </p>
 
-        <motion.h3
-          className="font-serif font-semibold leading-snug mb-3"
-          style={{ fontSize: featured ? "1.5rem" : "1.1rem" }}
-          animate={{ color: hovered ? "#ffffff" : "#1A1714" }}
-          transition={{ duration: 0.3 }}
+        <h3
+          className="font-serif font-semibold text-white leading-snug mb-3"
+          style={{ fontSize: featured ? "1.5rem" : "1.15rem" }}
         >
           {headline}
-        </motion.h3>
+        </h3>
 
-        <motion.p
-          className="text-sm leading-relaxed flex-1"
-          animate={{ color: hovered ? "rgba(255,255,255,0.78)" : "#5C5550" }}
-          transition={{ duration: 0.3 }}
-        >
+        <p className="text-sm text-white/60 leading-relaxed">
           {description}
-        </motion.p>
+        </p>
 
-        <Link
-          href={href}
-          className="mt-5 inline-flex items-center gap-1.5 text-[#CC5533] text-xs font-semibold uppercase tracking-wider hover:gap-2.5 transition-all duration-200"
-          onClick={(e) => e.stopPropagation()}
+        <motion.span
+          className="mt-5 inline-flex items-center gap-1.5 text-[#CC5533] text-xs font-semibold uppercase tracking-wider"
+          animate={{ opacity: hovered ? 1 : 0.7 }}
+          transition={{ duration: 0.2 }}
         >
-          Meer info <span>→</span>
-        </Link>
+          Meer info →
+        </motion.span>
       </motion.div>
     </motion.div>
   );

@@ -17,38 +17,42 @@ export const metadata: Metadata = {
 
 export default function DoelgroepenPage() {
   return (
-    <>
-      {/* ─── HERO ─── */}
-      <section className="relative overflow-hidden pt-32 pb-20 px-6">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1740953846896-b3acd846fa61?w=2000&q=80"
-            alt="Horeca omgeving"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-[#1A1714]/70" />
-        </div>
-        <div className="relative z-10 max-w-4xl mx-auto">
+    <main className="bg-[#1A1714]">
+
+      {/* ─── HERO — volle breedte, inner container voor content ─── */}
+      <section className="w-full relative overflow-hidden text-white">
+        {/* Achtergrondafbeelding */}
+        <img
+          src="https://images.unsplash.com/photo-1740953846896-b3acd846fa61?w=2000&q=80"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1A1714]/80 via-[#1A1714]/70 to-[#1A1714]" />
+
+        {/* Gecentreerde content */}
+        <div className="relative mx-auto w-full max-w-6xl px-6 pt-40 pb-24">
           <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-4">
             Doelgroepen
           </p>
           <h1 className="text-5xl md:text-6xl font-serif text-white font-semibold leading-tight mb-6">
             Voor welk type zaak
             <br />
-            <em className="not-italic text-white/80">ben jij?</em>
+            <em className="not-italic text-white/70">ben jij?</em>
           </h1>
-          <p className="text-white/70 text-lg max-w-xl">
+          <p className="text-white/60 text-lg max-w-xl leading-relaxed">
             Spont werkt voor restaurants, cafés, koffiezaken en meer. Zelfde systeem, eerlijke prijs, gemaakt voor jouw manier van werken.
           </p>
         </div>
       </section>
 
-      {/* ─── TILE GRID ─── */}
-      <section className="bg-[#FCF9F4] py-6 px-6">
+      {/* ─── TILE GRID — donkere achtergrond, volle breedte ─── */}
+      <section className="w-full bg-[#1A1714] px-4 pb-6">
         <div className="w-full">
 
-          {/* Rij 1: featured links + 2 tiles rechts */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 items-start mb-3">
+          {/* Rij 1: featured links + 2×2 tiles rechts */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
             <DoelgroepTile
               label="Vol terras, drukke bediening"
               headline="Restaurants"
@@ -124,6 +128,6 @@ export default function DoelgroepenPage() {
         primary={{ label: "Start direct", href: "/contact" }}
         secondary={{ label: "Bekijk de prijzen", href: "/prijzen" }}
       />
-    </>
+    </main>
   );
 }

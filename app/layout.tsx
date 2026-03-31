@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/shared/CookieBanner";
 import PlausibleAnalytics from "@/components/shared/PlausibleAnalytics";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Script from "next/script";
 
 const notoSerif = Noto_Serif({
   variable: "--font-noto-serif",
@@ -93,6 +94,17 @@ export default function RootLayout({
           <PlausibleAnalytics />
         </Suspense>
         <SpeedInsights />
+        {/* Google Ads */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16835723122"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-16835723122');
+        `}</Script>
       </body>
     </html>
   );

@@ -156,19 +156,27 @@ export default function FeaturesPage() {
       />
 
       {/* ─── HERO ─── */}
-      <section className="bg-[#FCF9F4] pt-32 pb-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative overflow-hidden pt-32 pb-20 px-6 min-h-[55vh] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-dNH4CywjIPI?w=2000&q=80"
+            alt="Modern restaurant interieur"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-[#1A1714]/70" />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto text-center w-full">
           <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-4">
             Alle functies
           </p>
-          <h1 className="text-5xl md:text-6xl font-serif text-[#1A1714] font-semibold leading-tight mb-6">
+          <h1 className="text-5xl md:text-6xl font-serif text-white font-semibold leading-tight mb-6">
             Eén systeem voor alles.
           </h1>
-          <p className="text-[#5C5550] text-lg max-w-2xl mx-auto mb-6">
+          <p className="text-white/70 text-lg max-w-2xl mx-auto mb-6">
             Geen losse tools, geen integratie-gedoe. Spont bundelt alles wat je
             nodig hebt in één platform — en het werkt gewoon.
           </p>
-          <p className="text-[#5C5550]/60 text-xs mb-10">
+          <p className="text-white/40 text-xs mb-10">
             Laatst bijgewerkt: <time dateTime="2026-03-30">30 maart 2026</time>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -180,7 +188,7 @@ export default function FeaturesPage() {
             </a>
             <Link
               href="/prijzen"
-              className="bg-[#F6F3EE] hover:bg-[#EBE8E3] text-[#1A1714] font-semibold px-8 py-4 rounded-full transition-colors"
+              className="bg-white/15 hover:bg-white/25 text-white font-semibold px-8 py-4 rounded-full transition-colors"
             >
               Bekijk prijzen
             </Link>

@@ -20,19 +20,19 @@ const doelgroepen = [
     slug: "restaurants",
     title: "Restaurants",
     subtitle: "Vol terras, drukke bediening",
-    img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+    img: "https://images.unsplash.com/photo-dNH4CywjIPI?w=800&q=80",
   },
   {
     slug: "coffee-bars",
     title: "Koffiezaken",
     subtitle: "Ochtenddrukte, loyaliteit, snelheid",
-    img: "https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=800&q=80",
+    img: "https://images.unsplash.com/photo-I-JXqOeq9G0?w=800&q=80",
   },
   {
     slug: "cafes",
     title: "Café & kroeg",
     subtitle: "Snel aan de toog",
-    img: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=800&q=80",
+    img: "https://images.unsplash.com/photo-CNgNOkO0b2U?w=800&q=80",
   },
   {
     slug: "quick-service",
@@ -44,7 +44,7 @@ const doelgroepen = [
     slug: "bakkerijen",
     title: "Bakkerijen",
     subtitle: "Toonbank, snel, overzichtelijk",
-    img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80",
+    img: "https://images.unsplash.com/photo-KLnALCSWxQQ?w=800&q=80",
   },
   {
     slug: "discotheken",
@@ -56,7 +56,7 @@ const doelgroepen = [
     slug: "bowlingbanen",
     title: "Bowling & leisure",
     subtitle: "Van baan tot bar",
-    img: "https://images.unsplash.com/photo-1541795795328-f073b763494e?w=800&q=80",
+    img: "https://images.unsplash.com/photo-d_w0xS7nMDQ?w=800&q=80",
   },
   {
     slug: "evenementen",
@@ -73,7 +73,7 @@ export default function DoelgroepenPage() {
       <section className="relative overflow-hidden pt-32 pb-20 px-6">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?w=2000&q=80"
+            src="https://images.unsplash.com/photo-oC5WOLQdOoE?w=2000&q=80"
             alt="Horeca omgeving"
             className="w-full h-full object-cover"
           />

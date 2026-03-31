@@ -143,7 +143,7 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=2000&q=80"
+            src="https://images.unsplash.com/photo-rV1sSn8SCvg?w=2000&q=80"
             alt="Restaurant"
             className="w-full h-full object-cover"
           />

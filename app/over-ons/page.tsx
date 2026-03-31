@@ -59,7 +59,7 @@ export default function OverOnsPage() {
       <section className="relative overflow-hidden pt-32 pb-20 px-6">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=2000&q=80"
+            src="https://images.unsplash.com/photo-MwE2-fEkj44?w=2000&q=80"
             alt="Restaurant"
             className="w-full h-full object-cover"
           />

@@ -43,12 +43,12 @@ const team = [
   {
     name: "Flip van den Bosch",
     role: "Co-founder",
-    bio: "Flip groeide op in de horeca. Hij zag hoe kassasystemen het werk zwaarder maakten in plaats van makkelijker. Dat wilde hij anders.",
+    bio: "Flip bouwt het systeem dat Sjoerd voor ogen had. Technologie die zichzelf wegcijfert, zodat de horeca centraal staat.",
   },
   {
     name: "Sjoerd van den Bosch",
     role: "Co-founder",
-    bio: "Sjoerd bouwt het systeem dat Flip voor ogen had. Technologie die zichzelf wegcijfert, zodat de horeca centraal staat.",
+    bio: "Sjoerd groeide op in de horeca. Hij zag hoe kassasystemen het werk zwaarder maakten in plaats van makkelijker. Dat wilde hij anders.",
   },
 ];
 

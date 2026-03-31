@@ -8,15 +8,15 @@ import PaymentsTabs from "@/components/pricing/PaymentsTabs";
 export const metadata: Metadata = {
   title: "Prijzen",
   description:
-    "Spont Start vanaf €89/mnd, Pro vanaf €169/mnd. Alle functies inbegrepen, geen verborgen kosten, maandelijks opzegbaar.",
+    "Spont Start vanaf €69/mnd (met Payments). Alle functies inbegrepen, geen verborgen kosten, maandelijks opzegbaar.",
   openGraph: {
     title: "Prijzen | Spont",
     description:
-      "Spont Start vanaf €89/mnd, Pro vanaf €169/mnd. Alle functies inbegrepen, geen verborgen kosten.",
+      "Spont Start vanaf €69/mnd met Spont Payments. Alle functies inbegrepen, geen verborgen kosten.",
     url: "https://www.spont.nl/prijzen",
   },
   alternates: { canonical: "https://www.spont.nl/prijzen" },
-  other: { "article:modified_time": "2026-03-30" },
+  other: { "article:modified_time": "2026-03-31" },
 };
 
 // ─── PLANS ────────────────────────────────────────────────────────────────────
@@ -24,9 +24,11 @@ export const metadata: Metadata = {
 const plans = [
   {
     name: "Start",
-    price: "€89",
+    price: "€69",
+    priceNote: "*",
+    basePriceWithoutPayments: "€89",
     period: "/maand",
-    description: "1–2 verkooppunten. Alle functies inbegrepen.",
+    description: "1–2 verkooppunten. Alle functies inbegrepen. Met Spont Payments.",
     cta: "Start direct",
     ctaHref: "https://admin.spont.nl",
     highlight: false,
@@ -44,9 +46,11 @@ const plans = [
   },
   {
     name: "Pro",
-    price: "€169",
+    price: "€149",
+    priceNote: "*",
+    basePriceWithoutPayments: "€169",
     period: "/maand",
-    description: "Onbeperkt verkooppunten. Meerdere vestigingen. Alles.",
+    description: "Onbeperkt verkooppunten. Meerdere vestigingen. Alles. Met Spont Payments.",
     cta: "Start met Pro",
     ctaHref: "https://admin.spont.nl",
     highlight: true,
@@ -91,7 +95,7 @@ const faqs = [
   },
   {
     q: "Wat kost Spont Payments?",
-    a: "Gebruik je Spont als betaaloplossing, dan betaal je €30/maand minder op je abonnement. POS-tarieven: debit €0,085/tx, creditcard consumer 1,89%, creditcard zakelijk 2,79%, Amex €0,05 + 2,20%, Bancontact €0,06 + 0,30%. Voor online bestellingen (ECOM) gelden aparte tarieven — zie de tariefstabel op deze pagina. Geen verborgen kosten.",
+    a: "Spont Payments is standaard inbegrepen. Geen extra terminal-kosten of setup fees. POS-tarieven: debit €0,085/tx, creditcard consumer 1,89%, creditcard zakelijk 2,79%, Amex €0,05 + 2,20%, Bancontact €0,06 + 0,30%. Voor online bestellingen (ECOM) gelden aparte tarieven — zie de tariefstabel op deze pagina. Wil je geen betaaloplossing gebruiken? Dan betaal je €20/maand minder.",
   },
 ];
 
@@ -142,7 +146,7 @@ export default function PricingPage() {
             <em className="not-italic text-white/80">is wat je betaalt.</em>
           </h1>
           <p className="text-white/70 text-lg max-w-xl mx-auto">
-            Volledig kassasysteem. Vanaf €59/maand. Geen opstartkosten,
+            Volledig kassasysteem met betaaloplossing. Vanaf €69/maand. Geen opstartkosten,
             geen jaarcontract.
           </p>
           <p className="text-white/40 text-xs mt-4">
@@ -185,13 +189,24 @@ export default function PricingPage() {
                 </p>
 
                 <div className="mb-8">
-                  <span
-                    className={`text-4xl font-serif font-bold ${
-                      plan.highlight ? "text-white" : "text-[#1A1714]"
-                    }`}
-                  >
-                    {plan.price}
-                  </span>
+                  <div className="flex items-baseline gap-1">
+                    <span
+                      className={`text-4xl font-serif font-bold ${
+                        plan.highlight ? "text-white" : "text-[#1A1714]"
+                      }`}
+                    >
+                      {plan.price}
+                    </span>
+                    {plan.priceNote && (
+                      <span
+                        className={`text-lg font-semibold ${
+                          plan.highlight ? "text-[#CC5533]" : "text-[#CC5533]"
+                        }`}
+                      >
+                        {plan.priceNote}
+                      </span>
+                    )}
+                  </div>
                   <span
                     className={`text-sm ml-1 ${
                       plan.highlight ? "text-white/60" : "text-[#5C5550]"
@@ -252,6 +267,11 @@ export default function PricingPage() {
               </div>
             ))}
           </div>
+
+          {/* Footnote */}
+          <p className="text-center text-[#5C5550] text-sm mt-8">
+            <span className="font-semibold">* Met Spont Payments.</span> Wil je een ander betaalmiddel gebruiken? Start zonder Payments voor €89/maand (Start) of €169/maand (Pro).
+          </p>
         </div>
       </section>
 
@@ -265,20 +285,20 @@ export default function PricingPage() {
               Spont Payments
             </p>
             <h3 className="font-serif text-2xl text-white font-semibold mb-2">
-              Gebruik je Spont als betaaloplossing?<br />
-              Dan betaal je €30/maand minder.
+              Reeds inbegrepen.<br />
+              Geïntegreerde betalingen, geen extra terminal.
             </h3>
             <p className="text-white/60 text-sm mb-6">
-              Geïntegreerde betalingen. Geen aparte terminal-SLA's. Geen verborgen kosten.
+              Spont Payments is standaard inbegrepen in onze prijzen. Tap to Pay, debit- en creditcard — alles in één terminal, zonder aparte SLA's.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="bg-white/10 rounded-2xl px-6 py-4 text-center">
-                <p className="text-white/60 text-xs mb-1">Start + Payments</p>
-                <p className="text-white text-2xl font-serif font-bold">€59<span className="text-sm font-normal text-white/60">/maand</span></p>
+                <p className="text-white/60 text-xs mb-1">Zonder Payments</p>
+                <p className="text-white text-2xl font-serif font-bold">€89<span className="text-sm font-normal text-white/60">/maand</span></p>
               </div>
-              <div className="bg-white/10 rounded-2xl px-6 py-4 text-center">
-                <p className="text-white/60 text-xs mb-1">Pro + Payments</p>
-                <p className="text-white text-2xl font-serif font-bold">€139<span className="text-sm font-normal text-white/60">/maand</span></p>
+              <div className="bg-[#CC5533] rounded-2xl px-6 py-4 text-center">
+                <p className="text-white/80 text-xs mb-1">Met Payments (bespaar €20)</p>
+                <p className="text-white text-2xl font-serif font-bold">€69<span className="text-sm font-normal text-white/60">/maand</span></p>
               </div>
             </div>
           </div>

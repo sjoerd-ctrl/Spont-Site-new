@@ -48,3 +48,115 @@ h1, h2, h3, h4 {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
+
+/* ─── Artikel typografie ──────────────────────────────────────────────────── */
+
+.article-body {
+  color: #3D3A36;
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  max-width: 68ch;
+}
+
+.article-body > * + * {
+  margin-top: 1.5rem;
+}
+
+.article-body > p:first-child {
+  font-size: 1.2rem;
+  line-height: 1.75;
+  color: #1A1714;
+}
+
+.article-body h2 {
+  font-family: var(--font-noto-serif), Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1A1714;
+  line-height: 1.25;
+  margin-top: 3rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #EBE8E3;
+}
+
+.article-body h3 {
+  font-family: var(--font-noto-serif), Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1A1714;
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.article-body p {
+  color: #3D3A36;
+  margin-top: 1.25rem;
+}
+
+.article-body ul,
+.article-body ol {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.article-body ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.article-body ul li {
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.article-body ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #CC5533;
+}
+
+.article-body ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+}
+
+.article-body li {
+  color: #3D3A36;
+  line-height: 1.7;
+}
+
+.article-body strong {
+  font-weight: 600;
+  color: #1A1714;
+}
+
+.article-body a {
+  color: #CC5533;
+  text-decoration: none;
+  border-bottom: 1px solid #CC553355;
+  transition: border-color 0.15s ease;
+}
+
+.article-body a:hover {
+  border-color: #CC5533;
+}
+
+.article-body blockquote {
+  border-left: 3px solid #CC5533;
+  padding-left: 1.25rem;
+  margin-left: 0;
+  margin-top: 2rem;
+  color: #1A1714;
+  font-size: 1.1rem;
+  font-style: italic;
+  font-family: var(--font-noto-serif), Georgia, serif;
+}

@@ -1144,7 +1144,7 @@ export default async function BlogArticlePage({
           {/* Decoratieve topbalk */}
           <div className="h-1 w-16 bg-[#CC5533] rounded-full mt-16 mb-12" />
           <FadeUp>
-            <div className="prose prose-lg prose-neutral prose-headings:font-serif prose-headings:text-[#1A1714] prose-headings:font-semibold prose-p:text-[#3D3A36] prose-p:leading-[1.8] prose-li:text-[#3D3A36] prose-a:text-[#CC5533] prose-a:no-underline hover:prose-a:underline prose-strong:text-[#1A1714] prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-5 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-ul:my-5 prose-li:my-2 prose-ul:pl-5 max-w-none">
+            <div className="article-body">
               {article.content}
             </div>
           </FadeUp>

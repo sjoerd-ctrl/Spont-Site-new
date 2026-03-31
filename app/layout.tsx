@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Nunito_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import { Suspense } from "react";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
@@ -9,10 +9,35 @@ import PlausibleAnalytics from "@/components/shared/PlausibleAnalytics";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
 
-const nunitoSans = Nunito_Sans({
+const nunitoSans = localFont({
+  src: [
+    {
+      path: "../public/fonts/NunitoSans-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/NunitoSans-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/NunitoSans-SemiBold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/NunitoSans-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/NunitoSans-ExtraBold.woff2",
+      weight: "800",
+      style: "normal",
+    },
+  ],
   variable: "--font-nunito",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {

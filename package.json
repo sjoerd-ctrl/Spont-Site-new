@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/nunito-sans": "^5.2.7",
     "@plausible-analytics/tracker": "^0.4.4",
     "@vercel/speed-insights": "^2.0.0",
     "framer-motion": "^12.38.0",

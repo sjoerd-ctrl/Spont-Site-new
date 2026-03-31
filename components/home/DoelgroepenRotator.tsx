@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import Link from "next/link";
 
 const segments = [
@@ -57,7 +56,7 @@ const segments = [
 
 export default function DoelgroepenRotator() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [paused, setPaused] = useState(false);
+  const pausedRef = useRef(false);
 
   useEffect(() => {
     const el = scrollRef.current;
@@ -65,10 +64,10 @@ export default function DoelgroepenRotator() {
 
     let raf: number;
     let lastTime = 0;
-    const speed = 0.28; // langzamer — was 0.5
+    const speed = 0.28;
 
     const step = (time: number) => {
-      if (!paused && lastTime) {
+      if (!pausedRef.current && lastTime) {
         const delta = time - lastTime;
         el.scrollLeft += speed * (delta / 16);
         const half = el.scrollWidth / 2;
@@ -82,7 +81,7 @@ export default function DoelgroepenRotator() {
 
     raf = requestAnimationFrame(step);
     return () => cancelAnimationFrame(raf);
-  }, [paused]);
+  }, []); // geen dependency op state — ref is altijd actueel
 
   const items = [...segments, ...segments];
 
@@ -91,37 +90,30 @@ export default function DoelgroepenRotator() {
       ref={scrollRef}
       className="flex gap-4 overflow-x-auto"
       style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onTouchStart={() => setPaused(true)}
-      onTouchEnd={() => setPaused(false)}
+      onMouseEnter={() => { pausedRef.current = true; }}
+      onMouseLeave={() => { pausedRef.current = false; }}
+      onTouchStart={() => { pausedRef.current = true; }}
+      onTouchEnd={() => { pausedRef.current = false; }}
     >
       {items.map((seg, i) => (
-        <motion.div
-          key={`${seg.slug}-${i}`}
-          className="flex-shrink-0 w-64 md:w-72"
-          whileHover={{
-            scale: 1.02,
-            y: -4,
-            boxShadow: "0 20px 48px rgba(0,0,0,0.14)",
-          }}
-          whileTap={{ scale: 0.98 }}
-          transition={{ type: "spring", stiffness: 260, damping: 20 }}
-        >
+        <div key={`${seg.slug}-${i}`} className="flex-shrink-0 w-64 md:w-72">
           <Link
             href={`/doelgroepen/${seg.slug}`}
-            className="relative block rounded-3xl overflow-hidden"
+            className="group relative block rounded-3xl overflow-hidden"
             style={{ height: "400px" }}
           >
             {/* Full-bleed foto */}
             <img
               src={seg.img}
               alt={seg.label}
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
             />
 
-            {/* Gradient overlay */}
+            {/* Vaste gradient onderaan */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#1A1714]/90 via-[#1A1714]/25 to-transparent" />
+
+            {/* Kleur-overlay bij hover — warm tint, zoals Mollie */}
+            <div className="absolute inset-0 bg-[#CC5533]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
             {/* Tekst onderaan */}
             <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
@@ -133,7 +125,7 @@ export default function DoelgroepenRotator() {
               </p>
             </div>
           </Link>
-        </motion.div>
+        </div>
       ))}
     </div>
   );

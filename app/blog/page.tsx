@@ -46,6 +46,13 @@ const articles = [
     category: "Ondernemen",
   },
   {
+    slug: "meerdere-horecalocaties-beheren",
+    title: "Meerdere horecalocaties beheren: zo houd je het overzicht",
+    excerpt: "Twee of drie locaties? Zo houd je grip op omzet, personeel en menukaarten zonder dagelijks heen en weer te rijden.",
+    date: "15 februari 2026",
+    category: "Ondernemen",
+  },
+  {
     slug: "nieuw-restaurant-welke-kassa",
     title: "Nieuw restaurant openen: welke kassa kies je?",
     excerpt: "Als je net begint, wil je geen gedoe. Hier is wat je moet weten voordat je een kassasysteem kiest.",

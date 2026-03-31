@@ -159,7 +159,7 @@ export default function FeaturesPage() {
       <section className="relative overflow-hidden pt-32 pb-20 px-6 min-h-[55vh] flex items-center">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-dNH4CywjIPI?w=2000&q=80"
+            src="https://images.unsplash.com/photo-1657198642762-bae3c6958e80?w=2000&q=80"
             alt="Modern restaurant interieur"
             className="w-full h-full object-cover"
           />

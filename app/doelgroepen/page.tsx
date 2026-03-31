@@ -44,11 +44,11 @@ export default function DoelgroepenPage() {
       </section>
 
       {/* ─── TILE GRID ─── */}
-      <section className="bg-[#FCF9F4] py-16 px-6">
-        <div className="mx-auto max-w-6xl">
+      <section className="bg-[#FCF9F4] py-6 px-6">
+        <div className="w-full">
 
           {/* Rij 1: featured links + 2 tiles rechts */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 items-start mb-3">
             <DoelgroepTile
               label="Vol terras, drukke bediening"
               headline="Restaurants"
@@ -57,7 +57,7 @@ export default function DoelgroepenPage() {
               imageSrc="https://images.unsplash.com/photo-1657198642762-bae3c6958e80?w=1200&q=80"
               featured
             />
-            <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
               <DoelgroepTile
                 label="Ochtenddrukte, loyaliteit, snelheid"
                 headline="Koffiezaken"
@@ -90,7 +90,7 @@ export default function DoelgroepenPage() {
           </div>
 
           {/* Rij 2: 3 gelijke tiles */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <DoelgroepTile
               label="Ook als het donker en druk is"
               headline="Discotheek & club"

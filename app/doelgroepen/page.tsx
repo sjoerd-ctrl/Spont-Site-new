@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import CTABanner from "@/components/shared/CTABanner";
-import DoelgroepenSlider from "@/components/doelgroepen/DoelgroepenSlider";
+import DoelgroepenFeatureRows from "@/components/doelgroepen/DoelgroepenFeatureRows";
 
 export const metadata: Metadata = {
   title: "Doelgroepen",
@@ -20,49 +20,65 @@ const doelgroepen = [
     slug: "restaurants",
     title: "Restaurants",
     subtitle: "Vol terras, drukke bediening",
-    img: "https://images.unsplash.com/photo-1657198642762-bae3c6958e80?w=800&q=80",
+    description:
+      "Of je nu een bruine kroeg, een trendy bistro of een groot terrasrestaurant hebt — Spont houdt de bediening soepel. Tafelorders, splits rekeningen, kaart- én contant betalen, alles in één systeem. Meer tafels bedienen zonder dat het ten koste gaat van de gastvrijheid.",
+    img: "https://images.unsplash.com/photo-1657198642762-bae3c6958e80?w=1200&q=80",
   },
   {
     slug: "coffee-bars",
     title: "Koffiezaken",
     subtitle: "Ochtenddrukte, loyaliteit, snelheid",
-    img: "https://images.unsplash.com/photo-1702540565983-f9184533c42a?w=800&q=80",
+    description:
+      "In de ochtendspits is elke seconde telt. Spont laat je razendsnel afrekenen, loyaliteitskaarten bijhouden en je meest bestelde drankjes altijd op één tik bereiken. Klanten komen terug — en jij weet waarom.",
+    img: "https://images.unsplash.com/photo-1702540565983-f9184533c42a?w=1200&q=80",
   },
   {
     slug: "cafes",
     title: "Café & kroeg",
     subtitle: "Snel aan de toog",
-    img: "https://images.unsplash.com/photo-1761671595965-e03c4d5f779f?w=800&q=80",
+    description:
+      "Druk aan de bar, muziek op volle sterkte, een rij klanten. Spont is ontworpen om in die chaos feilloos te werken. Grote knoppen, snelle tap-betaling, en een overzicht van de omzet aan het einde van de avond — zonder gedoe.",
+    img: "https://images.unsplash.com/photo-1761671595965-e03c4d5f779f?w=1200&q=80",
   },
   {
     slug: "quick-service",
     title: "Quick Service",
     subtitle: "Van bestelling tot afgifte",
-    img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80",
+    description:
+      "Bij quick service draait alles om doorlooptijd. Spont verbindt de kassa direct met de keuken, geeft nummers uit aan gasten en zorgt dat elke bestelling op de juiste plek uitkomt — snel, foutloos, zonder papieren bonnetjes.",
+    img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&q=80",
   },
   {
     slug: "bakkerijen",
     title: "Bakkerijen",
     subtitle: "Toonbank, snel, overzichtelijk",
-    img: "https://images.unsplash.com/photo-1738153730506-3f1c165c30fc?w=800&q=80",
+    description:
+      "Een volle toonbank, vaste klanten en een lunchpiek om 12 uur. Spont maakt afrekenen aan de balie snel en overzichtelijk. Geen ingewikkeld systeem, gewoon een kassa die bijhoudt wat je verkoopt en wat je verdient.",
+    img: "https://images.unsplash.com/photo-1738153730506-3f1c165c30fc?w=1200&q=80",
   },
   {
     slug: "discotheken",
     title: "Discotheek & club",
     subtitle: "Ook als het donker en druk is",
+    description:
+      "Spont werkt ook als het donker is en de muziek hard staat. Helder scherm, grote knoppen, en Tap to Pay zodat je geen muntjes of bonnetjes nodig hebt. Ideaal voor drukke bars en nachtclubs waar snelheid alles is.",
     img: "/images/disco-muziekgieterij.jpg",
   },
   {
     slug: "bowlingbanen",
     title: "Bowling & leisure",
     subtitle: "Van baan tot bar",
-    img: "https://images.unsplash.com/photo-1539805668195-3c16b76c90c1?w=800&q=80",
+    description:
+      "Van het reserveren van banen tot bestellingen aan de bar: Spont beheert alles op één plek. Combineer horeca-omzet met baanverhuur en houd altijd een helder overzicht — ook op drukke vrijdagavonden.",
+    img: "https://images.unsplash.com/photo-1539805668195-3c16b76c90c1?w=1200&q=80",
   },
   {
     slug: "evenementen",
     title: "Evenementen & festivals",
     subtitle: "Plug-and-play, Tap to Pay, geen contract",
-    img: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80",
+    description:
+      "Eén keer opstarten, meteen aan de slag. Spont heeft geen langlopend contract nodig. Tap to Pay op je telefoon, mobiele pinautomaat of vaste kassa — jij kiest. Perfect voor festivals, markten en tijdelijke pop-ups.",
+    img: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=1200&q=80",
   },
 ];
 
@@ -94,17 +110,9 @@ export default function DoelgroepenPage() {
         </div>
       </section>
 
-      {/* ─── DOELGROEPEN SLIDER ─── */}
-      <section className="bg-[#FCF9F4] py-20 overflow-hidden">
-        <div className="max-w-7xl mx-auto mb-10 px-6 md:px-12">
-          <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-2">
-            Kies jouw type zaak
-          </p>
-          <p className="text-[#5C5550] text-base">
-            Scroll om alle typen te bekijken.
-          </p>
-        </div>
-        <DoelgroepenSlider items={doelgroepen} />
+      {/* ─── FEATURE ROWS ─── */}
+      <section className="bg-[#FCF9F4] py-16 md:py-20">
+        <DoelgroepenFeatureRows items={doelgroepen} />
       </section>
 
       {/* ─── CTA ─── */}

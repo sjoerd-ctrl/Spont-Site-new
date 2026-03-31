@@ -17,6 +17,7 @@ const links = {
     { href: "/over-ons", label: "Over ons" },
     { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact" },
+    { href: "https://status.spont.nl", label: "Systeemstatus" },
   ],
   Juridisch: [
     { href: "/privacy", label: "Privacybeleid" },
@@ -46,12 +47,23 @@ export default function Footer() {
               <ul className="space-y-2.5">
                 {items.map((item) => (
                   <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      className="text-sm text-white/70 hover:text-white transition-colors"
-                    >
-                      {item.label}
-                    </Link>
+                    {item.href.startsWith("http") ? (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-white/70 hover:text-white transition-colors"
+                      >
+                        {item.label}
+                      </a>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className="text-sm text-white/70 hover:text-white transition-colors"
+                      >
+                        {item.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

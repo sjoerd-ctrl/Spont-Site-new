@@ -11,7 +11,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-plus-jakarta);
-  --font-serif: var(--font-noto-serif);
+  --font-serif: var(--font-plus-jakarta);
   --color-terracotta: #CC5533;
   --color-terracotta-dark: #A33818;
   --color-terracotta-light: #D96B4A;
@@ -37,7 +37,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-noto-serif), Georgia, serif;
+  font-family: var(--font-plus-jakarta), system-ui, sans-serif;
 }
 
 .card-hover {

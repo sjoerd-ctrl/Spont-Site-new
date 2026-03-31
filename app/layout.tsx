@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Serif, Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { Suspense } from "react";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
@@ -8,13 +8,6 @@ import CookieBanner from "@/components/shared/CookieBanner";
 import PlausibleAnalytics from "@/components/shared/PlausibleAnalytics";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
-
-const notoSerif = Noto_Serif({
-  variable: "--font-noto-serif",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-});
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -60,7 +53,7 @@ export default function RootLayout({
   return (
     <html
       lang="nl"
-      className={`${notoSerif.variable} ${plusJakarta.variable} h-full antialiased`}
+      className={`${plusJakarta.variable} h-full antialiased`}
     >
       <head>
         <script

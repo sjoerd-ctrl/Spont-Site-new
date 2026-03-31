@@ -12,6 +12,7 @@ import {
   BarChart3,
   Smartphone,
   ArrowRight,
+  Sparkles,
 } from "lucide-react";
 
 
@@ -180,11 +181,11 @@ export default function HomePage() {
       <section className="bg-white border-b border-[#EBE8E3] py-10 px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-6">
           {[
-            { icon: Zap,          label: "Binnen minuten operationeel" },
-            { icon: CheckCircle,  label: "Geen opstartkosten" },
-            { icon: ShieldCheck,  label: "Maandelijks opzegbaar" },
-            { icon: Smartphone,   label: "Werkt op eigen hardware" },
-            { icon: Bot,          label: "AI + ticketsupport inbegrepen" },
+            { icon: Zap,         label: "Zelfde dag nog online" },
+            { icon: CheckCircle, label: "Geen opstartkosten" },
+            { icon: ShieldCheck, label: "Maandelijks opzegbaar" },
+            { icon: Sparkles,    label: "Echt vernieuwend!" },
+            { icon: Bot,         label: "AI + ticketsupport inbegrepen" },
           ].map(({ icon: Icon, label }) => (
             <div key={label} className="flex items-center gap-3">
               <div className="shrink-0 w-9 h-9 rounded-xl bg-[#FCF9F4] flex items-center justify-center">

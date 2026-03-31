@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 // Pages with a dark full-screen hero → show white logo when not scrolled
-const DARK_HERO_PAGES = ["/", "/prijzen", "/over-ons", "/doelgroepen", "/contact"];
+const DARK_HERO_PAGES = ["/", "/prijzen", "/over-ons", "/doelgroepen"];
 
 const navLinks = [
   { href: "/features", label: "Functies" },

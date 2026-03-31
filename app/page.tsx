@@ -2,6 +2,7 @@ import Link from "next/link";
 import CTABanner from "@/components/shared/CTABanner";
 import DoelgroepenRotator from "@/components/home/DoelgroepenRotator";
 import JsonLd from "@/components/shared/JsonLd";
+import { FadeUp, FadeIn, Stagger, StaggerItem, HeroReveal } from "@/components/shared/Animate";
 import {
   CheckCircle,
   Clock,
@@ -146,40 +147,47 @@ export default function HomePage() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-20 w-full">
           <div className="max-w-2xl">
-            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-6">
-              Kassasysteem voor de horeca
-            </p>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-white font-semibold leading-[1.05] mb-6">
-              Jouw kassa.
-              <br />
-              <em className="not-italic text-white/80">Jouw tempo.</em>
-            </h1>
-            <p className="text-lg text-white/80 leading-relaxed mb-10 max-w-lg">
-              Spont is het kassasysteem dat meedenkt met de horeca. Eenvoudig
-              voor het personeel. Eerlijk in prijs. Geen verrassingen.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="https://admin.spont.nl"
-                className="bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold px-8 py-4 rounded-full transition-colors text-base inline-block text-center"
-              >
-                Start direct
-              </a>
-              <Link
-                href="/doelgroepen"
-                className="bg-white/15 hover:bg-white/25 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base inline-block text-center backdrop-blur-sm"
-              >
-                Voor jouw type zaak
-              </Link>
-            </div>
-
+            <HeroReveal delay={0}>
+              <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-6">
+                Kassasysteem voor de horeca
+              </p>
+            </HeroReveal>
+            <HeroReveal delay={0.1}>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-white font-semibold leading-[1.05] mb-6">
+                Jouw kassa.
+                <br />
+                <em className="not-italic text-white/80">Jouw tempo.</em>
+              </h1>
+            </HeroReveal>
+            <HeroReveal delay={0.25}>
+              <p className="text-lg text-white/80 leading-relaxed mb-10 max-w-lg">
+                Spont is het kassasysteem dat meedenkt met de horeca. Eenvoudig
+                voor het personeel. Eerlijk in prijs. Geen verrassingen.
+              </p>
+            </HeroReveal>
+            <HeroReveal delay={0.4}>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="https://admin.spont.nl"
+                  className="bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold px-8 py-4 rounded-full transition-colors text-base inline-block text-center"
+                >
+                  Start direct
+                </a>
+                <Link
+                  href="/doelgroepen"
+                  className="bg-white/15 hover:bg-white/25 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base inline-block text-center backdrop-blur-sm"
+                >
+                  Voor jouw type zaak
+                </Link>
+              </div>
+            </HeroReveal>
           </div>
         </div>
       </section>
 
       {/* ─── TRUST STRIP ─── */}
       <section className="bg-white border-b border-[#EBE8E3] py-10 px-6">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-6">
+        <Stagger className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-6">
           {[
             { icon: Zap,         label: "Zelfde dag nog online" },
             { icon: CheckCircle, label: "Geen opstartkosten" },
@@ -187,20 +195,20 @@ export default function HomePage() {
             { icon: Sparkles,    label: "Echt vernieuwend!" },
             { icon: Bot,         label: "AI + ticketsupport inbegrepen" },
           ].map(({ icon: Icon, label }) => (
-            <div key={label} className="flex items-center gap-3">
+            <StaggerItem key={label} className="flex items-center gap-3">
               <div className="shrink-0 w-9 h-9 rounded-xl bg-[#FCF9F4] flex items-center justify-center">
                 <Icon size={18} className="text-[#CC5533]" />
               </div>
               <span className="text-sm font-medium text-[#1A1714] leading-tight">{label}</span>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </section>
 
       {/* ─── WHY SPONT ─── */}
       <section className="bg-[#FCF9F4] py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <FadeUp className="text-center mb-16">
             <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
               Waarom Spont?
             </p>
@@ -210,62 +218,64 @@ export default function HomePage() {
             <p className="text-[#5C5550] mt-4 max-w-xl mx-auto">
               Alles wat je nodig hebt. Niks wat je niet gebruikt.
             </p>
-          </div>
+          </FadeUp>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {valueProps.map((vp) => {
               const Icon = vp.icon;
               return (
-                <div
-                  key={vp.title}
-                  className="card-hover bg-[#F6F3EE] rounded-3xl p-8 hover:bg-[#F0EDE8]"
-                >
-                  <div className="w-12 h-12 bg-[#CC5533]/10 rounded-2xl flex items-center justify-center mb-5">
-                    <Icon size={22} className="text-[#CC5533]" />
+                <StaggerItem key={vp.title}>
+                  <div className="card-hover bg-[#F6F3EE] rounded-3xl p-8 hover:bg-[#F0EDE8]">
+                    <div className="w-12 h-12 bg-[#CC5533]/10 rounded-2xl flex items-center justify-center mb-5">
+                      <Icon size={22} className="text-[#CC5533]" />
+                    </div>
+                    <h3 className="font-serif font-semibold text-lg text-[#1A1714] mb-2">
+                      {vp.title}
+                    </h3>
+                    <p className="text-[#5C5550] text-sm leading-relaxed">{vp.body}</p>
                   </div>
-                  <h3 className="font-serif font-semibold text-lg text-[#1A1714] mb-2">
-                    {vp.title}
-                  </h3>
-                  <p className="text-[#5C5550] text-sm leading-relaxed">{vp.body}</p>
-                </div>
+                </StaggerItem>
               );
             })}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* ─── FEATURE SHOWCASE ─── */}
       <section className="bg-[#F6F3EE] py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <FadeUp className="text-center mb-16">
             <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
               Het platform
             </p>
             <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#1A1714]">
               Eén systeem voor alles.
             </h2>
-          </div>
+          </FadeUp>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="card-hover md:col-span-2 bg-[#2D4B3F] rounded-[2rem] overflow-hidden relative min-h-72">
-              <img
-                src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=1200&q=80"
-                alt="Kassasysteem"
-                className="w-full h-full object-cover opacity-40 absolute inset-0"
-              />
-              <div className="relative z-10 p-10 flex flex-col justify-end h-full min-h-72">
-                <Smartphone size={28} className="text-white/60 mb-4" />
-                <h3 className="font-serif text-2xl text-white font-semibold mb-2">
-                  Kassasysteem
-                </h3>
-                <p className="text-white/70 text-sm max-w-sm">
-                  Snel, overzichtelijk en betrouwbaar. Werkt op iPad, tablet of
-                  touchscreen. Personeel leert het in één dienst.
-                </p>
+          <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+            <StaggerItem className="md:col-span-2">
+              <div className="card-hover bg-[#2D4B3F] rounded-[2rem] overflow-hidden relative min-h-72">
+                <img
+                  src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=1200&q=80"
+                  alt="Kassasysteem"
+                  className="w-full h-full object-cover opacity-40 absolute inset-0"
+                />
+                <div className="relative z-10 p-10 flex flex-col justify-end h-full min-h-72">
+                  <Smartphone size={28} className="text-white/60 mb-4" />
+                  <h3 className="font-serif text-2xl text-white font-semibold mb-2">
+                    Kassasysteem
+                  </h3>
+                  <p className="text-white/70 text-sm max-w-sm">
+                    Snel, overzichtelijk en betrouwbaar. Werkt op iPad, tablet of
+                    touchscreen. Personeel leert het in één dienst.
+                  </p>
+                </div>
               </div>
-            </div>
+            </StaggerItem>
 
-            <div className="flex flex-col gap-4">
+            <StaggerItem className="flex flex-col gap-4">
               <div className="card-hover bg-[#FCF9F4] rounded-[2rem] p-8 flex-1">
                 <TrendingUp size={22} className="text-[#CC5533] mb-4" />
                 <h3 className="font-serif font-semibold text-[#1A1714] mb-2">Rapportages</h3>
@@ -280,37 +290,46 @@ export default function HomePage() {
                   Gasten bestellen zelf via QR-code. De bon gaat direct naar de bar of keuken.
                 </p>
               </div>
-            </div>
+            </StaggerItem>
 
-            <div className="card-hover bg-[#FCF9F4] rounded-[2rem] p-8">
-              <Clock size={22} className="text-[#CC5533] mb-4" />
-              <h3 className="font-serif font-semibold text-[#1A1714] mb-2">Reserveringen</h3>
-              <p className="text-[#5C5550] text-sm">
-                Zonder commissie. Direct gekoppeld aan je kassa.
-              </p>
-            </div>
-            <div className="card-hover bg-[#F0EDE8] rounded-[2rem] p-8">
-              <Zap size={22} className="text-[#CC5533] mb-4" />
-              <h3 className="font-serif font-semibold text-[#1A1714] mb-2">Betalingen</h3>
-              <p className="text-[#5C5550] text-sm">
-                Geïntegreerde pinbetalingen. Bonnen splitsen in seconden.
-              </p>
-            </div>
-            <div className="card-hover bg-[#2D4B3F] rounded-[2rem] p-8">
-              <BarChart3 size={22} className="text-white mb-4" />
-              <h3 className="font-serif font-semibold text-white mb-2">Keuken & bar display</h3>
-              <p className="text-white/70 text-sm">
-                Digitale bonnen voor de keuken. Geen papier, geen misverstanden.
-              </p>
-            </div>
-          </div>
+            <StaggerItem>
+              <div className="card-hover bg-[#FCF9F4] rounded-[2rem] p-8">
+                <Clock size={22} className="text-[#CC5533] mb-4" />
+                <h3 className="font-serif font-semibold text-[#1A1714] mb-2">Reserveringen</h3>
+                <p className="text-[#5C5550] text-sm">
+                  Zonder commissie. Direct gekoppeld aan je kassa.
+                </p>
+              </div>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className="card-hover bg-[#F0EDE8] rounded-[2rem] p-8">
+                <Zap size={22} className="text-[#CC5533] mb-4" />
+                <h3 className="font-serif font-semibold text-[#1A1714] mb-2">Betalingen</h3>
+                <p className="text-[#5C5550] text-sm">
+                  Geïntegreerde pinbetalingen. Bonnen splitsen in seconden.
+                </p>
+              </div>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className="card-hover bg-[#2D4B3F] rounded-[2rem] p-8">
+                <BarChart3 size={22} className="text-white mb-4" />
+                <h3 className="font-serif font-semibold text-white mb-2">Keuken & bar display</h3>
+                <p className="text-white/70 text-sm">
+                  Digitale bonnen voor de keuken. Geen papier, geen misverstanden.
+                </p>
+              </div>
+            </StaggerItem>
+
+          </Stagger>
         </div>
       </section>
 
       {/* ─── DOELGROEPEN ─── */}
       <section className="bg-[#FCF9F4] py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
+          <FadeUp className="text-center mb-12">
             <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
               Voor jou
             </p>
@@ -320,7 +339,7 @@ export default function HomePage() {
             <p className="text-[#5C5550] mt-4 max-w-xl mx-auto">
               Zelfde systeem, eerlijke prijs — gemaakt voor jouw manier van werken.
             </p>
-          </div>
+          </FadeUp>
 
           <DoelgroepenRotator />
 
@@ -335,7 +354,7 @@ export default function HomePage() {
       {/* ─── PRICING PREVIEW ─── */}
       <section className="bg-[#F6F3EE] py-24 px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
+          <FadeUp className="text-center mb-12">
             <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
               Prijzen
             </p>
@@ -345,10 +364,11 @@ export default function HomePage() {
             <p className="text-[#5C5550] mt-4">
               Geen verborgen kosten. Geen jaarcontract. Alle functies inbegrepen.
             </p>
-          </div>
+          </FadeUp>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {plans.map((plan) => (
+              <StaggerItem key={plan.name}>
               <div
                 key={plan.name}
                 className={`card-hover rounded-3xl p-8 flex flex-col ${
@@ -393,8 +413,9 @@ export default function HomePage() {
                   Start direct
                 </a>
               </div>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
 
           <p className="text-center text-[#5C5550] text-xs mt-6">
             <span className="font-semibold">* Met Spont Payments.</span> Zonder Payments: €89 (Start) of €169 (Pro) per maand.
@@ -410,7 +431,7 @@ export default function HomePage() {
       {/* ─── HOW IT WORKS ─── */}
       <section className="bg-[#FCF9F4] py-24 px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
+          <FadeUp className="text-center mb-16">
             <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
               Hoe werkt het?
             </p>
@@ -420,11 +441,11 @@ export default function HomePage() {
             <p className="text-[#5C5550] mt-4">
               Geen wekenlange implementaties. Geen verborgen opstartkosten.
             </p>
-          </div>
+          </FadeUp>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {steps.map((step) => (
-              <div key={step.num} className="text-center">
+              <StaggerItem key={step.num} className="text-center">
                 <div className="w-14 h-14 rounded-full bg-[#CC5533]/10 flex items-center justify-center mx-auto mb-5">
                   <span className="font-serif font-bold text-[#CC5533] text-lg">
                     {step.num}
@@ -434,33 +455,35 @@ export default function HomePage() {
                   {step.title}
                 </h3>
                 <p className="text-[#5C5550] text-sm leading-relaxed">{step.body}</p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* ─── TESTIMONIALS ─── */}
       <section className="bg-[#F6F3EE] py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
+          <FadeUp className="text-center mb-12">
             <h2 className="text-3xl font-serif font-semibold text-[#1A1714]">
               Wat horecaondernemers zeggen.
             </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          </FadeUp>
+          <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((t) => (
-              <div key={t.name} className="card-hover bg-white rounded-3xl p-8 shadow-sm">
-                <p className="text-[#1A1714] text-base leading-relaxed mb-6 italic">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <div>
-                  <p className="font-semibold text-[#1A1714] text-sm">{t.name}</p>
-                  <p className="text-[#5C5550] text-xs mt-0.5">{t.role}</p>
+              <StaggerItem key={t.name}>
+                <div className="card-hover bg-white rounded-3xl p-8 shadow-sm h-full">
+                  <p className="text-[#1A1714] text-base leading-relaxed mb-6 italic">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <div>
+                    <p className="font-semibold text-[#1A1714] text-sm">{t.name}</p>
+                    <p className="text-[#5C5550] text-xs mt-0.5">{t.role}</p>
+                  </div>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 

@@ -18,13 +18,11 @@ const navLinks = [
 const loginOptions = [
   {
     name: "Spont POS",
-    description: "De handheld en kassa van Spont",
     href: "https://cloud.spont.nl",
     bg: "from-[#00C9B1] to-[#00A693]",
   },
   {
     name: "Spont Beyond",
-    description: "Eten en drinken",
     href: "https://admin.spont.nl",
     bg: "from-[#5B5FEF] to-[#3B3FC7]",
   },
@@ -130,10 +128,7 @@ export default function Navbar() {
                         <div className="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-white/60" />
                       </div>
                     </div>
-                    <div>
-                      <p className="text-sm font-semibold text-[#1A1714] leading-none mb-0.5">{opt.name}</p>
-                      <p className="text-xs text-[#5C5550]">{opt.description}</p>
-                    </div>
+                    <p className="text-sm font-semibold text-[#1A1714]">{opt.name}</p>
                   </a>
                 ))}
               </div>
@@ -187,10 +182,7 @@ export default function Navbar() {
                   <div className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-white/60" />
                 </div>
               </div>
-              <div>
-                <p className="text-sm font-semibold text-[#1A1714] leading-none mb-0.5">{opt.name}</p>
-                <p className="text-xs text-[#5C5550]">{opt.description}</p>
-              </div>
+              <p className="text-sm font-semibold text-[#1A1714]">{opt.name}</p>
             </a>
           ))}
           <hr className="border-[#EBE8E3]" />

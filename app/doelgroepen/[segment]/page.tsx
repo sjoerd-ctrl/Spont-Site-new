@@ -163,8 +163,8 @@ const segments: Record<string, Segment> = {
       {
         quote:
           "In de ochtend hebben we geen tijd voor een trage kassa. Spont is zo snel dat we in dezelfde tijd meer klanten bedienen.",
-        name: "Specialty Coffee Roos",
-        location: "Amsterdam",
+        name: "Jack & Jackies",
+        location: "3 vestigingen — Tilburg & Den Haag",
       },
     ],
     onboarding: [
@@ -318,9 +318,9 @@ const segments: Record<string, Segment> = {
       },
       {
         quote:
-          "Bij Jack & Jackies ondersteunt Spont zowel de koffiemomenten als lunch- en borrelservice. Het team werkt sneller en houdt grip op bestellingen, betalingen en omzet per dagdeel.",
-        name: "Jack & Jackies",
-        location: "3 vestigingen — Leeuwarden, Breda & Tilburg",
+          "Bij Micha ondersteunt Spont zowel de koffiemomenten als lunch- en borrelservice. Het team werkt sneller en houdt grip op bestellingen, betalingen en omzet per dagdeel.",
+        name: "Micha Bakery",
+        location: "Utrecht",
       },
     ],
     onboarding: [
@@ -470,14 +470,14 @@ const segments: Record<string, Segment> = {
       {
         quote:
           "Eindelijk een kassa waar mijn invalkrachten op vrijdagavond direct mee kunnen werken. Geen uitleg meer nodig — ze tikken gewoon in en klaar.",
-        name: "Kroeg De Zwaan",
-        location: "Utrecht",
+        name: "Heerlijk Lokaal",
+        location: "Apeldoorn",
       },
       {
         quote:
           "Op drukke avonden werken we met vier mensen tegelijk aan de bar. Spont houdt alles bij zonder dat we in elkaars weg zitten.",
-        name: "Café De Brug",
-        location: "Amsterdam",
+        name: "Café Restaurant Buitenlust",
+        location: "Amerongen",
       },
     ],
     onboarding: [

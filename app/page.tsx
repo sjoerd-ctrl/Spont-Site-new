@@ -60,21 +60,21 @@ const steps = [
 const testimonials = [
   {
     quote:
-      "Ons oude systeem was te ingewikkeld voor nieuw personeel. Spont is zo simpel dat iedereen er binnen een uur mee overweg kan.",
-    name: "Marloes V.",
-    role: "Eigenaar, Brasserie de Hoek",
+      "Eindelijk een kassa waar mijn invalkrachten op vrijdagavond direct mee kunnen werken. Geen uitleg meer nodig — ze tikken gewoon in en klaar.",
+    name: "Heerlijk Lokaal",
+    role: "Apeldoorn",
   },
   {
     quote:
-      "Eindelijk een kassa waarbij de prijs gewoon klopt. Geen verborgen kosten, geen rare contracten. We zijn al twee jaar klant.",
-    name: "Thomas K.",
-    role: "Bedrijfsleider, Café Central",
+      "Op drukke avonden werken we met vier mensen tegelijk aan de bar. Spont houdt alles bij zonder dat we in elkaars weg zitten.",
+    name: "Café Restaurant Buitenlust",
+    role: "Amerongen",
   },
   {
     quote:
-      "Eindelijk een kassasysteem zonder verrassingen op de factuur. Wat ze zeggen, is wat je betaalt.",
-    name: "Anita R.",
-    role: "Eigenaar, Lunchroom Zonnig",
+      "Bij ons ondersteunt Spont zowel de koffiemomenten als lunch- en borrelservice. Het team werkt sneller en houdt grip op bestellingen, betalingen en omzet per dagdeel.",
+    name: "Micha Bakery",
+    role: "Utrecht",
   },
 ];
 
@@ -367,7 +367,7 @@ export default function HomePage() {
                   <p className={`text-4xl font-serif font-bold ${plan.highlight ? "text-white" : "text-[#1A1714]"}`}>
                     {plan.price}
                     {"priceNote" in plan && (
-                      <span className="text-lg font-semibold text-[#CC5533]">{(plan as { priceNote: string }).priceNote}</span>
+                      <sup className="text-sm font-semibold text-[#CC5533] align-super">{(plan as { priceNote: string }).priceNote}</sup>
                     )}
                     <span className={`text-base font-normal ml-1 ${plan.highlight ? "text-white/60" : "text-[#5C5550]"}`}>
                       {plan.period}

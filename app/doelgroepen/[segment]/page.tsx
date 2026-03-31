@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import CTABanner from "@/components/shared/CTABanner";
 import JsonLd from "@/components/shared/JsonLd";
+import ContactForm from "@/components/shared/ContactForm";
 import { CheckCircle, AlertCircle } from "lucide-react";
 
 // ─── CONTENT DATA ─────────────────────────────────────────────────────────────
@@ -896,6 +897,24 @@ export default async function DoelgroepDetailPage({
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ─── MEER INFORMATIE FORMULIER ─── */}
+      <section className="bg-[#FCF9F4] py-24 px-6">
+        <div className="max-w-2xl mx-auto">
+          <div className="text-center mb-10">
+            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
+              Meer weten?
+            </p>
+            <h2 className="text-3xl font-serif font-semibold text-[#1A1714] mb-3">
+              Stel je vraag direct.
+            </h2>
+            <p className="text-[#5C5550] text-base">
+              Geen verkooppraatje. Gewoon een eerlijk gesprek over wat Spont voor jouw zaak kan betekenen.
+            </p>
+          </div>
+          <ContactForm />
         </div>
       </section>
 

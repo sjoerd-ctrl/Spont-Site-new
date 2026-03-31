@@ -198,13 +198,9 @@ export default function PricingPage() {
                       {plan.price}
                     </span>
                     {plan.priceNote && (
-                      <span
-                        className={`text-lg font-semibold ${
-                          plan.highlight ? "text-[#CC5533]" : "text-[#CC5533]"
-                        }`}
-                      >
+                      <sup className="text-sm font-semibold text-[#CC5533] align-super">
                         {plan.priceNote}
-                      </span>
+                      </sup>
                     )}
                   </div>
                   <span

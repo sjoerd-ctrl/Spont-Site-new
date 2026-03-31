@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@plausible-analytics/tracker": "^0.4.4",
     "lucide-react": "^0.462.0",
     "next": "^16.2.1",
     "react": "^19.0.0",

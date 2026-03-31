@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Noto_Serif, Plus_Jakarta_Sans } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/shared/CookieBanner";
+import PlausibleAnalytics from "@/components/shared/PlausibleAnalytics";
 
 const notoSerif = Noto_Serif({
   variable: "--font-noto-serif",
@@ -86,6 +88,9 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <CookieBanner />
+        <Suspense fallback={null}>
+          <PlausibleAnalytics />
+        </Suspense>
       </body>
     </html>
   );

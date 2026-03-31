@@ -19,12 +19,12 @@ const loginOptions = [
   {
     name: "Spont POS",
     href: "https://cloud.spont.nl",
-    bg: "from-[#00C9B1] to-[#00A693]",
+    icon: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/80/52/d2/8052d254-3817-7d93-eb04-1215e438c813/Placeholder.mill/128x128bb-75.webp",
   },
   {
     name: "Spont Beyond",
     href: "https://admin.spont.nl",
-    bg: "from-[#5B5FEF] to-[#3B3FC7]",
+    icon: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/95/9f/d8/959fd821-3b06-dc4a-c234-60363c9da474/Placeholder.mill/128x128bb-75.webp",
   },
 ];
 
@@ -123,11 +123,7 @@ export default function Navbar() {
                     onClick={() => setLoginOpen(false)}
                     className="flex items-center gap-4 px-4 py-3.5 hover:bg-[#FCF9F4] transition-colors"
                   >
-                    <div className={`shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br ${opt.bg} flex items-center justify-center`}>
-                      <div className="w-5 h-5 rounded-full bg-white/30 relative overflow-hidden">
-                        <div className="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-white/60" />
-                      </div>
-                    </div>
+                    <img src={opt.icon} alt={opt.name} className="shrink-0 w-10 h-10 rounded-xl" />
                     <p className="text-sm font-semibold text-[#1A1714]">{opt.name}</p>
                   </a>
                 ))}
@@ -177,11 +173,7 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
               className="flex items-center gap-3"
             >
-              <div className={`shrink-0 w-9 h-9 rounded-xl bg-gradient-to-br ${opt.bg} flex items-center justify-center`}>
-                <div className="w-4 h-4 rounded-full bg-white/30 relative overflow-hidden">
-                  <div className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-white/60" />
-                </div>
-              </div>
+              <img src={opt.icon} alt={opt.name} className="shrink-0 w-9 h-9 rounded-xl" />
               <p className="text-sm font-semibold text-[#1A1714]">{opt.name}</p>
             </a>
           ))}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 const segments = [
@@ -64,14 +65,12 @@ export default function DoelgroepenRotator() {
 
     let raf: number;
     let lastTime = 0;
-    const speed = 0.5; // px per frame (~30px/s)
+    const speed = 0.5;
 
     const step = (time: number) => {
       if (!paused && lastTime) {
         const delta = time - lastTime;
         el.scrollLeft += speed * (delta / 16);
-
-        // Loop: when we've scrolled past the first set, jump back
         const half = el.scrollWidth / 2;
         if (el.scrollLeft >= half) {
           el.scrollLeft -= half;
@@ -85,13 +84,13 @@ export default function DoelgroepenRotator() {
     return () => cancelAnimationFrame(raf);
   }, [paused]);
 
-  // Duplicate items for seamless loop
+  // Duplicate for seamless loop
   const items = [...segments, ...segments];
 
   return (
     <div
       ref={scrollRef}
-      className="flex gap-4 overflow-x-auto scrollbar-hide"
+      className="flex gap-4 overflow-x-auto"
       style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
@@ -99,22 +98,43 @@ export default function DoelgroepenRotator() {
       onTouchEnd={() => setPaused(false)}
     >
       {items.map((seg, i) => (
-        <Link
+        <motion.div
           key={`${seg.slug}-${i}`}
-          href={`/doelgroepen/${seg.slug}`}
-          className="card-hover cursor-pointer group relative block rounded-2xl overflow-hidden min-h-56 flex-shrink-0 w-[85vw] md:w-[calc(33.333%-0.67rem)]"
+          className="flex-shrink-0 w-[85vw] md:w-[calc(33.333%-0.67rem)]"
+          whileHover={{
+            scale: 1.02,
+            y: -4,
+            boxShadow: "0 18px 45px rgba(0,0,0,0.10)",
+          }}
+          whileTap={{ scale: 0.98 }}
+          transition={{ type: "spring", stiffness: 260, damping: 20 }}
         >
-          <img
-            src={seg.img}
-            alt={seg.label}
-            className="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-500"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1A1714]/80 via-[#1A1714]/20 to-transparent" />
-          <div className="relative z-10 p-6 flex flex-col justify-end h-full min-h-56">
-            <h3 className="font-serif text-xl font-semibold text-white">{seg.label}</h3>
-            <p className="text-sm text-white/70 mt-1">{seg.subtitle}</p>
-          </div>
-        </Link>
+          <Link
+            href={`/doelgroepen/${seg.slug}`}
+            className="block bg-white rounded-3xl overflow-hidden p-3 text-decoration-none"
+            style={{ textDecoration: "none" }}
+          >
+            {/* Image wrap — eigen border-radius + overflow hidden */}
+            <div className="rounded-2xl overflow-hidden mb-4" style={{ height: "180px" }}>
+              <img
+                src={seg.img}
+                alt={seg.label}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            {/* Content */}
+            <div className="px-2 pb-2">
+              <h3 className="font-serif text-base font-semibold text-[#1A1714] leading-tight">
+                {seg.label}
+              </h3>
+              <p className="text-xs text-[#5C5550] mt-1">{seg.subtitle}</p>
+              <span className="mt-3 inline-block text-xs font-semibold text-[#CC5533] uppercase tracking-wider">
+                Meer info →
+              </span>
+            </div>
+          </Link>
+        </motion.div>
       ))}
     </div>
   );

@@ -3,6 +3,35 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import CTABanner from "@/components/shared/CTABanner";
 import JsonLd from "@/components/shared/JsonLd";
+import { ScrollProgress } from "@/components/blog/ScrollProgress";
+import { AnimatedTitle } from "@/components/blog/AnimatedTitle";
+import { FadeUp, HeroReveal } from "@/components/shared/Animate";
+import { Clock, ArrowLeft } from "lucide-react";
+
+// Hero-afbeelding per artikel
+const articleImages: Record<string, string> = {
+  "kassasysteem-festival-evenement": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=1600&q=80",
+  "kassasysteem-kiezen-starter":      "https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=1600&q=80",
+  "hoe-werken-kaartbetalingen":       "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1600&q=80",
+  "kassasysteem-vergelijken":         "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&q=80",
+  "meerdere-horecalocaties-beheren":  "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80",
+  "nieuw-restaurant-welke-kassa":     "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=1600&q=80",
+  "tap-to-pay-iphone":                "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1600&q=80",
+  "wat-kost-kassasysteem-restaurant": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80",
+  "ai-support-revolutie":             "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1600&q=80",
+};
+
+const readTimes: Record<string, string> = {
+  "kassasysteem-festival-evenement": "5 min",
+  "kassasysteem-kiezen-starter":      "6 min",
+  "hoe-werken-kaartbetalingen":       "4 min",
+  "kassasysteem-vergelijken":         "5 min",
+  "meerdere-horecalocaties-beheren":  "5 min",
+  "nieuw-restaurant-welke-kassa":     "4 min",
+  "tap-to-pay-iphone":                "3 min",
+  "wat-kost-kassasysteem-restaurant": "5 min",
+  "ai-support-revolutie":             "4 min",
+};
 
 // ─── ARTICLE DATA ─────────────────────────────────────────────────────────────
 
@@ -756,6 +785,231 @@ const articles: Record<string, Article> = {
           <li>Tap to Pay op iPhone inbegrepen</li>
           <li>Support zit in je abonnement</li>
           <li>Koppelingen met boekhouding en bezorgplatforms inbegrepen</li>
+        </ul>
+      </>
+    ),
+  },
+
+  "tap-to-pay-iphone": {
+    title: "Tap to Pay op iPhone: bestellen en afrekenen aan tafel",
+    metaDescription:
+      "Je medewerker neemt de bestelling op en rekent direct af — zonder losse pin-terminal. Zo werkt Tap to Pay op iPhone voor horecaondernemers.",
+    date: "22 november 2025",
+    dateISO: "2025-11-22",
+    category: "Betalingen",
+    content: (
+      <>
+        <p>
+          Stel je voor: een medewerker staat aan tafel, neemt de bestelling op via de app en houdt
+          daarna de iPhone bij de gast. Die tikt zijn bankpas of telefoon erop. Klaar. Geen loopje
+          terug naar de bar, geen losse betaalterminal, geen kabels.
+        </p>
+        <p>
+          Dat is Tap to Pay op iPhone. En het verandert hoe horeca afrekenent.
+        </p>
+
+        <h2>Wat is Tap to Pay op iPhone?</h2>
+        <p>
+          Tap to Pay op iPhone is een functie van Apple waarmee je iPhone als betaalterminal
+          werkt. Klanten betalen door hun bankpas, creditcard, Apple Pay of Google Pay op de
+          achterkant van de iPhone te houden. De betaling wordt verwerkt via NFC — dezelfde
+          technologie als in een gewone pin-terminal.
+        </p>
+        <p>
+          Je hebt geen extra hardware nodig. Geen apart apparaatje, geen kabels, geen laadproblemen
+          met een losse terminal. Alleen je iPhone en de juiste app.
+        </p>
+
+        <h2>Hoe werkt het in de praktijk?</h2>
+        <p>
+          Je medewerker heeft de Spont-app op de iPhone. Die app combineert bestellen en
+          afrekenen. De flow ziet er zo uit:
+        </p>
+        <ul>
+          <li>Medewerker opent de bestelling van tafel 4</li>
+          <li>Tikt op &ldquo;afrekenen&rdquo;</li>
+          <li>Kiest het betaalbedrag (heel of gesplitst)</li>
+          <li>Houdt de iPhone bij de gast — die tikt met kaart of telefoon</li>
+          <li>Betaling is binnen twee seconden bevestigd</li>
+        </ul>
+        <p>
+          Geen loopje naar de bar. Geen wachten op de terminal. Geen uitleg aan de gast waar de
+          pin-terminal staat.
+        </p>
+
+        <h2>Wat zijn de voordelen voor je zaak?</h2>
+
+        <h3>Sneller afrekenen</h3>
+        <p>
+          Je medewerker hoeft niet meer terug naar de bar om de rekening te pakken. Op een drukke
+          avond scheelt dat per tafel minstens een halve minuut — en over een hele avond loopt
+          dat op.
+        </p>
+
+        <h3>Minder hardware</h3>
+        <p>
+          Een losse betaalterminal kost 300 tot 600 euro aanschaf, plus onderhoud en
+          contractkosten. Met Tap to Pay op iPhone heb je dat allemaal niet nodig. Je medewerkers
+          werken met het apparaat dat ze al hebben.
+        </p>
+
+        <h3>Minder storingen</h3>
+        <p>
+          Losse pin-terminals raken kwijt, gaan kapot, hebben een lege batterij of verbinden niet
+          goed. iPhone is het primaire apparaat van je medewerker — die wordt altijd geladen en
+          bijgehouden.
+        </p>
+
+        <h3>Gesplitst betalen zonder gedoe</h3>
+        <p>
+          Gasten willen de rekening splitsen? Geen probleem. Je kiest in de app wie wat betaalt,
+          en elke gast tikt zijn eigen deel af. Zonder een aparte terminal rond te laten gaan.
+        </p>
+
+        <h2>Werkt het met alle betaalmethoden?</h2>
+        <p>
+          Tap to Pay op iPhone werkt met alle contactloze betaalmethoden: bankpas (Maestro en
+          V PAY), Visa, Mastercard, American Express, Apple Pay en Google Pay. iDEAL via NFC
+          is ook mogelijk afhankelijk van de betaalverwerker.
+        </p>
+        <p>
+          Contant betalen blijft gewoon mogelijk via de kassa-app. Tap to Pay is een aanvulling,
+          geen vervanging.
+        </p>
+
+        <h2>Is het veilig?</h2>
+        <p>
+          Tap to Pay op iPhone gebruikt dezelfde beveiligingsstandaarden als gewone
+          betaalterminals. Kaartgegevens worden versleuteld en nooit opgeslagen op de iPhone.
+          Apple heeft de technologie gecertificeerd bij de grote kaartnetwerken (Visa, Mastercard).
+        </p>
+
+        <h2>Wat heb je nodig om te starten?</h2>
+        <ul>
+          <li>
+            <strong>iPhone 15 of nieuwer</strong> — of iPhone XS en later met de juiste iOS-versie (iOS 16.7+).
+          </li>
+          <li>
+            <strong>Een betaalapp die Tap to Pay ondersteunt</strong> — Spont heeft dit ingebouwd.
+          </li>
+          <li>
+            <strong>Een betaalverwerker die Tap to Pay heeft geactiveerd</strong> — bij Spont is dit standaard inbegrepen.
+          </li>
+        </ul>
+        <p>
+          Geen extra contract, geen aanvraagprocedure, geen wachttijd. Als je Spont gebruikt, zet
+          je Tap to Pay aan via de app-instellingen.
+        </p>
+
+        <h2>Hoe werkt dit bij Spont?</h2>
+        <ul>
+          <li>Tap to Pay inbegrepen in je abonnement, geen extra kosten</li>
+          <li>Werkt direct in de Spont-app — bestellen en afrekenen in één flow</li>
+          <li>Geen losse betaalterminal nodig</li>
+          <li>Gesplitst betalen ingebouwd</li>
+          <li>Transacties direct zichtbaar in je dashboard</li>
+        </ul>
+      </>
+    ),
+  },
+
+  "ai-support-revolutie": {
+    title: "Hoe AI de support in de horeca verandert",
+    metaDescription:
+      "AI handelt standaardvragen af, tickets pakken de rest op. Zo blijft support snel en de prijs laag — zonder groot supportteam.",
+    date: "12 maart 2026",
+    dateISO: "2026-03-12",
+    category: "Support",
+    content: (
+      <>
+        <p>
+          Je kassasysteem doet het niet. Het is vrijdagavond, halfacht. Je belt de supportlijn
+          van je leverancier. Na tien minuten wachten krijg je iemand die je vraagt je apparaat
+          opnieuw op te starten. Dat wist je al.
+        </p>
+        <p>
+          Dit is hoe support eruitziet bij veel kassaleveranciers. En het is precies waarom AI
+          hier iets fundamenteels aan het veranderen is.
+        </p>
+
+        <h2>Wat doet AI in support?</h2>
+        <p>
+          Een AI-supportassistent is geen chatbot met vaste antwoorden. Het is een systeem dat
+          je vraag begrijpt, de meest waarschijnlijke oorzaak herkent en direct een oplossing
+          geeft — of doorverwijst als het complex is.
+        </p>
+        <p>
+          In de praktijk betekent dat: je typt &ldquo;mijn printer doet het niet&rdquo;, en de
+          assistent vraagt: welk printermodel, welke foutmelding, is de verbinding wifi of
+          Bluetooth? In plaats van jou te laten wachten tot een medewerker beschikbaar is,
+          doorloopt de AI direct de meest voorkomende oorzaken.
+        </p>
+
+        <h2>Welke vragen kan AI oplossen?</h2>
+        <p>
+          Zo&apos;n 70 tot 80% van de supportvragen in de horeca is hetzelfde: printerprobleem,
+          betaling die niet doorgaat, medewerker die geen inlog heeft, BTW die niet klopt,
+          product dat niet op de bon staat. Dit zijn oplosbare patronen. AI herkent ze en geeft
+          direct een antwoord — ook om 02:00 &apos;s nachts.
+        </p>
+        <p>
+          Wat AI niet oplost: complexe technische problemen, hardware die kapot is, situaties
+          die je specifieke locatieconfiguratie vereisen. Die gaan naar een ticket — en daarna
+          naar een mens.
+        </p>
+
+        <h2>Het ticketsysteem: wat daarna gebeurt</h2>
+        <p>
+          Niet alles is op te lossen via een AI-assistent. Complexere vragen gaan naar een
+          ticketsysteem. Het verschil met traditionele telefoonondersteuning:
+        </p>
+        <ul>
+          <li>
+            <strong>Prioriteit op urgentie.</strong> Een kassastoring op vrijdagavond krijgt hogere
+            prioriteit dan een vraag over een rapport.
+          </li>
+          <li>
+            <strong>Documentatie automatisch.</strong> De AI legt al bij je eerste vraag de context
+            vast. De medewerker die je ticket oppakt, weet al wat je geprobeerd hebt.
+          </li>
+          <li>
+            <strong>Geen herhaling.</strong> Je hoeft niet opnieuw uit te leggen wat er aan de hand
+            is als je van AI naar mens overgaat.
+          </li>
+        </ul>
+
+        <h2>Wat betekent dit voor de prijs?</h2>
+        <p>
+          Traditionele support is duur. Een supportteam van vijf mensen dat 24/7 beschikbaar is,
+          kost een bedrijf al snel meer dan 300.000 euro per jaar. Die kosten worden doorberekend
+          aan de klant — in een hoger abonnement, of in aparte supportcontracten.
+        </p>
+        <p>
+          Een AI-gedreven model verwerkt de grote meerderheid van vragen automatisch. Menselijke
+          medewerkers handelen alleen de complexe gevallen af. Dat is efficiënter en goedkoper —
+          en die besparing kun je doorgeven aan je klanten.
+        </p>
+
+        <h2>Is dit beter dan een telefoontje?</h2>
+        <p>
+          Voor standaardvragen: ja. Je krijgt direct een antwoord zonder wachttijd. Voor complexe
+          situaties: het hangt ervan af. Een goed ticketsysteem met duidelijke prioritering is
+          minstens zo effectief als een telefoontje — en laat een papieren spoor achter dat
+          handig is als het probleem terugkomt.
+        </p>
+        <p>
+          Telefonische support is niet per se beter dan AI + tickets. Het is anders. En voor
+          de meeste vragen is snelheid en beschikbaarheid belangrijker dan een menselijke stem.
+        </p>
+
+        <h2>Hoe werkt dit bij Spont?</h2>
+        <ul>
+          <li>AI-assistent beschikbaar 24/7 via de app en website</li>
+          <li>Herkent de meest voorkomende kassaproblemen direct</li>
+          <li>Complexe vragen gaan automatisch naar een ticket</li>
+          <li>Tickets worden geprioriteerd op urgentie</li>
+          <li>Support is inbegrepen in je abonnement, geen apart contract</li>
+          <li>Wil je meer? Prioriteitstickets zijn beschikbaar op het Pro-plan</li>
         </ul>
       </>
     ),

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Nunito_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { Suspense } from "react";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
@@ -9,8 +9,8 @@ import PlausibleAnalytics from "@/components/shared/PlausibleAnalytics";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
 
-const nunitoSans = Nunito_Sans({
-  variable: "--font-nunito",
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
 });
@@ -53,7 +53,7 @@ export default function RootLayout({
   return (
     <html
       lang="nl"
-      className={`${nunitoSans.variable} h-full antialiased`}
+      className={`${plusJakarta.variable} h-full antialiased`}
     >
       <head>
         <script

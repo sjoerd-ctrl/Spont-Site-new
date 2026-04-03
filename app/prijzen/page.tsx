@@ -28,20 +28,32 @@ const plans = [
     priceNote: "*",
     basePriceWithoutPayments: "€89",
     period: "/maand",
-    description: "1–2 verkooppunten. Alle functies inbegrepen. Met Spont Payments.",
+    description: "Perfect voor 1–2 kassa's. Alle functies van Spont, inclusief betalingen.",
+    badge: null,
+    badgeSub: null,
     cta: "Start direct",
     ctaHref: "https://admin.spont.nl",
     highlight: false,
-    features: [
-      { text: "Alle functies inbegrepen", included: true },
-      { text: "Kassasysteem (POS)", included: true },
-      { text: "Handhelds, QR-bestellen, Kiosks, KDS", included: true },
-      { text: "Online bestellen & reserveringen", included: true },
-      { text: "Loyalty, BI-rapportages, AI Assistent", included: true },
-      { text: "Support via AI + tickets", included: true },
-      { text: "Menselijke hulp bijkoopbaar (dealer of €59/uur)", included: true },
-      { text: "Maximaal 2 verkooppunten", included: true },
-      { text: "Meerdere verkooppunten", included: false },
+    featureGroups: [
+      {
+        label: "Wat je krijgt",
+        items: [
+          "Kassasysteem (POS)",
+          "Handhelds, QR-bestellen, Kiosks, KDS",
+          "Online bestellen & reserveringen",
+          "Loyalty & BI-rapportages",
+          "AI Assistent",
+          "Spont Payments inbegrepen",
+          "Maximaal 2 verkooppunten",
+        ],
+      },
+      {
+        label: "Support",
+        items: [
+          "AI + tickets inbegrepen",
+          "Menselijke hulp bijkoopbaar (dealer of €59/uur)",
+        ],
+      },
     ],
   },
   {
@@ -50,18 +62,24 @@ const plans = [
     priceNote: "*",
     basePriceWithoutPayments: "€169",
     period: "/vestiging/maand",
-    description: "Onbeperkt verkooppunten per vestiging. Meerdere vestigingen. Alles. Met Spont Payments.",
+    description: "Onbeperkt kassa's, apparaten en vestigingen. Alles van Start, plus prioriteit.",
+    badge: "Meest gekozen",
+    badgeSub: "voor groeiende zaken",
     cta: "Start met Pro",
     ctaHref: "https://admin.spont.nl",
     highlight: true,
-    features: [
-      { text: "Alles van Start", included: true },
-      { text: "Onbeperkte verkooppunten", included: true },
-      { text: "Onbeperkte apparaten & gebruikers", included: true },
-      { text: "Meerdere vestigingen in één dashboard", included: true },
-      { text: "AI-inzichten & suggesties", included: true },
-      { text: "Support via AI + prioriteitstickets", included: true },
-      { text: "Menselijke hulp bijkoopbaar (dealer of €59/uur)", included: true },
+    featureGroups: [
+      {
+        label: "Alles van Start, plus",
+        items: [
+          "Onbeperkte verkooppunten",
+          "Onbeperkte apparaten & gebruikers",
+          "Meerdere vestigingen in één dashboard",
+          "AI-inzichten & suggesties",
+          "Support via AI + prioriteitstickets",
+          "Menselijke hulp bijkoopbaar (dealer of €59/uur)",
+        ],
+      },
     ],
   },
 ];
@@ -140,14 +158,13 @@ export default function PricingPage() {
           <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-4">
             Prijzen
           </p>
-          <h1 className="text-5xl md:text-6xl font-sans text-white font-semibold leading-tight mb-6">
-            Wat je ziet,
+          <h1 className="text-5xl md:text-6xl font-serif text-white font-semibold leading-tight mb-6">
+            Alles in
             <br />
-            <em className="not-italic text-white/80">is wat je betaalt.</em>
+            <em className="not-italic text-white/80">één pakket.</em>
           </h1>
           <p className="text-white/70 text-lg max-w-xl mx-auto">
-            Volledig kassasysteem met betaaloplossing. Vanaf €69/maand. Geen opstartkosten,
-            geen jaarcontract.
+            Kassasysteem, betalingen, QR-bestellen, loyalty, rapportages en AI — alles inbegrepen. Geen verborgen kosten, geen jaarcontract.
           </p>
           <p className="text-white/40 text-xs mt-4">
             Laatst bijgewerkt: <time dateTime="2026-03-30">30 maart 2026</time>
@@ -168,87 +185,73 @@ export default function PricingPage() {
                     : "bg-[#F9FAFB] text-[#111827]"
                 }`}
               >
-                {plan.highlight && (
-                  <span className="inline-block bg-[#4353FF] text-white text-xs font-semibold px-3 py-1 rounded-full mb-4 w-fit">
-                    Meest gekozen
-                  </span>
+                {/* Badge */}
+                {plan.badge && (
+                  <div className="mb-4">
+                    <span className="inline-block bg-[#CC5533] text-white text-xs font-semibold px-3 py-1 rounded-full">
+                      {plan.badge}
+                    </span>
+                    {plan.badgeSub && (
+                      <span className={`ml-2 text-xs ${plan.highlight ? "text-white/50" : "text-[#5C5550]"}`}>
+                        {plan.badgeSub}
+                      </span>
+                    )}
+                  </div>
                 )}
-                <h2
-                  className={`font-sans text-xl font-semibold mb-1 ${
-                    plan.highlight ? "text-white" : "text-[#111827]"
-                  }`}
-                >
+
+                {/* Naam + beschrijving */}
+                <h2 className={`font-serif text-xl font-semibold mb-1 ${plan.highlight ? "text-white" : "text-[#1A1714]"}`}>
                   {plan.name}
                 </h2>
-                <p
-                  className={`text-sm mb-6 ${
-                    plan.highlight ? "text-white/60" : "text-[#6B7280]"
-                  }`}
-                >
+                <p className={`text-sm mb-6 ${plan.highlight ? "text-white/60" : "text-[#5C5550]"}`}>
                   {plan.description}
                 </p>
 
-                <div className="mb-8">
+                {/* Prijs */}
+                <div className="mb-6">
                   <div className="flex items-baseline gap-1">
-                    <span
-                      className={`text-4xl font-sans font-bold ${
-                        plan.highlight ? "text-white" : "text-[#111827]"
-                      }`}
-                    >
+                    <span className={`text-4xl font-serif font-bold ${plan.highlight ? "text-white" : "text-[#1A1714]"}`}>
                       {plan.price}
                     </span>
                     {plan.priceNote && (
-                      <sup className="text-sm font-semibold text-[#4353FF] align-super">
-                        {plan.priceNote}
-                      </sup>
+                      <sup className="text-sm font-semibold text-[#CC5533] align-super">{plan.priceNote}</sup>
                     )}
                   </div>
-                  <span
-                    className={`text-sm ml-1 ${
-                      plan.highlight ? "text-white/60" : "text-[#6B7280]"
-                    }`}
-                  >
+                  <span className={`text-sm ml-1 ${plan.highlight ? "text-white/60" : "text-[#5C5550]"}`}>
                     {plan.period}
                   </span>
                 </div>
 
-                <ul className="space-y-3 flex-1 mb-8">
-                  {plan.features.map((f) => (
-                    <li key={f.text} className="flex items-start gap-3 text-sm">
-                      {f.included ? (
-                        <CheckCircle
-                          size={16}
-                          className="text-[#4353FF] mt-0.5 shrink-0"
-                        />
-                      ) : (
-                        <span className="w-4 h-4 mt-0.5 shrink-0 flex items-center justify-center">
-                          <span
-                            className={`text-base leading-none ${
-                              plan.highlight
-                                ? "text-white/25"
-                                : "text-[#6B7280]/35"
-                            }`}
-                          >
-                            —
-                          </span>
-                        </span>
-                      )}
-                      <span
-                        className={
-                          f.included
-                            ? plan.highlight
-                              ? "text-white/90"
-                              : "text-[#111827]"
-                            : plan.highlight
-                            ? "text-white/35"
-                            : "text-[#6B7280]/50"
-                        }
-                      >
-                        {f.text}
-                      </span>
-                    </li>
+                {/* "Alles inbegrepen" pill — alleen op Start */}
+                {!plan.highlight && (
+                  <div className="mb-5">
+                    <span className="inline-flex items-center gap-1.5 bg-[#2D4B3F]/10 text-[#2D4B3F] text-xs font-semibold px-3 py-1.5 rounded-full">
+                      <CheckCircle size={12} />
+                      Alles inbegrepen — niets apart bijkopen
+                    </span>
+                  </div>
+                )}
+
+                {/* Feature groepen */}
+                <div className="flex-1 space-y-5 mb-8">
+                  {plan.featureGroups.map((group) => (
+                    <div key={group.label}>
+                      <p className={`text-xs font-semibold uppercase tracking-widest mb-2 ${plan.highlight ? "text-white/40" : "text-[#5C5550]/60"}`}>
+                        {group.label}
+                      </p>
+                      <ul className="space-y-2.5">
+                        {group.items.map((item) => (
+                          <li key={item} className="flex items-start gap-3 text-sm">
+                            <CheckCircle size={15} className="text-[#CC5533] mt-0.5 shrink-0" />
+                            <span className={plan.highlight ? "text-white/90" : "text-[#1A1714]"}>
+                              {item}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   ))}
-                </ul>
+                </div>
 
                 <Link
                   href={plan.ctaHref}
@@ -332,13 +335,11 @@ export default function PricingPage() {
             <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-3">
               Support
             </p>
-            <h2 className="text-3xl md:text-4xl font-sans font-semibold text-[#111827] mb-4">
-              Geen supportteam. Wel een lage prijs.
+            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#1A1714] mb-4">
+              Support die werkt.<br />Zonder wachtrijen.
             </h2>
-            <p className="text-[#6B7280] max-w-2xl mx-auto">
-              Spont heeft geen mensen die op de telefoon wachten. Dat kost geld
-              — en dat betaal jij dan. Wij vinden het niet nodig. Support gaat
-              via AI en tickets, en wordt snel opgepakt.
+            <p className="text-[#5C5550] max-w-2xl mx-auto">
+              AI lost het meeste direct op. Tickets voor de rest — snel opgepakt, geen wachtrijen. Wil je toch iemand die je persoonlijk kent? Dat kan via een dealer of losse hulp.
             </p>
           </div>
 
@@ -355,7 +356,7 @@ export default function PricingPage() {
                 AI + Tickets
               </h3>
               <p className="text-white/65 text-sm leading-relaxed">
-                Snel, effectief, geen wachtrijen. Inbegrepen in elk plan.
+                Direct antwoord via AI, tickets voor complexere vragen. Snel, geen telefoon, geen wachtrijen.
               </p>
             </div>
 
@@ -393,9 +394,8 @@ export default function PricingPage() {
             </div>
           </div>
 
-          <p className="text-center text-[#6B7280] text-sm mt-8">
-            De meeste klanten hebben blok 2 en 3 nooit nodig. Maar als je het
-            wil — het kan.
+          <p className="text-center text-[#5C5550] text-sm mt-8">
+            De meeste klanten komen prima uit met AI + tickets. Maar wil je meer — het kan altijd.
           </p>
         </div>
       </section>

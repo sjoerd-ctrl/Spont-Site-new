@@ -63,13 +63,13 @@ export default function OverOnsPage() {
             alt="Restaurant"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-[#1A1714]/70" />
+          <div className="absolute inset-0 bg-[#111827]/70" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto">
-          <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-4">
+          <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-4">
             Over ons
           </p>
-          <h1 className="text-5xl md:text-6xl font-serif text-white font-semibold leading-tight mb-6">
+          <h1 className="text-5xl md:text-6xl font-sans text-white font-semibold leading-tight mb-6">
             Minder techniek,
             <br />
             <em className="not-italic text-white/80">meer gastvrijheid.</em>
@@ -82,26 +82,26 @@ export default function OverOnsPage() {
       </section>
 
       {/* ─── WAAROM WE ZIJN BEGONNEN ─── */}
-      <section className="bg-[#FCF9F4] py-24 px-6">
+      <section className="bg-[#FFFFFF] py-24 px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-4">
+            <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-4">
               Ons verhaal
             </p>
-            <h2 className="text-3xl font-serif font-semibold text-[#1A1714] mb-6">
+            <h2 className="text-3xl font-sans font-semibold text-[#111827] mb-6">
               Waarom we zijn begonnen.
             </h2>
-            <p className="text-[#5C5550] leading-relaxed mb-4">
+            <p className="text-[#6B7280] leading-relaxed mb-4">
               We groeiden op in de horeca. We zagen hoe kassasystemen het werk
               zwaarder maakten. Trage systemen, ingewikkelde interfaces, support
               die pas drie dagen later reageerde.
             </p>
-            <p className="text-[#5C5550] leading-relaxed mb-4">
+            <p className="text-[#6B7280] leading-relaxed mb-4">
               Dus bouwden we Spont. Een systeem dat personeel in één dienst
               onder de knie heeft. Met support via AI en tickets — snel, zonder
               contracten die je vastzetten.
             </p>
-            <p className="text-[#5C5550] leading-relaxed">
+            <p className="text-[#6B7280] leading-relaxed">
               Geen grote investeerders, geen anoniem bedrijf. Gewoon twee broers
               die iets wilden bouwen dat echt werkt — voor ondernemers zoals jij.
             </p>
@@ -109,41 +109,41 @@ export default function OverOnsPage() {
 
           {/* Stats */}
           <div className="grid grid-cols-2 gap-4">
-            <div className="card-hover bg-[#2D4B3F] rounded-3xl p-8 text-white">
-              <p className="text-5xl font-serif font-bold mb-2">500+</p>
+            <div className="card-hover bg-[#111827] rounded-3xl p-8 text-white">
+              <p className="text-5xl font-sans font-bold mb-2">500+</p>
               <p className="text-white/70 text-sm">Horecazaken die dagelijks draaien op Spont</p>
             </div>
-            <div className="card-hover bg-[#CC5533] rounded-3xl p-8 text-white">
-              <p className="text-5xl font-serif font-bold mb-2">&lt;2u</p>
+            <div className="card-hover bg-[#4353FF] rounded-3xl p-8 text-white">
+              <p className="text-5xl font-sans font-bold mb-2">&lt;2u</p>
               <p className="text-white/70 text-sm">Gemiddelde responstijd via AI + tickets</p>
             </div>
-            <div className="card-hover bg-[#F6F3EE] rounded-3xl p-8 col-span-2">
-              <p className="text-5xl font-serif font-bold text-[#1A1714] mb-2">2019</p>
-              <p className="text-[#5C5550] text-sm">Opgericht. Sindsdien geen dag zonder horeca.</p>
+            <div className="card-hover bg-[#F9FAFB] rounded-3xl p-8 col-span-2">
+              <p className="text-5xl font-sans font-bold text-[#111827] mb-2">2019</p>
+              <p className="text-[#6B7280] text-sm">Opgericht. Sindsdien geen dag zonder horeca.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* ─── QUOTE ─── */}
-      <section className="bg-[#F6F3EE] py-16 px-6">
+      <section className="bg-[#F9FAFB] py-16 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <blockquote className="font-serif text-2xl md:text-3xl text-[#1A1714] leading-snug italic">
+          <blockquote className="font-sans text-2xl md:text-3xl text-[#111827] leading-snug italic">
             &ldquo;Persoonlijk werken betekent niet dat alles handmatig moet.
             AI regelt het standaardwerk — wij regelen de rest.&rdquo;
           </blockquote>
-          <p className="text-[#5C5550] mt-6 text-sm">— Flip & Sjoerd van den Bosch, oprichters Spont</p>
+          <p className="text-[#6B7280] mt-6 text-sm">— Flip & Sjoerd van den Bosch, oprichters Spont</p>
         </div>
       </section>
 
       {/* ─── KERNWAARDEN ─── */}
-      <section className="bg-[#FCF9F4] py-24 px-6">
+      <section className="bg-[#FFFFFF] py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-3">
               Onze waarden
             </p>
-            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#1A1714]">
+            <h2 className="text-3xl md:text-4xl font-sans font-semibold text-[#111827]">
               Onze kernwaarden.
             </h2>
           </div>
@@ -152,14 +152,14 @@ export default function OverOnsPage() {
             {kernwaarden.map((kw) => {
               const Icon = kw.icon;
               return (
-                <div key={kw.title} className="card-hover bg-[#F6F3EE] rounded-3xl p-8">
-                  <div className="w-12 h-12 bg-[#CC5533]/10 rounded-2xl flex items-center justify-center mb-5">
-                    <Icon size={22} className="text-[#CC5533]" />
+                <div key={kw.title} className="card-hover bg-[#F9FAFB] rounded-3xl p-8">
+                  <div className="w-12 h-12 bg-[#4353FF]/10 rounded-2xl flex items-center justify-center mb-5">
+                    <Icon size={22} className="text-[#4353FF]" />
                   </div>
-                  <h3 className="font-serif font-semibold text-lg text-[#1A1714] mb-2">
+                  <h3 className="font-sans font-semibold text-lg text-[#111827] mb-2">
                     {kw.title}
                   </h3>
-                  <p className="text-[#5C5550] text-sm leading-relaxed">{kw.body}</p>
+                  <p className="text-[#6B7280] text-sm leading-relaxed">{kw.body}</p>
                 </div>
               );
             })}
@@ -168,16 +168,16 @@ export default function OverOnsPage() {
       </section>
 
       {/* ─── TEAM ─── */}
-      <section className="bg-[#F6F3EE] py-24 px-6">
+      <section className="bg-[#F9FAFB] py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-3">
               Het team
             </p>
-            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#1A1714]">
+            <h2 className="text-3xl md:text-4xl font-sans font-semibold text-[#111827]">
               De gezichten achter Spont.
             </h2>
-            <p className="text-[#5C5550] mt-4">
+            <p className="text-[#6B7280] mt-4">
               Geen anoniem bedrijf. Geen supportfabriek. Gewoon mensen die het
               vak kennen.
             </p>
@@ -189,17 +189,17 @@ export default function OverOnsPage() {
                 key={member.name}
                 className="card-hover bg-white rounded-3xl overflow-hidden shadow-sm"
               >
-                <div className="w-full h-20 bg-[#F6F3EE] flex items-end px-8 pt-8">
-                  <div className="w-16 h-16 rounded-full bg-[#2D4B3F] flex items-center justify-center text-white font-serif font-bold text-xl">
+                <div className="w-full h-20 bg-[#F9FAFB] flex items-end px-8 pt-8">
+                  <div className="w-16 h-16 rounded-full bg-[#111827] flex items-center justify-center text-white font-sans font-bold text-xl">
                     {member.name.charAt(0)}
                   </div>
                 </div>
                 <div className="p-8">
-                  <h3 className="font-serif font-semibold text-xl text-[#1A1714] mb-1">
+                  <h3 className="font-sans font-semibold text-xl text-[#111827] mb-1">
                     {member.name}
                   </h3>
-                  <p className="text-[#CC5533] text-sm font-medium mb-4">{member.role}</p>
-                  <p className="text-[#5C5550] text-sm leading-relaxed">{member.bio}</p>
+                  <p className="text-[#4353FF] text-sm font-medium mb-4">{member.role}</p>
+                  <p className="text-[#6B7280] text-sm leading-relaxed">{member.bio}</p>
                 </div>
               </div>
             ))}
@@ -207,31 +207,31 @@ export default function OverOnsPage() {
 
           {/* ─── DEALERS BLOCK ─── */}
           <div className="mt-8">
-            <div className="card-hover bg-[#2D4B3F] rounded-3xl overflow-hidden shadow-sm">
+            <div className="card-hover bg-[#111827] rounded-3xl overflow-hidden shadow-sm">
               <div className="w-full h-20 bg-[#243D32] flex items-end px-8 pt-8">
-                <div className="w-16 h-16 rounded-full bg-[#CC5533]/20 flex items-center justify-center">
-                  <Handshake size={28} className="text-[#CC5533]" />
+                <div className="w-16 h-16 rounded-full bg-[#4353FF]/20 flex items-center justify-center">
+                  <Handshake size={28} className="text-[#4353FF]" />
                 </div>
               </div>
               <div className="p-8">
-                <h3 className="font-serif font-semibold text-xl text-white mb-1">
+                <h3 className="font-sans font-semibold text-xl text-white mb-1">
                   Ons dealernetwerk
                 </h3>
-                <p className="text-[#CC5533] text-sm font-medium mb-4">Lokale ontzorging, overal in Nederland</p>
+                <p className="text-[#4353FF] text-sm font-medium mb-4">Lokale ontzorging, overal in Nederland</p>
                 <p className="text-white/70 text-sm leading-relaxed mb-6">
                   Spont werkt samen met een netwerk van gecertificeerde dealers. Zij helpen bij de installatie, training en dagelijkse ondersteuning — zodat jij je op je zaak kunt richten.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="flex items-start gap-3">
-                    <MapPin size={16} className="text-[#CC5533] shrink-0 mt-0.5" />
+                    <MapPin size={16} className="text-[#4353FF] shrink-0 mt-0.5" />
                     <p className="text-white/70 text-sm">Dealers door heel Nederland en België</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <PhoneCall size={16} className="text-[#CC5533] shrink-0 mt-0.5" />
+                    <PhoneCall size={16} className="text-[#4353FF] shrink-0 mt-0.5" />
                     <p className="text-white/70 text-sm">Persoonlijk aanspreekpunt in jouw regio</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Users size={16} className="text-[#CC5533] shrink-0 mt-0.5" />
+                    <Users size={16} className="text-[#4353FF] shrink-0 mt-0.5" />
                     <p className="text-white/70 text-sm">Installatie, training en opvolging geregeld</p>
                   </div>
                 </div>

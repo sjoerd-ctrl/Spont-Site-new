@@ -126,66 +126,36 @@ export default function BlogPage() {
         }}
       />
 
-      {/* ─── HERO ─── */}
-      <section className="bg-[#FCF9F4] pt-32 pb-16 px-6">
-        <div className="max-w-7xl mx-auto">
-          <HeroReveal delay={0}>
-            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-4">Blog</p>
-          </HeroReveal>
-          <HeroReveal delay={0.1}>
-            <h1 className="text-5xl md:text-6xl font-serif text-[#1A1714] font-semibold leading-tight mb-4">
-              Kennis voor de horeca.
-            </h1>
-          </HeroReveal>
-          <HeroReveal delay={0.2}>
-            <p className="text-[#5C5550] text-lg max-w-xl">
-              Praktische artikelen over kassatechnologie, betalingen en het runnen van een horecazaak.
-            </p>
-          </HeroReveal>
+      <section className="bg-[#FFFFFF] pt-32 pb-16 px-6">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-4">Blog</p>
+          <h1 className="text-5xl font-sans text-[#111827] font-semibold mb-4">
+            Kennis voor de horeca.
+          </h1>
+          <p className="text-[#6B7280] text-lg">
+            Praktische artikelen over kassatechnologie, betalingen en het runnen van een horecazaak.
+          </p>
         </div>
       </section>
 
-      {/* ─── FEATURED ARTICLE ─── */}
-      <section className="bg-[#FCF9F4] px-6 pb-8">
-        <div className="max-w-7xl mx-auto">
-          <FadeUp>
+      <section className="bg-[#FFFFFF] pb-24 px-6">
+        <div className="max-w-4xl mx-auto space-y-4">
+          {articles.map((a) => (
             <Link
-              href={`/blog/${featured.slug}`}
-              className="group relative block rounded-[2rem] overflow-hidden min-h-[480px]"
+              key={a.slug}
+              href={`/blog/${a.slug}`}
+              className="card-hover cursor-pointer block bg-[#F9FAFB] hover:bg-[#F3F4F6] rounded-3xl p-8 group"
             >
-              {/* Achtergrond foto */}
-              <img
-                src={featured.image}
-                alt={featured.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-              />
-              {/* Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1A1714]/90 via-[#1A1714]/40 to-transparent" />
-              {/* Hover kleur-overlay */}
-              <div className="absolute inset-0 bg-[#CC5533]/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-              {/* Content */}
-              <div className="relative z-10 flex flex-col justify-end h-full min-h-[480px] p-10 md:p-14">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="bg-[#CC5533] text-white text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full">
-                    {featured.category}
-                  </span>
-                  <span className="flex items-center gap-1 text-white/60 text-xs">
-                    <Clock size={12} />
-                    {featured.readTime} leestijd
-                  </span>
-                  <span className="text-white/60 text-xs">{featured.date}</span>
-                </div>
-                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white font-semibold leading-tight max-w-3xl mb-4">
-                  {featured.title}
-                </h2>
-                <p className="text-white/70 text-base max-w-2xl leading-relaxed mb-6">
-                  {featured.excerpt}
-                </p>
-                <span className="inline-flex items-center gap-2 text-white font-semibold text-sm group-hover:gap-4 transition-all duration-300">
-                  Lees artikel <ArrowRight size={16} />
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-xs font-semibold text-[#4353FF] uppercase tracking-widest">
+                  {a.category}
                 </span>
+                <span className="text-[#6B7280] text-xs">{a.date}</span>
               </div>
+              <h2 className="font-sans text-xl font-semibold text-[#111827] mb-2 group-hover:text-[#4353FF] transition-colors">
+                {a.title}
+              </h2>
+              <p className="text-[#6B7280] text-sm leading-relaxed">{a.excerpt}</p>
             </Link>
           </FadeUp>
         </div>

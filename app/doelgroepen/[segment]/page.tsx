@@ -751,13 +751,13 @@ export default async function DoelgroepDetailPage({
             alt={data.headline}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-[#1A1714]/70" />
+          <div className="absolute inset-0 bg-[#111827]/70" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto w-full">
-          <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-4">
+          <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-4">
             {data.badge}
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white font-semibold leading-tight mb-6 max-w-3xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-sans text-white font-semibold leading-tight mb-6 max-w-3xl">
             {data.headline}
           </h1>
           <p className="text-white/75 text-lg max-w-2xl leading-relaxed mb-10">
@@ -765,7 +765,7 @@ export default async function DoelgroepDetailPage({
           </p>
           <a
             href="https://admin.spont.nl"
-            className="inline-block bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold px-8 py-4 rounded-full transition-colors"
+            className="inline-block bg-[#4353FF] hover:bg-[#3344DD] text-white font-semibold px-8 py-4 rounded-full transition-colors"
           >
             Start direct
           </a>
@@ -773,13 +773,13 @@ export default async function DoelgroepDetailPage({
       </section>
 
       {/* ─── PIJNPUNTEN ─── */}
-      <section className="bg-[#FCF9F4] py-24 px-6">
+      <section className="bg-[#FFFFFF] py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
-            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-3">
               Herkenbaar?
             </p>
-            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#1A1714]">
+            <h2 className="text-3xl md:text-4xl font-sans font-semibold text-[#111827]">
               Waar loop jij tegenaan?
             </h2>
           </div>
@@ -787,17 +787,17 @@ export default async function DoelgroepDetailPage({
             {data.painPoints.map((p) => (
               <div
                 key={p.title}
-                className="card-hover bg-[#F6F3EE] rounded-3xl p-7 flex gap-4"
+                className="card-hover bg-[#F9FAFB] rounded-3xl p-7 flex gap-4"
               >
                 <AlertCircle
                   size={20}
-                  className="text-[#CC5533] shrink-0 mt-0.5"
+                  className="text-[#4353FF] shrink-0 mt-0.5"
                 />
                 <div>
-                  <h3 className="font-semibold text-[#1A1714] mb-1 text-base">
+                  <h3 className="font-semibold text-[#111827] mb-1 text-base">
                     {p.title}
                   </h3>
-                  <p className="text-[#5C5550] text-sm leading-relaxed">{p.body}</p>
+                  <p className="text-[#6B7280] text-sm leading-relaxed">{p.body}</p>
                 </div>
               </div>
             ))}
@@ -806,13 +806,13 @@ export default async function DoelgroepDetailPage({
       </section>
 
       {/* ─── OPLOSSING ─── */}
-      <section className="bg-[#2D4B3F] py-24 px-6">
+      <section className="bg-[#111827] py-24 px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-4">
+            <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-4">
               De oplossing
             </p>
-            <h2 className="text-3xl md:text-4xl font-serif text-white font-semibold mb-4">
+            <h2 className="text-3xl md:text-4xl font-sans text-white font-semibold mb-4">
               {data.solution.title}
             </h2>
             <p className="text-white/70 text-base mb-3 font-medium">
@@ -828,7 +828,7 @@ export default async function DoelgroepDetailPage({
                 key={b}
                 className="card-hover bg-white/10 rounded-2xl px-5 py-4 flex items-center gap-3"
               >
-                <CheckCircle size={16} className="text-[#CC5533] shrink-0" />
+                <CheckCircle size={16} className="text-[#4353FF] shrink-0" />
                 <span className="text-white/90 text-sm">{b}</span>
               </div>
             ))}
@@ -837,13 +837,13 @@ export default async function DoelgroepDetailPage({
       </section>
 
       {/* ─── TESTIMONIALS ─── */}
-      <section className="bg-[#F6F3EE] py-24 px-6">
+      <section className="bg-[#F9FAFB] py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
-            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-3">
               {isBowling ? "Klantcase" : "Ervaringen"}
             </p>
-            <h2 className="text-3xl font-serif font-semibold text-[#1A1714]">
+            <h2 className="text-3xl font-sans font-semibold text-[#111827]">
               {isBowling
                 ? "Wat onze klanten zeggen."
                 : "Wat klanten zeggen over Spont."}
@@ -858,12 +858,12 @@ export default async function DoelgroepDetailPage({
           >
             {data.testimonials.map((t) => (
               <div key={t.name} className="card-hover bg-white rounded-3xl p-8 shadow-sm">
-                <p className="text-[#1A1714] text-base leading-relaxed mb-6 italic">
+                <p className="text-[#111827] text-base leading-relaxed mb-6 italic">
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <div>
-                  <p className="font-semibold text-[#1A1714] text-sm">{t.name}</p>
-                  <p className="text-[#5C5550] text-xs mt-0.5">{t.location}</p>
+                  <p className="font-semibold text-[#111827] text-sm">{t.name}</p>
+                  <p className="text-[#6B7280] text-xs mt-0.5">{t.location}</p>
                 </div>
               </div>
             ))}
@@ -872,27 +872,27 @@ export default async function DoelgroepDetailPage({
       </section>
 
       {/* ─── ONBOARDING ─── */}
-      <section className="bg-[#FCF9F4] py-24 px-6">
+      <section className="bg-[#FFFFFF] py-24 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-14">
-            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-3">
               Hoe starten?
             </p>
-            <h2 className="text-3xl font-serif font-semibold text-[#1A1714]">
+            <h2 className="text-3xl font-sans font-semibold text-[#111827]">
               In vier stappen operationeel.
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {data.onboarding.map((step, i) => (
-              <div key={step.title} className="card-hover bg-[#F6F3EE] rounded-3xl p-8 flex gap-5">
-                <div className="w-10 h-10 rounded-full bg-[#CC5533]/10 flex items-center justify-center shrink-0">
-                  <span className="font-serif font-bold text-[#CC5533] text-sm">
+              <div key={step.title} className="card-hover bg-[#F9FAFB] rounded-3xl p-8 flex gap-5">
+                <div className="w-10 h-10 rounded-full bg-[#4353FF]/10 flex items-center justify-center shrink-0">
+                  <span className="font-sans font-bold text-[#4353FF] text-sm">
                     0{i + 1}
                   </span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-[#1A1714] mb-1">{step.title}</h3>
-                  <p className="text-[#5C5550] text-sm leading-relaxed">{step.body}</p>
+                  <h3 className="font-semibold text-[#111827] mb-1">{step.title}</h3>
+                  <p className="text-[#6B7280] text-sm leading-relaxed">{step.body}</p>
                 </div>
               </div>
             ))}
@@ -901,16 +901,16 @@ export default async function DoelgroepDetailPage({
       </section>
 
       {/* ─── MEER INFORMATIE FORMULIER ─── */}
-      <section className="bg-[#FCF9F4] py-24 px-6">
+      <section className="bg-[#FFFFFF] py-24 px-6">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-10">
-            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-3">
               Meer weten?
             </p>
-            <h2 className="text-3xl font-serif font-semibold text-[#1A1714] mb-3">
+            <h2 className="text-3xl font-sans font-semibold text-[#111827] mb-3">
               Stel je vraag direct.
             </h2>
-            <p className="text-[#5C5550] text-base">
+            <p className="text-[#6B7280] text-base">
               Geen verkooppraatje. Gewoon een eerlijk gesprek over wat Spont voor jouw zaak kan betekenen.
             </p>
           </div>
@@ -928,7 +928,7 @@ export default async function DoelgroepDetailPage({
 
       {/* Footer note */}
       {data.ctaFooter && (
-        <div className="bg-[#2D4B3F] pb-6 text-center">
+        <div className="bg-[#111827] pb-6 text-center">
           <p className="text-white/40 text-xs">{data.ctaFooter}</p>
         </div>
       )}

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function DoelgroepenPage() {
   return (
-    <main className="bg-[#1A1714]">
+    <main className="bg-[#111827]">
 
       {/* ─── HERO — volle breedte, inner container voor content ─── */}
       <section className="w-full relative overflow-hidden text-white">
@@ -29,14 +29,14 @@ export default function DoelgroepenPage() {
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1A1714]/80 via-[#1A1714]/70 to-[#1A1714]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#111827]/80 via-[#111827]/70 to-[#111827]" />
 
         {/* Gecentreerde content */}
         <div className="relative mx-auto w-full max-w-6xl px-6 pt-40 pb-24">
-          <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-4">
+          <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-4">
             Doelgroepen
           </p>
-          <h1 className="text-5xl md:text-6xl font-serif text-white font-semibold leading-tight mb-6">
+          <h1 className="text-5xl md:text-6xl font-sans text-white font-semibold leading-tight mb-6">
             Voor welk type zaak
             <br />
             <em className="not-italic text-white/70">ben jij?</em>
@@ -48,7 +48,7 @@ export default function DoelgroepenPage() {
       </section>
 
       {/* ─── TILE GRID — donkere achtergrond, volle breedte ─── */}
-      <section className="w-full bg-[#1A1714] px-4 pb-6">
+      <section className="w-full bg-[#111827] px-4 pb-6">
         <div className="w-full">
 
           {/* Rij 1: featured links + 2×2 tiles rechts */}

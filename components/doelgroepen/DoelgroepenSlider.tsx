@@ -14,8 +14,8 @@ export default function DoelgroepenSlider({ items }: { items: Doelgroep[] }) {
   return (
     <div className="relative">
       {/* Fade edges */}
-      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-r from-[#FCF9F4] to-transparent" />
-      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-l from-[#FCF9F4] to-transparent" />
+      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-r from-[#FFFFFF] to-transparent" />
+      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-l from-[#FFFFFF] to-transparent" />
 
       {/* Slider wrapper — animates in as a whole */}
       <motion.div
@@ -57,13 +57,13 @@ export default function DoelgroepenSlider({ items }: { items: Doelgroep[] }) {
                 alt={d.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1A1714]/85 via-[#1A1714]/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/85 via-[#111827]/20 to-transparent" />
               <div className="relative z-10 p-7 flex flex-col justify-end h-full">
-                <h2 className="font-serif text-xl font-semibold text-white leading-tight">
+                <h2 className="font-sans text-xl font-semibold text-white leading-tight">
                   {d.title}
                 </h2>
                 <p className="text-sm text-white/65 mt-1">{d.subtitle}</p>
-                <span className="mt-4 text-xs font-semibold text-[#CC5533] uppercase tracking-wider">
+                <span className="mt-4 text-xs font-semibold text-[#4353FF] uppercase tracking-wider">
                   Meer info →
                 </span>
               </div>

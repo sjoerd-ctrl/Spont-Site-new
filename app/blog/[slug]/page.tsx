@@ -1091,63 +1091,33 @@ export default async function BlogArticlePage({
         }}
       />
 
-      {/* ─── SCROLL PROGRESS BAR ─── */}
-      <ScrollProgress />
-
-      {/* ─── HERO ─── */}
-      <section className="relative min-h-[520px] flex items-end overflow-hidden">
-        {/* Achtergrond foto */}
-        <img
-          src={articleImages[slug] ?? "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80"}
-          alt={article.title}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        {/* Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1A1714]/95 via-[#1A1714]/50 to-[#1A1714]/20" />
-
-        {/* Content */}
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 pt-40 pb-16">
-          <HeroReveal delay={0}>
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm font-medium mb-8 transition-colors"
-            >
-              <ArrowLeft size={16} /> Terug naar blog
-            </Link>
-          </HeroReveal>
-
-          <HeroReveal delay={0.1}>
-            <div className="flex items-center gap-3 mb-5">
-              <span className="bg-[#CC5533] text-white text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full">
-                {article.category}
-              </span>
-              <span className="flex items-center gap-1 text-white/60 text-xs">
-                <Clock size={12} />
-                {readTimes[slug] ?? "5 min"} leestijd
-              </span>
-              <span className="text-white/60 text-xs">
-                <time dateTime={article.dateISO}>{article.date}</time>
-              </span>
-            </div>
-          </HeroReveal>
-
-          <AnimatedTitle
-            text={article.title}
-            className="text-4xl md:text-5xl lg:text-6xl font-serif text-white font-semibold leading-tight"
-          />
+      {/* ─── HEADER ─── */}
+      <section className="bg-[#FFFFFF] pt-32 pb-12 px-6">
+        <div className="max-w-3xl mx-auto">
+          <Link
+            href="/blog"
+            className="text-sm text-[#4353FF] font-semibold hover:underline mb-6 inline-block"
+          >
+            &larr; Terug naar blog
+          </Link>
+          <div className="flex items-center gap-3 mb-4">
+            <span className="text-xs font-semibold text-[#4353FF] uppercase tracking-widest">
+              {article.category}
+            </span>
+            <span className="text-[#6B7280] text-xs">
+              <time dateTime={article.dateISO}>{article.date}</time>
+            </span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-sans text-[#111827] font-semibold leading-tight">
+            {article.title}
+          </h1>
         </div>
       </section>
 
       {/* ─── CONTENT ─── */}
-      <section className="bg-white pb-24 px-6">
-        <div className="max-w-3xl mx-auto">
-          {/* Decoratieve topbalk */}
-          <div className="h-1 w-16 bg-[#CC5533] rounded-full mt-16 mb-12" />
-          <FadeUp>
-            <div className="article-body">
-              {article.content}
-            </div>
-          </FadeUp>
+      <section className="bg-[#FFFFFF] pb-24 px-6">
+        <div className="max-w-3xl mx-auto prose prose-neutral prose-headings:font-sans prose-headings:text-[#111827] prose-p:text-[#6B7280] prose-p:leading-relaxed prose-li:text-[#6B7280] prose-a:text-[#4353FF] prose-a:no-underline hover:prose-a:underline prose-strong:text-[#111827] prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-lg prose-h3:mt-8 prose-h3:mb-3 prose-ul:my-4 prose-li:my-1">
+          {article.content}
         </div>
       </section>
 

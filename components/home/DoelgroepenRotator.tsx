@@ -1,7 +1,8 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import Link from "next/link";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const segments = [
   {
@@ -57,76 +58,135 @@ const segments = [
 export default function DoelgroepenRotator() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const pausedRef = useRef(false);
+  const [hovered, setHovered] = useState(false);
 
+  // Smooth ease-in-out scroll animation
+  const smoothScroll = useCallback((distance: number, duration = 800) => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const start = el.scrollLeft;
+    const startTime = performance.now();
+
+    // Soft ease — slow start, gentle glide, soft landing
+    const easeInOut = (t: number) => {
+      if (t < 0.3) return 2.5 * t * t * t; // slow ramp up
+      if (t < 0.7) return 0.0675 + (t - 0.3) * 2.169; // smooth glide
+      const r = 1 - t;
+      return 1 - 2.5 * r * r * r; // soft deceleration
+    };
+
+    const animate = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      el.scrollLeft = start + distance * easeInOut(progress);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, []);
+
+  const getCardWidth = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return 300;
+    const card = el.querySelector<HTMLElement>("[data-card]");
+    if (!card) return 300;
+    return card.offsetWidth + 20;
+  }, []);
+
+  // Auto-scroll: one card at a time, then pause
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
 
-    let raf: number;
-    let lastTime = 0;
-    const speed = 0.28;
+    const interval = setInterval(() => {
+      if (pausedRef.current) return;
 
-    const step = (time: number) => {
-      if (!pausedRef.current && lastTime) {
-        const delta = time - lastTime;
-        el.scrollLeft += speed * (delta / 16);
-        const half = el.scrollWidth / 2;
-        if (el.scrollLeft >= half) {
-          el.scrollLeft -= half;
-        }
+      const half = el.scrollWidth / 2;
+      if (el.scrollLeft >= half) {
+        el.scrollLeft -= half;
       }
-      lastTime = time;
-      raf = requestAnimationFrame(step);
-    };
 
-    raf = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(raf);
-  }, []); // geen dependency op state — ref is altijd actueel
+      smoothScroll(getCardWidth(), 1200);
+    }, 4500); // pause 4.5s between each card
+
+    return () => clearInterval(interval);
+  }, [smoothScroll, getCardWidth]);
+
+  const scrollByCard = useCallback((direction: number) => {
+    smoothScroll(getCardWidth() * direction, 600);
+  }, [smoothScroll, getCardWidth]);
 
   const items = [...segments, ...segments];
 
   return (
     <div
-      ref={scrollRef}
-      className="flex gap-4 overflow-x-auto"
-      style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-      onMouseEnter={() => { pausedRef.current = true; }}
-      onMouseLeave={() => { pausedRef.current = false; }}
+      className="relative group/rotator"
+      onMouseEnter={() => {
+        pausedRef.current = true;
+        setHovered(true);
+      }}
+      onMouseLeave={() => {
+        pausedRef.current = false;
+        setHovered(false);
+      }}
       onTouchStart={() => { pausedRef.current = true; }}
       onTouchEnd={() => { pausedRef.current = false; }}
     >
-      {items.map((seg, i) => (
-        <div key={`${seg.slug}-${i}`} className="flex-shrink-0 w-64 md:w-72">
-          <Link
-            href={`/doelgroepen/${seg.slug}`}
-            className="group relative block rounded-3xl overflow-hidden"
-            style={{ height: "400px" }}
-          >
-            {/* Full-bleed foto */}
-            <img
-              src={seg.img}
-              alt={seg.label}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-            />
+      <div
+        ref={scrollRef}
+        className="flex gap-5 overflow-x-auto w-full"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}
+      >
+        {items.map((seg, i) => (
+          <div key={`${seg.slug}-${i}`} data-card className="flex-shrink-0 w-[85vw] sm:w-[45vw] lg:w-[30vw] xl:w-[25vw]">
+            <Link
+              href={`/doelgroepen/${seg.slug}`}
+              className="group relative block rounded-2xl overflow-hidden"
+              style={{ height: "480px" }}
+            >
+              <img
+                src={seg.img}
+                alt={seg.label}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-[#4353FF]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute bottom-0 left-0 right-0 p-8 z-10">
+                <h3 className="font-sans text-2xl md:text-3xl font-bold text-white leading-tight mb-2">
+                  {seg.label}
+                </h3>
+                <p className="text-base text-white/70 leading-snug">
+                  {seg.subtitle}
+                </p>
+              </div>
+            </Link>
+          </div>
+        ))}
+      </div>
 
-            {/* Vaste gradient onderaan */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#1A1714]/90 via-[#1A1714]/25 to-transparent" />
-
-            {/* Kleur-overlay bij hover — warm tint, zoals Mollie */}
-            <div className="absolute inset-0 bg-[#CC5533]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-            {/* Tekst onderaan */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-              <h3 className="font-serif text-2xl font-semibold text-white leading-tight mb-2">
-                {seg.label}
-              </h3>
-              <p className="text-sm text-white/70 leading-snug">
-                {seg.subtitle}
-              </p>
-            </div>
-          </Link>
-        </div>
-      ))}
+      {/* Arrow controls — visible on hover */}
+      <button
+        onClick={() => scrollByCard(-1)}
+        className={`absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center transition-opacity duration-200 hover:bg-white ${
+          hovered ? "opacity-100" : "opacity-0"
+        }`}
+        aria-label="Vorige"
+      >
+        <ChevronLeft size={22} className="text-[#111827]" />
+      </button>
+      <button
+        onClick={() => scrollByCard(1)}
+        className={`absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center transition-opacity duration-200 hover:bg-white ${
+          hovered ? "opacity-100" : "opacity-0"
+        }`}
+        aria-label="Volgende"
+      >
+        <ChevronRight size={22} className="text-[#111827]" />
+      </button>
     </div>
   );
 }

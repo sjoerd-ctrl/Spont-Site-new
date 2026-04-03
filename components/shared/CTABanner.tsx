@@ -14,9 +14,9 @@ export default function CTABanner({
   secondary = { label: "Bekijk de prijzen", href: "/prijzen" },
 }: CTABannerProps) {
   return (
-    <section className="bg-[#2D4B3F] px-6 py-20">
+    <section className="bg-[#111827] px-6 py-20">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-serif text-white font-semibold mb-4">
+        <h2 className="text-3xl md:text-4xl font-sans text-white font-semibold mb-4">
           {title}
         </h2>
         {subtitle && (
@@ -25,7 +25,7 @@ export default function CTABanner({
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href={primary.href}
-            className="bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
+            className="bg-[#4353FF] hover:bg-[#3344DD] text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
           >
             {primary.label}
           </Link>

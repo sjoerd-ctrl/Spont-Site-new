@@ -152,10 +152,10 @@ export default function PricingPage() {
             alt="Restaurant interieur"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-[#1A1714]/70" />
+          <div className="absolute inset-0 bg-[#111827]/70" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-4">
+          <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-4">
             Prijzen
           </p>
           <h1 className="text-5xl md:text-6xl font-serif text-white font-semibold leading-tight mb-6">
@@ -173,7 +173,7 @@ export default function PricingPage() {
       </section>
 
       {/* ─── PRICING CARDS ─── */}
-      <section className="bg-[#FCF9F4] pt-20 pb-8 px-6">
+      <section className="bg-[#FFFFFF] pt-20 pb-8 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {plans.map((plan) => (
@@ -181,8 +181,8 @@ export default function PricingPage() {
                 key={plan.name}
                 className={`card-hover rounded-3xl p-8 flex flex-col ${
                   plan.highlight
-                    ? "bg-[#2D4B3F] text-white ring-2 ring-[#2D4B3F]"
-                    : "bg-[#F6F3EE] text-[#1A1714]"
+                    ? "bg-[#111827] text-white ring-2 ring-[#111827]"
+                    : "bg-[#F9FAFB] text-[#111827]"
                 }`}
               >
                 {/* Badge */}
@@ -257,8 +257,8 @@ export default function PricingPage() {
                   href={plan.ctaHref}
                   className={`text-center font-semibold py-3.5 rounded-full transition-colors text-sm ${
                     plan.highlight
-                      ? "bg-[#CC5533] hover:bg-[#A33818] text-white"
-                      : "bg-[#1A1714] hover:bg-[#2D4B3F] text-white"
+                      ? "bg-[#4353FF] hover:bg-[#3344DD] text-white"
+                      : "bg-[#111827] hover:bg-[#111827] text-white"
                   }`}
                 >
                   {plan.cta}
@@ -268,22 +268,22 @@ export default function PricingPage() {
           </div>
 
           {/* Footnote */}
-          <p className="text-center text-[#5C5550] text-sm mt-8">
+          <p className="text-center text-[#6B7280] text-sm mt-8">
             <span className="font-semibold">* Met Spont Payments.</span> Wil je een ander betaalmiddel gebruiken? Start zonder Payments voor €89/maand (Start) of €169/maand (Pro).
           </p>
         </div>
       </section>
 
       {/* ─── SPONT PAYMENTS ─── */}
-      <section className="bg-[#FCF9F4] pb-16 px-6">
+      <section className="bg-[#FFFFFF] pb-16 px-6">
         <div className="max-w-4xl mx-auto space-y-6">
 
           {/* Header callout */}
-          <div className="bg-[#2D4B3F] rounded-3xl p-8 md:p-10">
-            <p className="text-[#CC5533] font-semibold text-xs uppercase tracking-widest mb-3">
+          <div className="bg-[#111827] rounded-3xl p-8 md:p-10">
+            <p className="text-[#4353FF] font-semibold text-xs uppercase tracking-widest mb-3">
               Spont Payments
             </p>
-            <h3 className="font-serif text-2xl text-white font-semibold mb-2">
+            <h3 className="font-sans text-2xl text-white font-semibold mb-2">
               Reeds inbegrepen.<br />
               Geïntegreerde betalingen, geen extra terminal.
             </h3>
@@ -293,11 +293,11 @@ export default function PricingPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="bg-white/10 rounded-2xl px-6 py-4 text-center">
                 <p className="text-white/60 text-xs mb-1">Zonder Payments</p>
-                <p className="text-white text-2xl font-serif font-bold">€89<span className="text-sm font-normal text-white/60">/maand</span></p>
+                <p className="text-white text-2xl font-sans font-bold">€89<span className="text-sm font-normal text-white/60">/maand</span></p>
               </div>
-              <div className="bg-[#CC5533] rounded-2xl px-6 py-4 text-center">
+              <div className="bg-[#4353FF] rounded-2xl px-6 py-4 text-center">
                 <p className="text-white/80 text-xs mb-1">Met Payments (bespaar €20)</p>
-                <p className="text-white text-2xl font-serif font-bold">€69<span className="text-sm font-normal text-white/60">/maand</span></p>
+                <p className="text-white text-2xl font-sans font-bold">€69<span className="text-sm font-normal text-white/60">/maand</span></p>
               </div>
             </div>
           </div>
@@ -309,19 +309,19 @@ export default function PricingPage() {
       </section>
 
       {/* ─── MULTI-LOCATIE BANNER ─── */}
-      <section className="bg-[#F6F3EE] py-10 px-6">
+      <section className="bg-[#F9FAFB] py-10 px-6">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 bg-white rounded-3xl px-8 py-6">
           <div>
-            <h3 className="font-serif font-semibold text-[#1A1714] text-lg mb-1">
+            <h3 className="font-sans font-semibold text-[#111827] text-lg mb-1">
               Meer vestigingen of maatwerk nodig?
             </h3>
-            <p className="text-[#5C5550] text-sm">
+            <p className="text-[#6B7280] text-sm">
               We maken het mogelijk. Neem contact op voor een gesprek op maat.
             </p>
           </div>
           <Link
             href="/contact"
-            className="shrink-0 bg-[#1A1714] hover:bg-[#2D4B3F] text-white font-semibold px-6 py-3 rounded-full transition-colors text-sm whitespace-nowrap"
+            className="shrink-0 bg-[#111827] hover:bg-[#111827] text-white font-semibold px-6 py-3 rounded-full transition-colors text-sm whitespace-nowrap"
           >
             Gesprek inplannen
           </Link>
@@ -329,10 +329,10 @@ export default function PricingPage() {
       </section>
 
       {/* ─── SUPPORT SECTIE ─── */}
-      <section className="bg-[#FCF9F4] py-20 px-6">
+      <section className="bg-[#FFFFFF] py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-3">
               Support
             </p>
             <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#1A1714] mb-4">
@@ -345,14 +345,14 @@ export default function PricingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {/* Blok 1 – inbegrepen */}
-            <div className="bg-[#2D4B3F] rounded-3xl p-7">
+            <div className="bg-[#111827] rounded-3xl p-7">
               <div className="w-10 h-10 bg-white/10 rounded-2xl flex items-center justify-center mb-4">
                 <Bot size={20} className="text-white" />
               </div>
               <p className="text-white/50 text-xs font-semibold uppercase tracking-wider mb-2">
                 Inbegrepen
               </p>
-              <h3 className="font-serif font-semibold text-white mb-2">
+              <h3 className="font-sans font-semibold text-white mb-2">
                 AI + Tickets
               </h3>
               <p className="text-white/65 text-sm leading-relaxed">
@@ -361,34 +361,34 @@ export default function PricingPage() {
             </div>
 
             {/* Blok 2 – optioneel */}
-            <Link href="/contact#formulier" className="card-hover bg-[#F6F3EE] rounded-3xl p-7 block">
-              <div className="w-10 h-10 bg-[#CC5533]/10 rounded-2xl flex items-center justify-center mb-4">
-                <Users size={20} className="text-[#CC5533]" />
+            <Link href="/contact#formulier" className="card-hover bg-[#F9FAFB] rounded-3xl p-7 block">
+              <div className="w-10 h-10 bg-[#4353FF]/10 rounded-2xl flex items-center justify-center mb-4">
+                <Users size={20} className="text-[#4353FF]" />
               </div>
-              <p className="text-[#5C5550] text-xs font-semibold uppercase tracking-wider mb-2">
+              <p className="text-[#6B7280] text-xs font-semibold uppercase tracking-wider mb-2">
                 Optioneel
               </p>
-              <h3 className="font-serif font-semibold text-[#1A1714] mb-2">
+              <h3 className="font-sans font-semibold text-[#111827] mb-2">
                 Spont Dealer
               </h3>
-              <p className="text-[#5C5550] text-sm leading-relaxed">
+              <p className="text-[#6B7280] text-sm leading-relaxed">
                 Wil je een vast contactpersoon? Een gecertificeerde dealer
                 helpt je. Eigen maandelijks tarief.
               </p>
             </Link>
 
             {/* Blok 3 – optioneel */}
-            <div className="bg-[#F6F3EE] rounded-3xl p-7">
-              <div className="w-10 h-10 bg-[#CC5533]/10 rounded-2xl flex items-center justify-center mb-4">
-                <Wrench size={20} className="text-[#CC5533]" />
+            <div className="bg-[#F9FAFB] rounded-3xl p-7">
+              <div className="w-10 h-10 bg-[#4353FF]/10 rounded-2xl flex items-center justify-center mb-4">
+                <Wrench size={20} className="text-[#4353FF]" />
               </div>
-              <p className="text-[#5C5550] text-xs font-semibold uppercase tracking-wider mb-2">
+              <p className="text-[#6B7280] text-xs font-semibold uppercase tracking-wider mb-2">
                 Optioneel
               </p>
-              <h3 className="font-serif font-semibold text-[#1A1714] mb-2">
+              <h3 className="font-sans font-semibold text-[#111827] mb-2">
                 Losse hulp
               </h3>
-              <p className="text-[#5C5550] text-sm leading-relaxed">
+              <p className="text-[#6B7280] text-sm leading-relaxed">
                 €59 per uur. Online of op locatie. Per half uur afgerekend.
               </p>
             </div>
@@ -401,9 +401,9 @@ export default function PricingPage() {
       </section>
 
       {/* ─── FAQ ─── */}
-      <section className="bg-[#F6F3EE] py-20 px-6">
+      <section className="bg-[#F9FAFB] py-20 px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-serif font-semibold text-[#1A1714] mb-12 text-center">
+          <h2 className="text-3xl font-sans font-semibold text-[#111827] mb-12 text-center">
             Veelgestelde vragen.
           </h2>
           <div className="space-y-4">
@@ -412,13 +412,13 @@ export default function PricingPage() {
                 key={faq.q}
                 className="bg-white rounded-2xl px-7 py-5 group cursor-pointer"
               >
-                <summary className="font-semibold text-[#1A1714] text-base list-none flex items-center justify-between">
+                <summary className="font-semibold text-[#111827] text-base list-none flex items-center justify-between">
                   {faq.q}
-                  <span className="text-[#CC5533] text-xl leading-none group-open:rotate-45 transition-transform">
+                  <span className="text-[#4353FF] text-xl leading-none group-open:rotate-45 transition-transform">
                     +
                   </span>
                 </summary>
-                <p className="text-[#5C5550] text-sm mt-4 leading-relaxed">{faq.a}</p>
+                <p className="text-[#6B7280] text-sm mt-4 leading-relaxed">{faq.a}</p>
               </details>
             ))}
           </div>

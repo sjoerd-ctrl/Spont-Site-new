@@ -24,15 +24,15 @@ export default function PaymentsTabs() {
   const rows = active === "pos" ? pos : ecom;
 
   return (
-    <div className="bg-[#F6F3EE] rounded-3xl p-7">
+    <div className="bg-[#F9FAFB] rounded-3xl p-7">
       {/* Toggle */}
-      <div className="flex items-center gap-1 bg-[#EBE8E3] rounded-full p-1 w-fit mb-6">
+      <div className="flex items-center gap-1 bg-[#E5E7EB] rounded-full p-1 w-fit mb-6">
         <button
           onClick={() => setActive("pos")}
           className={`px-5 py-2 rounded-full text-sm font-semibold transition-colors ${
             active === "pos"
-              ? "bg-white text-[#1A1714] shadow-sm"
-              : "text-[#5C5550] hover:text-[#1A1714]"
+              ? "bg-white text-[#111827] shadow-sm"
+              : "text-[#6B7280] hover:text-[#111827]"
           }`}
         >
           Kassa (POS)
@@ -41,8 +41,8 @@ export default function PaymentsTabs() {
           onClick={() => setActive("ecom")}
           className={`px-5 py-2 rounded-full text-sm font-semibold transition-colors ${
             active === "ecom"
-              ? "bg-white text-[#1A1714] shadow-sm"
-              : "text-[#5C5550] hover:text-[#1A1714]"
+              ? "bg-white text-[#111827] shadow-sm"
+              : "text-[#6B7280] hover:text-[#111827]"
           }`}
         >
           Online bestellen (ECOM)
@@ -52,16 +52,16 @@ export default function PaymentsTabs() {
       {/* Table */}
       <table className="w-full text-sm">
         <thead>
-          <tr className="border-b border-[#EBE8E3]">
-            <th className="text-left text-[#5C5550] font-medium pb-3 pr-4">Betaalmethode</th>
-            <th className="text-right text-[#5C5550] font-medium pb-3">Tarief</th>
+          <tr className="border-b border-[#E5E7EB]">
+            <th className="text-left text-[#6B7280] font-medium pb-3 pr-4">Betaalmethode</th>
+            <th className="text-right text-[#6B7280] font-medium pb-3">Tarief</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-[#EBE8E3]">
+        <tbody className="divide-y divide-[#E5E7EB]">
           {rows.map((r) => (
             <tr key={r.method}>
-              <td className="py-3 pr-4 text-[#1A1714]">{r.method}</td>
-              <td className="py-3 text-right font-semibold text-[#1A1714]">{r.rate}</td>
+              <td className="py-3 pr-4 text-[#111827]">{r.method}</td>
+              <td className="py-3 text-right font-semibold text-[#111827]">{r.rate}</td>
             </tr>
           ))}
         </tbody>

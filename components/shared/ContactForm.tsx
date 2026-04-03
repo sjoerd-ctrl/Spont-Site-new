@@ -1,15 +1,44 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState, useRef, useEffect } from "react";
 import { submitContactForm } from "@/app/actions/contact";
+import { ChevronDown } from "lucide-react";
+
+const zaakOptions = [
+  "Restaurant",
+  "Café",
+  "Koffiezaak",
+  "Lunchroom",
+  "Fastcasual / afhaal",
+  "Bakkerij",
+  "Discotheek / club",
+  "Hotel",
+  "Anders",
+];
+
+const inputClass =
+  "w-full bg-white border border-[#E5E7EB] rounded-xl px-4 py-3 text-[#111827] text-sm outline-none focus:ring-2 focus:ring-[#4353FF] focus:border-[#4353FF] placeholder-[#6B7280]/50 transition-colors";
 
 export default function ContactForm() {
   const [state, action, pending] = useActionState(submitContactForm, null);
+  const [zaakOpen, setZaakOpen] = useState(false);
+  const [zaakValue, setZaakValue] = useState("");
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setZaakOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
 
   if (state?.success) {
     return (
-      <div className="bg-[#2D4B3F] rounded-3xl p-10 text-center">
-        <h3 className="font-serif text-2xl font-semibold text-white mb-3">
+      <div className="bg-[#111827] rounded-3xl p-10 text-center">
+        <h3 className="font-sans text-2xl font-semibold text-white mb-3">
           Bericht verstuurd!
         </h3>
         <p className="text-white/70 text-sm">
@@ -23,81 +52,104 @@ export default function ContactForm() {
     <form className="space-y-5" action={action}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
-          <label className="block text-sm font-medium text-[#1A1714] mb-2">
+          <label className="block text-sm font-medium text-[#111827] mb-2">
             Voornaam *
           </label>
           <input
             type="text"
             name="voornaam"
             required
-            className="w-full bg-white rounded-2xl px-5 py-3.5 text-[#1A1714] text-sm outline-none focus:ring-2 focus:ring-[#CC5533] placeholder-[#5C5550]/50"
+            className={inputClass}
             placeholder="Jan"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-[#1A1714] mb-2">
+          <label className="block text-sm font-medium text-[#111827] mb-2">
             Achternaam
           </label>
           <input
             type="text"
             name="achternaam"
-            className="w-full bg-white rounded-2xl px-5 py-3.5 text-[#1A1714] text-sm outline-none focus:ring-2 focus:ring-[#CC5533] placeholder-[#5C5550]/50"
+            className={inputClass}
             placeholder="Jansen"
           />
         </div>
       </div>
       <div>
-        <label className="block text-sm font-medium text-[#1A1714] mb-2">
+        <label className="block text-sm font-medium text-[#111827] mb-2">
           E-mailadres *
         </label>
         <input
           type="email"
           name="email"
           required
-          className="w-full bg-white rounded-2xl px-5 py-3.5 text-[#1A1714] text-sm outline-none focus:ring-2 focus:ring-[#CC5533] placeholder-[#5C5550]/50"
+          className={inputClass}
           placeholder="jan@mijnzaak.nl"
         />
       </div>
       <div>
-        <label className="block text-sm font-medium text-[#1A1714] mb-2">
+        <label className="block text-sm font-medium text-[#111827] mb-2">
           Telefoonnummer
         </label>
         <input
           type="tel"
           name="telefoon"
-          className="w-full bg-white rounded-2xl px-5 py-3.5 text-[#1A1714] text-sm outline-none focus:ring-2 focus:ring-[#CC5533] placeholder-[#5C5550]/50"
+          className={inputClass}
           placeholder="06 12345678"
         />
       </div>
       <div>
-        <label className="block text-sm font-medium text-[#1A1714] mb-2">
+        <label className="block text-sm font-medium text-[#111827] mb-2">
           Type zaak
         </label>
-        <select
-          name="zaakType"
-          className="w-full bg-white rounded-2xl px-5 py-3.5 text-[#1A1714] text-sm outline-none focus:ring-2 focus:ring-[#CC5533]"
-        >
-          <option value="">Selecteer...</option>
-          <option>Restaurant</option>
-          <option>Café</option>
-          <option>Koffiezaak</option>
-          <option>Lunchroom</option>
-          <option>Fastcasual / afhaal</option>
-          <option>Bakkerij</option>
-          <option>Discotheek / club</option>
-          <option>Hotel</option>
-          <option>Anders</option>
-        </select>
+        {/* Hidden native input for form submission */}
+        <input type="hidden" name="zaakType" value={zaakValue} />
+        {/* Custom dropdown */}
+        <div ref={dropdownRef} className="relative">
+          <button
+            type="button"
+            onClick={() => setZaakOpen(!zaakOpen)}
+            className={`${inputClass} flex items-center justify-between text-left ${
+              zaakValue ? "text-[#111827]" : "text-[#6B7280]/50"
+            }`}
+          >
+            <span>{zaakValue || "Selecteer..."}</span>
+            <ChevronDown
+              className={`w-4 h-4 text-[#6B7280] transition-transform ${zaakOpen ? "rotate-180" : ""}`}
+            />
+          </button>
+          {zaakOpen && (
+            <div className="absolute z-20 mt-1 w-full bg-white border border-[#E5E7EB] rounded-xl shadow-lg py-1 max-h-60 overflow-y-auto">
+              {zaakOptions.map((opt) => (
+                <button
+                  key={opt}
+                  type="button"
+                  onClick={() => {
+                    setZaakValue(opt);
+                    setZaakOpen(false);
+                  }}
+                  className={`w-full text-left px-4 py-2.5 text-sm hover:bg-[#F3F4F6] transition-colors ${
+                    zaakValue === opt
+                      ? "text-[#4353FF] font-medium bg-[#F3F4F6]"
+                      : "text-[#111827]"
+                  }`}
+                >
+                  {opt}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
       <div>
-        <label className="block text-sm font-medium text-[#1A1714] mb-2">
+        <label className="block text-sm font-medium text-[#111827] mb-2">
           Bericht *
         </label>
         <textarea
           name="bericht"
           rows={5}
           required
-          className="w-full bg-white rounded-2xl px-5 py-3.5 text-[#1A1714] text-sm outline-none focus:ring-2 focus:ring-[#CC5533] placeholder-[#5C5550]/50 resize-none"
+          className={`${inputClass} resize-none`}
           placeholder="Vertel ons over jouw zaak en wat je nodig hebt..."
         />
       </div>
@@ -107,9 +159,9 @@ export default function ContactForm() {
           type="checkbox"
           name="dealer"
           value="ja"
-          className="mt-0.5 w-5 h-5 rounded border-[#5C5550]/30 text-[#CC5533] focus:ring-[#CC5533] accent-[#CC5533]"
+          className="mt-0.5 w-5 h-5 rounded border-[#E5E7EB] text-[#4353FF] focus:ring-[#4353FF] accent-[#4353FF]"
         />
-        <span className="text-sm text-[#1A1714]">
+        <span className="text-sm text-[#111827]">
           Ik wil graag een Spont Dealer als vast contactpersoon
         </span>
       </label>
@@ -121,7 +173,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={pending}
-        className="w-full bg-[#CC5533] hover:bg-[#A33818] disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold py-4 rounded-full transition-colors text-sm"
+        className="w-full bg-[#4353FF] hover:bg-[#3344DD] disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold py-4 rounded-full transition-colors text-sm"
       >
         {pending ? "Versturen..." : "Verstuur bericht"}
       </button>

@@ -188,7 +188,7 @@ export default function PricingPage() {
                 {/* Badge */}
                 {plan.badge && (
                   <div className="mb-4">
-                    <span className="inline-block bg-[#CC5533] text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    <span className="inline-block bg-[#f5e45d] text-[#1A1714] text-xs font-semibold px-3 py-1 rounded-full">
                       {plan.badge}
                     </span>
                     {plan.badgeSub && (
@@ -214,7 +214,7 @@ export default function PricingPage() {
                       {plan.price}
                     </span>
                     {plan.priceNote && (
-                      <sup className="text-sm font-semibold text-[#CC5533] align-super">{plan.priceNote}</sup>
+                      <sup className="text-sm font-semibold text-[#b8a020] align-super">{plan.priceNote}</sup>
                     )}
                   </div>
                   <span className={`text-sm ml-1 ${plan.highlight ? "text-white/60" : "text-[#5C5550]"}`}>
@@ -242,7 +242,7 @@ export default function PricingPage() {
                       <ul className="space-y-2.5">
                         {group.items.map((item) => (
                           <li key={item} className="flex items-start gap-3 text-sm">
-                            <CheckCircle size={15} className="text-[#CC5533] mt-0.5 shrink-0" />
+                            <CheckCircle size={15} className="text-[#b8a020] mt-0.5 shrink-0" />
                             <span className={plan.highlight ? "text-white/90" : "text-[#1A1714]"}>
                               {item}
                             </span>

@@ -157,7 +157,7 @@ export default function BlogPage() {
               </h2>
               <p className="text-[#6B7280] text-sm leading-relaxed">{a.excerpt}</p>
             </Link>
-          </FadeUp>
+          ))}
         </div>
       </section>
 
@@ -192,7 +192,7 @@ export default function BlogPage() {
                         {a.readTime}
                       </span>
                     </div>
-                    <h2 className="font-serif text-lg font-semibold text-[#1A1714] leading-snug mb-2 group-hover:text-[#CC5533] transition-colors duration-200">
+                    <h2 className="font-serif text-lg font-semibold text-[#1A1714] leading-snug mb-2 group-hover:text-[#b8a020] transition-colors duration-200">
                       {a.title}
                     </h2>
                     <p className="text-[#5C5550] text-sm leading-relaxed flex-1 mb-4">
@@ -200,7 +200,7 @@ export default function BlogPage() {
                     </p>
                     <div className="flex items-center justify-between mt-auto pt-4 border-t border-[#EBE8E3]">
                       <span className="text-[#5C5550] text-xs">{a.date}</span>
-                      <span className="text-[#CC5533] text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
+                      <span className="text-[#b8a020] text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
                         Lees meer <ArrowRight size={14} />
                       </span>
                     </div>

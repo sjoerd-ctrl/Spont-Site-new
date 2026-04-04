@@ -157,7 +157,7 @@ export default function BlogPage() {
               </h2>
               <p className="text-[#6B7280] text-sm leading-relaxed">{a.excerpt}</p>
             </Link>
-          </FadeUp>
+          ))}
         </div>
       </section>
 

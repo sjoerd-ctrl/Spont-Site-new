@@ -154,7 +154,7 @@ export default function DoelgroepenRotator() {
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="absolute inset-0 bg-[#4353FF]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-[#f5e45d]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="absolute bottom-0 left-0 right-0 p-8 z-10">
                 <h3 className="font-sans text-2xl md:text-3xl font-bold text-white leading-tight mb-2">
                   {seg.label}

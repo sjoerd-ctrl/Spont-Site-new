@@ -133,7 +133,7 @@ export default function KostenCalculator({ model, concurrentNaam }: Props) {
             <input
               type="number" min={0} step={1000} value={omzet}
               onChange={(e) => setOmzet(Number(e.target.value))}
-              className="w-full bg-white border border-[#E5E7EB] rounded-xl pl-8 pr-4 py-3 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#4353FF]/30"
+              className="w-full bg-white border border-[#E5E7EB] rounded-xl pl-8 pr-4 py-3 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#f5e45d]/30"
             />
           </div>
         </label>
@@ -143,7 +143,7 @@ export default function KostenCalculator({ model, concurrentNaam }: Props) {
           <input
             type="number" min={0} step={100} value={transacties}
             onChange={(e) => setTransacties(Number(e.target.value))}
-            className="w-full bg-white border border-[#E5E7EB] rounded-xl px-4 py-3 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#4353FF]/30"
+            className="w-full bg-white border border-[#E5E7EB] rounded-xl px-4 py-3 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#f5e45d]/30"
           />
         </label>
 
@@ -153,7 +153,7 @@ export default function KostenCalculator({ model, concurrentNaam }: Props) {
             <input
               type="number" min={0} max={100} value={pctDebit}
               onChange={(e) => { const v = Math.min(100, Number(e.target.value)); setPctDebit(v); setPctCredit(100 - v); }}
-              className="w-full bg-white border border-[#E5E7EB] rounded-xl px-4 pr-8 py-3 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#4353FF]/30"
+              className="w-full bg-white border border-[#E5E7EB] rounded-xl px-4 pr-8 py-3 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#f5e45d]/30"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[#6B7280] text-sm">%</span>
           </div>
@@ -165,7 +165,7 @@ export default function KostenCalculator({ model, concurrentNaam }: Props) {
             <input
               type="number" min={0} max={100} value={pctCredit}
               onChange={(e) => { const v = Math.min(100, Number(e.target.value)); setPctCredit(v); setPctDebit(100 - v); }}
-              className="w-full bg-white border border-[#E5E7EB] rounded-xl px-4 pr-8 py-3 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#4353FF]/30"
+              className="w-full bg-white border border-[#E5E7EB] rounded-xl px-4 pr-8 py-3 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#f5e45d]/30"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[#6B7280] text-sm">%</span>
           </div>
@@ -198,7 +198,7 @@ export default function KostenCalculator({ model, concurrentNaam }: Props) {
           <label className="flex flex-col gap-1.5 sm:col-span-2">
             <span className="text-xs font-semibold text-[#6B7280] uppercase tracking-wider">
               Aantal verkooppunten / devices
-              <span className="ml-2 normal-case font-normal text-[#4353FF]">
+              <span className="ml-2 normal-case font-normal text-[#b8a020]">
                 {aantalDevices > LS_INCLUDED[lsPlan]
                   ? `+${aantalDevices - LS_INCLUDED[lsPlan]} extra × €49 = €${(aantalDevices - LS_INCLUDED[lsPlan]) * 49}/mnd bij ${concurrentNaam}`
                   : `${LS_INCLUDED[lsPlan] - aantalDevices + (aantalDevices <= LS_INCLUDED[lsPlan] ? 0 : 0)} inbegrepen in plan`}

@@ -155,7 +155,7 @@ export default function PricingPage() {
           <div className="absolute inset-0 bg-[#111827]/70" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-4">
+          <p className="text-[#f5e45d] font-semibold text-sm uppercase tracking-widest mb-4">
             Prijzen
           </p>
           <h1 className="text-5xl md:text-6xl font-serif text-white font-semibold leading-tight mb-6">
@@ -257,7 +257,7 @@ export default function PricingPage() {
                   href={plan.ctaHref}
                   className={`text-center font-semibold py-3.5 rounded-full transition-colors text-sm ${
                     plan.highlight
-                      ? "bg-[#4353FF] hover:bg-[#3344DD] text-white"
+                      ? "bg-[#f5e45d] hover:bg-[#d4c430] text-[#1A1714]"
                       : "bg-[#111827] hover:bg-[#111827] text-white"
                   }`}
                 >
@@ -280,7 +280,7 @@ export default function PricingPage() {
 
           {/* Header callout */}
           <div className="bg-[#111827] rounded-3xl p-8 md:p-10">
-            <p className="text-[#4353FF] font-semibold text-xs uppercase tracking-widest mb-3">
+            <p className="text-[#f5e45d] font-semibold text-xs uppercase tracking-widest mb-3">
               Spont Payments
             </p>
             <h3 className="font-sans text-2xl text-white font-semibold mb-2">
@@ -295,9 +295,9 @@ export default function PricingPage() {
                 <p className="text-white/60 text-xs mb-1">Zonder Payments</p>
                 <p className="text-white text-2xl font-sans font-bold">€89<span className="text-sm font-normal text-white/60">/maand</span></p>
               </div>
-              <div className="bg-[#4353FF] rounded-2xl px-6 py-4 text-center">
-                <p className="text-white/80 text-xs mb-1">Met Payments (bespaar €20)</p>
-                <p className="text-white text-2xl font-sans font-bold">€69<span className="text-sm font-normal text-white/60">/maand</span></p>
+              <div className="bg-[#f5e45d] rounded-2xl px-6 py-4 text-center">
+                <p className="text-[#1A1714]/70 text-xs mb-1">Met Payments (bespaar €20)</p>
+                <p className="text-[#1A1714] text-2xl font-sans font-bold">€69<span className="text-sm font-normal text-[#1A1714]/60">/maand</span></p>
               </div>
             </div>
           </div>
@@ -332,7 +332,7 @@ export default function PricingPage() {
       <section className="bg-[#FFFFFF] py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#b8a020] font-semibold text-sm uppercase tracking-widest mb-3">
               Support
             </p>
             <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#1A1714] mb-4">
@@ -362,8 +362,8 @@ export default function PricingPage() {
 
             {/* Blok 2 – optioneel */}
             <Link href="/contact#formulier" className="card-hover bg-[#F9FAFB] rounded-3xl p-7 block">
-              <div className="w-10 h-10 bg-[#4353FF]/10 rounded-2xl flex items-center justify-center mb-4">
-                <Users size={20} className="text-[#4353FF]" />
+              <div className="w-10 h-10 bg-[#f5e45d]/10 rounded-2xl flex items-center justify-center mb-4">
+                <Users size={20} className="text-[#b8a020]" />
               </div>
               <p className="text-[#6B7280] text-xs font-semibold uppercase tracking-wider mb-2">
                 Optioneel
@@ -379,8 +379,8 @@ export default function PricingPage() {
 
             {/* Blok 3 – optioneel */}
             <div className="bg-[#F9FAFB] rounded-3xl p-7">
-              <div className="w-10 h-10 bg-[#4353FF]/10 rounded-2xl flex items-center justify-center mb-4">
-                <Wrench size={20} className="text-[#4353FF]" />
+              <div className="w-10 h-10 bg-[#f5e45d]/10 rounded-2xl flex items-center justify-center mb-4">
+                <Wrench size={20} className="text-[#b8a020]" />
               </div>
               <p className="text-[#6B7280] text-xs font-semibold uppercase tracking-wider mb-2">
                 Optioneel
@@ -414,7 +414,7 @@ export default function PricingPage() {
               >
                 <summary className="font-semibold text-[#111827] text-base list-none flex items-center justify-between">
                   {faq.q}
-                  <span className="text-[#4353FF] text-xl leading-none group-open:rotate-45 transition-transform">
+                  <span className="text-[#b8a020] text-xl leading-none group-open:rotate-45 transition-transform">
                     +
                   </span>
                 </summary>

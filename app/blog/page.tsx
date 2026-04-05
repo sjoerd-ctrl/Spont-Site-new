@@ -128,7 +128,7 @@ export default function BlogPage() {
 
       <section className="bg-[#FFFFFF] pt-32 pb-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-4">Blog</p>
+          <p className="text-[#b8a020] font-semibold text-sm uppercase tracking-widest mb-4">Blog</p>
           <h1 className="text-5xl font-sans text-[#111827] font-semibold mb-4">
             Kennis voor de horeca.
           </h1>
@@ -147,12 +147,12 @@ export default function BlogPage() {
               className="card-hover cursor-pointer block bg-[#F9FAFB] hover:bg-[#F3F4F6] rounded-3xl p-8 group"
             >
               <div className="flex items-center gap-3 mb-3">
-                <span className="text-xs font-semibold text-[#4353FF] uppercase tracking-widest">
+                <span className="text-xs font-semibold text-[#b8a020] uppercase tracking-widest">
                   {a.category}
                 </span>
                 <span className="text-[#6B7280] text-xs">{a.date}</span>
               </div>
-              <h2 className="font-sans text-xl font-semibold text-[#111827] mb-2 group-hover:text-[#4353FF] transition-colors">
+              <h2 className="font-sans text-xl font-semibold text-[#111827] mb-2 group-hover:text-[#b8a020] transition-colors">
                 {a.title}
               </h2>
               <p className="text-[#6B7280] text-sm leading-relaxed">{a.excerpt}</p>

@@ -280,7 +280,7 @@ const vergelijkingen: Record<string, Vergelijking> = {
 
 function CelIcon({ value }: { value: string }) {
   if (value.startsWith("✅")) return <CheckCircle size={16} className="text-[#111827] inline mr-1 shrink-0" />;
-  if (value.startsWith("❌")) return <XCircle size={16} className="text-[#4353FF] inline mr-1 shrink-0" />;
+  if (value.startsWith("❌")) return <XCircle size={16} className="text-[#b8a020] inline mr-1 shrink-0" />;
   if (value.startsWith("⚠️")) return <AlertCircle size={16} className="text-amber-500 inline mr-1 shrink-0" />;
   return null;
 }
@@ -327,7 +327,7 @@ export default async function VergelijkPage({
       {/* ─── HERO ─── */}
       <section className="bg-[#FFFFFF] pt-32 pb-16 px-6 border-b border-[#E5E7EB]">
         <div className="max-w-4xl mx-auto">
-          <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-4">
+          <p className="text-[#b8a020] font-semibold text-sm uppercase tracking-widest mb-4">
             Vergelijking
           </p>
           <h1 className="text-4xl md:text-5xl font-sans text-[#111827] font-semibold mb-5 leading-tight">
@@ -336,7 +336,7 @@ export default async function VergelijkPage({
           <p className="text-[#6B7280] text-lg max-w-2xl mb-8">{v.subkop}</p>
           <a
             href="https://admin.spont.nl"
-            className="bg-[#4353FF] hover:bg-[#3344DD] text-white font-semibold px-8 py-4 rounded-full transition-colors inline-block"
+            className="bg-[#f5e45d] hover:bg-[#d4c430] text-[#1A1714] font-semibold px-8 py-4 rounded-full transition-colors inline-block"
           >
             Start direct
           </a>
@@ -351,7 +351,7 @@ export default async function VergelijkPage({
             <p className="text-white/90 leading-relaxed">{v.spontSamenvatting}</p>
           </div>
           <div className="card-hover bg-[#F9FAFB] rounded-3xl p-8">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#4353FF] mb-3">{v.concurrentNaam}</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#b8a020] mb-3">{v.concurrentNaam}</p>
             <p className="text-[#6B7280] leading-relaxed">{v.concurrentSamenvatting}</p>
           </div>
         </div>
@@ -416,20 +416,20 @@ export default async function VergelijkPage({
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="card-hover bg-[#111827] rounded-3xl p-8">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#4353FF] mb-4">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#f5e45d] mb-4">
                 Kies Spont als…
               </p>
               <ul className="space-y-3">
                 {v.kiesSpont.map((punt) => (
                   <li key={punt} className="flex items-start gap-3 text-white/90 text-sm">
-                    <CheckCircle size={16} className="text-[#4353FF] shrink-0 mt-0.5" />
+                    <CheckCircle size={16} className="text-[#f5e45d] shrink-0 mt-0.5" />
                     {punt}
                   </li>
                 ))}
               </ul>
             </div>
             <div className="card-hover bg-[#F9FAFB] rounded-3xl p-8">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#4353FF] mb-4">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#b8a020] mb-4">
                 Kies {v.concurrentNaam} als…
               </p>
               <ul className="space-y-3">

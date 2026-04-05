@@ -66,7 +66,7 @@ export default function OverOnsPage() {
           <div className="absolute inset-0 bg-[#111827]/70" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto">
-          <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-4">
+          <p className="text-[#f5e45d] font-semibold text-sm uppercase tracking-widest mb-4">
             Over ons
           </p>
           <h1 className="text-5xl md:text-6xl font-sans text-white font-semibold leading-tight mb-6">
@@ -85,7 +85,7 @@ export default function OverOnsPage() {
       <section className="bg-[#FFFFFF] py-24 px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-4">
+            <p className="text-[#b8a020] font-semibold text-sm uppercase tracking-widest mb-4">
               Ons verhaal
             </p>
             <h2 className="text-3xl font-sans font-semibold text-[#111827] mb-6">
@@ -113,9 +113,9 @@ export default function OverOnsPage() {
               <p className="text-5xl font-sans font-bold mb-2">500+</p>
               <p className="text-white/70 text-sm">Horecazaken die dagelijks draaien op Spont</p>
             </div>
-            <div className="card-hover bg-[#4353FF] rounded-3xl p-8 text-white">
+            <div className="card-hover bg-[#f5e45d] rounded-3xl p-8 text-[#1A1714]">
               <p className="text-5xl font-sans font-bold mb-2">&lt;2u</p>
-              <p className="text-white/70 text-sm">Gemiddelde responstijd via AI + tickets</p>
+              <p className="text-[#1A1714]/70 text-sm">Gemiddelde responstijd via AI + tickets</p>
             </div>
             <div className="card-hover bg-[#F9FAFB] rounded-3xl p-8 col-span-2">
               <p className="text-5xl font-sans font-bold text-[#111827] mb-2">2019</p>
@@ -140,7 +140,7 @@ export default function OverOnsPage() {
       <section className="bg-[#FFFFFF] py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#b8a020] font-semibold text-sm uppercase tracking-widest mb-3">
               Onze waarden
             </p>
             <h2 className="text-3xl md:text-4xl font-sans font-semibold text-[#111827]">
@@ -153,8 +153,8 @@ export default function OverOnsPage() {
               const Icon = kw.icon;
               return (
                 <div key={kw.title} className="card-hover bg-[#F9FAFB] rounded-3xl p-8">
-                  <div className="w-12 h-12 bg-[#4353FF]/10 rounded-2xl flex items-center justify-center mb-5">
-                    <Icon size={22} className="text-[#4353FF]" />
+                  <div className="w-12 h-12 bg-[#f5e45d]/10 rounded-2xl flex items-center justify-center mb-5">
+                    <Icon size={22} className="text-[#b8a020]" />
                   </div>
                   <h3 className="font-sans font-semibold text-lg text-[#111827] mb-2">
                     {kw.title}
@@ -171,7 +171,7 @@ export default function OverOnsPage() {
       <section className="bg-[#F9FAFB] py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#b8a020] font-semibold text-sm uppercase tracking-widest mb-3">
               Het team
             </p>
             <h2 className="text-3xl md:text-4xl font-sans font-semibold text-[#111827]">
@@ -198,7 +198,7 @@ export default function OverOnsPage() {
                   <h3 className="font-sans font-semibold text-xl text-[#111827] mb-1">
                     {member.name}
                   </h3>
-                  <p className="text-[#4353FF] text-sm font-medium mb-4">{member.role}</p>
+                  <p className="text-[#b8a020] text-sm font-medium mb-4">{member.role}</p>
                   <p className="text-[#6B7280] text-sm leading-relaxed">{member.bio}</p>
                 </div>
               </div>
@@ -209,29 +209,29 @@ export default function OverOnsPage() {
           <div className="mt-8">
             <div className="card-hover bg-[#111827] rounded-3xl overflow-hidden shadow-sm">
               <div className="w-full h-20 bg-[#243D32] flex items-end px-8 pt-8">
-                <div className="w-16 h-16 rounded-full bg-[#4353FF]/20 flex items-center justify-center">
-                  <Handshake size={28} className="text-[#4353FF]" />
+                <div className="w-16 h-16 rounded-full bg-[#f5e45d]/20 flex items-center justify-center">
+                  <Handshake size={28} className="text-[#f5e45d]" />
                 </div>
               </div>
               <div className="p-8">
                 <h3 className="font-sans font-semibold text-xl text-white mb-1">
                   Ons dealernetwerk
                 </h3>
-                <p className="text-[#4353FF] text-sm font-medium mb-4">Lokale ontzorging, overal in Nederland</p>
+                <p className="text-[#f5e45d] text-sm font-medium mb-4">Lokale ontzorging, overal in Nederland</p>
                 <p className="text-white/70 text-sm leading-relaxed mb-6">
                   Spont werkt samen met een netwerk van gecertificeerde dealers. Zij helpen bij de installatie, training en dagelijkse ondersteuning — zodat jij je op je zaak kunt richten.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="flex items-start gap-3">
-                    <MapPin size={16} className="text-[#4353FF] shrink-0 mt-0.5" />
+                    <MapPin size={16} className="text-[#f5e45d] shrink-0 mt-0.5" />
                     <p className="text-white/70 text-sm">Dealers door heel Nederland en België</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <PhoneCall size={16} className="text-[#4353FF] shrink-0 mt-0.5" />
+                    <PhoneCall size={16} className="text-[#f5e45d] shrink-0 mt-0.5" />
                     <p className="text-white/70 text-sm">Persoonlijk aanspreekpunt in jouw regio</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Users size={16} className="text-[#4353FF] shrink-0 mt-0.5" />
+                    <Users size={16} className="text-[#f5e45d] shrink-0 mt-0.5" />
                     <p className="text-white/70 text-sm">Installatie, training en opvolging geregeld</p>
                   </div>
                 </div>

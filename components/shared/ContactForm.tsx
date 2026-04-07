@@ -17,7 +17,7 @@ const zaakOptions = [
 ];
 
 const inputClass =
-  "w-full bg-white border border-[#E5E7EB] rounded-xl px-4 py-3 text-[#111827] text-sm outline-none focus:ring-2 focus:ring-[#4353FF] focus:border-[#4353FF] placeholder-[#6B7280]/50 transition-colors";
+  "w-full bg-white border border-[#E5E7EB] rounded-xl px-4 py-3 text-[#111827] text-sm outline-none focus:ring-2 focus:ring-[#CC5533] focus:border-[#CC5533] placeholder-[#6B7280]/50 transition-colors";
 
 export default function ContactForm() {
   const [state, action, pending] = useActionState(submitContactForm, null);
@@ -130,7 +130,7 @@ export default function ContactForm() {
                   }}
                   className={`w-full text-left px-4 py-2.5 text-sm hover:bg-[#F3F4F6] transition-colors ${
                     zaakValue === opt
-                      ? "text-[#4353FF] font-medium bg-[#F3F4F6]"
+                      ? "text-[#CC5533] font-medium bg-[#F3F4F6]"
                       : "text-[#111827]"
                   }`}
                 >
@@ -159,7 +159,7 @@ export default function ContactForm() {
           type="checkbox"
           name="dealer"
           value="ja"
-          className="mt-0.5 w-5 h-5 rounded border-[#E5E7EB] text-[#4353FF] focus:ring-[#4353FF] accent-[#4353FF]"
+          className="mt-0.5 w-5 h-5 rounded border-[#E5E7EB] text-[#CC5533] focus:ring-[#CC5533] accent-[#CC5533]"
         />
         <span className="text-sm text-[#111827]">
           Ik wil graag een Spont Dealer als vast contactpersoon
@@ -173,7 +173,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={pending}
-        className="w-full bg-[#4353FF] hover:bg-[#3344DD] disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold py-4 rounded-full transition-colors text-sm"
+        className="w-full bg-[#CC5533] hover:bg-[#A33818] disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold py-4 rounded-full transition-colors text-sm"
       >
         {pending ? "Versturen..." : "Verstuur bericht"}
       </button>

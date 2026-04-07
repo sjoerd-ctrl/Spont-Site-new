@@ -22,7 +22,7 @@ export default function ContactPage() {
       {/* ─── HERO ─── */}
       <section className="bg-[#FFFFFF] pt-32 pb-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-4">
+          <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-4">
             Contact
           </p>
           <h1 className="text-5xl md:text-6xl font-sans text-[#111827] font-semibold leading-tight mb-6">
@@ -52,7 +52,7 @@ export default function ContactPage() {
               href="https://admin.spont.nl"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-[#4353FF] hover:bg-[#3344DD] text-white font-semibold px-6 py-3.5 rounded-full transition-colors text-sm"
+              className="inline-block bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold px-6 py-3.5 rounded-full transition-colors text-sm"
             >
               Start direct
             </a>
@@ -60,7 +60,7 @@ export default function ContactPage() {
 
           {/* Route 2 – Partner */}
           <div className="card-hover bg-[#F9FAFB] rounded-3xl p-10">
-            <Users size={28} className="mb-6 text-[#4353FF]" />
+            <Users size={28} className="mb-6 text-[#CC5533]" />
             <h2 className="font-sans text-2xl font-semibold text-[#111827] mb-3">
               Dealer of partner
             </h2>
@@ -92,23 +92,23 @@ export default function ContactPage() {
       <section className="bg-[#FFFFFF] py-16 px-6">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
           <div>
-            <MessageCircle size={22} className="text-[#4353FF] mx-auto mb-3" />
+            <MessageCircle size={22} className="text-[#CC5533] mx-auto mb-3" />
             <h3 className="font-semibold text-[#111827] mb-1">WhatsApp</h3>
             <p className="text-[#6B7280] text-sm">Direct een bericht sturen</p>
-            <a href="https://wa.me/31000000000" className="text-[#4353FF] text-sm font-medium mt-1 inline-block hover:underline">
+            <a href="https://wa.me/31000000000" className="text-[#CC5533] text-sm font-medium mt-1 inline-block hover:underline">
               App ons →
             </a>
           </div>
           <div>
-            <Calendar size={22} className="text-[#4353FF] mx-auto mb-3" />
+            <Calendar size={22} className="text-[#CC5533] mx-auto mb-3" />
             <h3 className="font-semibold text-[#111827] mb-1">E-mail</h3>
             <p className="text-[#6B7280] text-sm">We reageren binnen één werkdag</p>
-            <a href="mailto:info@spont.nl" className="text-[#4353FF] text-sm font-medium mt-1 inline-block hover:underline">
+            <a href="mailto:info@spont.nl" className="text-[#CC5533] text-sm font-medium mt-1 inline-block hover:underline">
               info@spont.nl →
             </a>
           </div>
           <div>
-            <MapPin size={22} className="text-[#4353FF] mx-auto mb-3" />
+            <MapPin size={22} className="text-[#CC5533] mx-auto mb-3" />
             <h3 className="font-semibold text-[#111827] mb-1">Kantoor</h3>
             <p className="text-[#6B7280] text-sm">Nederland</p>
             <span className="text-[#6B7280] text-sm">Op afspraak</span>

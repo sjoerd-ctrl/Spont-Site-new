@@ -166,7 +166,7 @@ export default function FeaturesPage() {
           <div className="absolute inset-0 bg-[#111827]/70" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center w-full">
-          <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-4">
+          <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-4">
             Alle functies
           </p>
           <h1 className="text-5xl md:text-6xl font-sans text-white font-semibold leading-tight mb-6">
@@ -182,7 +182,7 @@ export default function FeaturesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="https://admin.spont.nl"
-              className="bg-[#4353FF] hover:bg-[#3344DD] text-white font-semibold px-8 py-4 rounded-full transition-colors"
+              className="bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold px-8 py-4 rounded-full transition-colors"
             >
               Start direct
             </a>
@@ -200,7 +200,7 @@ export default function FeaturesPage() {
       <section className="bg-[#FFFFFF] py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
               Kernfuncties
             </p>
             <h2 className="text-3xl md:text-4xl font-sans font-semibold text-[#111827]">
@@ -216,8 +216,8 @@ export default function FeaturesPage() {
                   key={s.title}
                   className="card-hover bg-[#F9FAFB] rounded-3xl p-8 hover:bg-[#F3F4F6]"
                 >
-                  <div className="w-12 h-12 bg-[#4353FF]/10 rounded-2xl flex items-center justify-center mb-5">
-                    <Icon size={22} className="text-[#4353FF]" />
+                  <div className="w-12 h-12 bg-[#CC5533]/10 rounded-2xl flex items-center justify-center mb-5">
+                    <Icon size={22} className="text-[#CC5533]" />
                   </div>
                   <h3 className="font-sans font-semibold text-lg text-[#111827] mb-2">
                     {s.title}
@@ -244,7 +244,7 @@ export default function FeaturesPage() {
               const Icon = e.icon;
               return (
                 <div key={e.title} className="card-hover bg-white rounded-3xl p-6 text-center">
-                  <Icon size={22} className="text-[#4353FF] mx-auto mb-3" />
+                  <Icon size={22} className="text-[#CC5533] mx-auto mb-3" />
                   <h3 className="font-semibold text-[#111827] text-sm mb-1">{e.title}</h3>
                   <p className="text-[#6B7280] text-xs leading-relaxed">{e.body}</p>
                 </div>
@@ -259,7 +259,7 @@ export default function FeaturesPage() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-4">
+              <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-4">
                 AI-first
               </p>
               <h2 className="text-3xl md:text-4xl font-sans text-white font-semibold mb-6">
@@ -281,7 +281,7 @@ export default function FeaturesPage() {
                   key={item}
                   className="card-hover bg-white/10 rounded-2xl px-5 py-4 flex items-center gap-3"
                 >
-                  <Bot size={16} className="text-[#4353FF] shrink-0" />
+                  <Bot size={16} className="text-[#CC5533] shrink-0" />
                   <span className="text-white/90 text-sm">{item}</span>
                 </div>
               ))}

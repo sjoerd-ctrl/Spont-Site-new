@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <section className="bg-[#FFFFFF] pt-32 pb-24 px-6">
-      <div className="max-w-3xl mx-auto prose prose-neutral prose-headings:font-sans prose-headings:text-[#111827] prose-p:text-[#6B7280] prose-p:leading-relaxed prose-li:text-[#6B7280] prose-a:text-[#4353FF] prose-a:no-underline hover:prose-a:underline prose-strong:text-[#111827] prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-lg prose-h3:mt-6 prose-h3:mb-2 prose-ul:my-4 prose-li:my-1">
+      <div className="max-w-3xl mx-auto prose prose-neutral prose-headings:font-sans prose-headings:text-[#111827] prose-p:text-[#6B7280] prose-p:leading-relaxed prose-li:text-[#6B7280] prose-a:text-[#CC5533] prose-a:no-underline hover:prose-a:underline prose-strong:text-[#111827] prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-lg prose-h3:mt-6 prose-h3:mb-2 prose-ul:my-4 prose-li:my-1">
         <h1 className="text-4xl font-semibold mb-2">Privacyverklaring Spont</h1>
         <p className="text-[#6B7280] text-sm !mt-0 mb-8">Laatst bijgewerkt: januari 2025</p>
 

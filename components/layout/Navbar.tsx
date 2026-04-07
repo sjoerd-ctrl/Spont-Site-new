@@ -133,7 +133,7 @@ export default function Navbar() {
 
           <a
             href="https://admin.spont.nl"
-            className="bg-[#4353FF] hover:bg-[#3344DD] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
+            className="bg-[#CC5533] hover:bg-[#A33818] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
           >
             Start direct
           </a>
@@ -180,7 +180,7 @@ export default function Navbar() {
           <hr className="border-[#E5E7EB]" />
           <a
             href="https://admin.spont.nl"
-            className="bg-[#4353FF] text-white text-sm font-semibold px-5 py-3 rounded-full text-center"
+            className="bg-[#CC5533] text-white text-sm font-semibold px-5 py-3 rounded-full text-center"
             onClick={() => setOpen(false)}
           >
             Start direct

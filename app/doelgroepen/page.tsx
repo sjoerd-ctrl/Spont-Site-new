@@ -33,7 +33,7 @@ export default function DoelgroepenPage() {
 
         {/* Gecentreerde content */}
         <div className="relative mx-auto w-full max-w-6xl px-6 pt-40 pb-24">
-          <p className="text-[#4353FF] font-semibold text-sm uppercase tracking-widest mb-4">
+          <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-4">
             Doelgroepen
           </p>
           <h1 className="text-5xl md:text-6xl font-sans text-white font-semibold leading-tight mb-6">

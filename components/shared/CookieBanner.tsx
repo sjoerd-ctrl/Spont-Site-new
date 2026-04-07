@@ -29,7 +29,7 @@ export default function CookieBanner() {
         <p className="text-white/80 text-sm leading-relaxed flex-1 mb-4 md:mb-0">
           Wij gebruiken functionele en analytische cookies om de website te
           verbeteren. Geen tracking zonder jouw toestemming.{" "}
-          <Link href="/privacy" className="text-[#4353FF] hover:underline">
+          <Link href="/privacy" className="text-[#CC5533] hover:underline">
             Privacyverklaring
           </Link>
         </p>
@@ -42,7 +42,7 @@ export default function CookieBanner() {
           </button>
           <button
             onClick={accept}
-            className="px-5 py-2.5 rounded-full text-sm font-semibold bg-[#4353FF] hover:bg-[#3344DD] text-white transition-colors"
+            className="px-5 py-2.5 rounded-full text-sm font-semibold bg-[#CC5533] hover:bg-[#A33818] text-white transition-colors"
           >
             Accepteren
           </button>

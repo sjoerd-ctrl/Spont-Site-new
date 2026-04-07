@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import CTABanner from "@/components/shared/CTABanner";
 import JsonLd from "@/components/shared/JsonLd";
-import { CheckCircle, Bot, Users, Wrench } from "lucide-react";
+import { CheckCircle, Bot, Users, Wrench, Code } from "lucide-react";
 import PaymentsTabs from "@/components/pricing/PaymentsTabs";
 
 export const metadata: Metadata = {
@@ -304,6 +304,27 @@ export default function PricingPage() {
 
           {/* Tarieven tabs */}
           <PaymentsTabs />
+
+          {/* Maatwerk callout */}
+          <div className="bg-[#F9FAFB] rounded-3xl p-8 md:p-10 flex flex-col sm:flex-row items-start gap-6">
+            <div className="w-12 h-12 bg-[#f5e45d]/10 rounded-2xl flex items-center justify-center shrink-0">
+              <Code size={22} className="text-[#b8a020]" />
+            </div>
+            <div>
+              <h3 className="font-sans text-xl text-[#111827] font-semibold mb-2">
+                Maatwerk nodig?
+              </h3>
+              <p className="text-[#5C5550] text-sm leading-relaxed mb-4">
+                Heb jij custom modules, of maak je gebruik van de API? Dan kunnen wij je op weg helpen. Hiervoor wordt een prijs op maat afgesproken.
+              </p>
+              <Link
+                href="/contact"
+                className="inline-flex items-center text-sm font-semibold text-[#b8a020] hover:underline"
+              >
+                Neem contact op &rarr;
+              </Link>
+            </div>
+          </div>
 
         </div>
       </section>

@@ -274,57 +274,33 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* ─── SPONT PAYMENTS ─── */}
+      {/* ─── MAATWERK ─── */}
       <section className="bg-[#FFFFFF] pb-16 px-6">
         <div className="max-w-4xl mx-auto space-y-6">
 
-          {/* Header callout */}
+          {/* Maatwerk callout */}
           <div className="bg-[#111827] rounded-3xl p-8 md:p-10">
             <p className="text-[#f5e45d] font-semibold text-xs uppercase tracking-widest mb-3">
-              Spont Payments
+              Maatwerk
             </p>
             <h3 className="font-sans text-2xl text-white font-semibold mb-2">
-              Reeds inbegrepen.<br />
-              Geïntegreerde betalingen, geen extra terminal.
+              Custom modules of API-koppelingen?<br />
+              Wij helpen je op weg.
             </h3>
             <p className="text-white/60 text-sm mb-6">
-              Spont Payments is standaard inbegrepen in onze prijzen. Tap to Pay, debit- en creditcard — alles in één terminal, zonder aparte SLA's.
+              Heb jij custom modules, of maak je gebruik van de API? Dan kunnen wij je op weg helpen. Hiervoor wordt een prijs op maat afgesproken.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <div className="bg-white/10 rounded-2xl px-6 py-4 text-center">
-                <p className="text-white/60 text-xs mb-1">Zonder Payments</p>
-                <p className="text-white text-2xl font-sans font-bold">€89<span className="text-sm font-normal text-white/60">/maand</span></p>
-              </div>
-              <div className="bg-[#f5e45d] rounded-2xl px-6 py-4 text-center">
-                <p className="text-[#1A1714]/70 text-xs mb-1">Met Payments (bespaar €20)</p>
-                <p className="text-[#1A1714] text-2xl font-sans font-bold">€69<span className="text-sm font-normal text-[#1A1714]/60">/maand</span></p>
-              </div>
-            </div>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-[#f5e45d] hover:bg-[#d4c430] text-[#1A1714] font-semibold px-6 py-3 rounded-full transition-colors text-sm"
+            >
+              <Code size={16} />
+              Neem contact op
+            </Link>
           </div>
 
           {/* Tarieven tabs */}
           <PaymentsTabs />
-
-          {/* Maatwerk callout */}
-          <div className="bg-[#F9FAFB] rounded-3xl p-8 md:p-10 flex flex-col sm:flex-row items-start gap-6">
-            <div className="w-12 h-12 bg-[#f5e45d]/10 rounded-2xl flex items-center justify-center shrink-0">
-              <Code size={22} className="text-[#b8a020]" />
-            </div>
-            <div>
-              <h3 className="font-sans text-xl text-[#111827] font-semibold mb-2">
-                Maatwerk nodig?
-              </h3>
-              <p className="text-[#5C5550] text-sm leading-relaxed mb-4">
-                Heb jij custom modules, of maak je gebruik van de API? Dan kunnen wij je op weg helpen. Hiervoor wordt een prijs op maat afgesproken.
-              </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center text-sm font-semibold text-[#b8a020] hover:underline"
-              >
-                Neem contact op &rarr;
-              </Link>
-            </div>
-          </div>
 
         </div>
       </section>

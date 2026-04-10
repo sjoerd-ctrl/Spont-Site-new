@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/doelgroepen`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${baseUrl}/voorwaarden`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${baseUrl}/docs/novachat`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
   ];
 
   const segments = [

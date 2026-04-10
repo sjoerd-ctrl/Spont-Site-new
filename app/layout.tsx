@@ -98,6 +98,19 @@ export default function RootLayout({
           gtag('js', new Date());
           gtag('config', 'AW-16835723122');
         `}</Script>
+        {/* NovaChat Widget */}
+        <Script id="novachat-config" strategy="afterInteractive">{`
+          window.NovaChat = window.NovaChat || [];
+          window.NovaChat.push(['config', {
+            env: 'spont-production',
+            lang: 'nl',
+            tracking: { pageViews: true }
+          }]);
+        `}</Script>
+        <Script
+          src="https://novachat.spont.nl/widget.js?v=8"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

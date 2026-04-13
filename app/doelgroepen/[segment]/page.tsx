@@ -754,7 +754,7 @@ export default async function DoelgroepDetailPage({
           <div className="absolute inset-0 bg-[#111827]/70" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto w-full">
-          <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-4">
+          <p className="text-[#f5e45d] font-semibold text-sm uppercase tracking-widest mb-4">
             {data.badge}
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-sans text-white font-semibold leading-tight mb-6 max-w-3xl">
@@ -765,7 +765,7 @@ export default async function DoelgroepDetailPage({
           </p>
           <a
             href="https://admin.spont.nl"
-            className="inline-block bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold px-8 py-4 rounded-full transition-colors"
+            className="inline-block bg-[#f5e45d] hover:bg-[#d4c430] text-[#1A1714] font-semibold px-8 py-4 rounded-full transition-colors"
           >
             Start direct
           </a>
@@ -776,7 +776,7 @@ export default async function DoelgroepDetailPage({
       <section className="bg-[#FFFFFF] py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
-            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#b8a020] font-semibold text-sm uppercase tracking-widest mb-3">
               Herkenbaar?
             </p>
             <h2 className="text-3xl md:text-4xl font-sans font-semibold text-[#111827]">
@@ -791,7 +791,7 @@ export default async function DoelgroepDetailPage({
               >
                 <AlertCircle
                   size={20}
-                  className="text-[#CC5533] shrink-0 mt-0.5"
+                  className="text-[#b8a020] shrink-0 mt-0.5"
                 />
                 <div>
                   <h3 className="font-semibold text-[#111827] mb-1 text-base">
@@ -809,7 +809,7 @@ export default async function DoelgroepDetailPage({
       <section className="bg-[#111827] py-24 px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-4">
+            <p className="text-[#f5e45d] font-semibold text-sm uppercase tracking-widest mb-4">
               De oplossing
             </p>
             <h2 className="text-3xl md:text-4xl font-sans text-white font-semibold mb-4">
@@ -828,7 +828,7 @@ export default async function DoelgroepDetailPage({
                 key={b}
                 className="card-hover bg-white/10 rounded-2xl px-5 py-4 flex items-center gap-3"
               >
-                <CheckCircle size={16} className="text-[#CC5533] shrink-0" />
+                <CheckCircle size={16} className="text-[#f5e45d] shrink-0" />
                 <span className="text-white/90 text-sm">{b}</span>
               </div>
             ))}
@@ -840,7 +840,7 @@ export default async function DoelgroepDetailPage({
       <section className="bg-[#F9FAFB] py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
-            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#b8a020] font-semibold text-sm uppercase tracking-widest mb-3">
               {isBowling ? "Klantcase" : "Ervaringen"}
             </p>
             <h2 className="text-3xl font-sans font-semibold text-[#111827]">
@@ -875,7 +875,7 @@ export default async function DoelgroepDetailPage({
       <section className="bg-[#FFFFFF] py-24 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-14">
-            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#b8a020] font-semibold text-sm uppercase tracking-widest mb-3">
               Hoe starten?
             </p>
             <h2 className="text-3xl font-sans font-semibold text-[#111827]">
@@ -885,8 +885,8 @@ export default async function DoelgroepDetailPage({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {data.onboarding.map((step, i) => (
               <div key={step.title} className="card-hover bg-[#F9FAFB] rounded-3xl p-8 flex gap-5">
-                <div className="w-10 h-10 rounded-full bg-[#CC5533]/10 flex items-center justify-center shrink-0">
-                  <span className="font-sans font-bold text-[#CC5533] text-sm">
+                <div className="w-10 h-10 rounded-full bg-[#f5e45d]/10 flex items-center justify-center shrink-0">
+                  <span className="font-sans font-bold text-[#b8a020] text-sm">
                     0{i + 1}
                   </span>
                 </div>
@@ -904,7 +904,7 @@ export default async function DoelgroepDetailPage({
       <section className="bg-[#FFFFFF] py-24 px-6">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-10">
-            <p className="text-[#CC5533] font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#b8a020] font-semibold text-sm uppercase tracking-widest mb-3">
               Meer weten?
             </p>
             <h2 className="text-3xl font-sans font-semibold text-[#111827] mb-3">

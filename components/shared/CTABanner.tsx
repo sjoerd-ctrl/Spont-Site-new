@@ -25,7 +25,7 @@ export default function CTABanner({
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href={primary.href}
-            className="bg-[#CC5533] hover:bg-[#A33818] text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
+            className="bg-[#f5e45d] hover:bg-[#d4c430] text-[#1A1714] font-semibold px-8 py-4 rounded-full transition-colors text-base"
           >
             {primary.label}
           </Link>

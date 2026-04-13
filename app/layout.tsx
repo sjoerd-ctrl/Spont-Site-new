@@ -102,9 +102,8 @@ export default function RootLayout({
         <Script id="novachat-config" strategy="afterInteractive">{`
           window.NovaChat = window.NovaChat || [];
           window.NovaChat.push(['config', {
-            env: 'spont-production',
+            env: 'spont-staging',
             lang: 'nl',
-            primaryColor: '#F5E45D',
             tracking: { pageViews: true }
           }]);
         `}</Script>

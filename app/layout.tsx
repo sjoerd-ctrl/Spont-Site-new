@@ -104,6 +104,7 @@ export default function RootLayout({
           window.NovaChat.push(['config', {
             env: 'spont-production',
             lang: 'nl',
+            primaryColor: '#F5E45D',
             tracking: { pageViews: true }
           }]);
         `}</Script>

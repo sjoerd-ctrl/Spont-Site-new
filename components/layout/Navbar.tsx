@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 // Pages with a dark full-screen hero → show white logo when not scrolled
 const DARK_HERO_PAGES = ["/", "/prijzen", "/over-ons", "/doelgroepen"];
@@ -15,25 +15,16 @@ const navLinks = [
   { href: "/over-ons", label: "Over ons" },
 ];
 
-const loginOptions = [
-  {
-    name: "Spont POS",
-    href: "https://cloud.spont.nl",
-    icon: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/80/52/d2/8052d254-3817-7d93-eb04-1215e438c813/Placeholder.mill/128x128bb-75.webp",
-  },
-  {
-    name: "Spont Beyond",
-    href: "https://admin.spont.nl",
-    icon: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/95/9f/d8/959fd821-3b06-dc4a-c234-60363c9da474/Placeholder.mill/128x128bb-75.webp",
-  },
-];
+const loginOption = {
+  name: "Spont",
+  href: "https://admin.spont.nl",
+  icon: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/95/9f/d8/959fd821-3b06-dc4a-c234-60363c9da474/Placeholder.mill/128x128bb-75.webp",
+};
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [loginOpen, setLoginOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const loginRef = useRef<HTMLDivElement>(null);
 
   const hasDarkHero =
     DARK_HERO_PAGES.includes(pathname) ||
@@ -43,17 +34,6 @@ export default function Navbar() {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (loginRef.current && !loginRef.current.contains(e.target as Node)) {
-        setLoginOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
   }, []);
 
   const isLight = scrolled || !hasDarkHero;
@@ -95,41 +75,19 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
-          {/* Inloggen dropdown */}
-          <div ref={loginRef} className="relative">
-            <button
-              onClick={() => setLoginOpen(!loginOpen)}
-              className={`flex items-center gap-1 text-sm font-medium transition-colors ${
-                isLight
-                  ? "text-[#6B7280] hover:text-[#111827]"
-                  : "text-white/80 hover:text-white"
-              }`}
-            >
-              Inloggen
-              <ChevronDown
-                size={14}
-                className={`transition-transform duration-200 ${loginOpen ? "rotate-180" : ""}`}
-              />
-            </button>
-
-            {loginOpen && (
-              <div className="absolute right-0 top-full mt-3 w-64 bg-white rounded-2xl shadow-xl border border-[#E5E7EB] overflow-hidden">
-                {loginOptions.map((opt) => (
-                  <a
-                    key={opt.href}
-                    href={opt.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setLoginOpen(false)}
-                    className="flex items-center gap-4 px-4 py-3.5 hover:bg-[#FFFFFF] transition-colors"
-                  >
-                    <img src={opt.icon} alt={opt.name} className="shrink-0 w-10 h-10 rounded-xl" />
-                    <p className="text-sm font-semibold text-[#111827]">{opt.name}</p>
-                  </a>
-                ))}
-              </div>
-            )}
-          </div>
+          {/* Inloggen */}
+          <a
+            href={loginOption.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`text-sm font-medium transition-colors ${
+              isLight
+                ? "text-[#6B7280] hover:text-[#111827]"
+                : "text-white/80 hover:text-white"
+            }`}
+          >
+            Inloggen
+          </a>
 
           <a
             href="https://admin.spont.nl"
@@ -163,20 +121,16 @@ export default function Navbar() {
             </Link>
           ))}
           <hr className="border-[#E5E7EB]" />
-          <p className="text-xs font-semibold text-[#6B7280] uppercase tracking-widest">Inloggen</p>
-          {loginOptions.map((opt) => (
-            <a
-              key={opt.href}
-              href={opt.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setOpen(false)}
-              className="flex items-center gap-3"
-            >
-              <img src={opt.icon} alt={opt.name} className="shrink-0 w-9 h-9 rounded-xl" />
-              <p className="text-sm font-semibold text-[#111827]">{opt.name}</p>
-            </a>
-          ))}
+          <a
+            href={loginOption.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setOpen(false)}
+            className="flex items-center gap-3"
+          >
+            <img src={loginOption.icon} alt={loginOption.name} className="shrink-0 w-9 h-9 rounded-xl" />
+            <p className="text-sm font-semibold text-[#111827]">Inloggen</p>
+          </a>
           <hr className="border-[#E5E7EB]" />
           <a
             href="https://admin.spont.nl"

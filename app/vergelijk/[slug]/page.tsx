@@ -325,15 +325,15 @@ export default async function VergelijkPage({
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="bg-[#FFFFFF] pt-32 pb-16 px-6 border-b border-[#E5E7EB]">
+      <section className="bg-[#111827] pt-32 pb-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <p className="text-[#b8a020] font-semibold text-sm uppercase tracking-widest mb-4">
+          <p className="text-[#f5e45d] font-semibold text-sm uppercase tracking-widest mb-4">
             Vergelijking
           </p>
-          <h1 className="text-4xl md:text-5xl font-sans text-[#111827] font-semibold mb-5 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-sans text-white font-semibold mb-5 leading-tight">
             {v.h1}
           </h1>
-          <p className="text-[#6B7280] text-lg max-w-2xl mb-8">{v.subkop}</p>
+          <p className="text-white/70 text-lg max-w-2xl mb-8">{v.subkop}</p>
           <a
             href="https://admin.spont.nl"
             className="bg-[#f5e45d] hover:bg-[#d4c430] text-[#1A1714] font-semibold px-8 py-4 rounded-full transition-colors inline-block"
@@ -409,13 +409,13 @@ export default async function VergelijkPage({
       )}
 
       {/* ─── VOOR WIE ─── */}
-      <section className="bg-[#FFFFFF] py-16 px-6">
+      <section className="bg-[#111827] py-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-sans font-semibold text-[#111827] mb-8">
+          <h2 className="text-2xl md:text-3xl font-sans font-semibold text-white mb-8">
             Voor wie is welk systeem?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="card-hover bg-[#111827] rounded-3xl p-8">
+            <div className="card-hover bg-white/10 rounded-3xl p-8">
               <p className="text-xs font-semibold uppercase tracking-widest text-[#f5e45d] mb-4">
                 Kies Spont als…
               </p>
@@ -428,14 +428,14 @@ export default async function VergelijkPage({
                 ))}
               </ul>
             </div>
-            <div className="card-hover bg-[#F9FAFB] rounded-3xl p-8">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#b8a020] mb-4">
+            <div className="card-hover bg-white/10 rounded-3xl p-8">
+              <p className="text-xs font-semibold uppercase tracking-widest text-white/50 mb-4">
                 Kies {v.concurrentNaam} als…
               </p>
               <ul className="space-y-3">
                 {v.kiesConcurrent.map((punt) => (
-                  <li key={punt} className="flex items-start gap-3 text-[#6B7280] text-sm">
-                    <CheckCircle size={16} className="text-[#6B7280] shrink-0 mt-0.5" />
+                  <li key={punt} className="flex items-start gap-3 text-white/70 text-sm">
+                    <CheckCircle size={16} className="text-white/40 shrink-0 mt-0.5" />
                     {punt}
                   </li>
                 ))}
@@ -446,13 +446,14 @@ export default async function VergelijkPage({
       </section>
 
       {/* ─── QUOTE ─── */}
-      <section className="bg-[#F9FAFB] py-16 px-6">
+      <section className="bg-[#111827] py-16 px-6 border-t border-white/10">
         <div className="max-w-3xl mx-auto text-center">
-          <blockquote className="font-sans text-2xl text-[#111827] leading-snug italic mb-6">
-            &ldquo;{v.quote.text}&rdquo;
+          <p className="text-[#f5e45d] text-5xl font-serif mb-4">&ldquo;</p>
+          <blockquote className="font-sans text-2xl text-white leading-snug italic mb-6">
+            {v.quote.text}
           </blockquote>
-          <p className="text-[#6B7280] text-sm font-medium">{v.quote.name}</p>
-          <p className="text-[#6B7280] text-xs mt-1">{v.quote.role}</p>
+          <p className="text-white/70 text-sm font-medium">{v.quote.name}</p>
+          <p className="text-white/50 text-xs mt-1">{v.quote.role}</p>
         </div>
       </section>
 

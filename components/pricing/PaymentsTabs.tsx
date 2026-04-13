@@ -3,35 +3,28 @@
 import { useState } from "react";
 
 const pos = [
-  { method: "Debit / pin", rate: "€0,085 / tx" },
+  { method: "Maestro", rate: "€0,085" },
+  { method: "vPay", rate: "€0,085" },
+  { method: "Mastercard Debit", rate: "€0,05 + 0,25% + Cardfees*" },
+  { method: "VISA Debit", rate: "€0,05 + 0,25% + Cardfees*" },
+  { method: "Bancontact", rate: "€0,06 + 0,30%" },
   { method: "Creditcard (consumer)", rate: "1,89%" },
   { method: "Creditcard (zakelijk)", rate: "2,79%" },
   { method: "American Express", rate: "€0,05 + 2,20%" },
-  { method: "Bancontact", rate: "€0,06 + 0,30%" },
 ];
 
 const ecom = [
-  { method: "Maestro", rate: "€0,10 / tx" },
-  { method: "iDEAL", rate: "€0,25 / tx" },
+  { method: "Maestro", rate: "€0,10" },
+  { method: "iDEAL", rate: "€0,25" },
   { method: "Creditcard (consumer)", rate: "€0,05 + 1,89%" },
   { method: "Creditcard (zakelijk)", rate: "€0,05 + 2,79%" },
   { method: "American Express", rate: "€0,08 + 3,10%" },
   { method: "Bancontact", rate: "€0,10 + 0,30%" },
 ];
 
-const terminal = [
-  { method: "Maestro", rate: "€0,085 / tx" },
-  { method: "vPay", rate: "€0,085 / tx" },
-  { method: "Mastercard Debit", rate: "€0,05 + 0,25% + Cardfees*" },
-  { method: "VISA Debit", rate: "€0,05 + 0,25% + Cardfees*" },
-  { method: "Bancontact", rate: "€0,06 + 0,30%" },
-];
-
-type Tab = "pos" | "ecom" | "terminal";
-
 export default function PaymentsTabs() {
-  const [active, setActive] = useState<Tab>("pos");
-  const rows = active === "pos" ? pos : active === "ecom" ? ecom : terminal;
+  const [active, setActive] = useState<"pos" | "ecom">("pos");
+  const rows = active === "pos" ? pos : ecom;
 
   return (
     <div className="bg-[#F9FAFB] rounded-3xl p-7">
@@ -57,16 +50,6 @@ export default function PaymentsTabs() {
         >
           Online bestellen (ECOM)
         </button>
-        <button
-          onClick={() => setActive("terminal")}
-          className={`px-5 py-2 rounded-full text-sm font-semibold transition-colors ${
-            active === "terminal"
-              ? "bg-white text-[#111827] shadow-sm"
-              : "text-[#6B7280] hover:text-[#111827]"
-          }`}
-        >
-          Pin Terminals
-        </button>
       </div>
 
       {/* Table */}
@@ -86,7 +69,7 @@ export default function PaymentsTabs() {
           ))}
         </tbody>
       </table>
-      {active === "terminal" && (
+      {active === "pos" && (
         <p className="text-[#6B7280] text-xs mt-4">
           * Cardfees worden bepaald door het kaartnetwerk en variëren per transactie.
         </p>

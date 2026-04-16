@@ -1096,12 +1096,12 @@ export default async function BlogArticlePage({
         <div className="max-w-3xl mx-auto">
           <Link
             href="/blog"
-            className="text-sm text-[#CC5533] font-semibold hover:underline mb-6 inline-block"
+            className="text-sm text-[#b8a020] font-semibold hover:underline mb-6 inline-block"
           >
             &larr; Terug naar blog
           </Link>
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-xs font-semibold text-[#CC5533] uppercase tracking-widest">
+            <span className="text-xs font-semibold text-[#b8a020] uppercase tracking-widest">
               {article.category}
             </span>
             <span className="text-[#6B7280] text-xs">
@@ -1116,7 +1116,7 @@ export default async function BlogArticlePage({
 
       {/* ─── CONTENT ─── */}
       <section className="bg-[#FFFFFF] pb-24 px-6">
-        <div className="max-w-3xl mx-auto prose prose-neutral prose-headings:font-sans prose-headings:text-[#111827] prose-p:text-[#6B7280] prose-p:leading-relaxed prose-li:text-[#6B7280] prose-a:text-[#CC5533] prose-a:no-underline hover:prose-a:underline prose-strong:text-[#111827] prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-lg prose-h3:mt-8 prose-h3:mb-3 prose-ul:my-4 prose-li:my-1">
+        <div className="max-w-3xl mx-auto prose prose-neutral prose-headings:font-sans prose-headings:text-[#111827] prose-p:text-[#6B7280] prose-p:leading-relaxed prose-li:text-[#6B7280] prose-a:text-[#b8a020] prose-a:no-underline hover:prose-a:underline prose-strong:text-[#111827] prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-lg prose-h3:mt-8 prose-h3:mb-3 prose-ul:my-4 prose-li:my-1">
           {article.content}
         </div>
       </section>

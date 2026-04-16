@@ -69,7 +69,7 @@ export function DoelgroepTile({
         animate={{ y: hovered ? -4 : 0 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
       >
-        <p className="text-[#CC5533] text-xs font-semibold uppercase tracking-widest mb-3">
+        <p className="text-[#f5e45d] text-xs font-semibold uppercase tracking-widest mb-3">
           {label}
         </p>
 
@@ -85,7 +85,7 @@ export function DoelgroepTile({
         </p>
 
         <motion.span
-          className="mt-5 inline-flex items-center gap-1.5 text-[#CC5533] text-xs font-semibold uppercase tracking-wider"
+          className="mt-5 inline-flex items-center gap-1.5 text-[#f5e45d] text-xs font-semibold uppercase tracking-wider"
           animate={{ opacity: hovered ? 1 : 0.7 }}
           transition={{ duration: 0.2 }}
         >

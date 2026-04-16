@@ -11,9 +11,9 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-plus-jakarta);
   --font-serif: var(--font-plus-jakarta);
-  --color-terracotta: #CC5533;
-  --color-terracotta-dark: #A33818;
-  --color-terracotta-light: #D96B4A;
+  --color-terracotta: #f5e45d;
+  --color-terracotta-dark: #d4c430;
+  --color-terracotta-light: #f9ee8a;
   --color-green-spont: #2D4B3F;
   --color-green-light: #466558;
   --color-beige: #FCF9F4;
@@ -120,7 +120,7 @@ h1, h2, h3, h4 {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #CC5533;
+  background: #f5e45d;
 }
 
 .article-body ol {
@@ -139,18 +139,18 @@ h1, h2, h3, h4 {
 }
 
 .article-body a {
-  color: #CC5533;
+  color: #b8a020;
   text-decoration: none;
-  border-bottom: 1px solid #CC553355;
+  border-bottom: 1px solid #f5e45d55;
   transition: border-color 0.15s ease;
 }
 
 .article-body a:hover {
-  border-color: #CC5533;
+  border-color: #f5e45d;
 }
 
 .article-body blockquote {
-  border-left: 3px solid #CC5533;
+  border-left: 3px solid #f5e45d;
   padding-left: 1.25rem;
   margin-left: 0;
   margin-top: 2rem;

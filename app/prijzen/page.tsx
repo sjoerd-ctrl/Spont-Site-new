@@ -113,7 +113,7 @@ const faqs = [
   },
   {
     q: "Wat kost Spont Payments?",
-    a: "Spont Payments is standaard inbegrepen. Geen extra terminal-kosten of setup fees. POS-tarieven: debit €0,085/tx, creditcard consumer 1,89%, creditcard zakelijk 2,79%, Amex €0,05 + 2,20%, Bancontact €0,06 + 0,30%. Voor online bestellingen (ECOM) gelden aparte tarieven — zie de tariefstabel op deze pagina. Wil je geen betaaloplossing gebruiken? Dan betaal je €20/maand minder.",
+    a: "Spont Payments is standaard inbegrepen. Geen extra terminal-kosten of setup fees. Bekijk de tariefstabel op deze pagina voor alle actuele Card present- en ECOM-tarieven. Wil je geen betaaloplossing gebruiken? Dan betaal je €20/maand minder.",
   },
 ];
 
@@ -281,14 +281,16 @@ export default function PricingPage() {
           {/* Maatwerk callout */}
           <div className="bg-[#111827] rounded-3xl p-8 md:p-10">
             <p className="text-[#f5e45d] font-semibold text-xs uppercase tracking-widest mb-3">
-              Maatwerk
+              Waarom zo voordelig?
             </p>
             <h3 className="font-sans text-2xl text-white font-semibold mb-2">
-              Custom modules of API-koppelingen?<br />
-              Wij helpen je op weg.
+              Samen inkopen, slim besparen.
             </h3>
+            <p className="text-white/60 text-sm mb-4">
+              Spont is gebouwd als één platform voor duizenden ondernemers. Iedereen krijgt dezelfde krachtige functionaliteiten — gebouwd op een systeem dat ook door multinationals wordt gebruikt. Door samen in te kopen, betaal je een fractie van wat je normaal kwijt bent.
+            </p>
             <p className="text-white/60 text-sm mb-6">
-              Heb jij custom modules, of maak je gebruik van de API? Dan kunnen wij je op weg helpen. Hiervoor wordt een prijs op maat afgesproken.
+              Heb je custom modules of API-koppelingen nodig? Dan maken we daar een prijs op maat voor.
             </p>
             <Link
               href="/contact"

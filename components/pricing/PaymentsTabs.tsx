@@ -14,7 +14,8 @@ const cardPresent: Row[] = [
   { name: "Mastercard Credit",brand: "mastercard", rates: ["€0,05", "0,25%", "Card fees *"] },
   { name: "Visa Debit",       brand: "visa",       rates: ["€0,05", "0,25%", "Card fees *"] },
   { name: "Visa Credit",      brand: "visa",       rates: ["€0,05", "0,25%", "Card fees *"] },
-  { name: "American Express", brand: "amex",       rates: ["€0,05", "2,20%"] },
+  { name: "Bancontact",        brand: "bancontact", rates: ["€0,06", "0,30%"] },
+  { name: "American Express",  brand: "amex",       rates: ["€0,05", "2,20%"] },
 ];
 
 const ecom: Row[] = [

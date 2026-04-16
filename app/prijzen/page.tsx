@@ -278,7 +278,7 @@ export default function PricingPage() {
       <section className="bg-[#FFFFFF] pb-16 px-6">
         <div className="max-w-4xl mx-auto space-y-6">
 
-          {/* Maatwerk callout */}
+          {/* Waarom zo voordelig + maatwerk */}
           <div className="bg-[#111827] rounded-3xl p-8 md:p-10">
             <p className="text-[#f5e45d] font-semibold text-xs uppercase tracking-widest mb-3">
               Waarom zo voordelig?
@@ -286,19 +286,28 @@ export default function PricingPage() {
             <h3 className="font-sans text-2xl text-white font-semibold mb-2">
               Samen inkopen, slim besparen.
             </h3>
-            <p className="text-white/60 text-sm mb-4">
+            <p className="text-white/60 text-sm mb-6">
               Spont is gebouwd als één platform voor duizenden ondernemers. Iedereen krijgt dezelfde krachtige functionaliteiten — gebouwd op een systeem dat ook door multinationals wordt gebruikt. Door samen in te kopen, betaal je een fractie van wat je normaal kwijt bent.
             </p>
-            <p className="text-white/60 text-sm mb-6">
-              Heb je custom modules of API-koppelingen nodig? Dan maken we daar een prijs op maat voor.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-[#f5e45d] hover:bg-[#d4c430] text-[#1A1714] font-semibold px-6 py-3 rounded-full transition-colors text-sm"
-            >
-              <Code size={16} />
-              Neem contact op
-            </Link>
+
+            <div className="border-t border-white/10 pt-6">
+              <p className="text-[#f5e45d] font-semibold text-xs uppercase tracking-widest mb-3">
+                Maatwerk
+              </p>
+              <h4 className="font-sans text-xl text-white font-semibold mb-2">
+                Betaal je nu meer? Dat kan kloppen.
+              </h4>
+              <p className="text-white/60 text-sm mb-6">
+                De prijzen hierboven gelden voor het standaardplatform — alles wat je nodig hebt, zonder extra&apos;s. Werk je met custom modules, specifieke koppelingen of maatwerk? Dan geldt een aanvullend tarief. Dat verklaart waarom sommige klanten een hoger bedrag zien — zij gebruiken functionaliteiten die op maat zijn gebouwd.
+              </p>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-[#f5e45d] hover:bg-[#d4c430] text-[#1A1714] font-semibold px-6 py-3 rounded-full transition-colors text-sm"
+              >
+                <Code size={16} />
+                Neem contact op
+              </Link>
+            </div>
           </div>
 
           {/* Tarieven tabs */}

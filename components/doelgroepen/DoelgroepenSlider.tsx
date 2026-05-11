@@ -63,7 +63,7 @@ export default function DoelgroepenSlider({ items }: { items: Doelgroep[] }) {
                   {d.title}
                 </h2>
                 <p className="text-sm text-white/65 mt-1">{d.subtitle}</p>
-                <span className="mt-4 text-xs font-semibold text-[#CC5533] uppercase tracking-wider">
+                <span className="mt-4 text-xs font-semibold text-[#f5e45d] uppercase tracking-wider">
                   Meer info →
                 </span>
               </div>

@@ -46,7 +46,7 @@ export function FeatureRow({
         </p>
         <Link
           href={ctaHref}
-          className="inline-flex items-center gap-1.5 text-[#CC5533] font-semibold text-sm uppercase tracking-wider hover:gap-3 transition-all duration-200"
+          className="inline-flex items-center gap-1.5 text-[#b8a020] font-semibold text-sm uppercase tracking-wider hover:gap-3 transition-all duration-200"
         >
           {ctaLabel} <span>→</span>
         </Link>

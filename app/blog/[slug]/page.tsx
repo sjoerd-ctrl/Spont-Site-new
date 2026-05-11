@@ -1055,6 +1055,8 @@ export default async function BlogArticlePage({
   const { slug } = await params;
   const article = articles[slug];
   if (!article) notFound();
+  const heroImage = articleImages[slug];
+  const readTime = readTimes[slug];
 
   return (
     <>
@@ -1091,6 +1093,8 @@ export default async function BlogArticlePage({
         }}
       />
 
+      <ScrollProgress />
+
       {/* ─── HEADER ─── */}
       <section className="bg-[#FFFFFF] pt-32 pb-12 px-6">
         <div className="max-w-3xl mx-auto">
@@ -1107,6 +1111,12 @@ export default async function BlogArticlePage({
             <span className="text-[#6B7280] text-xs">
               <time dateTime={article.dateISO}>{article.date}</time>
             </span>
+            {readTime && (
+              <span className="flex items-center gap-1 text-[#6B7280] text-xs">
+                <Clock size={11} />
+                {readTime}
+              </span>
+            )}
           </div>
           <h1 className="text-4xl md:text-5xl font-sans text-[#111827] font-semibold leading-tight">
             {article.title}
@@ -1114,9 +1124,22 @@ export default async function BlogArticlePage({
         </div>
       </section>
 
+      {/* ─── HERO IMAGE ─── */}
+      {heroImage && (
+        <section className="bg-[#FFFFFF] px-6 pb-8">
+          <div className="max-w-3xl mx-auto">
+            <img
+              src={heroImage}
+              alt={article.title}
+              className="w-full aspect-[2/1] object-cover rounded-2xl"
+            />
+          </div>
+        </section>
+      )}
+
       {/* ─── CONTENT ─── */}
       <section className="bg-[#FFFFFF] pb-24 px-6">
-        <div className="max-w-3xl mx-auto prose prose-neutral prose-headings:font-sans prose-headings:text-[#111827] prose-p:text-[#6B7280] prose-p:leading-relaxed prose-li:text-[#6B7280] prose-a:text-[#b8a020] prose-a:no-underline hover:prose-a:underline prose-strong:text-[#111827] prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-lg prose-h3:mt-8 prose-h3:mb-3 prose-ul:my-4 prose-li:my-1">
+        <div className="max-w-3xl mx-auto article-body">
           {article.content}
         </div>
       </section>

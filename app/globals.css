@@ -68,7 +68,7 @@ h1, h2, h3, h4 {
 }
 
 .article-body h2 {
-  font-family: var(--font-noto-serif), Georgia, serif;
+  font-family: var(--font-sans), sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
   color: #1A1714;
@@ -80,7 +80,7 @@ h1, h2, h3, h4 {
 }
 
 .article-body h3 {
-  font-family: var(--font-noto-serif), Georgia, serif;
+  font-family: var(--font-sans), sans-serif;
   font-size: 1.2rem;
   font-weight: 600;
   color: #1A1714;
@@ -157,5 +157,5 @@ h1, h2, h3, h4 {
   color: #1A1714;
   font-size: 1.1rem;
   font-style: italic;
-  font-family: var(--font-noto-serif), Georgia, serif;
+  font-family: var(--font-sans), sans-serif;
 }

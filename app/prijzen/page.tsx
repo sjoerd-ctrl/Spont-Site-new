@@ -89,31 +89,31 @@ const plans = [
 const faqs = [
   {
     q: "Zit ik vast aan een contract?",
-    a: "Nee. Spont is maandelijks opzegbaar. Geen lock-in, geen boeteclausules.",
+    a: "Nee. Spont is maandelijks opzegbaar. Geen jaarcontract, geen opzegtermijn, geen boeteclausules. Bevalt het niet? Dan stop je gewoon.",
   },
   {
-    q: "Zijn er opstartkosten?",
-    a: "Geen. Je betaalt het maandelijkse bedrag, en dat is het.",
+    q: "Zijn er opstartkosten of verborgen kosten?",
+    a: "Nee. Er zijn geen opstartkosten en geen verborgen kosten. Je hebt je hardware, je abonnement, en je kunt aan de slag. Wil je hulp bij de installatie of heb je vragen? Dan brengen we je in contact met een van onze dealers. Zij bieden persoonlijke, menselijke support.",
   },
   {
     q: "Wat is het verschil tussen Start en Pro?",
-    a: "Beide plannen hebben alle functies. Start is voor zaken met 1–2 verkooppunten. Pro heeft geen limiet — ideaal als je meerdere kassa's of vestigingen hebt.",
+    a: "Beide plannen bevatten alle functies — er wordt niets achtergehouden. Start is voor zaken met maximaal 2 verkooppunten. Pro heeft geen limiet op apparaten, gebruikers of vestigingen. Groei je? Dan schakel je eenvoudig over.",
   },
   {
     q: "Hoe snel ben ik operationeel?",
-    a: "Binnen een paar uur. Je richt je menukaart in, koppelt je printer en betaalterminal — klaar.",
+    a: "Binnen een paar uur. Je maakt een account aan, richt je menukaart in, koppelt je printer en betaalterminal — klaar. Geen technicus nodig, geen wachttijden.",
   },
   {
     q: "Kan ik meerdere locaties beheren?",
-    a: "Ja, met het Pro-plan beheer je meerdere vestigingen vanuit één dashboard.",
+    a: "Ja. Met het Pro-plan beheer je al je vestigingen vanuit één dashboard. Omzet, menukaarten, personeel — alles centraal, zonder heen en weer te schakelen.",
   },
   {
     q: "Wat als er iets misgaat tijdens de dienst?",
-    a: "Stuur een ticket in via het platform. AI + ons team pakt het snel op. Heb je iemand nodig die langskomt of belt? Dat kan via onze dealers of als losse ondersteuning à €59/uur.",
+    a: "Je stuurt een ticket in via het platform. Onze AI lost de meeste vragen direct op. Lukt dat niet, dan pakt ons team het op. Wil je iemand die je persoonlijk kent en die kan langskomen of bellen? Dan koppelen we je aan een dealer bij jou in de buurt.",
   },
   {
     q: "Wat kost Spont Payments?",
-    a: "Spont Payments is standaard inbegrepen. Geen extra terminal-kosten of setup fees. Bekijk de tariefstabel op deze pagina voor alle actuele Card present- en ECOM-tarieven. Wil je geen betaaloplossing gebruiken? Dan betaal je €20/maand minder.",
+    a: "Spont Payments zit standaard in je abonnement. Geen extra terminal-kosten, geen setup fees. Bekijk de tariefstabel op deze pagina voor alle actuele tarieven. Liever een eigen betaalprovider? Dan betaal je €20/maand minder.",
   },
 ];
 

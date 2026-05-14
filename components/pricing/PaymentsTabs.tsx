@@ -2,6 +2,18 @@
 
 import { useState } from "react";
 
+const logos: Record<string, string> = {
+  Maestro: "/images/payments/maestro.svg",
+  vPay: "/images/payments/vpay.svg",
+  "Mastercard Debit": "/images/payments/mastercard.svg",
+  "VISA Debit": "/images/payments/visa.svg",
+  Bancontact: "/images/payments/bancontact.png",
+  "Creditcard (consumer)": "/images/payments/mastercard.svg",
+  "Creditcard (zakelijk)": "/images/payments/mastercard.svg",
+  "American Express": "/images/payments/amex.svg",
+  iDEAL: "/images/payments/maestro.svg",
+};
+
 const pos = [
   { method: "Maestro", rate: "€0,085" },
   { method: "vPay", rate: "€0,085" },
@@ -63,17 +75,50 @@ export default function PaymentsTabs() {
         <tbody className="divide-y divide-[#E5E7EB]">
           {rows.map((r) => (
             <tr key={r.method}>
-              <td className="py-3 pr-4 text-[#111827]">{r.method}</td>
+              <td className="py-3 pr-4 text-[#111827]">
+                <span className="flex items-center gap-3">
+                  {logos[r.method] && (
+                    <img
+                      src={logos[r.method]}
+                      alt={r.method}
+                      className="h-6 w-9 object-contain rounded"
+                    />
+                  )}
+                  {r.method}
+                </span>
+              </td>
               <td className="py-3 text-right font-semibold text-[#111827]">{r.rate}</td>
             </tr>
           ))}
         </tbody>
       </table>
-      {active === "pos" && (
-        <p className="text-[#6B7280] text-xs mt-4">
-          * Cardfees worden bepaald door het kaartnetwerk en variëren per transactie.
-        </p>
-      )}
+
+      {/* Kaartkosten uitleg */}
+      <div className="mt-6 bg-[#EBE8E3] rounded-2xl p-6">
+        <div className="flex flex-col sm:flex-row gap-4">
+          <span className="shrink-0 text-xs font-semibold text-[#111827] border border-[#111827] rounded-full px-3 py-1.5 self-start">
+            Kaartkosten*
+          </span>
+          <div className="text-sm text-[#3D3A36] leading-relaxed">
+            <p>
+              Interchange (uitvoerende bank) + scheme fee (Visa &amp; Mastercard)
+              <br />
+              Voor meer informatie over kaartkosten, zie{" "}
+              <a href="https://www.mastercard.nl/nl-nl/vision/wie-zijn-wij/interchange.html" target="_blank" rel="noopener noreferrer" className="underline">
+                deze uitleg
+              </a>.
+            </p>
+            <p className="mt-3">
+              Tap to Pay-transactiekosten: €0,06 per transactie op iOS en €0,03 per transactie op Android.
+              <br />
+              Voor meer informatie over Tap to Pay, bezoek{" "}
+              <a href="/features" className="underline">
+                Tap to Pay
+              </a>.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
